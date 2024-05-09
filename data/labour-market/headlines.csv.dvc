@@ -1,0 +1,13 @@
+md5: 7762bee34392ca4d7b285cdc517cd903
+frozen: true
+deps:
+- checksum: '"58ed22570e92c9de9e83030ace70a73f335cdebe5d0b8e1d51ef91203e0dd0ab"'
+  size: 1166
+  hash: md5
+  path: 
+    https://raw.githubusercontent.com/open-innovations/yff-data/e9fadb5a3571bff20b46b19322a4b5a07245f2d1/src/_data/sources/labour-market/headlines.csv
+outs:
+- md5: e6cd7969f71598f63424f8a5c05723a6
+  size: 1166
+  hash: md5
+  path: headlines.csv
