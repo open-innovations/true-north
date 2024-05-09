@@ -10,9 +10,9 @@ header_class: c5-bg
 # Automatically adds meta and social tags 
 # See https://lume.land/plugins/metas/
 metas:
-  site: Open Innovations Lume Template Site
-  description: A template site for Open Innovations
+  site: True North Data Dashboard
+  description: True North — the collaborative network for purpose-led businesses
   image: https://open-innovations.org/resources/images/logos/oi-square.png
   twitter: openinnovates
   lang: en
-  keywords: [open, data, leeds, innovation]
+  keywords: [truenorth, data, leeds, innovation, brabners]
