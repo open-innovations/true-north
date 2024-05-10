@@ -1,0 +1,9 @@
+vars:
+  - TOP: ..
+stages:
+  scrape-lms:
+    cmd: python labour-market.py
+    deps:
+      - labour-market.py
+      - ${TOP}/working/labour-market/lms.csv
+      - ${TOP}/metadata/lms-codes.csv

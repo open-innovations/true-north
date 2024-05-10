@@ -1,0 +1,17 @@
+schema: '2.0'
+stages:
+  scrape-lms:
+    cmd: python labour-market.py
+    deps:
+    - path: ../metadata/lms-codes.csv
+      hash: md5
+      md5: 33ff63c705f05dff43947d5980a8a72c
+      size: 176969
+    - path: ../working/labour-market/lms.csv
+      hash: md5
+      md5: f8fa1571cea0934e1c48e3de9758d524
+      size: 18565708
+    - path: labour-market.py
+      hash: md5
+      md5: 00cee672bad641ae85f288321ed52a40
+      size: 760

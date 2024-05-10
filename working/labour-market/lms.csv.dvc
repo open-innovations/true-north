@@ -1,0 +1,13 @@
+md5: c7efbae139725cb4567ef35c8bde717d
+frozen: true
+deps:
+- checksum: '"c618dbcd3d08734316154db64c4cad38d5cc34cb8219a8a2679ebd23733dacdf"'
+  size: 18565708
+  hash: md5
+  path: 
+    https://raw.githubusercontent.com/open-innovations/yff-data-pipelines/main/data/processed/lms.csv
+outs:
+- md5: f8fa1571cea0934e1c48e3de9758d524
+  size: 18565708
+  hash: md5
+  path: lms.csv
