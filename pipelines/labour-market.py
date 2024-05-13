@@ -6,7 +6,7 @@ THIS_DIR = os.path.dirname(__file__)
 TOP = os.path.abspath(os.path.join(THIS_DIR, os.pardir))
 
 WDIR = os.path.join(TOP, 'working/labour-market')
-DATA_DIR = os.path.join(TOP, 'data')
+DATA_DIR = os.path.join(TOP, '_data')
 METADATA_DIR = os.path.join(TOP, 'metadata')
 
 if __name__ == "__main__":

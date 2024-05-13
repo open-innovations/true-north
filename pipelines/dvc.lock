@@ -13,5 +13,5 @@ stages:
       size: 18565708
     - path: labour-market.py
       hash: md5
-      md5: 00cee672bad641ae85f288321ed52a40
-      size: 760
+      md5: 5a36d0ebc674f90e8fe1b646425b7332
+      size: 761
