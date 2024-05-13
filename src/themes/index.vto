@@ -1,0 +1,12 @@
+---
+title: Themes
+nav: themes
+---
+<p>
+    True North covers five main themes. You can find out more about each one on their respective pages.
+</p>
+<ul>
+    {{ for page of search.pages("theme!=undefined") }}
+    <li><a href="{{ page.url }}">{{ page.theme }}</a></li>
+    {{ /for }}
+</ul>
