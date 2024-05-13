@@ -42,5 +42,6 @@ site.use(postcss({}));
 
 site.copy('CNAME');
 site.copy('.nojekyll');
+site.copy('assets/images');
 
 export default site;
