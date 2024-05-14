@@ -9,14 +9,38 @@ stages:
       size: 176969
     - path: ../working/labour-market/lms.csv
       hash: md5
-      md5: f8fa1571cea0934e1c48e3de9758d524
-      size: 18565708
+      md5: 2c5fc9a9f9820e831b452912c3c47388
+      size: 18640004
     - path: labour-market.py
       hash: md5
-      md5: 7f8d40c82cf29cfc53de821b8c475ec0
-      size: 925
-    outs:
-    - path: ../src/_data/lms.csv
+      md5: 564c1ee92e917eb31fe4130280238eff
+      size: 670
+    - path: util.py
       hash: md5
-      md5: 51480a9273813e948cadb964489d3efa
-      size: 73133
+      md5: 59926b696cc371b910521512040dabcd
+      size: 630
+    outs:
+    - path: ../src/_data/labour-market/lms.csv
+      hash: md5
+      md5: 5262512be6c4aa9db35aef86e39e6a78
+      size: 73295
+  vacancies:
+    cmd: python vacancies.py
+    deps:
+    - path: ../working/vacancies/vacancies-growth-by-sector.csv
+      hash: md5
+      md5: 465e6a86f041eca367be61ade6346784
+      size: 1922
+    - path: util.py
+      hash: md5
+      md5: 59926b696cc371b910521512040dabcd
+      size: 630
+    - path: vacancies.py
+      hash: md5
+      md5: d38b047e2b275e33b9cfcf693c847544
+      size: 259
+    outs:
+    - path: ../src/_data/vacancies/growth_by_sector.csv
+      hash: md5
+      md5: fd5b05784851afdc5835c95f50ce9c3e
+      size: 1941

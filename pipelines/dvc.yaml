@@ -5,8 +5,18 @@ stages:
     cmd: python labour-market.py
     deps:
       - labour-market.py
+      - util.py
       - ${TOP}/working/labour-market/lms.csv
       - ${TOP}/metadata/lms-codes.csv
     outs:
-      - ${TOP}/src/_data/lms.csv:
+      - ${TOP}/src/_data/labour-market/lms.csv:
+          cache: false
+  vacancies:
+    cmd: python vacancies.py
+    deps:
+      - vacancies.py
+      - util.py
+      - ${TOP}/working/vacancies/vacancies-growth-by-sector.csv
+    outs:
+      - ${TOP}/src/_data/vacancies/growth_by_sector.csv:
           cache: false
