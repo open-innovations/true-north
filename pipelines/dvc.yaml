@@ -7,3 +7,6 @@ stages:
       - labour-market.py
       - ${TOP}/working/labour-market/lms.csv
       - ${TOP}/metadata/lms-codes.csv
+    outs:
+      - ${TOP}/src/_data/lms.csv:
+          cache: false
