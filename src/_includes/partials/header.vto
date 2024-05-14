@@ -1,9 +1,9 @@
 <div class="b6-bg">
   <header>
-    <div class="{{ header_class }} or 'b1-bg'">
+    <div class="{{ header_class || 'b1-bg' }}"> 
       <div class="holder padded" style="text-align: center;">
       {{# need to figure out why image only rendering on home page below #}}
-        {{# <a href="https://www.brabners.com/true-north-network"><image src="assets/images/temp-logo.png" alt="Brabners logo" style="width:15%; height:15%; margin:left;"></image></a> #}}
+        <a href="https://www.brabners.com/true-north-network"><image src="/assets/images/temp-logo.png" alt="Brabners logo" style="width:15%; height:15%; margin:left;"></image></a>
         <div class="title"><a href="/">{{ metas.site }}</a></div>
       </div>
       <div class="holder">
