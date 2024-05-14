@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 dvc = "*"
 petl = "*"
+pandas = "*"
+pyarrow = "*"
+fastparquet = "*"
 
 [dev-packages]
 
