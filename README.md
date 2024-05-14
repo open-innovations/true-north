@@ -10,3 +10,9 @@ Additionally, we grab metadata (primarily lookup tables for ONS 4-letter codes) 
 
 # YFF data
 We use data from the `yff-data-pipelines` repo which scrapes the latest data for various themes directly from ONS, Nomis etc.
+
+Vacancies growth by sector is taken from an ONS graph they publish and YFF scrape to get the latest stats. We could replicate the ONS growth figure using the UNEM data set from EDD, although may not be worthwhile as could adapt code from YFF to get historic stats too.
+
+# Immigration data
+Useful stuff available [here](https://www.gov.uk/government/statistics/immigration-statistics-year-ending-september-2022/why-do-people-come-to-the-uk-to-work#data-tables).
+Specifically, this dataset has data on global talent visa applications and admissions by date, nationality, region, applicant type and case outcome.
