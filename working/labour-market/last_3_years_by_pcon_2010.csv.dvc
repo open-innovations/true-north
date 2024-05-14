@@ -1,0 +1,13 @@
+md5: 57ff3c66fa4fe7134464b5dedffe8c32
+frozen: true
+deps:
+- checksum: '"f55f42e95537abf5b71881e9a456600c8f5e5e65300813a5df20d62a6d01ae6f"'
+  size: 11551228
+  hash: md5
+  path: 
+    https://raw.githubusercontent.com/open-innovations/yff-data-pipelines/main/data/processed/labour-market/last_3_years_by_pcon_2010.csv
+outs:
+- md5: 075509e09b9c108ec184bad5510de797
+  size: 11551228
+  hash: md5
+  path: last_3_years_by_pcon_2010.csv
