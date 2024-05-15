@@ -3,3 +3,26 @@ title: True North
 theme: True North
 ---
 <p>Test page</p>
+
+
+{{ comp.oi.map.hex_cartogram({ config: {
+	width: 600,
+	hexjson: "hexjson.uk-local-authority-districts",
+	data: bcorp_by_la,
+	columns:[{
+		name: "filterLabel",
+		template: "{{ n }}"
+	}],
+	value: "Total",
+	scale: "Viridis",
+	min: 0,
+	max: 300,
+	matchKey: "LADCD",
+	"tools":{
+		"filter":{
+			"label": "filterLabel"
+		}
+	},
+	"tooltip": "<strong>{{ n }}</strong><br />{{ Total | toLocaleString() }} B corps"
+}}) }}
+
