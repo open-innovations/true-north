@@ -15,6 +15,6 @@ def etl_load(working, fname):
     data = etl.fromcsv(os.path.join(working, fname))
     return data
 
-def etl_write(data, path, type='.csv'):
-    '''write `data` to a csv (or other if declared) file located at path.'''
-    return etl.tocsv(data, f'{path}{type}')
+def etl_write(data, fpath):
+    '''write `data` to a csv (or other if declared) file located at fpath.'''
+    return etl.tocsv(data, fpath)

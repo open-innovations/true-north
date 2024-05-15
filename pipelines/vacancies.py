@@ -1,4 +1,4 @@
-from util import *
+from pipelines.util import *
 
 if __name__ == "__main__":
 
