@@ -5,10 +5,24 @@ theme: People, Skills and the Future
 <p>Test page</p>
 {{ comp.oi.chart.line({ config: {
     data: unemployment,
+    legend: {
+        show: true },
+    axis: {
+        x: { title: { label: "Date" }, grid: { 'stroke-dasharray': "6 2", 'stroke-width': "1"} },
+        y: { title: { label: "Employment rate - aged 16-64" }, grid: { "stroke-width": "1"} }
+        },
     series: [{
         title: "E12000001",
         x: "index",
-        y: "E12000001" }]
+        y: "E12000001" },
+        {
+        title: "E12000002",
+        x: "index",
+        y: "E12000002" },
+        {
+        title: "E12000003",
+        x: "index",
+        y: "E12000003" }]
         }
     }) 
 }}
