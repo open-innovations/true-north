@@ -1,5 +1,7 @@
 # nomis data pull
 
+library(dotenv)
+
 geographies <- list(
   regions = c(
     "E12000001",
@@ -42,7 +44,7 @@ build_nomis_url <- function(geography, variable, measures) {
   variable <- paste0("variable=", paste(variable, collapse = ","))
   measure <- paste0("measures=", paste(measures, collapse = ","))
   selectors <- paste(geography, variable, measure, sep = "&")
-  url <- paste0(endpoint, selectors, "&uid=0xce1485b8af597e9021c978a63225cd5b792607df")
+  url <- paste0(endpoint, selectors, "&uid=", Sys.getenv("NOMIS_KEY"))
   return(url)
 }
 
