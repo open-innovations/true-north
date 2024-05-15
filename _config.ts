@@ -21,6 +21,13 @@ const site = lume({
 // Need to explicitly include it for Lume 2
 site.use(nunjucks());
 
+
+// The autodependency processor needs to be registered before the base path plugin,
+// or else the autodepended paths will not be rewritten to include the path prefix
+// set in location passed to the lume constructor (above)
+//site.process(['.html'], autoDependency);
+
+
 site.loadData([".csv", ".tsv", ".dat"], csvLoader({ basic: true }));
 site.loadData([".geojson"], jsonLoader);
 site.loadData([".hexjson"], jsonLoader);
@@ -29,7 +36,6 @@ site.loadData([".hexjson"], jsonLoader);
 // Import lume viz
 import oiVizConfig from "./oi-viz-config.ts";
 site.use(oiViz(oiVizConfig));
-
 
 site.use(base_path());
 site.use(metas({
