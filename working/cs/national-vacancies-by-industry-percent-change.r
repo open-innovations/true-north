@@ -25,5 +25,5 @@ lms_change <- lms |>
 
 readr::write_csv(
   lms_change,
-  "working/vacancies_by_sector_percentage_change_on_previous.csv"
+  "working/cs/vacancies_by_sector_percentage_change_on_previous.csv"
 )

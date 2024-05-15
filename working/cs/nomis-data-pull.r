@@ -120,6 +120,6 @@ data$qualifications <- retrieve_nomis_data(
 data_out <- dplyr::bind_rows(data, .id = "theme") |>
   dplyr::select(-category, -is_summary)
 
-readr::write_csv(data_out, "working/cs-true-north.csv")
-arrow::write_parquet(data_out, "working/cs-true-north.parquet")
+readr::write_csv(data_out, "working/cs/cs-true-north.csv")
+arrow::write_parquet(data_out, "working/cs/cs-true-north.parquet")
 
