@@ -66,7 +66,7 @@ for($i = 0; $i < @hits; $i++){
 		$hits[$i]{$key} =~ s/(^\"|\"$)//g;
 		#print "$i - $key\n";
 	}
-	$hits[$i]{'name'} =~ s/\"/\\\"/g;
+	$hits[$i]{'name'} =~ s/\"//g;
 	$pcd = fixPostcode($hits[$i]{'hqPostalCode'});
 	$la = $pcds->{$pcd}||"";
 
@@ -147,13 +147,13 @@ foreach $la (sort(keys(%{$ladata}))){
 	print $fh "$la,$ladata->{$la}{'count'},$ladata->{$la}{'employeeOwned'}";
 
 	for($s = 0; $s < @sizes; $s++){
-		print $fh ",".($ladata->{$la}{'sizes'}{$sizes[$s]}||"");
+		print $fh ",".($ladata->{$la}{'sizes'}{$sizes[$s]}||"0");
 	}
 	foreach $own (sort(keys(%{$owned}))){
-		print $fh ",".($ladata->{$la}{'owned'}{$own}||"");
+		print $fh ",".($ladata->{$la}{'owned'}{$own}||"0");
 	}
 	foreach $industry (sort(keys(%{$industries}))){
-		print $fh ",".($ladata->{$la}{'industries'}{$industry}||"");
+		print $fh ",".($ladata->{$la}{'industries'}{$industry}||"0");
 	}
 	print $fh "\n";
 }
