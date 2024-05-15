@@ -44,3 +44,14 @@ stages:
       hash: md5
       md5: fd5b05784851afdc5835c95f50ce9c3e
       size: 1941
+  employment:
+    cmd: PYTHONPATH=.. python people/employment.py
+    deps:
+    - path: people/employment.py
+      hash: md5
+      md5: e6d474c0ff1bb443fc7cc4ebfb7d5154
+      size: 785
+    - path: util.py
+      hash: md5
+      md5: baa16bed947c9e86ccc0803baf3b19a6
+      size: 609

@@ -20,3 +20,8 @@ stages:
     outs:
       - ${TOP}/src/_data/vacancies/growth_by_sector.csv:
           cache: false
+  employment:
+    cmd: PYTHONPATH=.. python people/employment.py
+    deps:
+      - people/employment.py
+      - util.py
