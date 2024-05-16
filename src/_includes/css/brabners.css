@@ -18,8 +18,6 @@
 
 }
 
-
-
 :root {
 	--oi-title-fontstack: Libre Caslon Text,serif;
 	--oi-main-fontstack: Roboto,"Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
@@ -28,7 +26,7 @@
 		background-color: #131216;
 		color: white;
 }
-h1, .title {
+h1, .title, .number, ol>li:before {
 	letter-spacing: -.05em;
 	font-family: var(--oi-title-fontstack);
 }
@@ -65,7 +63,6 @@ ol>li:before {
 	padding-right:0.5em;
 	color: #97694e;
 	font-size: 1.5rem;
-	font-family: var(--oi-title-fontstack);
 	font-weight: bold;
 	text-align:right;
 	content:counter(item) ".";

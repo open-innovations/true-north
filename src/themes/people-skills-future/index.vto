@@ -15,15 +15,17 @@ theme: People, Skills and the Future
     series: [{
         title: "North East",
         x: "unix_timestamp",
-        y: "E12000001" },
-        {
+        y: "E12000001",
+		tooltip: "<strong class=\"subtitle\">North East</strong><br />{{ date }}: <strong class=\"number\">{{ _y }}%</strong>"
+	},{
         title: "North West",
         x: "unix_timestamp",
-        y: "E12000002" },
-        {
+        y: "E12000002",
+		tooltip: "<strong class=\"subtitle\">North West</strong><br />{{ date }}: <strong class=\"number\">{{ _y }}%</strong>"
+	},{
         title: "Yorkshire and The Humber",
         x: "unix_timestamp",
-        y: "E12000003" }]
-        }
-    }) 
-}}
+        y: "E12000003",
+		tooltip: "<strong class=\"subtitle\">Yorkshire and The Humber</strong><br />{{ date }}: <strong class=\"number\">{{ _y }}%</strong>"
+	}]
+} }) }}

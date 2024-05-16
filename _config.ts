@@ -33,6 +33,8 @@ site.loadData([".geojson"], jsonLoader);
 site.loadData([".hexjson"], jsonLoader);
 
 
+site.loadAssets([".woff",".woff2"]);
+
 // Import lume viz
 import oiVizConfig from "./oi-viz-config.ts";
 site.use(oiViz(oiVizConfig));
