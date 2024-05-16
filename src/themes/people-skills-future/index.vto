@@ -2,30 +2,28 @@
 title: People, Skills and the Future
 theme: People, Skills and the Future
 ---
-<p>Test page</p>
+<h3>Employment rate by region</h3>
 {{ comp.oi.chart.line({ config: {
     data: unemployment,
+    height: 600,
     legend: {
         show: true },
     axis: {
-        x: { title: { label: "Date" }, grid: { 'stroke-dasharray': "6 2", 'stroke-width': "1"} },
-        y: { title: { label: "Employment rate - aged 16-64" }, grid: { "stroke-width": "1"} }
+        x: { title: { label: "Date" }, grid: { 'stroke-dasharray': "6 2", 'stroke-width': "1"}, tick: { spacing: 100000000} },
+        y: { title: { label: "Employment rate - aged 16-64" }, grid: { "stroke-width": "1"}, tick: { spacing: 5} }
         },
     series: [{
-        title: "E12000001",
-        x: "index",
+        title: "North East",
+        x: "unix_timestamp",
         y: "E12000001" },
         {
-        title: "E12000002",
-        x: "index",
+        title: "North West",
+        x: "unix_timestamp",
         y: "E12000002" },
         {
-        title: "E12000003",
-        x: "index",
+        title: "Yorkshire and The Humber",
+        x: "unix_timestamp",
         y: "E12000003" }]
         }
     }) 
 }}
-
-<p>test</p>
-
