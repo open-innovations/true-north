@@ -1,4 +1,5 @@
 import os
+from datetime import datetime
 import petl as etl
 
 #set some directory paths
@@ -18,3 +19,8 @@ def etl_load(working, fname):
 def etl_write(data, fpath):
     '''write `data` to a csv (or other if declared) file located at fpath.'''
     return etl.tocsv(data, fpath)
+
+def iso_to_unix(row):
+    iso_date = row['date']
+    dt = datetime.fromisoformat(iso_date)
+    return int(dt.timestamp())
