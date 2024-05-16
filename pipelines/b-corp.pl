@@ -99,10 +99,10 @@ for($i = 0; $i < @hits; $i++){
 
 
 # Save the CSV
-msg("Saving to <cyan>$ofile<none>\n");
-open($fh,">:utf8",$ofile);
-print $fh $csv;
-close($fh);
+#msg("Saving to <cyan>$ofile<none>\n");
+#open($fh,">:utf8",$ofile);
+#print $fh $csv;
+#close($fh);
 
 
 # Create breakdowns by local authority
