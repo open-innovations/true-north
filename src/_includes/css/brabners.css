@@ -75,7 +75,20 @@ ol>li:before {
 	text-align:right;
 	content:counter(item) ".";
 }
-
+.in-section { position: relative; }
+.in-section:before {
+	display: block;
+	width: 0;
+	height: 0;
+	content: "";
+	border-color: white transparent transparent;
+	border-style: solid inset inset;
+	border-width: 8px 8px 0;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translate3d(-50%,100%,0);	
+}
 /* Tweak OI Lume styles */
 .tooltip .subtitle {
 	font-size: 1.25rem;
