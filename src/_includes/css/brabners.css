@@ -39,9 +39,17 @@ h2, h3, h4 {
 	font-family: var(--oi-main-fontstack);
 	font-weight: bold;
 }
-h2, h3, h4 {
+h2 {
 	font-size: 1.9375rem;
 	line-height: 40px;
+}
+h3 {
+	font-size: 1.75rem;
+	line-height: 1.25em;
+}
+h4 {
+	font-size: 1.5rem;
+	line-height: 1.25em;
 }
 ol {
 	margin:0 0 1.5em;
