@@ -5,6 +5,7 @@ import date from "lume/plugins/date.ts";
 import metas from "lume/plugins/metas.ts";
 import postcss from "lume/plugins/postcss.ts";
 
+
 // Importing the OI Lume charts and utilities
 import oiViz from "https://deno.land/x/oi_lume_viz@v0.15.1/mod.ts";
 import autoDependency from "https://deno.land/x/oi_lume_utils@v0.4.0/processors/auto-dependency.ts";
@@ -25,8 +26,7 @@ site.use(nunjucks());
 // The autodependency processor needs to be registered before the base path plugin,
 // or else the autodepended paths will not be rewritten to include the path prefix
 // set in location passed to the lume constructor (above)
-//site.process(['.html'], autoDependency);
-
+site.process([".html"], (pages) => pages.forEach(autoDependency));
 
 site.loadData([".csv", ".tsv", ".dat"], csvLoader({ basic: true }));
 site.loadData([".geojson"], jsonLoader);
