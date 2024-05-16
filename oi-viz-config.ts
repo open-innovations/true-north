@@ -5,7 +5,8 @@ export default {
 		"background": "#efefef",
 		"scales": {
 			"TrueNorth": "#efefef 0%, #a06c47 40%, #000000 100%",
-		}
+		},
+		"series": [ '#97694e', '#bb9985', '#634635', '#decbc0', '#33251e' ]
 	},
 	"font": {
 		"family": 'Poppins,CenturyGothicStd,"Century Gothic",Arial,sans-serif',

@@ -48,3 +48,6 @@ ol>li:before {
 	text-align:right;
 	content:counter(item) ".";
 }
+.tooltip .subtitle {
+	font-size: 1.25rem;
+}
