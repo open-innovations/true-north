@@ -4,25 +4,45 @@ theme: True North
 ---
 <p>Test page</p>
 
-
+<h2>B Corporations</h2>
+<p class="warning padded">WARNING: We need B Corporations to say that it is OK for us to use their data. Brabners to contact them.</p>
 {{ comp.oi.map.hex_cartogram({ config: {
-	width: 600,
-	hexjson: "hexjson.uk-local-authority-districts",
-	data: bcorp_by_la,
-	columns:[{
-		name: "filterLabel",
-		template: "{{ n }}"
+	"width": 600,
+	"hexjson": "hexjson.uk-local-authority-districts",
+	"data": bcorp_by_la,
+	"columns":[{
+		"name": "filterLabel",
+		"template": "{{ n }}"
 	}],
-	value: "Total",
-	scale: "Viridis",
-	min: 0,
-	max: 300,
-	matchKey: "LADCD",
+	"value": "Total",
+	"scale": "TrueNorth",
+	"min": 0,
+	"max": 200,
+	"matchKey": "LADCD",
+	"legend": {
+		"position": "top right",
+		"items": [{
+			"value": 200,
+			"label": "200+"
+		},{
+			"value": 150,
+			"label": "150"
+		},{
+			"value": 100,
+			"label": "100"
+		},{
+			"value": 50,
+			"label": "50"
+		},{
+			"value": 0,
+			"label": "0"
+		}]
+	},
 	"tools":{
 		"filter":{
 			"label": "filterLabel"
 		}
 	},
-	"tooltip": "<strong>{{ n }}</strong><br />{{ Total | toLocaleString() }} B corps"
+	"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />B corps: <strong>{{ Total | toLocaleString() }}</strong>"
 }}) }}
 

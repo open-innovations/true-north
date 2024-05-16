@@ -1,4 +1,25 @@
+:root {
+	--oi-title-fontstack: Libre Caslon Text,serif;
+	--oi-main-fontstack: Roboto,"Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
 .brabners-header {
-    background-color: #131216;
-    color: white;
+		background-color: #131216;
+		color: white;
+}
+h1, .title {
+	letter-spacing: -.05em;
+	font-family: var(--oi-title-fontstack);
+}
+
+h1 {
+	font-size: 48px !important;
+	font-weight: bold;
+}
+h2, h3, h4 {
+	font-family: var(--oi-main-fontstack);
+	font-weight: bold;
+}
+h2, h3, h4 {
+	font-size: 1.9375rem;
+	line-height: 40px;
 }
