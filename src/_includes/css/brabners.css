@@ -26,7 +26,7 @@
 		background-color: #131216;
 		color: white;
 }
-h1, .title, .number, ol>li:before {
+h1, .title, .number, .bignum, ol>li:before {
 	letter-spacing: -.05em;
 	font-family: var(--oi-title-fontstack);
 }
@@ -89,6 +89,7 @@ ol>li:before {
 	left: 50%;
 	transform: translate3d(-50%,100%,0);	
 }
+
 /* Tweak OI Lume styles */
 .tooltip .subtitle {
 	font-size: 1.25rem;
@@ -98,3 +99,14 @@ ol>li:before {
 .oi-legend-inner .oi-legend-item.oi-series-on { outline: 0!important; background: none!important; }
 .oi-legend-inner .oi-legend-item:hover, .oi-legend-inner .oi-legend-item:focus { outline: 1px solid #97694e!important; }
 .oi-legend-inner .oi-legend-item.oi-series-off { opacity: 0.3; }
+
+.oi-dashboard-inner { display: flex; gap: 1em; flex-wrap: wrap; flex-direction: row; align-items: stretch; }
+.oi-dashboard-inner .panel {
+	width: 330px;
+	flex-grow: 1;
+	background: #f5f7f6;
+	color: black;
+	padding: 1rem;
+}
+.oi-dashboard-inner .panel h3 { font-size: 1.2rem; }
+.oi-dashboard-inner .panel .bignum { font-size: 3rem; color: #97694e; }
