@@ -67,6 +67,13 @@ ol>li:before {
 	text-align:right;
 	content:counter(item) ".";
 }
+
+/* Tweak OI Lume styles */
 .tooltip .subtitle {
 	font-size: 1.25rem;
 }
+
+.oi-legend-inner .oi-legend-item { padding: 0.25rem 0.5rem!important; }
+.oi-legend-inner .oi-legend-item.oi-series-on { outline: 0!important; background: none!important; }
+.oi-legend-inner .oi-legend-item:hover, .oi-legend-inner .oi-legend-item:focus { outline: 1px solid #97694e!important; }
+.oi-legend-inner .oi-legend-item.oi-series-off { opacity: 0.3; }
