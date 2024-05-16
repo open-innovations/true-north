@@ -1,6 +1,12 @@
 export default {
 	"assetPath": '/assets',
 	"componentNamespace": 'oi',
+	"colour": {
+		"background": "#efefef",
+		"scales": {
+			"TrueNorth": "#efefef 0%, #a06c47 40%, #000000 100%",
+		}
+	},
 	"font": {
 		"family": 'Poppins,CenturyGothicStd,"Century Gothic",Arial,sans-serif',
 		"weight": 'normal',

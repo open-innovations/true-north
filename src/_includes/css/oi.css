@@ -137,7 +137,7 @@ header nav ul {
 	margin: 0 auto;
 	font-size: 1.2em;
 	position: relative;
-	font-family: Poppins;
+	font-family: var(--oi-title-fontstack);
 	display: flex;
 }
 header nav ul li { display: inline-block; }

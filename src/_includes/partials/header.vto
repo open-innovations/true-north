@@ -1,3 +1,6 @@
+<div class="warning centred padded">
+	<div class="holder">WARNING: This is a work-in-progress. Styling is temporary whilst we build content.</div>
+</div>
 <div class="b6-bg">
   <header>
     <div class="{{ header_class || 'b1-bg' }}"> 
@@ -10,7 +13,7 @@
       <nav>
         <ul>
           {{ for page of search.pages("nav!=undefined") }}
-            <li><a href="{{ page.url }}">{{ page.nav }}</a></li>
+            <li><a href="{{ page.url }}"{{ if page.url==url || (url!="/" && page.url.match("^"+url)) }} class="b6-bg"{{ /if }}>{{ page.nav }}</a></li>
           {{ /for }}
         </ul>
       </nav>
