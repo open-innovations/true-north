@@ -1,0 +1,42 @@
+schema: '2.0'
+stages:
+  vacancies:
+    cmd: PYTHONPATH=../.. python vacancies.py
+    deps:
+    - path: ../../pipelines/util.py
+      hash: md5
+      md5: 60a1784a7591049dba483ddad3da4dea
+      size: 1135
+    - path: ../../working/cs/vacancies_by_sector_percentage_change_on_previous.csv
+      hash: md5
+      md5: f7ada6a8f6bf1c292871898fa47fed07
+      size: 497028
+    - path: vacancies.py
+      hash: md5
+      md5: 4a5af6fd4395b98163b6fa2b781172ab
+      size: 828
+    outs:
+    - path: ../../src/themes/people-skills-future/_data/growth_by_sector.csv
+      hash: md5
+      md5: 098bd3687a83152d8f39da660a3d8bd6
+      size: 825
+  employment:
+    cmd: PYTHONPATH=../.. python employment.py
+    deps:
+    - path: ../../pipelines/util.py
+      hash: md5
+      md5: 60a1784a7591049dba483ddad3da4dea
+      size: 1135
+    - path: ../../working/cs/cs-true-north.csv
+      hash: md5
+      md5: af140a62c1f7e4fffc6c5b797be97290
+      size: 1480442
+    - path: employment.py
+      hash: md5
+      md5: 4f9a0b99b9d722b105eba138f5989adc
+      size: 640
+    outs:
+    - path: ../../src/themes/people-skills-future/_data/unemployment.csv
+      hash: md5
+      md5: b60d9a2d17a38edc13552071bf2187c0
+      size: 2943

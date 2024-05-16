@@ -11,20 +11,4 @@ stages:
     outs:
       - ${TOP}/src/_data/labour-market/lms.csv:
           cache: false
-  vacancies:
-    cmd: python vacancies.py
-    deps:
-      - vacancies.py
-      - util.py
-      - ${TOP}/working/vacancies/vacancies-growth-by-sector.csv
-    outs:
-      - ${TOP}/src/_data/vacancies/growth_by_sector.csv:
-          cache: false
-  employment:
-    cmd: PYTHONPATH=.. python people/employment.py
-    deps:
-      - people/employment.py
-      - util.py
-    outs:
-      - ${TOP}/src/themes/people-skills-future/_data/unemployment.csv:
-          cache: false
+          

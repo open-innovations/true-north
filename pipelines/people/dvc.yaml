@@ -1,0 +1,21 @@
+vars:
+  - TOP: ../..
+stages:
+  vacancies:
+    cmd: PYTHONPATH=${TOP} python vacancies.py
+    deps:
+      - vacancies.py
+      - ${TOP}/pipelines/util.py
+      - ${TOP}/working/cs/vacancies_by_sector_percentage_change_on_previous.csv
+    outs:
+      - ${TOP}/src/themes/people-skills-future/_data/growth_by_sector.csv:
+          cache: false
+  employment:
+    cmd: PYTHONPATH=${TOP} python employment.py
+    deps:
+      - employment.py
+      - ${TOP}/pipelines/util.py
+      - ${TOP}/working/cs/cs-true-north.csv
+    outs:
+      - ${TOP}/src/themes/people-skills-future/_data/unemployment.csv:
+          cache: false
