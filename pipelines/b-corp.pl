@@ -19,10 +19,13 @@ my $dir = $basedir."../working/b-corp/";
 my $ofile = $basedir."../src/themes/true-north/_data/bcorp_list.csv";
 my $lfile = $basedir."../src/themes/true-north/_data/bcorp_by_la.csv";
 my $pcdfile = $dir."postcodes.csv";
-
+my $hexfile = $basedir."../src/_data/hexjson/uk-local-authority-districts-2023.hexjson";
 
 # Get any .env environment variables
 my $env = getEnvironment();
+
+my $hexes = LoadJSON($hexfile)->{'hexes'};
+
 
 
 # Loop over the the API results to load all the data
@@ -149,8 +152,8 @@ for($i = 0; $i < $n; $i++){ print $fh ($i == 0 ? "":",")."---"; }
 print $fh "\n";
 
 # Make rows
-foreach $la (sort(keys(%{$ladata}))){
-	print $fh "$la,$ladata->{$la}{'count'},$ladata->{$la}{'employeeOwned'}";
+foreach $la (sort(keys(%{$hexes}))){
+	print $fh "$la,".($ladata->{$la}{'count'}||0).",".($ladata->{$la}{'employeeOwned'}||0);
 
 	for($s = 0; $s < @sizes; $s++){
 		print $fh ",".($ladata->{$la}{'sizes'}{$sizes[$s]}||"0");
