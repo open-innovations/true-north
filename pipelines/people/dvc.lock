@@ -5,28 +5,28 @@ stages:
     deps:
     - path: ../../pipelines/util.py
       hash: md5
-      md5: 60a1784a7591049dba483ddad3da4dea
-      size: 1135
+      md5: 45eadb25b53b2a36da79c75c732d93f7
+      size: 1136
     - path: ../../working/cs/vacancies_by_sector_percentage_change_on_previous.csv
       hash: md5
       md5: f7ada6a8f6bf1c292871898fa47fed07
       size: 497028
     - path: vacancies.py
       hash: md5
-      md5: 4a5af6fd4395b98163b6fa2b781172ab
-      size: 828
+      md5: 28cda71b1cf55a363f5883d92f9e9c63
+      size: 934
     outs:
     - path: ../../src/themes/people-skills-future/_data/growth_by_sector.csv
       hash: md5
-      md5: 098bd3687a83152d8f39da660a3d8bd6
-      size: 825
+      md5: d299bf8d940b93bb089c0cd7ed979cfe
+      size: 58294
   employment:
     cmd: PYTHONPATH=../.. python employment.py
     deps:
     - path: ../../pipelines/util.py
       hash: md5
-      md5: 60a1784a7591049dba483ddad3da4dea
-      size: 1135
+      md5: 45eadb25b53b2a36da79c75c732d93f7
+      size: 1136
     - path: ../../working/cs/cs-true-north.csv
       hash: md5
       md5: af140a62c1f7e4fffc6c5b797be97290
