@@ -25,3 +25,6 @@ stages:
     deps:
       - people/employment.py
       - util.py
+    outs:
+      - ${TOP}/src/themes/people-skills-future/_data/unemployment.csv:
+          cache: false
