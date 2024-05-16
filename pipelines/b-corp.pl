@@ -18,7 +18,7 @@ BEGIN { ($basedir, $path) = abs_path($0) =~ m{(.*/)?([^/]+)$}; push @INC, $based
 my $dir = $basedir."../working/b-corp/";
 my $ofile = $basedir."../src/themes/true-north/_data/bcorp_list.csv";
 my $lfile = $basedir."../src/themes/true-north/_data/bcorp_by_la.csv";
-my $pcdfile = $basedir."../working/b-corp/NSPL21_FEB_2024_UK_cut.csv";
+my $pcdfile = $dir."postcodes.csv";
 
 
 # Get any .env environment variables
@@ -47,7 +47,7 @@ while($n < $nbhits){
 
 # If we don't have postcodes we quit
 if(!-e $pcdfile){
-	error("No NSPL postcode file exists at <cyan>$pcdfile<none>\n");
+	error("No postcode file exists at <cyan>$pcdfile<none>\n");
 	exit;
 }
 
@@ -67,8 +67,14 @@ for($i = 0; $i < @hits; $i++){
 		#print "$i - $key\n";
 	}
 	$hits[$i]{'name'} =~ s/\"//g;
-	$pcd = fixPostcode($hits[$i]{'hqPostalCode'});
+	$pcd = fixPostcode($hits[$i]{'hqPostalCode'},$hits[$i]{'name'});
 	$la = $pcds->{$pcd}||"";
+
+	if(!defined($pcds->{$pcd})){
+		# Try to get data on this postcode
+		$la = FindThatLocalAuthority($pcd);
+		$pcds->{$pcd} = $la;
+	}
 
 	if(!$la){
 		warning("The postcode for $hits[$i]{'name'} ($i) seems invalid: <green>$pcd<none>\n");
@@ -98,6 +104,8 @@ for($i = 0; $i < @hits; $i++){
 
 
 
+SavePostcodeLookup($pcdfile,$pcds);
+
 # Save the CSV
 #msg("Saving to <cyan>$ofile<none>\n");
 #open($fh,">:utf8",$ofile);
@@ -106,8 +114,6 @@ for($i = 0; $i < @hits; $i++){
 
 
 # Create breakdowns by local authority
-print Dumper $ladata;
-
 msg("Saving LA breakdown to <cyan>$lfile<none>\n");
 open($fh,">:utf8",$lfile);
 # Make headers
@@ -229,9 +235,25 @@ sub getEnvironment {
 	return $env;
 }
 
+sub SavePostcodeLookup {
+	my $file = shift;
+	my $pcds = shift;
+	my ($la,$pcd);
+	msg("Saving postcodes to <cyan>$file<none>...\n");
+	open($fh,">",$file);
+	print $fh "Postcode,LADCD\n";
+	foreach $pcd (sort(keys(%{$pcds}))){
+		if($pcd){
+			print $fh "$pcd,$pcds->{$pcd}\n";
+		}
+	}
+	close($fh);
+	return;
+}
+
 sub GetPostcodeLookup {
 	my $file = shift;
-	my ($fh,@lines,$line,$pcd,$la,$rgn,$pcds);
+	my ($fh,@lines,$line,$pcd,$la,$pcds);
 
 	msg("Reading postcodes from <cyan>$file<none>...\n");
 	open($fh,$file);
@@ -241,7 +263,8 @@ sub GetPostcodeLookup {
 	$pcds = {};
 	foreach $line (@lines){
 		chomp($line);
-		($pcd,$la,$rgn) = split(/,/,$line);
+		($pcd,$la) = split(/,/,$line);
+		$pcd = uc($pcd);
 		$pcd =~ s/ //g;
 		$pcds->{$pcd} = $la;
 	}
@@ -252,6 +275,7 @@ sub GetPostcodeLookup {
 # Fixes for poorly formatted postcodes
 sub fixPostcode {
 	my $pcd = shift;
+	my $name = shift;
 	$pcd = uc($pcd);
 	$pcd =~ s/[^A-Z0-9]//g;
 	$pcd =~ s/LONDON//g;
@@ -260,5 +284,37 @@ sub fixPostcode {
 	if($pcd eq "SN21NR"){ $pcd = "SN12NR"; }
 	if($pcd eq "CH645FE"){ $pcd = "CH654FE"; }
 	if($pcd eq "EC1V7DO"){ $pcd = "EC1V7DP"; }
+	if($pcd eq "TB91BE"){ $pcd = "TN91BE"; }
+	if($pcd eq "BS14RWUK"){ $pcd = "BS14RW"; }
+	if($pcd eq "TR11" && $name eq "Kingdom & Sparrow"){ $pcd = "TR113JJ"; }
+	if($pcd eq "CA15" && $name eq "SISGroup Ltd."){ $pcd = "CA158NT"; }
+	if($pcd eq "ECV12NX" && $name eq "Profit Impact"){ $pcd = "EC1V2NX"; }
+	if($pcd eq "EH6" && $name eq "Rationale"){ $pcd = "EH66RA"; }
+	if($pcd eq "BA30DL" && $name eq "Natural Vitality"){ $pcd = "BA20DL"; }
+	if($pcd eq "S331AZ" && $name eq "Sladen Consulting"){ $pcd = "S321AZ"; }
+	if($pcd eq "HA1SX1" && $name eq "The Curious Beetle"){ $pcd = "HA11SX"; }
+	if($pcd eq "SW9" && $name eq "Urban Jungle Services Ltd"){ $pcd = "N17GU"; }
+	if($pcd eq "W12" && $name eq "Higson"){ $pcd = "W127RZ"; }
+	if($pcd eq "" && $name eq "Kin and Carta Plc"){ $pcd = "N19BE"; }
+	if($pcd eq "UK" && $name eq "By Sarah"){ $pcd = "B798RH"; }
 	return $pcd;
+}
+
+sub FindThatLocalAuthority {
+	my $pcd = shift;
+	my (@lines,$json);
+
+	if($pcd){
+		msg("Getting postcode <green>$pcd<none>\n");
+		@lines = `curl 'https://findthatpostcode.uk/postcodes/$pcd.json' -s`;
+		$json = ParseJSON(join("",@lines));
+		$la = $json->{'data'}{'attributes'}{'laua'};
+		if(!defined($la)){
+			warning("Bad postcode <green>$pcd<none>\n");
+			return "";
+		}else{
+			return $la;
+		}
+	}
+	return "";
 }
