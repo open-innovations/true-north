@@ -47,7 +47,7 @@ theme: True North
 				"label": "filterLabel"
 			}
 		},
-		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />B corps: <strong>{{ Total | toLocaleString() }}</strong>"
+		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />B corps: <strong class=\"number\">{{ Total | toLocaleString() }}</strong>"
 	}
 }) }}
 
@@ -94,7 +94,7 @@ theme: True North
 				"columns": ["Size→1-9","Size→10-49","Size→50-249","Size→250-999","Size→1000+"]
 			}
 		},
-		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />B corps: <strong>{{ {{ _value }} | toLocaleString() }}</strong>"
+		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />B corps: <strong class=\"number\">{{ {{ _value }} | toLocaleString() }}</strong>"
 	}
 }) }}
 
@@ -144,7 +144,7 @@ theme: True North
 				"columns": ["Owned→employeeOwned","Owned→minorityOwned","Owned→womenOwned"]
 			}
 		},
-		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />B corps: <strong>{{ {{ _value }} | toLocaleString() }}</strong>"
+		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />B corps: <strong class=\"number\">{{ {{ _value }} | toLocaleString() }}</strong>"
 	}
 }) }}
 
@@ -193,7 +193,7 @@ theme: True North
 						"label": "filterLabel"
 					}
 				},
-				"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />B corps: <strong>{{ {{ _value }} | toLocaleString() }}</strong>"
+				"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />B corps: <strong class=\"number\">{{ {{ _value }} | toLocaleString() }}</strong>"
 			}
 		}) }}
 	{{ /for }}
