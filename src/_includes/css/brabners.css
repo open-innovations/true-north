@@ -23,3 +23,28 @@ h2, h3, h4 {
 	font-size: 1.9375rem;
 	line-height: 40px;
 }
+ol {
+	margin:0 0 1.5em;
+	padding:0;
+	counter-reset:item;
+}
+ 
+ol>li {
+	margin:0;
+	padding:0 0 0 2em;
+	text-indent:-2em;
+	list-style-type:none;
+	counter-increment:item;
+}
+ 
+ol>li:before {
+	display:inline-block;
+	width:1.5em;
+	padding-right:0.5em;
+	color: #97694e;
+	font-size: 1.5rem;
+	font-family: var(--oi-title-fontstack);
+	font-weight: bold;
+	text-align:right;
+	content:counter(item) ".";
+}
