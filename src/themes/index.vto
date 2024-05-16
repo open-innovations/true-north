@@ -10,3 +10,20 @@ nav: themes
     <li><a href="{{ page.url }}">{{ page.theme }}</a></li>
     {{ /for }}
 </ol>
+{{ comp.oi.dashboard ({ config: {
+	title: "name",
+	value: "value",
+    note: footnote,
+    data: true_north_list,
+    panels: [
+        { name: "Total members" },
+        { name: "Membership change" },
+        { name: "Companies with 1-10 employees" },
+        { name: "Top sector" },
+        { name: "B-Corps" },
+        { name: "True North purpose" },
+        ],
+    units: { postfix: "post" },
+    }
+    })
+}}
