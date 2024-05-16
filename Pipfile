@@ -9,6 +9,7 @@ petl = "*"
 pandas = "*"
 pyarrow = "*"
 fastparquet = "*"
+python-slugify = "*"
 
 [dev-packages]
 

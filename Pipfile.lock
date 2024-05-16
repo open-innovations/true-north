@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "76f6e7d415146a39df63cf6051a4cf39a745a770766f3b01128dc78b5e269fa4"
+            "sha256": "d313a535f0a9e54fe1d59b09ae1e157fa64e15417200411fd81b4252cc5c7a4e"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -845,11 +845,11 @@
                 "tqdm"
             ],
             "hashes": [
-                "sha256:918d18d41bf73f0e2b261824baeb1b124bcf771767e3a26425cd7dec3332f512",
-                "sha256:f39780e282d7d117ffb42bb96992f8a90795e4d0fb0f661a70ca39fe9c43ded9"
+                "sha256:1d021b0b0f933e3b3029ed808eb400c08ba101ca2de4b3483fbc9ca23fcee94a",
+                "sha256:e0fdbc446d67e182f49a70b82cf7889028a63588fde6b222521f10937b2b670c"
             ],
             "markers": "python_version >= '3.8'",
-            "version": "==2024.3.1"
+            "version": "==2024.5.0"
         },
         "funcy": {
             "hashes": [
@@ -1455,6 +1455,15 @@
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==2.9.0.post0"
         },
+        "python-slugify": {
+            "hashes": [
+                "sha256:276540b79961052b66b7d116620b36518847f52d5fd9e3a70164fc8c50faa6b8",
+                "sha256:59202371d1d05b54a9e7720c5e038f928f45daaffe41dd10822f3907b937c856"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.7'",
+            "version": "==8.0.4"
+        },
         "pytz": {
             "hashes": [
                 "sha256:2a29735ea9c18baf14b448846bde5a48030ed267578472d8955cd0e7443a9812",
@@ -1678,6 +1687,13 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==0.9.0"
+        },
+        "text-unidecode": {
+            "hashes": [
+                "sha256:1311f10e8b895935241623731c2ba64f4c455287888b18189350b67134a822e8",
+                "sha256:bad6603bb14d279193107714b288be206cac565dfa49aa5b105294dd5c4aab93"
+            ],
+            "version": "==1.3"
         },
         "tomlkit": {
             "hashes": [
