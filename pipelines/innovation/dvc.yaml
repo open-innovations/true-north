@@ -1,0 +1,12 @@
+vars:
+  - TOP: ../..
+stages:
+  vacancies:
+    cmd: PYTHONPATH=${TOP} python gtv.py
+    deps:
+      - gtv.py
+      - ${TOP}/pipelines/util.py
+      - ${TOP}/working/innovation-change/entry-clearance-visa-outcomes-datasets-dec-2023.xlsx
+    outs:
+      - ${TOP}/src/themes/innovation-change/_data/global_talent.csv:
+          cache: false

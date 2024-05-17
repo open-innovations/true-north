@@ -1,0 +1,23 @@
+schema: '2.0'
+stages:
+  vacancies:
+    cmd: PYTHONPATH=../.. python gtv.py
+    deps:
+    - path: ../../pipelines/util.py
+      hash: md5
+      md5: fa553267bd9762c8d7a6aa7ef8f53c69
+      size: 1136
+    - path: 
+        ../../working/innovation-change/entry-clearance-visa-outcomes-datasets-dec-2023.xlsx
+      hash: md5
+      md5: 3d3dc6e7add1c433a5b501a23164f756
+      size: 28123346
+    - path: gtv.py
+      hash: md5
+      md5: 96232708cdd6ea508c0dd5ebf35f88b0
+      size: 828
+    outs:
+    - path: ../../src/themes/innovation-change/_data/global_talent.csv
+      hash: md5
+      md5: d08dfdb7c1a65a7889c3c1cdd4da197b
+      size: 715
