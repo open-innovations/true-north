@@ -2,77 +2,9 @@
 title: People, Skills and The Future
 theme: People, Skills and The Future
 ---
-<h3>Employment rate by region</h3>
-
-{{ comp.oi.chart.line({ config: {
-    data: unemployment,
-    height: 600,
-    legend: {
-        show: true },
-    axis: {
-        x: { title: { label: "Date" }, grid: { 'stroke-dasharray': "6 2", 'stroke-width': "1"}, ticks: comp.buildYearTicks({ data: unemployment, field: "date", step: 2}) },
-        y: { title: { label: "Employment rate - aged 16-64" }, grid: { "stroke-width": "1"}, tick: { spacing: 5} }
-    },
-    series: [{
-        title: "North East",
-        x: "unix_timestamp",
-        y: "E12000001",
-		tooltip: "<strong class=\"subtitle\">North East</strong><br />{{ date }}: <strong class=\"number\">{{ _y }}%</strong>"
-	},{
-        title: "North West",
-        x: "unix_timestamp",
-        y: "E12000002",
-		tooltip: "<strong class=\"subtitle\">North West</strong><br />{{ date }}: <strong class=\"number\">{{ _y }}%</strong>"
-	},{
-        title: "Yorkshire and The Humber",
-        x: "unix_timestamp",
-        y: "E12000003",
-		tooltip: "<strong class=\"subtitle\">Yorkshire and The Humber</strong><br />{{ date }}: <strong class=\"number\">{{ _y }}%</strong>"
-	}]
-} }) }}
-
-<h3>Vacancies growth by sector </h3>
-
-{{ comp.oi.chart.bar ({ config: { 
-    data: growth_by_sector,
-    height: 600,
-    legend: { show: true }, 
-    category: 'sector',
-    axis: { 
-        x: { 
-            min: -20,
-            max: 30,
-            ticks: [{
-                value: -20,
-                label: "-20%"},
-                {
-                value: -10,
-                label: "-10%"},
-                {
-                value: 0,
-                label: "0%"},
-                {
-                value: 10,
-                label: "10%"},
-                {
-                value: 20,
-                label: "20%"},
-                {
-                value: 30,
-                label: "30%"}
-            ]} 
-        },
-    series: [
-        {
-        title: "March 2024",
-        value: "2024-03-01" 
-        },
-        { 
-        title: "Feb 2024",
-        value: "2024-02-01" },
-        { 
-        title: "Jan 2024",
-        value: "2024-01-01" }]
-        }
-    }) 
-}}
+<h3>Topics</h3>
+<ol>
+    {{ for page of search.pages("theme=people-skills-future") }}
+    <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+    {{ /for }}
+</ol>

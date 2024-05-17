@@ -1,0 +1,32 @@
+---
+title: Employment
+theme: people-skills-future
+---
+<h3>Employment rate by region</h3>
+
+{{ comp.oi.chart.line({ config: {
+    data: unemployment,
+    height: 600,
+    legend: {
+        show: true },
+    axis: {
+        x: { title: { label: "Date" }, grid: { 'stroke-dasharray': "6 2", 'stroke-width': "1"}, ticks: comp.buildYearTicks({ data: unemployment, field: "date", step: 2}) },
+        y: { title: { label: "Employment rate - aged 16-64" }, grid: { "stroke-width": "1"}, tick: { spacing: 5} }
+    },
+    series: [{
+        title: "North East",
+        x: "unix_timestamp",
+        y: "E12000001",
+		tooltip: "<strong class=\"subtitle\">North East</strong><br />{{ date }}: <strong class=\"number\">{{ _y }}%</strong>"
+	},{
+        title: "North West",
+        x: "unix_timestamp",
+        y: "E12000002",
+		tooltip: "<strong class=\"subtitle\">North West</strong><br />{{ date }}: <strong class=\"number\">{{ _y }}%</strong>"
+	},{
+        title: "Yorkshire and The Humber",
+        x: "unix_timestamp",
+        y: "E12000003",
+		tooltip: "<strong class=\"subtitle\">Yorkshire and The Humber</strong><br />{{ date }}: <strong class=\"number\">{{ _y }}%</strong>"
+	}]
+} }) }}

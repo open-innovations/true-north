@@ -1,0 +1,49 @@
+---
+title: Vacancies
+theme: people-skills-future
+---
+<h3>Growth on previous month by sector </h3>
+
+{{ comp.oi.chart.bar ({ config: { 
+    data: growth_by_sector,
+    height: 600,
+    legend: { show: true }, 
+    category: 'sector',
+    axis: { 
+        x: { 
+            min: -20,
+            max: 30,
+            ticks: [{
+                value: -20,
+                label: "-20%"},
+                {
+                value: -10,
+                label: "-10%"},
+                {
+                value: 0,
+                label: "0%"},
+                {
+                value: 10,
+                label: "10%"},
+                {
+                value: 20,
+                label: "20%"},
+                {
+                value: 30,
+                label: "30%"}
+            ]} 
+        },
+    series: [
+        {
+        title: "March 2024",
+        value: "2024-03-01" 
+        },
+        { 
+        title: "Feb 2024",
+        value: "2024-02-01" },
+        { 
+        title: "Jan 2024",
+        value: "2024-01-01" }]
+        }
+    }) 
+}}
