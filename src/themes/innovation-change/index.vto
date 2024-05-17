@@ -2,4 +2,9 @@
 title: Innovation and Change
 theme: Innovation and Change
 ---
-<p>Test page</p>
+<h3>Topics</h3>
+<ol>
+    {{ for page of search.pages("theme=innovation-change") }}
+    <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+    {{ /for }}
+</ol>

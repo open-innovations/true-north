@@ -10,6 +10,7 @@ pandas = "*"
 pyarrow = "*"
 fastparquet = "*"
 python-slugify = "*"
+openpyxl = "*"
 
 [dev-packages]
 

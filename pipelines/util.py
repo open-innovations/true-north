@@ -1,6 +1,6 @@
 import os
-from datetime import datetime
 import petl as etl
+from datetime import datetime
 from slugify import slugify
 
 #set some directory paths
