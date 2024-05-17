@@ -5,25 +5,15 @@ nav: themes
 <p>
     True North covers five main themes. You can find out more about each one on their respective pages.
 </p>
-<ol>
+{{# <ol>
     {{ for page of search.pages("theme!=undefined") }}
     <li><a href="{{ page.url }}">{{ page.theme }}</a></li>
     {{ /for }}
+</ol> #}}
+<ol>
+    <li><a href="/themes/true-north/">True North</a></li>
+    <li><a href="/themes/people-skills-future/">People, Skills & The Future</a></li>
+    <li><a href="/themes/innovation-change/">Innovation & Change</a></li>
+    <li><a href="/themes/sustainable-growth/">Sustainable Growth</a></li>
+    <li><a href="/themes/purpose-social-impact/">Purpose & Social Impact</a></li>
 </ol>
-{{ comp.oi.dashboard ({ config: {
-	title: "name",
-	value: "value",
-    note: footnote,
-    data: true_north_list,
-    panels: [
-        { name: "Total members" },
-        { name: "Membership change" },
-        { name: "Companies with 1-10 employees" },
-        { name: "Top sector" },
-        { name: "B-Corps" },
-        { name: "True North purpose" },
-        ],
-    units: { postfix: "post" },
-    }
-    })
-}}
