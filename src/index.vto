@@ -1,7 +1,25 @@
 ---
-title: Welcome to the data dashboard for True North
+title: Welcome to the data explorer for True North
 nav: about
 ---
+{{ comp.oi.dashboard ({ config: {
+	title: "name",
+	value: "value",
+    note: "footnote",
+    data: dashboard.true_north_list,
+    panels: [
+        { name: "Total members" },
+        { name: "Membership change" },
+        { name: "Companies with 1-10 employees" },
+        { name: "Top sector" },
+        { name: "B-Corps" },
+        { name: "True North purpose" },
+        ],
+    units: { postfix: "post" },
+    }
+    })
+}}
+<h3>About the True North Network</h3>
   <p>
     From Manchester to Morecambe Bay, Liverpool to Leeds, Sheffield to Sunderland, Bradford to Blackpool, the North is a rich tapestry of people, businesses, innovation and opportunity.
   </p>

@@ -10,7 +10,7 @@ header_class: brabners-header
 # Automatically adds meta and social tags 
 # See https://lume.land/plugins/metas/
 metas:
-  site: True North Data Dashboard
+  site: True North Data Explorer
   description: True North — the collaborative network for purpose-led businesses
   image: https://open-innovations.org/resources/images/logos/oi-square.png
   twitter: openinnovates
