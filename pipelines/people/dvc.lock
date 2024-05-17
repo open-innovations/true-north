@@ -5,7 +5,7 @@ stages:
     deps:
     - path: ../../pipelines/util.py
       hash: md5
-      md5: 45eadb25b53b2a36da79c75c732d93f7
+      md5: fa553267bd9762c8d7a6aa7ef8f53c69
       size: 1136
     - path: ../../working/cs/vacancies_by_sector_percentage_change_on_previous.csv
       hash: md5
@@ -25,7 +25,7 @@ stages:
     deps:
     - path: ../../pipelines/util.py
       hash: md5
-      md5: 45eadb25b53b2a36da79c75c732d93f7
+      md5: fa553267bd9762c8d7a6aa7ef8f53c69
       size: 1136
     - path: ../../working/cs/cs-true-north.csv
       hash: md5
