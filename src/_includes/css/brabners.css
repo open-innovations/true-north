@@ -110,3 +110,8 @@ ol>li:before {
 }
 .oi-dashboard-inner .panel h3 { font-size: 1.2rem; }
 .oi-dashboard-inner .panel .bignum { font-size: 3rem; color: #97694e; }
+.oi-dashboard-inner .footnote {
+	font-size: 0.7em;
+	text-align: left;
+	display: block;
+	}
