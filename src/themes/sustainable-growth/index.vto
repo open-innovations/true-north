@@ -1,5 +1,9 @@
 ---
 title: Sustainable Growth
-theme: Sustainable Growth
 ---
-<p>Test page</p>
+<h3>Topics</h3>
+<ol>
+    {{ for page of search.pages("theme=sustainable-growth") }}
+    <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+    {{ /for }}
+</ol>

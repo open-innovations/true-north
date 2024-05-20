@@ -1,0 +1,47 @@
+---
+title: GVA
+theme: sustainable-growth
+---
+<h3>GVA (current prices) in millions of pounds</h3>
+{{ comp.oi.map.hex_cartogram({
+	"config": {
+		"width": 600,
+		"hexjson": "hexjson.uk-local-authority-districts-2023",
+		"data": gva_lad,
+		"columns":[{
+			"name": "filterLabel",
+			"template": "{{ n }}"
+		}],
+		"value": "gva_current_prices",
+		"scale": "TrueNorth",
+		"min": 0,
+		"max": 100000,
+		"matchKey": "geography.code",
+		"legend": {
+			"position": "top right",
+			"continuous": true,
+			"items": [{
+				"value": 100000,
+				"label": "£100,000M"
+			},{
+				"value": 75000,
+				"label": "£75,000M"
+			},{
+				"value": 50000,
+				"label": "£50,000M"
+			},{
+				"value": 25000,
+				"label": "£25,000M"
+			},{
+				"value": 0,
+				"label": "0"
+			}]
+		},
+		"tools":{
+			"filter":{
+				"label": "filterLabel"
+			}
+		},
+		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />GVA Current prices: <strong class=\"number\">£{{ gva_current_prices | toLocaleString() }} M</strong>"
+	}
+}) }}
