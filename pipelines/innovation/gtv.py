@@ -11,12 +11,12 @@ if __name__ == "__main__":
     
     df = df.loc[(df['Visa type subgroup']=='Global Talent') & 
                 (df['Case outcome']=='Issued')]
-    
-    df['Quarter'] = df['Quarter'].apply(quarters_to_iso)
+    df.rename(columns={'Quarter': 'date'}, inplace=True)
+    df['date'] = df['date'].apply(quarters_to_iso)
 
-    df['unix_timestamp'] = pd.to_datetime(df['Quarter']).astype(int)
+    df['unix_timestamp'] = pd.to_datetime(df['date'], format=f'%Y-%m-%d').astype(int).div(10**9).astype(int)
 
-    df = df.groupby(by=['Year', 'Quarter', 'unix_timestamp']).sum('Decisions')
+    df = df.groupby(by=['Year', 'date', 'unix_timestamp']).sum('Decisions')
 
     df.to_csv(os.path.join(SRC_DIR,'themes/innovation-change/_data/global_talent.csv'))
     print('Done')

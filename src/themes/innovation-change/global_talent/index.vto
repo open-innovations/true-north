@@ -10,13 +10,13 @@ theme: innovation-change
     legend: {
         show: true },
     axis: {
-        x: { title: { label: "Date" }, grid: { 'stroke-dasharray': "6 2", 'stroke-width': "1"}, ticks: comp.buildYearTicks({ data: global_talent, field: "Quarter", step: 2}) },
-        y: { title: { label: "Issued" }, grid: { "stroke-width": "1"}, tick: { spacing: 500} }
+        x: { title: { label: "Date" }, grid: { 'stroke-dasharray': "6 2", 'stroke-width': "1"}, ticks: comp.buildYearTicks({ data: global_talent, field: "date", step: 1})  },
+        y: { title: { label: "Issued" }, grid: { "stroke-width": "1"}, tick: { spacing: 500}, max=3000 }
     },
     series: [{
         title: "Issued",
         x: "unix_timestamp",
         y: "Decisions",
-		tooltip: "<strong class=\"subtitle\">Issued</strong><br />{{ Quarter }}: <strong class=\"number\">{{ _y }}</strong>"
+		tooltip: "<strong class=\"subtitle\">Issued</strong><br />{{ date }}: <strong class=\"number\">{{ _y }}</strong>"
 	}]
 } }) }}
