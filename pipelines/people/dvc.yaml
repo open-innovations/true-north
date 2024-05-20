@@ -19,3 +19,12 @@ stages:
     outs:
       - ${TOP}/src/themes/people-skills-future/_data/unemployment.csv:
           cache: false
+  qualifications:
+    cmd: PYTHONPATH=${TOP} python qualifications.py
+    deps:
+      - qualifications.py
+      - ${TOP}/pipelines/util.py
+      - ${TOP}/working/cs/cs-true-north.csv
+    outs:
+      - ${TOP}/src/themes/people-skills-future/_data/nvq_3plus.csv:
+          cache: false
