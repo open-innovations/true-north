@@ -6,11 +6,6 @@ if __name__ == "__main__":
 
     data = etl.cut(data, 'dates.date', 'value', 'variable.name')
 
-    #most_recent_date = max(etl.values(data, 'dates.date'))
-    # last_three_months = list(item for item in dates)[-3:]
-    # print(last_three_months)
-    #data = etl.selecteq(data, 'dates.date', most_recent_date)
-
     data = etl.recast(data, key='dates.date', variablefield='variable.name', valuefield='value')
 
     data = etl.setheader(data, split_text(on="-", headers=etl.header(data)))
