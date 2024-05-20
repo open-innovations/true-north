@@ -1,4 +1,5 @@
 import os
+import duckdb
 import petl as etl
 from datetime import datetime
 from slugify import slugify
@@ -39,3 +40,8 @@ def split_text(on, headers):
         except:
             l.append(header) 
     return l
+
+# def parquet_from_url(URL):
+#     con = duckdb.connect()
+#     data = con.execute(f"SELECT * FROM read_parquet('{URL}')").fetchdf()
+#     return data
