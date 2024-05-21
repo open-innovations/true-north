@@ -31,7 +31,7 @@
 header .logo, header .title { color: var(--color-heading-light); }
 header .logo svg { height: 22px; }
 header .title { padding-top: 1rem; }
-header a { text-decoration: none; }
+header a:hover, header a:focus { text-decoration: none; }
 h1, .title, .number, .bignum, ol>li:before {
 	letter-spacing: -.05em;
 	font-family: var(--oi-title-fontstack);
@@ -134,8 +134,8 @@ ol>li:before {
 input[type="range"].oi-slider-control { -webkit-appearance: none; -moz-appearance: none; appearance: none; background: transparent; cursor: pointer; width: 100%; margin-bottom: 0.25em; }
 input[type="range"].oi-slider-control:focus { outline: none; }
 input[type="range"].oi-slider-control::-webkit-slider-runnable-track { background-color: #dbcabe; border-radius: 0.5em; height: 0.5em; }
-input[type="range"].oi-slider-control::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; margin-top: -8px; background-color: #dc8c5d; border-radius: 1em; height: 1.5em; width: 1.5em; }
+input[type="range"].oi-slider-control::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; margin-top: -8px; background-color: #9d6646; border-radius: 1em; height: 1.5em; width: 1.5em; }
 input[type="range"].oi-slider-control:focus::-webkit-slider-thumb { outline: 4px solid #262626; }
 input[type="range"].oi-slider-control::-moz-range-track { background-color: #dbcabe; border-radius: 0.5rem; height: 0.5rem; }
-input[type="range"].oi-slider-control::-moz-range-thumb { background-color: #dc8c5d; border: none; border-radius: 1em; height: 1.5em; width: 1.5em; }
+input[type="range"].oi-slider-control::-moz-range-thumb { background-color: #9d6646; border: none; border-radius: 1em; height: 1.5em; width: 1.5em; }
 input[type="range"].oi-slider-control:focus::-moz-range-thumb{ outline: 4px solid #262626; }
