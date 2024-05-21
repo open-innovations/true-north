@@ -1,0 +1,18 @@
+schema: '2.0'
+stages:
+  gva:
+    cmd: PYTHONPATH=../.. python gva.py
+    deps:
+    - path: ../../pipelines/util.py
+      hash: md5
+      md5: 36ef11ec36aad93bd1f7b596d8f635ce
+      size: 1301
+    - path: gva.py
+      hash: md5
+      md5: 9fc8f58033538a4589e3882dda0e769b
+      size: 963
+    outs:
+    - path: ../../src/themes/sustainable-growth/_data/gva_lad.csv
+      hash: md5
+      md5: beb2a47120a334bcf3b3815085a2b37e
+      size: 13009

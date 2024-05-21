@@ -1,0 +1,11 @@
+vars:
+  - TOP: ../..
+stages:
+  gva:
+    cmd: PYTHONPATH=${TOP} python gva.py
+    deps:
+      - gva.py
+      - ${TOP}/pipelines/util.py
+    outs:
+      - ${TOP}/src/themes/sustainable-growth/_data/gva_lad.csv:
+          cache: false
