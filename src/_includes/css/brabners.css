@@ -30,7 +30,7 @@
 .brabners-bg-light { background: white; color: #262626; }
 header .logo, header .title { color: var(--color-heading-light); }
 header .logo svg { height: 22px; }
-header .title { padding-top: 1rem; }
+header .title { padding-top: 1rem; font-size: 2.6875rem; }
 header a:hover, header a:focus { text-decoration: none; }
 h1, .title, .number, .bignum, ol>li:before {
 	letter-spacing: -.05em;
@@ -40,7 +40,7 @@ h1, h2, h3, h4 {
 	color: var(--color-heading);
 }
 h1 {
-	font-size: 48px !important;
+	font-size: 2.6875rem;
 	font-weight: 900;
 }
 h2, h3, h4 {
