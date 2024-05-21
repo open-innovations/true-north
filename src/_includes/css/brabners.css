@@ -15,7 +15,6 @@
     src: url('fonts/LibreCaslon/librecaslontext-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 :root {
@@ -114,4 +113,6 @@ ol>li:before {
 	font-size: 0.7em;
 	text-align: left;
 	display: block;
+	line-height: 1.5em;
+	margin-top: 0.5rem;
 	}
