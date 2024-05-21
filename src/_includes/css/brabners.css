@@ -20,10 +20,14 @@
 :root {
 	--oi-title-fontstack: Libre Caslon Text,serif;
 	--oi-main-fontstack: Roboto,"Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+	color: #262626;
+}
+.bg-navy-radial {
+	background-image: radial-gradient(44.76% 50% at 50% 50%,#373f50 5.11%,#181b25 100%);
 }
 .brabners-header {
-		background-color: #131216;
-		color: white;
+	background-color: #181b25;
+	color: white;
 }
 h1, .title, .number, .bignum, ol>li:before {
 	letter-spacing: -.05em;
@@ -68,7 +72,7 @@ ol>li:before {
 	display:inline-block;
 	width:1.5em;
 	padding-right:0.5em;
-	color: #97694e;
+	color: #b17450;
 	font-size: 1.5rem;
 	font-weight: bold;
 	text-align:right;
@@ -93,10 +97,12 @@ ol>li:before {
 .tooltip .subtitle {
 	font-size: 1.25rem;
 }
+.brabners-bg-dark { background: #262626; color: white; }
+.brabners-bg-light { background: white; color: #262626; }
 
 .oi-legend-inner .oi-legend-item { padding: 0.25rem 0.5rem!important; }
 .oi-legend-inner .oi-legend-item.oi-series-on { outline: 0!important; background: none!important; }
-.oi-legend-inner .oi-legend-item:hover, .oi-legend-inner .oi-legend-item:focus { outline: 1px solid #97694e!important; }
+.oi-legend-inner .oi-legend-item:hover, .oi-legend-inner .oi-legend-item:focus { outline: 1px solid #b17450!important; }
 .oi-legend-inner .oi-legend-item.oi-series-off { opacity: 0.3; }
 
 .oi-dashboard-inner { display: flex; gap: 1em; flex-wrap: wrap; flex-direction: row; align-items: stretch; }
@@ -108,7 +114,7 @@ ol>li:before {
 	padding: 1rem;
 }
 .oi-dashboard-inner .panel h3 { font-size: 1.2rem; }
-.oi-dashboard-inner .panel .bignum { font-size: 3rem; color: #97694e; }
+.oi-dashboard-inner .panel .bignum { font-size: 3rem; color: #b17450; }
 .oi-dashboard-inner .footnote {
 	font-size: 0.7em;
 	text-align: left;

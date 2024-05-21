@@ -2,11 +2,11 @@ export default {
 	"assetPath": '/assets',
 	"componentNamespace": 'oi',
 	"colour": {
-		"background": "#efefef",
+		"background": "#fbf9f8",
 		"scales": {
-			"TrueNorth": "#efefef 0%, #a06c47 40%, #000000 100%",
+			"TrueNorth": "#efe9e5 0%, #3b7ea1 50%, #175677 65%, #181B25 91%, #000000 100%",
 		},
-		"series": [ '#97694e', '#bb9985', '#634635', '#decbc0', '#33251e' ]
+		"series": [ '#dc8c5d', '#9d6646', '#f4b16d', '#175677', '#3b7ea1', '#181b25', '#475062' ]
 	},
 	"font": {
 		"family": 'Poppins,CenturyGothicStd,"Century Gothic",Arial,sans-serif',
