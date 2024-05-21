@@ -12,7 +12,7 @@ theme: sustainable-growth
 			"name": "filterLabel",
 			"template": "{{ n }}"
 		}],
-		"value": "gva_current_prices",
+		"value": "GVA Current Prices £m",
 		"scale": "TrueNorth",
 		"min": 0,
 		"max": 100000,
@@ -40,8 +40,11 @@ theme: sustainable-growth
 		"tools":{
 			"filter":{
 				"label": "filterLabel"
+			},
+			"slider":{
+				"columns": ["GVA Constant Prices £m","GVA Current Prices £m"]
 			}
 		},
-		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />GVA Current prices: <strong class=\"number\">£{{ gva_current_prices | toLocaleString() }} M</strong>"
+		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />GVA: <strong class=\"number\">£{{ {{ _value }} | toLocaleString() }} M</strong>"
 	}
 }) }}
