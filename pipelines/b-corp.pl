@@ -18,6 +18,7 @@ BEGIN { ($basedir, $path) = abs_path($0) =~ m{(.*/)?([^/]+)$}; push @INC, $based
 my $dir = $basedir."../working/b-corp/";
 my $ofile = $basedir."../src/themes/true-north/_data/bcorp_list.csv";
 my $lfile = $basedir."../src/themes/true-north/_data/bcorp_by_la.csv";
+my $sfile = $basedir."../src/_data/dashboard/bcorp_north.csv";
 my $pcdfile = $dir."postcodes.csv";
 my $hexfile = $basedir."../src/_data/hexjson/uk-local-authority-districts-2023.hexjson";
 
@@ -29,6 +30,7 @@ my $hexes = LoadJSON($hexfile)->{'hexes'};
 
 
 # Loop over the the API results to load all the data
+my $total = 0;
 my $n = 0;
 my $nbhits = 1;
 my $page = 0;
@@ -165,7 +167,17 @@ foreach $la (sort(keys(%{$hexes}))){
 		print $fh ",".($ladata->{$la}{'industries'}{$industry}||"0");
 	}
 	print $fh "\n";
+	
+	if($hexes->{$la}{'region'} eq "E12000001" || $hexes->{$la}{'region'} eq "E12000002" || $hexes->{$la}{'region'} eq "E12000003"){
+		$total += ($ladata->{$la}{'count'}||0);
+	}
 }
+close($fh);
+
+msg("Save northern total to <cyan>$sfile<none>\n");
+open($fh,">:utf8",$sfile);
+print $fh "name,value,footnote,post\n";
+print $fh "\"Northern B Corps\",$total,,\n";
 close($fh);
 
 ##############################
