@@ -11,15 +11,23 @@ stages:
       hash: md5
       md5: f7ada6a8f6bf1c292871898fa47fed07
       size: 497028
+    - path: https://github.com/economic-analytics/edd/raw/main/data/parquet/LMS.parquet
+      hash: md5
+      checksum: '"60f870b20456d96fbd047a3c7c25a0f829e88b8a45a24a13fcafa5157c96ed9d"'
+      size: 3113603
     - path: vacancies.py
       hash: md5
-      md5: 929ba58398452214227ecfe5a565d3ef
-      size: 719
+      md5: 0c5b04e2629bb46cdbdef7e6ca6b66e3
+      size: 1428
     outs:
     - path: ../../src/themes/people-skills-future/_data/growth_by_sector.csv
       hash: md5
       md5: d299bf8d940b93bb089c0cd7ed979cfe
       size: 58294
+    - path: ../../src/themes/people-skills-future/_data/vacancies_by_sector.csv
+      hash: md5
+      md5: 1371114d3de595bca9e0effe4f2a90aa
+      size: 451461
   employment:
     cmd: PYTHONPATH=../.. python employment.py
     deps:
