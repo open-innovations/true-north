@@ -2,35 +2,82 @@
 title: Vacancies
 theme: people-skills-future
 ---
-<h3>Growth on previous month by sector </h3>
+<h3>Vacancies by sector over the last 10 years</h3>
+
+{{ comp.oi.chart.line({ config: {
+    data: vacancies_by_sector,
+    height: 600,
+    legend: {
+        show: true },
+    axis: {
+        x: { title: { label: "Date" }, grid: { 'stroke-dasharray': "6 2", 'stroke-width': "1"}, ticks: comp.buildYearTicks({ data: unemployment, field: "date", step: 2})  },
+        y: { title: { label: "000s of Vacancies" }, grid: { "stroke-width": "1"}, tick: { spacing: 50} }
+    },
+    series: [{
+        title: "Real Estate Activities",
+        x: "date",
+        y: "Real Estate Activities.",
+		tooltip: "<strong class=\"subtitle\">Real Estate Activities</strong><br />{{ date }}: <strong class=\"number\">{{ _y }},000</strong>"
+	    },
+        {
+        title: "Wholesale & Retail, Repair of motor vehicles",
+        x: "date",
+        y: "Wholesale & Retail, Repair of motor vehicles.",
+		tooltip: "<strong class=\"subtitle\">Wholesale & Retail, Repair of motor vehicles</strong><br />{{ date }}: <strong class=\"number\">{{ _y }},000</strong>"
+	    },
+        {
+        title: "Professional, Scientific & Technical Activities",
+        x: "date",
+        y: "Professional, Scientific & Technical Activities.",
+		tooltip: "<strong class=\"subtitle\">Professional, Scientific & Technical Activities</strong><br />{{ date }}: <strong class=\"number\">{{ _y }},000</strong>"
+	    },
+        {
+        title: "Manufacturing",
+        x: "date",
+        y: "Manufacturing",
+		tooltip: "<strong class=\"subtitle\">Manufacturing</strong><br />{{ date }}: <strong class=\"number\">{{ _y }},000</strong>"
+	    },
+        {
+        title: "Human Health & Social Work",
+        x: "date",
+        y: "Human Health & Social Work.",
+		tooltip: "<strong class=\"subtitle\">Human Health & Social Work</strong><br />{{ date }}: <strong class=\"number\">{{ _y }},000</strong>"
+	    },
+        {
+        title: "Arts, Entertainment & Recreation",
+        x: "date",
+        y: "Arts, Entertainment & Recreation.",
+		tooltip: "<strong class=\"subtitle\">Arts, Entertainment & Recreation</strong><br />{{ date }}: <strong class=\"number\">{{ _y }},000</strong>"
+	    }
+        ]
+    } }) 
+}}
+<h3>Vacancies percentage change on previous year by sector</h3>
 
 {{ comp.oi.chart.bar ({ config: { 
-    data: growth_by_sector,
+    data: vacancies_yearly_change_by_sector,
     height: 600,
     legend: { show: true }, 
     category: 'sector',
     axis: { 
         x: { 
-            min: -20,
-            max: 30,
+            min: -40,
+            max: 40,
             ticks: [{
+                value: -40,
+                label: "-40%"},
+                {
                 value: -20,
                 label: "-20%"},
-                {
-                value: -10,
-                label: "-10%"},
                 {
                 value: 0,
                 label: "0%"},
                 {
-                value: 10,
-                label: "10%"},
-                {
                 value: 20,
                 label: "20%"},
                 {
-                value: 30,
-                label: "30%"}
+                value: 40,
+                label: "40%"}
             ]} 
         },
     series: [
@@ -39,11 +86,8 @@ theme: people-skills-future
         value: "2024-03-01" 
         },
         { 
-        title: "Feb 2024",
-        value: "2024-02-01" },
-        { 
-        title: "Jan 2024",
-        value: "2024-01-01" }]
+        title: "March 2023",
+        value: "2023-03-01" }]
         }
     }) 
 }}
