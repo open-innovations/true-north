@@ -68,3 +68,32 @@ stages:
       hash: md5
       md5: 1d622f9c0a784598c2d6c1139818cd59
       size: 725
+  unem:
+    cmd: PYTHONPATH=../.. python neet.py
+    deps:
+    - path: 
+        https://raw.githubusercontent.com/open-innovations/yff-data-pipelines/main/data/processed/neet.csv
+      hash: md5
+      checksum: '"14ccdbb3a4299537b8eb04d5d83a1ac0f8eed61d0847d29812fa42b3b7c0b694"'
+      size: 367480
+    - path: neet.py
+      hash: md5
+      md5: 597ba2ad7c658328164f7b0bc062e04e
+      size: 452
+  neet:
+    cmd: PYTHONPATH=../.. python neet.py
+    deps:
+    - path: 
+        https://raw.githubusercontent.com/open-innovations/yff-data-pipelines/main/data/processed/neet.csv
+      hash: md5
+      checksum: '"14ccdbb3a4299537b8eb04d5d83a1ac0f8eed61d0847d29812fa42b3b7c0b694"'
+      size: 367480
+    - path: neet.py
+      hash: md5
+      md5: 3998309907548e9b1adcf230a6a7c203
+      size: 563
+    outs:
+    - path: ../../src/themes/people-skills-future/_data/neet.csv
+      hash: md5
+      md5: 9388a8604edf7c27235d8d27aeede084
+      size: 160

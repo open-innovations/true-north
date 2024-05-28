@@ -31,3 +31,11 @@ stages:
     outs:
       - ${TOP}/src/themes/people-skills-future/_data/nvq_3plus.csv:
           cache: false
+  neet:
+    cmd: PYTHONPATH=${TOP} python neet.py
+    deps:
+      - neet.py
+      - https://raw.githubusercontent.com/open-innovations/yff-data-pipelines/main/data/processed/neet.csv
+    outs:
+      - ${TOP}/src/themes/people-skills-future/_data/neet.csv:
+          cache: false
