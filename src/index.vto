@@ -17,21 +17,22 @@ nav: about
   True North is about highlighting all this activity and bringing it together in one place. One network for purpose-led organisations, our 'Northern Stars' — small businesses, SMEs, social enterprises and foundations — who don't have a voice."
   </p>
   <p class='warning padded'>WARNING: Above taken from the <a href="https://www.brabners.com/true-north-network">True North website</a> home page.</p>
-  {{ comp.oi.dashboard ({ config: {
+
+{{ comp.oi.dashboard ({ config: {
 	title: "name",
 	value: "value",
     note: "footnote",
     data: dashboard.true_north_list,
     panels: [
         { name: "Total members" },
+        { name: "Total companies" },
         { name: "Membership increase" },
         { name: "Companies with 1-10 employees" },
         { name: "Top sector" },
+        { name: "Geographic reach" },
+        { name: "Advisory council" },
+        { name: "Northern stars" },
         { name: "B Corps" },
-        { name: "Northern B Corps" },
-        { name: "Thing C" },
-        { name: "Thing D" },
-        { name: "Thing E" }
         ],
     units: { postfix: "post" },
     }
