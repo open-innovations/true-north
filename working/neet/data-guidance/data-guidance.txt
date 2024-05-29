@@ -1,0 +1,148 @@
+Participation in education, training and NEET age 16 to 17 by local authority
+2022/23 Academic year
+
+Description
+
+This document describes the data included in the ‘Participation in education, training and NEET age 16 and 17 by local authority’ management information release’s underlying data. This data is released under the terms of the Open Government License and is intended to meet at least three stars for Open Data.
+
+The underlying data files include national, regional and local authority participation and NEET estimates for 16-17 year olds in England and are broken down by (academic) age, gender, ethnic group and special educational needs and disability (SEND).
+
+The methodology accompanying the release should be referenced alongside this data. It provides information on the data source, coverage and quality.
+
+File formats and conventions
+
+The files are in comma separated values format (.csv) with UTF-8 encoding.
+
+Rounding and suppression has been applied as described in the confidentiality section of the accompanying methodology to avoid disclosure.
+
+Symbols used in the underlying data are as follows:
+
+Symbol  |  Meaning
+z       |  When an observation is not applicable
+
+c       |  When an observation has been suppressed to avoid disclosure.
+
+Data files
+
+NEET by characteristics
+
+Filename: ud_neet_characteristics.csv
+Geographic levels: Local authority; National; Regional
+Time period: 2019 to 2023
+Content summary: National, regional and local authority NEET estimates by (academic) age, gender, ethnic group and special educational needs and disability (SEND).
+
+Variable names and descriptions for this file are provided below:
+
+Variable name         |  Variable description
+--------------------  |  -----------------------------------------
+Age                   |  age - filter by age
+annual_change_NEETNK  |  Annual change in NEET/not known rate
+avgcohort             |  Cohort number
+avgNEET               |  Number NEET
+avgNEETNK             |  Number NEET/activity not known
+avgNK                 |  Number activity not known
+Characteristic        |  Characteristic - filter by characteristic
+NEETNKprop            |  NEET/not known proportion
+NEETprop              |  NEET proportion
+Notknownprop          |  Activity not known proportion
+
+Footnotes:
+
+1. Due to a change in software supplier in 2022, Surrey's data has been affected by some quality issues. Please use Surrey's data with caution.
+
+
+Participation by characteristics
+
+Filename: ud_participation_characteristics.csv
+Geographic levels: Local authority; National; Regional
+Time period: 2019 to 2023
+Content summary: National, regional and local authority participation in education and training estimates by (academic) age, gender, ethnic group and special educational needs and disability (SEND).
+
+Variable names and descriptions for this file are provided below:
+
+Variable name                         |  Variable description
+------------------------------------  |  -----------------------------------------------------
+Age                                   |  age - filter by age
+annual_change                         |  annual change in proportion in education and training
+Characteristic                        |  Characteristic - filter by characteristic
+cohort                                |  Cohort number
+Proportion_in_education_and_training  |  Proportion in education and training
+Total_in_education_and_training       |  Number in education and training
+
+Footnotes:
+
+1. Due to technical software issues with the March 2023 gender field, Surrey has no gender information.
+
+
+Participation by type
+
+Filename: ud_participation_by_type.csv
+Geographic levels: Local authority; National; Regional
+Time period: 2019 to 2023
+Content summary: National, regional and local authority participation in education and training estimates by type of participation and duty to participate.
+
+Variable names and descriptions for this file are provided below:
+
+Variable name       |  Variable description
+------------------  |  --------------------------------------
+annual_change       |  Annual change in percent participating
+number              |  Number
+Participation_type  |  Participation type
+percent             |  Percent
+
+Footnotes:
+
+1. Due to known coding issues with Surrey's apprenticeships data, please use Surrey's figures with caution.
+
+
+NEET and participation LA scorecard
+
+Filename: ud_neetnk_la_dashboard_2023_final.csv
+Geographic levels: Local authority; National; Regional
+Time period: 2023
+Content summary: National, regional and local authority NEET and participation in education and training estimates.
+
+Variable names and descriptions for this file are provided below:
+
+Variable name                                          |  Variable description
+-----------------------------------------------------  |  --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Age                                                    |  Age
+Age1617_ONS_population                                 |  Age 16-17 population ONS estimate
+annual_change_apprenticeship                           |  Annual change in the percentage of the cohort on an apprenticeship
+annual_change_FTE                                      |  Annual change in the percentage of the cohort in full-time education
+annual_change_other_education_training                 |  Annual change in the percentage of the cohort in other education and training
+annual_change_Participation_in_education_training      |  Annual change in the percentage of the cohort participation in education and training
+annual_change_ppts_NEET_not_known                      |  Annual change in the percentage of the cohort who are NEET or not known
+annualchange_NEET                                      |  Annual change in the percentage of the cohort who are NEET
+annualchange_notknown                                  |  Annual change in the percentage of the cohort with activity not known
+Apprenticeship_percent                                 |  Percentage of the cohort on an apprenticeship
+avg_att8                                               |  Average attainment 8 score per pupil
+Cohort_DJFavg                                          |  Total cohort (average of Dec/Jan/Feb)
+cohort_EHCP_percent                                    |  Percentage of the cohort with an EHCP
+cohort_March                                           |  Total cohort (March)
+cohort_noSEN_percent                                   |  Percentage of the cohort with no SEN
+cohort_SENDsupport_percent                             |  Percentage of the cohort who have SEND support
+Full_time_education_percent                            |  Percentage of the cohort in full-time education
+L2_em_GCSE_othL2                                       |  Percentage 19 year olds achieving GCSE 9-4 standard pass in English and maths (or equivalent) between ages 16 and 19 for those who had not achieved this level by 16
+Level_3                                                |  Percentage 19 year olds achieving a level 3
+NEET_NK_EHCP_percent                                   |  Percentage with an EHCP who are NEET or activity not known
+NEET_NK_noSEN_percent                                  |  Percentage with no SEN who are NEET or activity not known
+NEET_NK_quintile                                       |  NEET and activity not known quintile
+NEET_NK_SENDsupport_percent                            |  Percentage SEND support who are NEET or activity not known
+NEET_not_known_percent                                 |  Percentage of the cohort who are NEET or not known
+NEET_percent                                           |  Percentage of the cohort who are NEET
+NEET_quintile                                          |  NEET quintile
+Notknown_percent                                       |  Percentage of the cohort with activity not known
+Notknown_quintile                                      |  Activity not known quintile
+Other_education_and_training_percent                   |  Percentage of the cohort in other education and training
+Participation_ET_quintile                              |  Participation in education and training quintile
+pt_l2basics_94                                         |  9-4 standard pass in English and maths GCSEs
+Sep_guarantee_quintile                                 |  September Guarantee quintile
+September_guarantee_annual_change_ppts                 |  Annual change in the percentage of September Guarantee offers made
+September_guarantee_Offer_made_percent                 |  Percentage of September Guarantee offers made
+sess_overall_percent                                   |  Overall absence (% of sessions)
+sess_overall_percent_pa_10_exact                       |  Persistent absentees (% of pupils)
+TOTAL_participating_in_education_and_training_percent  |  Percentage of the cohort participating in education and training
+VG_cohort_DJF_avg                                      |  Cohort of vulnerable group (average of Dec/Jan/Feb)
+VG_cohort_percentage                                   |  Percentage of the total cohort who are in a vulnerable group
+VG_NEET_NK_percentage                                  |  Percentage of the vulnerable group who are NEET or activity not known
