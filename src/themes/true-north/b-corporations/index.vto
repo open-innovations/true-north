@@ -2,6 +2,19 @@
 title: B Corporations
 theme: true-north
 ---
+{{ comp.oi.dashboard ({ config: {
+	title: "name",
+	value: "value",
+    note: "footnote",
+    data: dashboard.bcorp_north,
+    panels: [
+		{ name: "Total B Corps" },
+        { name: "Northern B Corps" }
+        ],
+    units: { postfix: "post" },
+    }
+    })
+}}
 <h2>All B Corporations</h2>
 
 {{# <p class="warning padded">WARNING: We need B Corporations to say that it is OK for us to use their data. Brabners to contact them.</p> #}}
