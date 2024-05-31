@@ -30,3 +30,47 @@ theme: people-skills-future
 		tooltip: "<strong class=\"subtitle\">Yorkshire and The Humber</strong><br />{{ date }}: <strong class=\"number\">{{ _y }}%</strong>"
 	}]
 } }) }}
+
+<h3>NEET annual change</h3>
+{{ comp.oi.map.hex_cartogram({
+	"config": {
+		"width": 600,
+		"hexjson": "hexjson.uk-local-authority-districts-2023",
+		"data": most_recent_neet_by_la,
+		"columns":[{
+			"name": "filterLabel",
+			"template": "{{ n }}"
+		}],
+		"value": "annual_change_NEETNK",
+		"scale": "TrueNorth",
+		"min": -8,
+		"max": 8,
+		"matchKey": "geography_code",
+		"legend": {
+			"position": "top right",
+			"continuous": true,
+			"items": [{
+				"value": 10,
+				"label": "10"
+			},{
+				"value": 5,
+				"label": "5"
+			},{
+				"value": 0,
+				"label": "0"
+			},{
+				"value": -5,
+				"label": "-5"
+			},{
+				"value": -10,
+				"label": "-10"
+			}]
+		},
+		"tools":{
+			"filter":{
+				"label": "filterLabel"
+			}
+		},
+		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />Annual change NEET/Not known: <strong class=\"number\">{{ annual_change_NEETNK | toFixed(1) }}</strong>"
+	}
+}) }}

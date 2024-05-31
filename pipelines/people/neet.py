@@ -13,18 +13,16 @@ def total_neet_16_24():
     
 def neet_by_local_authority():
     data = pd.read_csv(os.path.join(WDIR, 'neet/ud_neet_characteristics.csv'))
-    
-    # get only data for the 3 northern regions OR national data
-    data = data[data['region_code'].isin(['E12000001', 'E12000002', 'E12000003']) | (data['geographic_level']=='National')]
-    
     # combine all codes into one column. Uses LA code if exists, the region, then country.
     data['geography_code'] = data['new_la_code'].combine_first(data['region_code']).combine_first(data['country_code'])
+    # data = data[data['new_la_code'].notnull()]
 
     #drop un-used columns
-    data.drop(columns=['time_identifier', 'country_name', 'country_code', 'new_la_code', 'region_code', 'la_name', 'region_name', 'old_la_code', 'geographic_level'], inplace=True)
+    data.drop(columns=['time_identifier', 'country_name', 'country_code', 'region_code', 'region_name', 'old_la_code', 'geographic_level'], inplace=True)
+    data = data[(data['Age']=='16-17') & (data['Characteristic']=='Total') & (data['time_period']==max(data['time_period']))]
     data.set_index('time_period', inplace=True)
     data.index.rename('date', inplace=True)
-    data.to_csv(os.path.join(SRC_DIR, 'themes/people-skills-future/_data/neet_by_la.csv'))
+    data.to_csv(os.path.join(SRC_DIR, 'themes/people-skills-future/_data/most_recent_neet_by_la.csv'))
 
 if __name__ == "__main__":
     total_neet_16_24()
