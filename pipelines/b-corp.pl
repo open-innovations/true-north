@@ -35,7 +35,7 @@ my $n = 0;
 my $nbhits = 1;
 my $page = 0;
 my $nperpage = 500;
-my ($json,$file,@hits,$i,$key,$csv,$fh,$pcds,$la,$ladata,$pcd,@sizes,$s,$industries,$industry,$own,$owned);
+my ($json,$file,@hits,$i,$key,$csv,$fh,$pcds,$la,$ladata,$pcd,@sizes,$s,$industries,$industry,$sectors,$own,$owned);
 while($n < $nbhits){
 	$file = $dir."page-$page.json";
 	if(!-e $file || -s $file == 0){
@@ -89,7 +89,17 @@ for($i = 0; $i < @hits; $i++){
 
 		if(!$ladata->{$la}{'industries'}{$hits[$i]{'industry'}}){ $ladata->{$la}{'industries'}{$hits[$i]{'industry'}} = 0; }
 		$ladata->{$la}{'industries'}{$hits[$i]{'industry'}}++;
-		if($hits[$i]{'industry'}){ $industries->{$hits[$i]{'industry'}} = 1; }
+		if($hits[$i]{'industry'}){
+			if(!defined($industries->{$hits[$i]{'industry'}})){ $industries->{$hits[$i]{'industry'}} = 0; }
+			$industries->{$hits[$i]{'industry'}}++;
+		}
+
+		if(!$ladata->{$la}{'sectors'}{$hits[$i]{'sector'}}){ $ladata->{$la}{'sectors'}{$hits[$i]{'sector'}} = 0; }
+		$ladata->{$la}{'sectors'}{$hits[$i]{'sector'}}++;
+		if($hits[$i]{'sector'}){
+			if(!defined($sectors->{$hits[$i]{'sector'}})){ $sectors->{$hits[$i]{'sector'}} = 0; }
+			$sectors->{$hits[$i]{'sector'}}++;
+		}
 
 		foreach $own (keys(%{$hits[$i]{'demographics'}})){
 			if($own){
@@ -105,8 +115,6 @@ for($i = 0; $i < @hits; $i++){
 	}
 	$csv .= "\"$hits[$i]{'name'}\",\"$hits[$i]{'industry'}\",$hits[$i]{'size'},$hits[$i]{'hqPostalCode'},$la\n";
 }
-
-
 
 SavePostcodeLookup($pcdfile,$pcds);
 
@@ -315,6 +323,8 @@ sub fixPostcode {
 	if($pcd eq "W12" && $name eq "Higson"){ $pcd = "W127RZ"; }
 	if($pcd eq "" && $name eq "Kin and Carta Plc"){ $pcd = "N19BE"; }
 	if($pcd eq "UK" && $name eq "By Sarah"){ $pcd = "B798RH"; }
+	if($pcd eq "WC2A0HF"){ $pcd = "WC2H0HF"; }
+	if($pcd eq "TA11FH"){ $pcd = "TA11QN"; }
 	return $pcd;
 }
 
