@@ -1,0 +1,25 @@
+---
+title: Net Zero
+theme: sustainable-growth
+---
+{{ comp.oi.dashboard ({ config: {
+	title: "name",
+	value: "value",
+    note: "footnote",
+    data: headlines,
+    panels: [
+        { name: "Total companies" },
+        { name: "Estimated total employees" },
+        { name: "Estimated total turnover" },
+        { name: "Estimated growth per year" },
+        ],
+    units: { postfix: "post", prefix: "pre" },
+        }
+    })
+}}
+<p class='warning padded'>
+    WARNING: These statistics are estimates calculated using The Data City's analyse tool. 
+    For information on their caveats and limitations, please read their blog on 
+    <a href="https://thedatacity.com/analyse-using-analyse-for-location-analysis/">how the analysis tool works</a>.
+</p>
+<p> add filters here</p>
