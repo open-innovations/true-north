@@ -40,7 +40,7 @@ while($n < $nbhits){
 	$file = $dir."page-$page.json";
 	if(!-e $file || -s $file == 0){
 		msg("Getting page <green>$page<none>\n");
-		`curl 'https://bx1p6tr71m-dsn.algolia.net/1/indexes/*/queries?x-algolia-agent=Algolia%20for%20JavaScript%20(4.22.0)%3B%20Browser%20(lite)%3B%20instantsearch.js%20(4.66.0)%3B%20react%20(18.2.0)%3B%20react-instantsearch%20(7.7.0)%3B%20react-instantsearch-core%20(7.7.0)%3B%20JS%20Helper%20(3.16.3)&x-algolia-api-key=$env->{'B_CORP_API'}&x-algolia-application-id=$env->{'B_CORP_APP'}' --compressed -X POST -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:125.0) Gecko/20100101 Firefox/125.0' -H 'Accept: */*' -H 'Accept-Language: en-GB,en;q=0.5' -H 'Accept-Encoding: gzip, deflate, br' -H 'content-type: application/x-www-form-urlencoded' -H 'Origin: https://www.bcorporation.net' -H 'DNT: 1' -H 'Connection: keep-alive' -H 'Referer: https://www.bcorporation.net/' -H 'Sec-Fetch-Dest: empty' -H 'Sec-Fetch-Mode: cors' -H 'Sec-Fetch-Site: cross-site' -H 'Pragma: no-cache' -H 'Cache-Control: no-cache' --data-raw '{"requests":[{"indexName":"companies-production-en-us-latest-certification-desc","params":"facetFilters=%5B%5B%22hqCountry%3AUnited%20Kingdom%22%5D%5D&facets=%5B%22countries%22%2C%22demographicsList%22%2C%22hqCountry%22%2C%22industry%22%2C%22size%22%5D&highlightPostTag=__%2Fais-highlight__&highlightPreTag=__ais-highlight__&hitsPerPage=$nperpage&maxValuesPerFacet=500&page=$page&query=&tagFilters="},{"indexName":"companies-production-en-us-latest-certification-desc","params":"analytics=false&clickAnalytics=false&facets=hqCountry&highlightPostTag=__%2Fais-highlight__&highlightPreTag=__ais-highlight__&hitsPerPage=0&maxValuesPerFacet=500&page=0&query="}]}' -o $file`;
+		`curl 'https://bx1p6tr71m-dsn.algolia.net/1/indexes/*/queries?x-algolia-agent=Algolia%20for%20JavaScript%20(4.22.0)%3B%20Browser%20(lite)%3B%20instantsearch.js%20(4.66.0)%3B%20react%20(18.2.0)%3B%20react-instantsearch%20(7.7.0)%3B%20react-instantsearch-core%20(7.7.0)%3B%20JS%20Helper%20(3.16.3)&x-algolia-api-key=$env->{'B_CORP_API'}&x-algolia-application-id=$env->{'B_CORP_APP'}' --compressed -X POST -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:126.0) Gecko/20100101 Firefox/126.0' -H 'Accept: */*' -H 'Accept-Language: en-GB,en;q=0.5' -H 'Accept-Encoding: gzip, deflate, br, zstd' -H 'content-type: application/x-www-form-urlencoded' -H 'Origin: https://www.bcorporation.net' -H 'DNT: 1' -H 'Connection: keep-alive' -H 'Referer: https://www.bcorporation.net/' -H 'Sec-Fetch-Dest: empty' -H 'Sec-Fetch-Mode: cors' -H 'Sec-Fetch-Site: cross-site' -H 'Pragma: no-cache' -H 'Cache-Control: no-cache' --data-raw '{"requests":[{"indexName":"companies-production-en-us-latest-certification-desc","params":"facetFilters=%5B%5B%22hqCountry%3AUnited%20Kingdom%22%5D%5D&facets=%5B%22countries%22%2C%22demographicsList%22%2C%22hqCountry%22%2C%22industry%22%2C%22size%22%5D&highlightPostTag=__%2Fais-highlight__&highlightPreTag=__ais-highlight__&hitsPerPage=$nperpage&maxValuesPerFacet=500&page=$page&query=&tagFilters="},{"indexName":"companies-production-en-us-latest-certification-desc","params":"analytics=false&clickAnalytics=false&facets=hqCountry&highlightPostTag=__%2Fais-highlight__&highlightPreTag=__ais-highlight__&hitsPerPage=0&maxValuesPerFacet=500&page=0&query="}]}' -o $file`;
 	}
 	$json = LoadJSON($file);
 	$nbhits = $json->{'results'}[0]{'nbHits'};
@@ -48,7 +48,6 @@ while($n < $nbhits){
 	push(@hits,@{$json->{'results'}[0]{'hits'}});
 	$page++;
 }
-
 
 # If we don't have postcodes we quit
 if(!-e $pcdfile){
@@ -177,8 +176,12 @@ close($fh);
 msg("Save northern total to <cyan>$sfile<none>\n");
 open($fh,">:utf8",$sfile);
 print $fh "name,value,footnote,post\n";
+print $fh "\"Total B Corps\",$nbhits,\"In the UK\"\n";
 print $fh "\"Northern B Corps\",$total,,\n";
 close($fh);
+
+msg("Total of <yellow>$total<none> northern corps out of <yellow>$nbhits<none>.");
+
 
 ##############################
 # Sub routines
@@ -230,7 +233,7 @@ sub ParseJSON {
 sub LoadJSON {
 	my (@files,$str,@lines,$json);
 	my $file = $_[0];
-	open(FILE,"<:utf8",$file);
+	open(FILE,"<:utf8",$file) || error("Unable to load <cyan>$file<none>.");
 	@lines = <FILE>;
 	close(FILE);
 	$str = (join("",@lines));
@@ -243,7 +246,7 @@ sub getEnvironment {
 	@lines = <$fh>;
 	close($fh);
 	foreach $line (@lines){
-		chomp($line);
+		$line =~ s/[\n\r]//g;
 		($k,$v) = split(/=/,$line);
 		$env->{$k} = $v;
 	}
