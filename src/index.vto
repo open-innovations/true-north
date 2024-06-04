@@ -21,22 +21,26 @@ nav: about
 {{ comp.oi.dashboard ({ config: {
 	title: "name",
 	value: "value",
-    note: "footnote",
-    data: dashboard.true_north_list,
-    panels: [
-        { name: "Total members" },
-        { name: "Total companies" },
-        { name: "Membership increase" },
-        { name: "Companies with 1-10 employees" },
-        { name: "Top sector" },
-        { name: "Geographic reach" },
-        { name: "Advisory council" },
-        { name: "Northern stars" },
-        { name: "B Corps" },
-        ],
-    units: { postfix: "post" },
+  note: "Link",
+  data: dashboard.true_north_list,
+  columns: [{ 
+    name: 'Link',
+    template: '<a href="{{ URL }}">{{ footnote }}</a>' 
+    }],
+  panels: [
+      { name: "Total members" },
+      { name: "Total companies" },
+      { name: "Membership increase" },
+      { name: "Companies with 1-10 employees" },
+      { name: "Top sector" },
+      { name: "Geographic reach" },
+      { name: "Advisory council" },
+      { name: "Northern stars" },
+      { name: "B Corps" },
+      ],
+  units: { postfix: "post" },
     }
-    })
+  })
 }}
 
 <p class='warning padded'>WARNING: Data above is not accurate and may be changed or removed without notice.</p>
