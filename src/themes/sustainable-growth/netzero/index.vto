@@ -22,4 +22,131 @@ theme: sustainable-growth
     For information on their caveats and limitations, please read their blog on 
     <a href="https://thedatacity.com/analyse-using-analyse-for-location-analysis/">how the analysis tool works</a>.
 </p>
-<p> add filters here</p>
+<p>
+    Only northern companies with registered adress there. analysis only includes these.
+    up to 250 employees
+    up to 10 million turnover
+</p>
+
+<h3>Business counts by local authority</h3>
+<p>Estimates for the number of businesses working in the Net Zero Real-time Industrial Classification</p>
+{{ comp.oi.map.hex_cartogram({
+	"config": {
+		"width": 600,
+		"hexjson": "hexjson.uk-local-authority-districts-2023",
+		"data": Business_counts_by_local_authority,
+		"columns":[{
+			"name": "filterLabel",
+			"template": "{{ n }}"
+		}],
+		"value": "Count",
+		"scale": "TrueNorth",
+		"min": 0,
+		"max": 200,
+		"matchKey": "LAD22CD",
+		"legend": {
+			"position": "top right",
+			"continuous": true,
+			"items": [{
+				"value": 200,
+				"label": "200"
+			},{
+				"value": 100,
+				"label": "100"
+			},{
+				"value": 0,
+				"label": "0"
+			}]
+		},
+		"tools":{
+			"filter":{
+				"label": "filterLabel"
+			}
+		},
+		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />Number of companies: <strong class=\"number\">{{ {{ _value }} | toLocaleString() }}</strong>"
+	}
+}) }}
+
+<h3>Employee counts by local authority</h3>
+<p>Estimates for the number of employees working in the Net Zero Real-time Industrial Classification</p>
+{{ comp.oi.map.hex_cartogram({
+	"config": {
+		"width": 600,
+		"hexjson": "hexjson.uk-local-authority-districts-2023",
+		"data": Employees_by_local_authority,
+		"columns":[{
+			"name": "filterLabel",
+			"template": "{{ n }}"
+		}],
+		"value": "Count",
+		"scale": "TrueNorth",
+		"min": 0,
+		"max": 1500,
+		"matchKey": "LAD22CD",
+		"legend": {
+			"position": "top right",
+			"continuous": true,
+			"items": [{
+				"value": 1500,
+				"label": "1500"
+			},{
+				"value": 1000,
+				"label": "1000"
+			},{
+				"value": 500,
+				"label": "500"
+			},{
+				"value": 0,
+				"label": "0"
+			}]
+		},
+		"tools":{
+			"filter":{
+				"label": "filterLabel"
+			}
+		},
+		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />Number of employees: <strong class=\"number\">{{ {{ _value }} | toLocaleString() }}</strong>"
+	}
+}) }}
+
+<h3>Estimated turnover by local authority</h3>
+<p>Estimates for the turnover of businesses working in the Net Zero Real-time Industrial Classification</p>
+{{ comp.oi.map.hex_cartogram({
+	"config": {
+		"width": 600,
+		"hexjson": "hexjson.uk-local-authority-districts-2023",
+		"data": Turnovers_by_local_authority,
+		"columns":[{
+			"name": "filterLabel",
+			"template": "{{ n }}"
+		}],
+		"value": "Count",
+		"scale": "TrueNorth",
+		"min": 0,
+		"max": 150000000,
+		"matchKey": "LAD22CD",
+		"legend": {
+			"position": "top right",
+			"continuous": true,
+			"items": [{
+				"value": 150000000,
+				"label": "£150M"
+			},{
+				"value": 100000000,
+				"label": "£100M"
+			},{
+				"value": 50000000,
+				"label": "£50M"
+			},{
+				"value": 0,
+				"label": "£0m"
+			}]
+		},
+		"tools":{
+			"filter":{
+				"label": "filterLabel"
+			}
+		},
+		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />Number of companies: <strong class=\"number\">{{ {{ _value }} | toLocaleString() }}</strong>"
+	}
+}) }}
