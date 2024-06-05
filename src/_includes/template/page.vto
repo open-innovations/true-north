@@ -1,6 +1,8 @@
 ---
 layout: template/base.vto
 ---
-
+{{ if theme!=undefined }}
+    <p>Back to <a href="/themes/{{ theme }}">{{ nicetheme }}</a><p>
+{{ /if }}
 <h1>{{ title }}</h1>
 {{ content |> safe }}
