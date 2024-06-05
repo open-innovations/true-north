@@ -12,6 +12,7 @@ fastparquet = "*"
 python-slugify = "*"
 openpyxl = "*"
 duckdb = "*"
+ipykernel = "*"
 
 [dev-packages]
 
