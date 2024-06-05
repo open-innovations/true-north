@@ -8,5 +8,5 @@ stages:
       - ${TOP}/pipelines/util.py
       - https://github.com/economic-analytics/edd/raw/main/data/parquet/RGVA_LAD.parquet
     outs:
-      - ${TOP}/src/themes/sustainable-growth/_data/gva_lad.csv:
+      - ${TOP}/src/themes/sustainable-growth/gva/_data/gva_lad.csv:
           cache: false
