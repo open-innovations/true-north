@@ -1,0 +1,375 @@
+﻿LAD22CD,LAD22NM,LAD22NMW,ObjectId
+E07000141,South Kesteven,,1
+E07000142,West Lindsey,,2
+E07000143,Breckland,,3
+E07000144,Broadland,,4
+E07000145,Great Yarmouth,,5
+E07000146,King's Lynn and West Norfolk,,6
+E07000147,North Norfolk,,7
+E07000148,Norwich,,8
+E07000149,South Norfolk,,9
+E07000163,Craven,,10
+E07000164,Hambleton,,11
+E07000165,Harrogate,,12
+E07000166,Richmondshire,,13
+E07000167,Ryedale,,14
+E07000168,Scarborough,,15
+E07000169,Selby,,16
+E07000170,Ashfield,,17
+E07000171,Bassetlaw,,18
+E07000172,Broxtowe,,19
+E07000173,Gedling,,20
+E07000174,Mansfield,,21
+E07000175,Newark and Sherwood,,22
+E07000176,Rushcliffe,,23
+E07000177,Cherwell,,24
+E07000178,Oxford,,25
+E07000179,South Oxfordshire,,26
+E07000180,Vale of White Horse,,27
+E07000181,West Oxfordshire,,28
+E07000187,Mendip,,29
+E07000188,Sedgemoor,,30
+E07000189,South Somerset,,31
+E07000192,Cannock Chase,,32
+E07000193,East Staffordshire,,33
+E07000194,Lichfield,,34
+E07000195,Newcastle-under-Lyme,,35
+E07000196,South Staffordshire,,36
+E07000197,Stafford,,37
+E07000198,Staffordshire Moorlands,,38
+E07000199,Tamworth,,39
+E07000200,Babergh,,40
+E07000202,Ipswich,,41
+E07000203,Mid Suffolk,,42
+E07000207,Elmbridge,,43
+E07000208,Epsom and Ewell,,44
+E07000209,Guildford,,45
+E07000210,Mole Valley,,46
+E07000211,Reigate and Banstead,,47
+E07000212,Runnymede,,48
+E07000213,Spelthorne,,49
+E07000214,Surrey Heath,,50
+E07000215,Tandridge,,51
+E07000216,Waverley,,52
+E07000217,Woking,,53
+E07000218,North Warwickshire,,54
+E06000058,"Bournemouth, Christchurch and Poole",,55
+E06000059,Dorset,,56
+E06000060,Buckinghamshire,,57
+E06000061,North Northamptonshire,,58
+E06000062,West Northamptonshire,,59
+E07000008,Cambridge,,60
+E07000009,East Cambridgeshire,,61
+E07000010,Fenland,,62
+E07000011,Huntingdonshire,,63
+E07000012,South Cambridgeshire,,64
+E07000026,Allerdale,,65
+E07000027,Barrow-in-Furness,,66
+E07000028,Carlisle,,67
+E07000029,Copeland,,68
+E07000030,Eden,,69
+E07000031,South Lakeland,,70
+E07000032,Amber Valley,,71
+E07000033,Bolsover,,72
+E07000034,Chesterfield,,73
+E07000035,Derbyshire Dales,,74
+E07000036,Erewash,,75
+E07000037,High Peak,,76
+E07000038,North East Derbyshire,,77
+E07000039,South Derbyshire,,78
+E07000040,East Devon,,79
+E07000041,Exeter,,80
+E07000042,Mid Devon,,81
+E07000043,North Devon,,82
+E07000044,South Hams,,83
+E07000045,Teignbridge,,84
+E07000046,Torridge,,85
+E07000047,West Devon,,86
+E07000061,Eastbourne,,87
+E07000062,Hastings,,88
+E07000063,Lewes,,89
+E07000064,Rother,,90
+E07000065,Wealden,,91
+E07000066,Basildon,,92
+E07000067,Braintree,,93
+E07000068,Brentwood,,94
+E07000069,Castle Point,,95
+E07000070,Chelmsford,,96
+E07000071,Colchester,,97
+E07000072,Epping Forest,,98
+E07000073,Harlow,,99
+E07000074,Maldon,,100
+E07000075,Rochford,,101
+E07000076,Tendring,,102
+E07000077,Uttlesford,,103
+E07000078,Cheltenham,,104
+E07000079,Cotswold,,105
+E07000080,Forest of Dean,,106
+E07000081,Gloucester,,107
+E07000082,Stroud,,108
+E06000001,Hartlepool,,109
+E06000002,Middlesbrough,,110
+E06000003,Redcar and Cleveland,,111
+E06000004,Stockton-on-Tees,,112
+E06000005,Darlington,,113
+E06000006,Halton,,114
+E06000007,Warrington,,115
+E06000008,Blackburn with Darwen,,116
+E06000009,Blackpool,,117
+E06000010,"Kingston upon Hull, City of",,118
+E06000011,East Riding of Yorkshire,,119
+E06000012,North East Lincolnshire,,120
+E06000013,North Lincolnshire,,121
+E06000014,York,,122
+E06000015,Derby,,123
+E06000016,Leicester,,124
+E06000017,Rutland,,125
+E06000018,Nottingham,,126
+E06000019,"Herefordshire, County of",,127
+E06000020,Telford and Wrekin,,128
+E06000021,Stoke-on-Trent,,129
+E06000022,Bath and North East Somerset,,130
+E06000023,"Bristol, City of",,131
+E06000024,North Somerset,,132
+E06000025,South Gloucestershire,,133
+E06000026,Plymouth,,134
+E06000027,Torbay,,135
+E06000030,Swindon,,136
+E06000031,Peterborough,,137
+E06000032,Luton,,138
+E06000033,Southend-on-Sea,,139
+E06000034,Thurrock,,140
+E06000035,Medway,,141
+E06000036,Bracknell Forest,,142
+E06000037,West Berkshire,,143
+E06000038,Reading,,144
+E06000039,Slough,,145
+E06000040,Windsor and Maidenhead,,146
+E06000041,Wokingham,,147
+E06000042,Milton Keynes,,148
+E06000043,Brighton and Hove,,149
+E06000044,Portsmouth,,150
+E06000045,Southampton,,151
+E06000046,Isle of Wight,,152
+E06000047,County Durham,,153
+E06000049,Cheshire East,,154
+E06000050,Cheshire West and Chester,,155
+E06000051,Shropshire,,156
+E06000052,Cornwall,,157
+E06000053,Isles of Scilly,,158
+E06000054,Wiltshire,,159
+E06000055,Bedford,,160
+E06000056,Central Bedfordshire,,161
+E06000057,Northumberland,,162
+E08000032,Bradford,,163
+E08000033,Calderdale,,164
+E08000034,Kirklees,,165
+E08000035,Leeds,,166
+E08000036,Wakefield,,167
+E08000037,Gateshead,,168
+E09000001,City of London,,169
+E09000002,Barking and Dagenham,,170
+E09000003,Barnet,,171
+E09000004,Bexley,,172
+E09000005,Brent,,173
+E09000006,Bromley,,174
+E09000007,Camden,,175
+E09000008,Croydon,,176
+E09000009,Ealing,,177
+E09000010,Enfield,,178
+E09000011,Greenwich,,179
+E09000012,Hackney,,180
+E09000013,Hammersmith and Fulham,,181
+E09000014,Haringey,,182
+E09000015,Harrow,,183
+E09000016,Havering,,184
+E09000017,Hillingdon,,185
+E09000018,Hounslow,,186
+E09000019,Islington,,187
+E09000020,Kensington and Chelsea,,188
+E09000021,Kingston upon Thames,,189
+E09000022,Lambeth,,190
+E09000023,Lewisham,,191
+E09000024,Merton,,192
+E09000025,Newham,,193
+E09000026,Redbridge,,194
+E09000027,Richmond upon Thames,,195
+E09000028,Southwark,,196
+E09000029,Sutton,,197
+E09000030,Tower Hamlets,,198
+E09000031,Waltham Forest,,199
+E09000032,Wandsworth,,200
+E07000083,Tewkesbury,,201
+E09000033,Westminster,,202
+N09000001,Antrim and Newtownabbey,,203
+E07000084,Basingstoke and Deane,,204
+N09000002,"Armagh City, Banbridge and Craigavon",,205
+E07000085,East Hampshire,,206
+N09000003,Belfast,,207
+E07000086,Eastleigh,,208
+N09000004,Causeway Coast and Glens,,209
+E07000087,Fareham,,210
+N09000005,Derry City and Strabane,,211
+E07000088,Gosport,,212
+N09000006,Fermanagh and Omagh,,213
+E07000089,Hart,,214
+N09000007,Lisburn and Castlereagh,,215
+E07000090,Havant,,216
+N09000008,Mid and East Antrim,,217
+E07000091,New Forest,,218
+E07000092,Rushmoor,,219
+E07000093,Test Valley,,220
+E07000094,Winchester,,221
+E07000095,Broxbourne,,222
+E07000096,Dacorum,,223
+E07000098,Hertsmere,,224
+E07000099,North Hertfordshire,,225
+E07000102,Three Rivers,,226
+E07000103,Watford,,227
+E07000105,Ashford,,228
+E07000106,Canterbury,,229
+E07000107,Dartford,,230
+E07000108,Dover,,231
+E07000109,Gravesham,,232
+E07000110,Maidstone,,233
+E07000111,Sevenoaks,,234
+E07000112,Folkestone and Hythe,,235
+E07000113,Swale,,236
+E07000114,Thanet,,237
+E07000115,Tonbridge and Malling,,238
+E07000116,Tunbridge Wells,,239
+E07000117,Burnley,,240
+E07000118,Chorley,,241
+E07000119,Fylde,,242
+E07000120,Hyndburn,,243
+E07000121,Lancaster,,244
+E07000122,Pendle,,245
+E07000123,Preston,,246
+E07000124,Ribble Valley,,247
+E07000125,Rossendale,,248
+E07000126,South Ribble,,249
+E07000127,West Lancashire,,250
+E07000128,Wyre,,251
+E07000129,Blaby,,252
+E07000130,Charnwood,,253
+E07000131,Harborough,,254
+E07000132,Hinckley and Bosworth,,255
+E07000133,Melton,,256
+E07000134,North West Leicestershire,,257
+E07000135,Oadby and Wigston,,258
+E07000136,Boston,,259
+E07000137,East Lindsey,,260
+E07000138,Lincoln,,261
+E07000139,North Kesteven,,262
+E07000140,South Holland,,263
+N09000009,Mid Ulster,,264
+N09000010,"Newry, Mourne and Down",,265
+N09000011,Ards and North Down,,266
+S12000005,Clackmannanshire,,267
+S12000006,Dumfries and Galloway,,268
+S12000008,East Ayrshire,,269
+S12000010,East Lothian,,270
+S12000011,East Renfrewshire,,271
+S12000013,Na h-Eileanan Siar,,272
+S12000014,Falkirk,,273
+S12000017,Highland,,274
+S12000018,Inverclyde,,275
+S12000019,Midlothian,,276
+S12000020,Moray,,277
+S12000021,North Ayrshire,,278
+S12000023,Orkney Islands,,279
+S12000026,Scottish Borders,,280
+S12000027,Shetland Islands,,281
+S12000028,South Ayrshire,,282
+S12000029,South Lanarkshire,,283
+S12000030,Stirling,,284
+S12000033,Aberdeen City,,285
+S12000034,Aberdeenshire,,286
+S12000035,Argyll and Bute,,287
+S12000036,City of Edinburgh,,288
+S12000038,Renfrewshire,,289
+S12000039,West Dunbartonshire,,290
+S12000040,West Lothian,,291
+S12000041,Angus,,292
+S12000042,Dundee City,,293
+S12000045,East Dunbartonshire,,294
+S12000047,Fife,,295
+S12000048,Perth and Kinross,,296
+S12000049,Glasgow City,,297
+S12000050,North Lanarkshire,,298
+W06000001,Isle of Anglesey,Ynys Môn,299
+W06000002,Gwynedd,Gwynedd,300
+W06000003,Conwy,Conwy,301
+W06000004,Denbighshire,Sir Ddinbych,302
+W06000005,Flintshire,Sir y Fflint,303
+W06000006,Wrexham,Wrecsam,304
+W06000008,Ceredigion,Ceredigion,305
+W06000009,Pembrokeshire,Sir Benfro,306
+W06000010,Carmarthenshire,Sir Gaerfyrddin,307
+W06000011,Swansea,Abertawe,308
+W06000012,Neath Port Talbot,Castell-nedd Port Talbot,309
+W06000013,Bridgend,Pen-y-bont ar Ogwr,310
+W06000014,Vale of Glamorgan,Bro Morgannwg,311
+W06000015,Cardiff,Caerdydd,312
+W06000016,Rhondda Cynon Taf,Rhondda Cynon Taf,313
+W06000018,Caerphilly,Caerffili,314
+W06000019,Blaenau Gwent,Blaenau Gwent,315
+W06000020,Torfaen,Torfaen,316
+W06000021,Monmouthshire,Sir Fynwy,317
+W06000022,Newport,Casnewydd,318
+W06000023,Powys,Powys,319
+W06000024,Merthyr Tydfil,Merthyr Tudful,320
+E07000219,Nuneaton and Bedworth,,321
+E07000220,Rugby,,322
+E07000221,Stratford-on-Avon,,323
+E07000222,Warwick,,324
+E07000223,Adur,,325
+E07000224,Arun,,326
+E07000225,Chichester,,327
+E07000226,Crawley,,328
+E07000227,Horsham,,329
+E07000228,Mid Sussex,,330
+E07000229,Worthing,,331
+E07000234,Bromsgrove,,332
+E07000235,Malvern Hills,,333
+E07000236,Redditch,,334
+E07000237,Worcester,,335
+E07000238,Wychavon,,336
+E07000239,Wyre Forest,,337
+E07000240,St Albans,,338
+E07000241,Welwyn Hatfield,,339
+E07000242,East Hertfordshire,,340
+E07000243,Stevenage,,341
+E07000244,East Suffolk,,342
+E07000245,West Suffolk,,343
+E07000246,Somerset West and Taunton,,344
+E08000001,Bolton,,345
+E08000002,Bury,,346
+E08000003,Manchester,,347
+E08000004,Oldham,,348
+E08000005,Rochdale,,349
+E08000006,Salford,,350
+E08000007,Stockport,,351
+E08000008,Tameside,,352
+E08000009,Trafford,,353
+E08000010,Wigan,,354
+E08000011,Knowsley,,355
+E08000012,Liverpool,,356
+E08000013,St. Helens,,357
+E08000014,Sefton,,358
+E08000015,Wirral,,359
+E08000016,Barnsley,,360
+E08000017,Doncaster,,361
+E08000018,Rotherham,,362
+E08000019,Sheffield,,363
+E08000021,Newcastle upon Tyne,,364
+E08000022,North Tyneside,,365
+E08000023,South Tyneside,,366
+E08000024,Sunderland,,367
+E08000025,Birmingham,,368
+E08000026,Coventry,,369
+E08000027,Dudley,,370
+E08000028,Sandwell,,371
+E08000029,Solihull,,372
+E08000030,Walsall,,373
+E08000031,Wolverhampton,,374
