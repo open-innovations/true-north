@@ -42,3 +42,29 @@ rgva |>
   dplyr::group_by(geography.code, geography.name) |>
   dplyr::filter(growth_2019_2022 == max(growth_2019_2022)) |>
   readr::write_csv("working/cs/fasting-growing-sector-by-itl3.csv")
+
+# LAD
+rgva_lad <- arrow::read_parquet(
+  "https://github.com/economic-analytics/edd/raw/main/data/parquet/RGVA_LAD.parquet",
+  as_data_frame = FALSE
+)
+
+rgva_lad |>
+  dplyr::filter(variable.name == "GVA Constant Prices £m") |>
+  dplyr::filter(dates.date == "2019-01-01" | dates.date == "2022-01-01") |>
+  dplyr::inner_join(
+    readr::read_csv(
+      "working/cs/Local_Authority_District_to_Region_(December_2023)_Lookup_in_England.csv",
+      col_select = c("LAD23CD", "RGN23CD")
+    ) |>
+      dplyr::filter(RGN23CD %in% paste0("E1200000", 1:3)) |>
+      dplyr::select(-RGN23CD),
+    by = c("geography.code" = "LAD23CD")
+  ) |>
+  dplyr::filter(grepl("^[A-Z]{1} |ABDE", industry.code)) |>
+  dplyr::collect() |>
+  tidyr::pivot_wider(names_from = dates.date, values_from = value) |>
+  dplyr::mutate(growth_2019_2022 = (`2022-01-01` - `2019-01-01`) / `2019-01-01` * 100) |>
+  dplyr::group_by(geography.code, geography.name) |>
+  dplyr::filter(growth_2019_2022 == max(growth_2019_2022)) |>
+  readr::write_csv("working/cs/fasting-growing-sector-by-lad23.csv")
