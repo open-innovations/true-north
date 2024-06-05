@@ -19,10 +19,10 @@ if __name__ == '__main__':
     paths, names = get_relative_paths('working/datacity/netzero')
     # outs = [os.path.join('src/themes/sustainable-growth/netzero/_data/', f'{name}.csv') for name in ['business_counts', 'employee_counts', 'turnover']]
 
-    codes = pd.read_csv('metadata/LADC_lookup_2022.csv', usecols=['LAD22NM', 'LAD22CD'])
+    codes = pd.read_csv('metadata/LAD23_lookup.csv', usecols=['LAD23NM', 'LAD23CD'])
 
     for path, name in zip(paths, names):
         data = pd.read_csv(f'{path}')
-        data.rename(columns={'Local authority': 'LAD22NM'}, inplace=True)
-        merged = data.merge(codes, how='inner', on='LAD22NM') 
+        data.rename(columns={'Local authority': 'LAD23NM'}, inplace=True)
+        merged = data.merge(codes, how='inner', on='LAD23NM') 
         merged.to_csv(os.path.join('src/themes/sustainable-growth/netzero/_data/',f'{name}'))
