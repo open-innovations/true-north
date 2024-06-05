@@ -1,0 +1,21 @@
+dates.freq,industry.code,industry.name,2019-01-01,2022-01-01,growth_2019_2022
+a,J (58-63),Information and communication,15534,20981,35.065018668726665
+a,M (69-75),"Professional, scientific and technical activities",21970,25596,16.504324078288576
+a,I (55-56),Accommodation and food service activities,10829,12102,11.755471419336965
+a,F (41-43),Construction,22963,24854,8.234986717763357
+a,K (64-66),Financial and insurance activities,20907,22278,6.557612282967427
+a,E (36-39),Water supply; sewerage and waste management,4976,5277,6.04903536977492
+a,C (10-33),Manufacturing,53519,56616,5.786729946374185
+a,L (68),Real estate activities,44683,46936,5.042186066289193
+a,Q (86-88),Human health and social work activities,36559,38109,4.239722093055062
+a,P (85),Education,24521,25504,4.008808776151055
+a,G (45-47),Wholesale and retail trade; repair of motor vehicles,42215,43043,1.9613881321805045
+a,O (84),Public administration and defence,19487,19727,1.2315902909632062
+a,N (77-82),Administrative and support service activities,18613,18777,0.8811046043088164
+a,S (94-96),Other service activities,6386,6334,-0.8142812402129659
+a,R (90-93),"Arts, entertainment and recreation",5121,4781,-6.639328256199962
+a,H (49-53),Transportation and storage,16389,14475,-11.678564891085484
+a,A (1-3),"Agriculture, forestry and fishing",2216,1947,-12.13898916967509
+a,T (97-98),Activities of households,496,432,-12.903225806451612
+a,B (5-9),Mining and quarrying,494,427,-13.562753036437247
+a,D (35),"Electricity, gas, steam and air conditioning supply",6304,3694,-41.402284263959395
