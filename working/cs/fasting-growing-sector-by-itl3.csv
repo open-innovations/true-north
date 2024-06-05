@@ -1,0 +1,39 @@
+dataset,dates.freq,geography.type,geography.code,geography.name,industry.code,industry.name,variable.code,variable.name,variable.unit,2019-01-01,2022-01-01,growth_2019_2022
+RGVA,a,ITL3,TLC11,Hartlepool and Stockton-on-Tees,J (58-63),Information and communication,constant,Constant prices,2019 £m,116,230,98.27586206896551
+RGVA,a,ITL3,TLC12,South Teesside,J (58-63),Information and communication,constant,Constant prices,2019 £m,111,142,27.927927927927925
+RGVA,a,ITL3,TLC13,Darlington,J (58-63),Information and communication,constant,Constant prices,2019 £m,335,669,99.70149253731343
+RGVA,a,ITL3,TLC14,Durham CC,F (41-43),Construction,constant,Constant prices,2019 £m,635,788,24.094488188976378
+RGVA,a,ITL3,TLC21,Northumberland,I (55-56),Accommodation and food service activities,constant,Constant prices,2019 £m,206,278,34.95145631067961
+RGVA,a,ITL3,TLC22,Tyneside,J (58-63),Information and communication,constant,Constant prices,2019 £m,1673,2311,38.135086670651525
+RGVA,a,ITL3,TLC23,Sunderland,J (58-63),Information and communication,constant,Constant prices,2019 £m,109,223,104.58715596330275
+RGVA,a,ITL3,TLD11,West Cumbria,F (41-43),Construction,constant,Constant prices,2019 £m,289,373,29.06574394463668
+RGVA,a,ITL3,TLD12,East Cumbria,M (69-75),"Professional, scientific and technical activities",constant,Constant prices,2019 £m,266,366,37.59398496240601
+RGVA,a,ITL3,TLD33,Manchester,J (58-63),Information and communication,constant,Constant prices,2019 £m,1837,2687,46.271094175285796
+RGVA,a,ITL3,TLD34,Greater Manchester South West,M (69-75),"Professional, scientific and technical activities",constant,Constant prices,2019 £m,1190,2152,80.84033613445378
+RGVA,a,ITL3,TLD35,Greater Manchester South East,M (69-75),"Professional, scientific and technical activities",constant,Constant prices,2019 £m,519,708,36.41618497109826
+RGVA,a,ITL3,TLD36,Greater Manchester North West,T (97-98),Activities of households,constant,Constant prices,2019 £m,10,13,30
+RGVA,a,ITL3,TLD37,Greater Manchester North East,R (90-93),"Arts, entertainment and recreation",constant,Constant prices,2019 £m,65,97,49.23076923076923
+RGVA,a,ITL3,TLD41,Blackburn with Darwen,K (64-66),Financial and insurance activities,constant,Constant prices,2019 £m,71,116,63.38028169014085
+RGVA,a,ITL3,TLD42,Blackpool,I (55-56),Accommodation and food service activities,constant,Constant prices,2019 £m,184,248,34.78260869565217
+RGVA,a,ITL3,TLD44,Lancaster and Wyre,J (58-63),Information and communication,constant,Constant prices,2019 £m,126,177,40.476190476190474
+RGVA,a,ITL3,TLD45,Mid Lancashire,C (10-33),Manufacturing,constant,Constant prices,2019 £m,2435,3244,33.22381930184805
+RGVA,a,ITL3,TLD46,East Lancashire,K (64-66),Financial and insurance activities,constant,Constant prices,2019 £m,124,180,45.16129032258064
+RGVA,a,ITL3,TLD47,Chorley and West Lancashire,C (10-33),Manufacturing,constant,Constant prices,2019 £m,609,805,32.18390804597701
+RGVA,a,ITL3,TLD61,Warrington,M (69-75),"Professional, scientific and technical activities",constant,Constant prices,2019 £m,785,1135,44.5859872611465
+RGVA,a,ITL3,TLD62,Cheshire East,I (55-56),Accommodation and food service activities,constant,Constant prices,2019 £m,330,408,23.636363636363637
+RGVA,a,ITL3,TLD63,Cheshire West and Chester,M (69-75),"Professional, scientific and technical activities",constant,Constant prices,2019 £m,536,708,32.08955223880597
+RGVA,a,ITL3,TLD71,East Merseyside,Q (86-88),Human health and social work activities,constant,Constant prices,2019 £m,1086,1332,22.65193370165746
+RGVA,a,ITL3,TLD72,Liverpool,K (64-66),Financial and insurance activities,constant,Constant prices,2019 £m,1143,1408,23.184601924759406
+RGVA,a,ITL3,TLD73,Sefton,J (58-63),Information and communication,constant,Constant prices,2019 £m,55,82,49.09090909090909
+RGVA,a,ITL3,TLD74,Wirral,M (69-75),"Professional, scientific and technical activities",constant,Constant prices,2019 £m,521,838,60.84452975047985
+RGVA,a,ITL3,TLE11,"Kingston upon Hull, City of",I (55-56),Accommodation and food service activities,constant,Constant prices,2019 £m,143,230,60.83916083916085
+RGVA,a,ITL3,TLE12,East Riding of Yorkshire,I (55-56),Accommodation and food service activities,constant,Constant prices,2019 £m,233,321,37.76824034334764
+RGVA,a,ITL3,TLE13,North and North East Lincolnshire,I (55-56),Accommodation and food service activities,constant,Constant prices,2019 £m,161,250,55.27950310559007
+RGVA,a,ITL3,TLE21,York,J (58-63),Information and communication,constant,Constant prices,2019 £m,205,332,61.951219512195124
+RGVA,a,ITL3,TLE22,North Yorkshire CC,K (64-66),Financial and insurance activities,constant,Constant prices,2019 £m,424,569,34.19811320754717
+RGVA,a,ITL3,TLE31,"Barnsley, Doncaster and Rotherham",J (58-63),Information and communication,constant,Constant prices,2019 £m,309,353,14.239482200647249
+RGVA,a,ITL3,TLE32,Sheffield,J (58-63),Information and communication,constant,Constant prices,2019 £m,850,1447,70.23529411764706
+RGVA,a,ITL3,TLE41,Bradford,K (64-66),Financial and insurance activities,constant,Constant prices,2019 £m,469,649,38.37953091684435
+RGVA,a,ITL3,TLE42,Leeds,J (58-63),Information and communication,constant,Constant prices,2019 £m,2151,3087,43.51464435146444
+RGVA,a,ITL3,TLE44,Calderdale and Kirklees,S (94-96),Other service activities,constant,Constant prices,2019 £m,258,396,53.48837209302325
+RGVA,a,ITL3,TLE45,Wakefield,K (64-66),Financial and insurance activities,constant,Constant prices,2019 £m,79,106,34.177215189873415
