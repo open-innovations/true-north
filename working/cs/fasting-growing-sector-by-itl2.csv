@@ -1,0 +1,12 @@
+dataset,dates.freq,geography.type,geography.code,geography.name,industry.code,industry.name,variable.code,variable.name,variable.unit,2019-01-01,2022-01-01,growth_2019_2022
+RGVA,a,ITL2,TLC1,Tees Valley and Durham,J (58-63),Information and communication,constant,Constant prices,2019 £m,630,1098,74.28571428571429
+RGVA,a,ITL2,TLC2,"Northumberland, and Tyne and Wear",J (58-63),Information and communication,constant,Constant prices,2019 £m,1826,2595,42.11391018619934
+RGVA,a,ITL2,TLD1,Cumbria,M (69-75),"Professional, scientific and technical activities",constant,Constant prices,2019 £m,504,596,18.253968253968253
+RGVA,a,ITL2,TLD3,Greater Manchester,J (58-63),Information and communication,constant,Constant prices,2019 £m,3939,5829,47.98172124904798
+RGVA,a,ITL2,TLD4,Lancashire,I (55-56),Accommodation and food service activities,constant,Constant prices,2019 £m,1081,1367,26.456984273820538
+RGVA,a,ITL2,TLD6,Cheshire,F (41-43),Construction,constant,Constant prices,2019 £m,1873,2243,19.754404698344903
+RGVA,a,ITL2,TLD7,Merseyside,B (5-9),Mining and quarrying,constant,Constant prices,2019 £m,13,15,15.384615384615385
+RGVA,a,ITL2,TLE1,East Yorkshire and Northern Lincolnshire,I (55-56),Accommodation and food service activities,constant,Constant prices,2019 £m,538,801,48.88475836431227
+RGVA,a,ITL2,TLE2,North Yorkshire,E (36-39),Water supply; sewerage and waste management,constant,Constant prices,2019 £m,144,192,33.33333333333333
+RGVA,a,ITL2,TLE3,South Yorkshire,J (58-63),Information and communication,constant,Constant prices,2019 £m,1159,1800,55.30629853321829
+RGVA,a,ITL2,TLE4,West Yorkshire,J (58-63),Information and communication,constant,Constant prices,2019 £m,2850,3885,36.31578947368421
