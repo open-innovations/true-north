@@ -50,5 +50,6 @@ site.copy('CNAME');
 site.copy('.nojekyll');
 site.copy('assets/images');
 site.copy('assets/css/fonts');
+site.copy('assets/js');
 
 export default site;

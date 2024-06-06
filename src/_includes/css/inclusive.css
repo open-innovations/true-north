@@ -1,0 +1,26 @@
+toggle-section, .toggle-section {
+    & [hidden] {
+      display: none;
+    }
+    & button {
+      all: inherit;
+      border: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      & svg {
+        height: 1em;
+        margin-left: 0.5em;
+      }
+      &:focus svg {  
+        outline: 2px solid;
+      }
+    }
+    & [aria-expanded] rect {
+      fill: currentColor;
+    }
+    & [aria-expanded="true"] .vert {
+      display: none;
+    }
+  }
