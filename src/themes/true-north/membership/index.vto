@@ -3,22 +3,30 @@ title: Membership
 theme: true-north
 nicetheme: True North
 ---
-<h3>True North membership</h3>
-<p>The chart below shows the cumulative number of people that filled out the questionnaire required when joining the True North network</p>
+<p>
+    The chart below shows the cumulative number of members, and the cumulutive number of unique organisations, 
+    in the True North network. In some months no one joined the network, so the data points are not evenly spaced.
+</p>
 {{ comp.oi.chart.line({ config: {
-    data: cumsum_members,
+    data: cumsum,
     height: 600,
     legend: {
         show: true },
     axis: {
-        x: { title: { label: "Date" }, grid: { 'stroke-dasharray': "6 2", 'stroke-width': "1"} },
-        y: { title: { label: "Members" }, grid: { "stroke-width": "1"}, tick: { spacing: 50} }
+        x: { title: { label: "Date" }, grid: { show: true,  'stroke-dasharray': "6 2", 'stroke-width': "1" }, tick: { spacing: 1 } },
+        y: { title: { label: "Members" }, grid: { show: false, "stroke-width": "1"}, tick: { spacing: 50} }
     },
     series: [{
-        title: "Members",
+        title: "Individuals",
         x: "year",
-        y: "count",
-		tooltip: "<strong class=\"subtitle\">Members</strong><br />{{ year }}: <strong class=\"number\">{{ _y }}</strong>"
+        y: "individuals",
+		tooltip: "<strong class=\"subtitle\">Individuals</strong><br />{{ year }}: <strong class=\"number\">{{ _y }}</strong>"
+	    },
+        {
+        title: "Organisations",
+        x: "year",
+        y: "orgs",
+		tooltip: "<strong class=\"subtitle\">Organisations</strong><br />{{ year }}: <strong class=\"number\">{{ _y }}</strong>"
 	    }]
         } 
     }) 
