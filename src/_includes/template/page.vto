@@ -5,4 +5,7 @@ layout: template/base.vto
     <p>Back to <a href="/themes/{{ theme }}">{{ nicetheme }}</a><p>
 {{ /if }}
 <h1>{{ title }}</h1>
+{{ if updated }}
+<p class="updated">Updated: <time datetime="{{ updated }}">{{ updated |> date('d MMMM yyyy') }}</time></p>
+{{ /if }}
 {{ content |> safe }}

@@ -120,7 +120,7 @@ ol>li:before {
 }
 .oi-dashboard-inner .panel h3 { font-size: 1.2rem; }
 .oi-dashboard-inner .panel span { display: block; }
-.oi-dashboard-inner .panel .bignum { font-size: 3rem; line-height: 1em; margin-top: 0; }
+.oi-dashboard-inner .panel .bignum { font-size: 3rem; line-height: 1em; margin-top: 0.5rem; }
 .oi-dashboard-inner .footnote {
 	font-size: 0.7em;
 	text-align: left;
