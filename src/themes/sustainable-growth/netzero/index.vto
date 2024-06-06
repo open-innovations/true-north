@@ -3,25 +3,6 @@ title: Net Zero
 theme: sustainable-growth
 nicetheme: "Sustainable Growth"
 ---
-<div class='warning padded'>
-    <h3>About the data on this page</h3>
-    <p>
-        The data on this page was calculated using The Data City's "Net Zero" Real-time industrial classification (RTIC).
-        These statistics are estimates calculated using their analyse tool, which has caveats and limitations.
-        Before interpreting these statistics, please read their blog on 
-        <a href="https://thedatacity.com/analyse-using-analyse-for-location-analysis/">how the analysis tool works</a>
-        and <a href="https://help.thedatacity.com/knowledge/using-analyse#analysis-summary-box">explanations of the headline statistics</a>.
-    </p>
-    <p>
-        In addition to the Net Zero classification, the following criteria were applied to the list of companies:
-        <ul>
-            <li>Must have its registered address in any of: the North East, North West, or Yorkshire and the Humber (ITL1 regions).</li>
-            <li>Up to 250 employees.</li>
-            <li>Up to £10 million annual turnover.</li>
-            <li>Exclude <a href="https://help.thedatacity.com/knowledge/what-are-companies-with-potential-anomalies">outliers</a>.</li>
-        </ul>
-    </p>
-</div>
 {{ comp.oi.dashboard ({ config: {
 	title: "name",
 	value: "value",
@@ -176,3 +157,28 @@ nicetheme: "Sustainable Growth"
 		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />Estimated turnover: <strong class=\"number\">£{{ {{ _value }} | toLocaleString() }}</strong>"
 	}
 }) }}
+{{# {{ comp.collapse ({
+	heading: "About the data on this page",
+	content: 'blah'
+	})
+}} #}}
+<div class='warning padded'>
+    <h3>About the data on this page</h3>
+    <p>
+        The data on this page was calculated using The Data City's "Net Zero" Real-time industrial classification (RTIC).
+        These statistics are estimates calculated using their analyse tool, which has caveats and limitations.
+        Before interpreting these statistics, please read their blog on 
+        <a href="https://thedatacity.com/analyse-using-analyse-for-location-analysis/">how the analysis tool works</a>
+        and <a href="https://help.thedatacity.com/knowledge/using-analyse#analysis-summary-box">explanations of the headline statistics</a>.
+    </p>
+    <p>
+        In addition to the Net Zero classification, the following criteria were applied to the list of companies:
+        <ul>
+            <li>Must have its registered address in any of: the North East, North West, or Yorkshire and the Humber (ITL1 regions).</li>
+            <li>Up to 250 employees.</li>
+            <li>Up to £10 million annual turnover.</li>
+            <li>Exclude <a href="https://help.thedatacity.com/knowledge/what-are-companies-with-potential-anomalies">outliers</a>.</li>
+        </ul>
+    </p>
+</div>
+</div>
