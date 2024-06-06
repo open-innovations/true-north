@@ -12,6 +12,9 @@ header .logo, header .title { color: var(--color-heading-light); }
 header .logo svg { height: 22px; }
 header .title { padding-top: 1rem; font-size: 2.6875rem; }
 header a:hover, header a:focus { text-decoration: none; }
+
+.holder { width: 1200px; }
+
 h1, .title, .number, .bignum, ol>li:before {
 	letter-spacing: -.05em;
 	font-family: var(--oi-title-fontstack);

@@ -71,7 +71,7 @@ header nav ul {
 }
 header nav ul li { display: inline-block; }
 header nav ul > li > a { padding: 0.5em 1em; display: inline-block; width: 100%; color: inherit; line-height: 1em; }
-header nav ul > li > a:hover, header nav ul > li > a:focus { background: white; color: black; }
+header nav ul > li > a:hover, header nav ul > li > a:focus, .in-section, .in-section:visited { background: white; color: black; }
 
 .grid { display: grid; grid-template-columns: repeat(2,1fr); grid-gap: 1em; }
 .grid .pane { background: #f9f9f9; }
