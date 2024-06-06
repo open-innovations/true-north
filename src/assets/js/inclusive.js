@@ -30,7 +30,7 @@ function initialiseToggleSections() {
       // TODO Check if heading is a heading?
   
       // find classes
-      const classes = Array.from<string>(toggleSection.classList).filter(x => x !== 'toggle-section');
+      // const classes = Array.from<string>(toggleSection.classList).filter(x => x !== 'toggle-section');
       
       // Update the innerHTML with a button and SVG indicator
       heading.innerHTML = `<button aria-expanded="false">
@@ -42,7 +42,7 @@ function initialiseToggleSections() {
       
       // Create a div to contain the hideable stuff
       const container = document.createElement('div');
-      container.classList.add(...classes);
+      // container.classList.add(...classes);
       // ...and set it to hidden
       container.hidden = true;
       // ...and append it as the last child of the toggleSection
