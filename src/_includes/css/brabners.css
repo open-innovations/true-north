@@ -1,25 +1,5 @@
-@font-face {
-    font-family: 'Libre Caslon Text';
-    src: url('fonts/LibreCaslon/librecaslontext-bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Libre Caslon Text';
-    src: url('fonts/LibreCaslon/librecaslontext-italic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Libre Caslon Text';
-    src: url('fonts/LibreCaslon/librecaslontext-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
+@import 'css/brabners-fonts.css';
 :root {
-	--oi-title-fontstack: Libre Caslon Text,serif;
-	--oi-main-fontstack: Roboto,"Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 	color: #262626;
 	--color-heading: #9d6646;
 	--color-heading-light: #dc8c5d;

@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Libre Caslon Text';
+    src: url('fonts/LibreCaslon/librecaslontext-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Libre Caslon Text';
+    src: url('fonts/LibreCaslon/librecaslontext-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Libre Caslon Text';
+    src: url('fonts/LibreCaslon/librecaslontext-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+:root {
+	--oi-title-fontstack: Georgia,Libre Caslon Text,serif;
+	--oi-main-fontstack: "Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
