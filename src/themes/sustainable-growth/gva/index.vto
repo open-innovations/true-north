@@ -49,7 +49,9 @@ nicetheme: "Sustainable Growth"
 		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />GVA: <strong class=\"number\">£{{ {{ _value }} | toLocaleString() }} M</strong>"
 	}
 }) }}
+
 <h3>Fastest growing sectors by Local Authority</h3>
+
 {{ comp.oi.map.hex_cartogram({
 	"config": {
 		"width": 600,
@@ -86,6 +88,6 @@ nicetheme: "Sustainable Growth"
 				"label": "filterLabel"
 			}
 		},
-		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />The fastest growing sector was {{ industry.name }}. <br />Growth in GVA from 2019 to 2022: <strong class=\"number\">{{ {{ _value }} | toLocaleString() | toFixed(1) }} %</strong>"
+		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />Fastest growing sector: <strong>{{ industry.name }}</strong> <br />Percetange change in GVA 2019-22: <strong class=\"number\">{{ {{ _value }} | toLocaleString() | toFixed(1) }} %</strong>"
 	}
 }) }}

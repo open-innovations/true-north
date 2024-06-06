@@ -1,0 +1,24 @@
+---
+title: Membership
+theme: true-north
+nicetheme: True North
+---
+<h3>membership over time</h3>
+{{ comp.oi.chart.line({ config: {
+    data: cumsum_members,
+    height: 600,
+    legend: {
+        show: true },
+    axis: {
+        x: { title: { label: "Date" }, grid: { 'stroke-dasharray': "6 2", 'stroke-width': "1"} },
+        y: { title: { label: "Members" }, grid: { "stroke-width": "1"}, tick: { spacing: 50} }
+    },
+    series: [{
+        title: "Members",
+        x: "year",
+        y: "count",
+		tooltip: "<strong class=\"subtitle\">Members</strong><br />{{ year }}: <strong class=\"number\">{{ _y }}</strong>"
+	    }]
+        } 
+    }) 
+}}
