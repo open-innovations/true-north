@@ -38,6 +38,7 @@ h1, .title, .number, .bignum, ol>li:before {
 }
 h1, h2, h3, h4 {
 	color: var(--color-heading);
+	margin-bottom: 0;
 }
 h1 {
 	font-size: 2.6875rem;
@@ -108,6 +109,7 @@ ol>li:before {
 .oi-legend-inner .oi-legend-item:hover, .oi-legend-inner .oi-legend-item:focus { outline: 1px solid #b17450!important; }
 .oi-legend-inner .oi-legend-item.oi-series-off { opacity: 0.3; }
 
+.oi-dashboard + * { margin-top: 1rem; }
 .oi-dashboard-inner { display: flex; gap: 1em; flex-wrap: wrap; flex-direction: row; align-items: stretch; }
 .oi-dashboard-inner .panel {
 	width: 330px;
@@ -117,7 +119,8 @@ ol>li:before {
 	padding: 1rem;
 }
 .oi-dashboard-inner .panel h3 { font-size: 1.2rem; }
-.oi-dashboard-inner .panel .bignum { font-size: 3rem; }
+.oi-dashboard-inner .panel span { display: block; }
+.oi-dashboard-inner .panel .bignum { font-size: 3rem; line-height: 1em; margin-top: 0; }
 .oi-dashboard-inner .footnote {
 	font-size: 0.7em;
 	text-align: left;

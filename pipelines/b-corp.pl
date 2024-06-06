@@ -6,6 +6,7 @@ use strict;
 use JSON::XS;
 use Data::Dumper;
 use Cwd qw(abs_path);
+use POSIX qw(strftime);
 binmode STDOUT, 'utf8';
 binmode STDERR, 'utf8';
 
@@ -19,6 +20,7 @@ my $dir = $basedir."../working/b-corp/";
 my $ofile = $basedir."../src/themes/true-north/_data/bcorp_list.csv";
 my $lfile = $basedir."../src/themes/true-north/_data/bcorp_by_la.csv";
 my $sfile = $basedir."../src/_data/dashboard/bcorp_north.csv";
+my $vfile = $basedir."../src/themes/true-north/b-corporations/index.vto";
 my $pcdfile = $dir."postcodes.csv";
 my $hexfile = $basedir."../src/_data/hexjson/uk-local-authority-districts-2023.hexjson";
 
@@ -35,7 +37,7 @@ my $n = 0;
 my $nbhits = 1;
 my $page = 0;
 my $nperpage = 500;
-my ($json,$file,@hits,$i,$key,$csv,$fh,$pcds,$la,$ladata,$pcd,@sizes,$s,$industries,$industry,$sectors,$own,$owned);
+my ($json,$file,@hits,$i,$key,$csv,$fh,$pcds,$la,$ladata,$pcd,@sizes,$s,$industries,$industry,$sectors,$sector,$own,$owned);
 while($n < $nbhits){
 	$file = $dir."page-$page.json";
 	if(!-e $file || -s $file == 0){
@@ -139,6 +141,10 @@ foreach $own (sort(keys(%{$owned}))){
 	print $fh ",Owned";
 	$n++;
 }
+foreach $sector (sort(keys(%{$sectors}))){
+	print $fh ",Sector";
+	$n++;
+}
 foreach $industry (sort(keys(%{$industries}))){
 	print $fh ",Industry";
 	$n++;
@@ -151,6 +157,9 @@ for($s = 0; $s < @sizes; $s++){
 }
 foreach $own (sort(keys(%{$owned}))){
 	print $fh ",\"$own\"";
+}
+foreach $sector (sort(keys(%{$sectors}))){
+	print $fh ",\"$sector\"";
 }
 foreach $industry (sort(keys(%{$industries}))){
 	print $fh ",\"$industry\"";
@@ -169,6 +178,9 @@ foreach $la (sort(keys(%{$hexes}))){
 	}
 	foreach $own (sort(keys(%{$owned}))){
 		print $fh ",".($ladata->{$la}{'owned'}{$own}||"0");
+	}
+	foreach $sector (sort(keys(%{$sectors}))){
+		print $fh ",".($ladata->{$la}{'sectors'}{$sector}||"0");
 	}
 	foreach $industry (sort(keys(%{$industries}))){
 		print $fh ",".($ladata->{$la}{'industries'}{$industry}||"0");
@@ -189,6 +201,10 @@ print $fh "\"Northern B Corps\",$total,,\n";
 close($fh);
 
 msg("Total of <yellow>$total<none> northern corps out of <yellow>$nbhits<none>.");
+
+
+updateCreationTimestamp($vfile);
+
 
 
 ##############################
@@ -345,4 +361,22 @@ sub FindThatLocalAuthority {
 		}
 	}
 	return "";
+}
+
+
+#######################
+sub updateCreationTimestamp {
+	my $file = shift;
+	my(@lines,$fh,$i,$dt);
+	open($fh,$file);
+	@lines = <$fh>;
+	close($fh);
+	$dt = strftime("%FT%H:%M", localtime);
+	for($i = 0; $i < @lines ; $i++){
+		$lines[$i] =~ s/^(updated: )(.*)/$1$dt/;
+	}
+	msg("Updating timestamp in <cyan>$file<none>\n");
+	open($fh,">",$file);
+	print $fh @lines;
+	close($fh);
 }
