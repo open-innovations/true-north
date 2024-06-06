@@ -181,15 +181,8 @@ nicetheme: "Sustainable Growth"
 		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />Estimated turnover: <strong class=\"number\">£{{ {{ _value }} | toLocaleString() }}</strong>"
 	}
 }) }}
-<div class='warning padded'>
-{{ comp.collapse ({
-	heading: "About the data on this page",
-	content: 'Test'
-	})
-}}
-</div>
 
-<div class='warning padded'>
+{{ comp collapse {'classes':'warning padded'} }}
     <h3>About the data on this page</h3>
     <p>
         The data on this page was calculated using The Data City's "Net Zero" Real-time industrial classification (RTIC).
@@ -207,4 +200,4 @@ nicetheme: "Sustainable Growth"
             <li>Exclude <a href="https://help.thedatacity.com/knowledge/what-are-companies-with-potential-anomalies">outliers</a>.</li>
         </ul>
     </p>
-</div>
+{{ /comp }}

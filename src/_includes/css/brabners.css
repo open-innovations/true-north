@@ -125,3 +125,6 @@ input[type="range"].oi-slider-control:focus::-webkit-slider-thumb { outline: 4px
 input[type="range"].oi-slider-control::-moz-range-track { background-color: #dbcabe; border-radius: 0.5rem; height: 0.5rem; }
 input[type="range"].oi-slider-control::-moz-range-thumb { background-color: #9d6646; border: none; border-radius: 1em; height: 1.5em; width: 1.5em; }
 input[type="range"].oi-slider-control:focus::-moz-range-thumb{ outline: 4px solid #262626; }
+
+.toggle-section button:hover, .toggle-section button:focus { cursor: help; }
+.toggle-section button:hover svg, .toggle-section button:focus svg { color: rgb(38 38 38)!important; }
