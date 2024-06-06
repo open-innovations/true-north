@@ -8,6 +8,10 @@
 .bg-navy-radial { background-image: radial-gradient(44.76% 50% at 50% 50%,#373f50 5.11%,#181b25 100%); }
 .brabners-bg-dark { background: #181b25; color: white; }
 .brabners-bg-light { background: white; color: #262626; }
+
+html, body { line-height: 1.875rem; }
+p, iframe, h2, h3, figure, ul, ol, .block, .padded-bottom { margin-bottom: 1.25rem; letter-spacing: .03rem; }
+
 header .logo, header .title { color: var(--color-heading-light); }
 header .logo svg { height: 22px; }
 header .title { padding-top: 1rem; font-size: 2.6875rem; }
@@ -125,6 +129,13 @@ input[type="range"].oi-slider-control:focus::-webkit-slider-thumb { outline: 4px
 input[type="range"].oi-slider-control::-moz-range-track { background-color: #dbcabe; border-radius: 0.5rem; height: 0.5rem; }
 input[type="range"].oi-slider-control::-moz-range-thumb { background-color: #9d6646; border: none; border-radius: 1em; height: 1.5em; width: 1.5em; }
 input[type="range"].oi-slider-control:focus::-moz-range-thumb{ outline: 4px solid #262626; }
+
+.oi-filter .oi-filter-button { border: 0px; background: #dc8c5d; border-radius: 1.5rem; }
+.oi-filter.searching .oi-filter-button { border-top-right-radius: 0; border-bottom-right-radius: 0;  }
+.oi-filter-button svg g { stroke: black; }
+.oi-filter input { border: solid var(--filter-padding) #dc8c5d; border-radius: 1.5rem; }
+.oi-filter-results { padding: 0 1rem; }
+.oi-filter-results button { border: 0; }
 
 .toggle-section button:hover, .toggle-section button:focus { cursor: help; }
 .toggle-section button:hover svg, .toggle-section button:focus svg { color: rgb(38 38 38)!important; }
