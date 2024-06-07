@@ -31,3 +31,43 @@ nicetheme: True North
         } 
     }) 
 }}
+
+<h3>Sector word frequency</h3>
+<p>
+    This chart shows the frequency of words mentioned in the question "What sector do you operate in?".
+</p>
+{{ comp.oi.chart.bar ({ config: {
+    data: sector_word_counts,
+    height: 600,
+    legend: { show: true },
+    category: "name",
+    axis: { 
+        x: { 
+            min: 0,
+            max: 20,
+            grid: { "stroke-dasharray": '6 2', "stroke-width": 1 },
+            ticks: [{
+                value: 0,
+                label: "0"},
+                {
+                value: 5,
+                label: "5"},
+                {
+                value: 10,
+                label: "10"},
+                {
+                value: 15,
+                label: "15"},
+                {
+                value: 20,
+                label: "20"}
+            ]} 
+        },
+    series: [{
+        title: "Frequency",
+        value: "count",
+        tooltip: '<strong>Frequency</strong><br />{{ name }}: {{ count }}'
+        }]    
+    }
+    })
+}}
