@@ -10,13 +10,17 @@ def get_relative_paths(dir):
     names = []
     for root, _, files in os.walk(dir):
         for file in files:
-            f_paths.append(os.path.join(root, file))
-            names.append(file.split("-")[1])
+            if file == '.gitignore':
+                continue
+            if 'local_authority' in file:
+                f_paths.append(os.path.join(root, file))
+                names.append(file.split("-")[1])
     return f_paths, names
 
 if __name__ == '__main__':
     
     paths, names = get_relative_paths('working/datacity/netzero')
+    print(names, paths)
     # outs = [os.path.join('src/themes/sustainable-growth/netzero/_data/', f'{name}.csv') for name in ['business_counts', 'employee_counts', 'turnover']]
 
     codes = pd.read_csv('metadata/LAD23_lookup.csv', usecols=['LAD23NM', 'LAD23CD'])
