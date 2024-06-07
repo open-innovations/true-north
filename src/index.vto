@@ -15,13 +15,13 @@ nav: about
   <p>
   True North is about highlighting all this activity and bringing it together in one place. One network for purpose-led organisations, our 'Northern Stars' — small businesses, SMEs, social enterprises and foundations — who don't have a voice.
   </p>
-  <p class='warning padded'>WARNING: Above taken from the <a href="https://www.brabners.com/true-north-network">True North website</a> home page.</p>
+  <p class='warning padded'>Above taken from the <a href="https://www.brabners.com/true-north-network">True North website</a> home page.</p>
 
 {{ comp.oi.dashboard ({ config: {
 	title: "name",
 	value: "value",
   note: "Link",
-  data: dashboard.true_north_list,
+  data: dashboard.true_north_members_list,
   columns: [{ 
     name: 'Link',
     template: '<a href="{{ URL }}">{{ footnote }}</a>' 
@@ -30,8 +30,8 @@ nav: about
       { name: "Total members" },
       { name: "Total companies" },
       { name: "Membership increase" },
-      { name: "Companies with 1-10 employees" },
-      { name: "Top sector" },
+      { name: "Companies with 0-9 employees" },
+      { name: "Top industry" },
       { name: "Geographic reach" },
       { name: "Advisory council" },
       { name: "Northern stars" },
@@ -41,5 +41,10 @@ nav: about
     }
   })
 }}
-
-<p class='warning padded'>WARNING: Data above is not accurate and may be changed or removed without notice.</p>
+{{ comp collapse {'classes':'warning padded'} }}
+  <h4>About the data</h4>
+  <p>
+    The data above was generated from questionnaire responses. As the questionnaire has changed over time, some fields were incomplete for some responses. 
+    You can read the details on <a href="themes/true-north/membership/">how we processed this data</a>.
+  </p>
+{{ /comp }}
