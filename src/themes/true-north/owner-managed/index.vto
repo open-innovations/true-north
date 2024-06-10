@@ -210,3 +210,111 @@ nicetheme: True North
 		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />Estimated turnover: <strong class=\"number\">£{{ {{ _value }} | toLocaleString() }}</strong>"
 	}
 }) }}
+
+<h3>RTIC Sector counts</h3>
+{{ comp.oi.chart.bar ({ config: {
+    data: RTIC_sector_counts,
+    height: 600,
+    legend: { show: true },
+    category: "RTIC",
+    axis: { 
+        x: { 
+            min: 0,
+            max: 1500,
+            ticks: [{
+                value: 1500,
+                label: "1500"},
+                {
+                value: 1000,
+                label: "1000"},
+                {
+                value: 500,
+                label: "500"},
+                {
+                value: 0,
+                label: "0"}
+                ]},
+            grid: { 'stroke-dasharray': '6 2', 'stroke-width': 1 } 
+        },
+    series: [
+        {
+        title: "Count",
+        value: "Count",
+        tooltip: '<strong>{{ RTIC }}</strong><br />Count: {{ Count }}' }
+        ]
+    } 
+    })
+}}
+
+<h3>Employees by RTIC sector</h3>
+{{ comp.oi.chart.bar ({ config: {
+    data: Employees_by_RTIC_sector,
+    height: 600,
+    legend: { show: true },
+    category: "RTIC",
+    axis: { 
+        x: { 
+            min: 0,
+            max: 15000,
+            ticks: [{
+                value: 15000,
+                label: "15k"},
+                {
+                value: 10000,
+                label: "10k"},
+                {
+                value: 5000,
+                label: "5k"},
+                {
+                value: 0,
+                label: "0"}
+                ]},
+            grid: { 'stroke-dasharray': '6 2', 'stroke-width': 1 } 
+        },
+    series: [
+        {
+        title: "Estimated employees",
+        value: "Count",
+        tooltip: '<strong>{{ RTIC }}</strong><br />Estimated employees: {{ Count | toLocaleString() }}' }
+        ]
+    } 
+    })
+}}
+
+<h3>Turnover by RTIC sector</h3>
+{{ comp.oi.chart.bar ({ config: {
+    data: Turnovers_by_RTIC_sector,
+    height: 600,
+    legend: { show: true },
+    category: "RTIC",
+    axis: { 
+        x: { 
+            min: 0,
+            max: 1000000000,
+            ticks: [{
+                value: 250000000,
+                label: "£250M"},
+                {
+                value: 500000000,
+                label: "£500M"},
+                {
+                value: 750000000,
+                label: "£750M"},
+                {
+                value: 1000000000,
+                label: "£1B"},
+                {
+                value: 0,
+                label: "0"}
+                ]},
+            grid: { 'stroke-dasharray': '6 2', 'stroke-width': 1 } 
+        },
+    series: [
+        {
+        title: "Estimated turnover",
+        value: "Count", 
+        tooltip: '<strong>{{ RTIC }}</strong><br />Estimated turnover: £{{ Count | toLocaleString() }}' }
+        ]
+    } 
+    })
+}}
