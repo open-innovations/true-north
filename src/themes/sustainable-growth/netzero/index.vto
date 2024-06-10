@@ -3,6 +3,15 @@ title: Net Zero
 theme: sustainable-growth
 nicetheme: "Sustainable Growth"
 ---
+<p>
+	This page shows data for companies in the North of England who are classified under The 
+	Data City's Net Zero Real-time Industrial Classification (RTIC). This data allows us to map 
+	the Net Zero economy in the U.K, which isn't possible using traditional economic sectors.
+	In partnership with the ECIU and CBI economics, The Data City produced  
+	a <a href="https://thedatacity.com/blog/new-report-showcases-the-uks-net-zero-economy/">report 
+	mapping the net zero economy</a>. We have taken a cut of that data for the North of England and present
+	a broad summary of the results below.
+</p>
 {{ comp.oi.dashboard ({ config: {
 	title: "name",
 	value: "value",
@@ -18,7 +27,6 @@ nicetheme: "Sustainable Growth"
         }
     })
 }}
-
 <h3>Business counts by local authority</h3>
 <p>Estimates for the number of businesses working in the Net Zero Real-time Industrial Classification</p>
 {{ comp.oi.map.hex_cartogram({
@@ -182,11 +190,125 @@ nicetheme: "Sustainable Growth"
 	}
 }) }}
 
+<h3>Company size by number of employees</h3>
+<p>
+	This chart shows the size of companies classified under the Net Zero RTIC according to employee counts.
+	The standard definitions of company sizes are: Micro: 0-9, Small: 10-49, Medium: 50-249.
+</p>
+
+{{ comp.oi.chart.bar ({ config: {
+	data: company_size_by_employees,
+	height: 600,
+	category: 'Company size',
+	axis: {
+		x:{
+			grid: { "stroke-dasharray": '6 2', "stroke-width": 1 }
+			}
+		},
+	series: [{
+		title: 'Number of Companies',
+		value: 'Count'
+		}]
+	} 
+	})
+}}
+
+<h3>Employees by year</h3>
+<p>
+	This chart shows the measured and projected number of employees working at companies classified under the Net Zero RTIC.
+</p>
+<p class='warning padded'>
+	Important note: For a given year, companies have until the end of the following year to file their accounts. This explains the low value for 2023 measured number of employees.
+	You can read more about <a href="https://help.thedatacity.com/knowledge/estimated-turnover-employees-growth">how employee and turnover 
+	numbers are estimated</a>.
+</p>
+
+{{ comp.oi.chart.line ({ config: {
+	data: employees_by_year,
+	legend: { show: true },
+	axis: { 
+		x: { 
+			title: { label: "Year" },
+			grid: { show: true, "stroke-dasharray": '6 2', "stroke-width": 1 } 
+			},
+		y: { 
+			min: 0, 
+			max: 25000, 
+			title: { label: "Estimated employees" },
+			ticks: [
+				{ value: 0, label: '0k'}, 
+				{ value: 5000, label: '0.5k'}, 
+				{ value: 10000, label: '1k'}, 
+				{ value: 15000, label: '1.5k'}, 
+				{ value: 20000, label: '2k'}, 
+				{ value: 25000, label: '2.5k' }
+					]
+				} 
+		},
+	series: [{
+		title: "Measured total",
+		x: "Year", 
+		y: "measured_total",
+		tooltip: "<strong class=\"subtitle\">Measured total</strong><br />{{ Year }}: <strong class=\"number\">{{ _y }}%</strong>"
+		},
+		{
+		title: "Projected total",
+		x: "Year", 
+		y: "projected_total",
+		tooltip: "<strong class=\"subtitle\">Projected total</strong><br />{{ Year }}: <strong class=\"number\">{{ _y }}</strong>"
+		}]
+	}
+	})
+}}
+
+<h3> Turnover by year</h3>
+This chart shows the measured and projected turnover of companies classified under the Net Zero RTIC.
+<p class='warning padded'>
+	Important note: For a given year, companies have until the end of the following year to file their accounts. This explains the low value for 2023 measured number of employees.
+	You can read more about <a href="https://help.thedatacity.com/knowledge/estimated-turnover-employees-growth">how employee and turnover 
+	numbers are estimated</a>.
+</p>
+{{ comp.oi.chart.line ({ config: {
+	data: turnover_by_year,
+	legend: { show: true },
+	axis: { 
+		x: { 
+			title: { label: "Year" },
+			grid: { show: true, "stroke-dasharray": '6 2', "stroke-width": 1 } 
+			},
+		y: { 
+			min: 0, 
+			max: 2500000000, 
+			title: { label: "Estimated turnover" }, 
+			ticks: [
+				{ value: 0, label: '0B'}, 
+				{ value: 500000000, label: '0.5B'}, 
+				{ value: 1000000000, label: '1B'}, 
+				{ value: 1500000000, label: '1.5B'}, 
+				{ value: 2000000000, label: '2B'}, 
+				{ value: 2500000000, label: '2.5B' }]
+				}
+			},
+	series: [{
+		title: "Measured total (GBP)",
+		x: "Year", 
+		y: "Measured total (GBP)",
+		tooltip: "<strong class=\"subtitle\">Measured total (GBP)</strong><br />{{ Year }}: <strong class=\"number\">£{{ _y | toLocaleString() }}</strong>"
+		},
+		{
+		title: "Projected total (GBP)",
+		x: "Year", 
+		y: "Projected total (GBP)",
+		tooltip: "<strong class=\"subtitle\">Projected total (GBP)</strong><br />{{ Year }}: <strong class=\"number\">£{{ _y | toLocaleString() }}</strong>"
+		}]
+	}
+	})
+}}
 {{ comp collapse {'classes':'warning padded'} }}
     <h3>About the data on this page</h3>
     <p>
         The data on this page was calculated using The Data City's "Net Zero" Real-time industrial classification (RTIC).
-        These statistics are estimates calculated using their analyse tool, which has caveats and limitations.
+        These statistics are estimates calculated using their analyse tool, which has important limitations to be aware of.
         Before interpreting these statistics, please read their blog on 
         <a href="https://thedatacity.com/analyse-using-analyse-for-location-analysis/">how the analysis tool works</a>
         and <a href="https://help.thedatacity.com/knowledge/using-analyse#analysis-summary-box">explanations of the headline statistics</a>.
