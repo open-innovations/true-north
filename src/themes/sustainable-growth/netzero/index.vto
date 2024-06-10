@@ -225,6 +225,7 @@ nicetheme: "Sustainable Growth"
 
 {{ comp.oi.chart.line ({ config: {
 	data: employees_by_year,
+	height: 600,
 	legend: { show: true },
 	axis: { 
 		x: { 
@@ -264,13 +265,14 @@ nicetheme: "Sustainable Growth"
 <h3> Turnover by year</h3>
 This chart shows the measured and projected turnover of companies classified under the Net Zero RTIC.
 <p class='warning padded'>
-	Important note: For a given year, companies have until the end of the following year to file their accounts. This explains the low value for 2023 measured number of employees.
+	Important note: For a given year, companies have until the end of the following year to file their accounts. This explains the low value for 2023 measured turnover.
 	You can read more about <a href="https://help.thedatacity.com/knowledge/estimated-turnover-employees-growth">how employee and turnover 
 	numbers are estimated</a>.
 </p>
 {{ comp.oi.chart.line ({ config: {
 	data: turnover_by_year,
 	legend: { show: true },
+	height: 600,
 	axis: { 
 		x: { 
 			title: { label: "Year" },
