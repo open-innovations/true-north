@@ -1,0 +1,310 @@
+Local Authority Code,Local Authority Name,Group,variable,value
+E06000001,Hartlepool,"Services, Manufacturing and Mining Legacy",Total Score,25.114703726023244
+E06000002,Middlesbrough,Manufacturing Traits,Total Score,32.37710541315126
+E06000003,Redcar and Cleveland,"Services, Manufacturing and Mining Legacy",Total Score,27.602394707686983
+E06000004,Stockton-on-Tees,"Services, Manufacturing and Mining Legacy",Total Score,13.242176932605823
+E06000005,Darlington,"Services, Manufacturing and Mining Legacy",Total Score,16.395596041613263
+E06000006,Halton,"Services, Manufacturing and Mining Legacy",Total Score,21.02889853489546
+E06000007,Warrington,Town Living,Total Score,-3.936494036533216
+E06000008,Blackburn with Darwen,Manufacturing Traits,Total Score,13.48731799931133
+E06000009,Blackpool,"Services, Manufacturing and Mining Legacy",Total Score,32.179299491384405
+E06000010,"Kingston upon Hull, City of",Manufacturing Traits,Total Score,20.52136876390436
+E06000011,East Riding of Yorkshire,English and Welsh Countryside,Total Score,-7.39289179699471
+E06000012,North East Lincolnshire,"Services, Manufacturing and Mining Legacy",Total Score,19.114296878982
+E06000013,North Lincolnshire,Country Living,Total Score,8.935854507877888
+E06000014,York,Larger Towns and Cities,Total Score,-14.786180840958078
+E06000015,Derby,Manufacturing Traits,Total Score,9.063229820876803
+E06000016,Leicester,Ethnically Diverse Metropolitan  Living,Total Score,5.121432266499314
+E06000017,Rutland,English and Welsh Countryside,Total Score,-17.78238435088505
+E06000018,Nottingham,University Towns and Cities,Total Score,12.376996207175097
+E06000019,"Herefordshire, County of",English and Welsh Countryside,Total Score,0.3387445819668488
+E06000020,Telford and Wrekin,Manufacturing Traits,Total Score,15.160838165009677
+E06000021,Stoke-on-Trent,Manufacturing Traits,Total Score,23.380926903367396
+E06000022,Bath and North East Somerset,Larger Towns and Cities,Total Score,-14.230013047197904
+E06000023,"Bristol, City of",Larger Towns and Cities,Total Score,-0.28977447835956194
+E06000024,North Somerset,English and Welsh Countryside,Total Score,-5.6769933607047065
+E06000025,South Gloucestershire,Town Living,Total Score,-10.021984784440734
+E06000026,Plymouth,Larger Towns and Cities,Total Score,9.593845493610875
+E06000027,Torbay,Remoter Coastal Living,Total Score,16.04117808242635
+E06000030,Swindon,Suburban Traits,Total Score,2.007267255818054
+E06000031,Peterborough,Suburban Traits,Total Score,11.883891305480795
+E06000032,Luton,Ethnically Diverse Metropolitan  Living,Total Score,4.22215256739313
+E06000033,Southend-on-Sea,Manufacturing Traits,Total Score,0.4781523868149711
+E06000034,Thurrock,Suburban Traits,Total Score,-0.6117543864553248
+E06000035,Medway,Suburban Traits,Total Score,7.184611174869486
+E06000036,Bracknell Forest,Rural-Urban Fringe,Total Score,-12.499828734730313
+E06000037,West Berkshire,Thriving Rural,Total Score,-11.743631649643138
+E06000038,Reading,University Towns and Cities,Total Score,-6.528483044760464
+E06000039,Slough,Ethnically Diverse Metropolitan  Living,Total Score,-0.9353362651623653
+E06000040,Windsor and Maidenhead,Rural-Urban Fringe,Total Score,-15.487645655281625
+E06000041,Wokingham,Thriving Rural,Total Score,-23.778299862627915
+E06000042,Milton Keynes,Suburban Traits,Total Score,-3.1011678210874107
+E06000043,Brighton and Hove,University Towns and Cities,Total Score,-6.414905522513707
+E06000044,Portsmouth,Larger Towns and Cities,Total Score,1.7568408073518431
+E06000045,Southampton,Larger Towns and Cities,Total Score,5.380541097073538
+E06000046,Isle of Wight,Remoter Coastal Living,Total Score,11.244227725388617
+E06000047,County Durham,"Services, Manufacturing and Mining Legacy",Total Score,13.708298032280485
+E06000049,Cheshire East,Country Living,Total Score,-7.6389372134661695
+E06000050,Cheshire West and Chester,Town Living,Total Score,-2.0293492265366884
+E06000051,Shropshire,English and Welsh Countryside,Total Score,0.13853543562216422
+E06000052,Cornwall,,Total Score,1.6632954107371263
+E06000053,Isles of Scilly,,Total Score,-11.396254277259676
+E06000054,Wiltshire,Country Living,Total Score,-5.796833691300963
+E06000055,Bedford,Suburban Traits,Total Score,-0.48613362069266963
+E06000056,Central Bedfordshire,Thriving Rural,Total Score,-7.689353820611938
+E06000057,Northumberland,English and Welsh Countryside,Total Score,9.391231394799181
+E06000058,"Bournemouth, Christchurch and Poole",,Total Score,-2.8759367508543185
+E06000059,Dorset,,Total Score,-2.0167274516904397
+E06000060,Buckinghamshire,,Total Score,-11.454372731887135
+E06000061,North Northamptonshire,,Total Score,4.22798737348412
+E06000062,West Northamptonshire,,Total Score,-3.4926283558340585
+E07000008,Cambridge,University Towns and Cities,Total Score,-12.748752709978262
+E07000009,East Cambridgeshire,Country Living,Total Score,-10.625549274322362
+E07000010,Fenland,Country Living,Total Score,11.151594473337965
+E07000011,Huntingdonshire,Country Living,Total Score,-6.112150791209242
+E07000012,South Cambridgeshire,Thriving Rural,Total Score,-15.054432390011044
+E07000026,Allerdale,English and Welsh Countryside,Total Score,2.492923318383299
+E07000027,Barrow-in-Furness,"Services, Manufacturing and Mining Legacy",Total Score,12.51027243617877
+E07000028,Carlisle,"Services, Manufacturing and Mining Legacy",Total Score,6.04633490762493
+E07000029,Copeland,"Services, Manufacturing and Mining Legacy",Total Score,1.0623975429401822
+E07000030,Eden,English and Welsh Countryside,Total Score,-9.286866910019699
+E07000031,South Lakeland,English and Welsh Countryside,Total Score,-11.291799178755447
+E07000032,Amber Valley,Country Living,Total Score,1.3763344126188397
+E07000033,Bolsover,"Services, Manufacturing and Mining Legacy",Total Score,13.174202886354216
+E07000034,Chesterfield,"Services, Manufacturing and Mining Legacy",Total Score,12.11151052333095
+E07000035,Derbyshire Dales,English and Welsh Countryside,Total Score,-9.950896947485626
+E07000036,Erewash,Country Living,Total Score,5.2207311069597555
+E07000037,High Peak,Town Living,Total Score,-1.5719319619212262
+E07000038,North East Derbyshire,Town Living,Total Score,4.076822244321024
+E07000039,South Derbyshire,Country Living,Total Score,-5.543852089154025
+E07000040,East Devon,Remoter Coastal Living,Total Score,-5.666969839123885
+E07000041,Exeter,Larger Towns and Cities,Total Score,-6.996178151507161
+E07000042,Mid Devon,English and Welsh Countryside,Total Score,-0.6544396306586289
+E07000043,North Devon,Remoter Coastal Living,Total Score,3.4133620262330786
+E07000044,South Hams,English and Welsh Countryside,Total Score,-7.333315426878513
+E07000045,Teignbridge,Remoter Coastal Living,Total Score,-1.254129011231205
+E07000046,Torridge,English and Welsh Countryside,Total Score,5.913782841702546
+E07000047,West Devon,English and Welsh Countryside,Total Score,-2.2780775906031514
+E07000061,Eastbourne,Larger Towns and Cities,Total Score,3.7690929779466824
+E07000062,Hastings,Manufacturing Traits,Total Score,17.048255062229345
+E07000063,Lewes,Remoter Coastal Living,Total Score,0.10769539894365376
+E07000064,Rother,Remoter Coastal Living,Total Score,5.156850573656462
+E07000065,Wealden,English and Welsh Countryside,Total Score,-10.108839185127149
+E07000066,Basildon,Suburban Traits,Total Score,5.722719310315056
+E07000067,Braintree,Country Living,Total Score,-1.9007767423268045
+E07000068,Brentwood,Thriving Rural,Total Score,-12.06387044465865
+E07000069,Castle Point,Town Living,Total Score,-3.6472208657750618
+E07000070,Chelmsford,Thriving Rural,Total Score,-10.928707950011495
+E07000071,Colchester,Thriving Rural,Total Score,-3.9890587567466085
+E07000072,Epping Forest,Thriving Rural,Total Score,-4.928912406474704
+E07000073,Harlow,Suburban Traits,Total Score,11.445656622357781
+E07000074,Maldon,Country Living,Total Score,-0.5353356508604935
+E07000075,Rochford,Town Living,Total Score,-10.388404018671853
+E07000076,Tendring,Remoter Coastal Living,Total Score,14.37842830394877
+E07000077,Uttlesford,Thriving Rural,Total Score,-16.437401430844666
+E07000078,Cheltenham,Larger Towns and Cities,Total Score,-8.974491044461995
+E07000079,Cotswold,English and Welsh Countryside,Total Score,-14.359491250660673
+E07000080,Forest of Dean,Country Living,Total Score,-1.7649343913426763
+E07000081,Gloucester,Manufacturing Traits,Total Score,1.7199577857559132
+E07000082,Stroud,Country Living,Total Score,-11.407351010901488
+E07000083,Tewkesbury,Country Living,Total Score,-8.788783612384625
+E07000084,Basingstoke and Deane,Thriving Rural,Total Score,-3.9812682393413192
+E07000085,East Hampshire,Thriving Rural,Total Score,-11.612925532773884
+E07000086,Eastleigh,Town Living,Total Score,-7.834511403167914
+E07000087,Fareham,Town Living,Total Score,-11.206630186681341
+E07000088,Gosport,"Services, Manufacturing and Mining Legacy",Total Score,7.0963162006617875
+E07000089,Hart,Thriving Rural,Total Score,-20.35554503320623
+E07000090,Havant,"Services, Manufacturing and Mining Legacy",Total Score,6.97751822048059
+E07000091,New Forest,Remoter Coastal Living,Total Score,-5.018052516611282
+E07000092,Rushmoor,Suburban Traits,Total Score,-2.2031837055006336
+E07000093,Test Valley,Thriving Rural,Total Score,-7.994483258289203
+E07000094,Winchester,Thriving Rural,Total Score,-17.41137283805215
+E07000095,Broxbourne,Suburban Traits,Total Score,-1.6600718614108616
+E07000096,Dacorum,Thriving Rural,Total Score,-6.006541549696479
+E07000098,Hertsmere,Rural-Urban Fringe,Total Score,-5.071920004829353
+E07000099,North Hertfordshire,Thriving Rural,Total Score,-8.30939031558643
+E07000102,Three Rivers,Rural-Urban Fringe,Total Score,-14.676547886078403
+E07000103,Watford,Suburban Traits,Total Score,-8.954331610082571
+E07000105,Ashford,Country Living,Total Score,2.3118882906047924
+E07000106,Canterbury,Larger Towns and Cities,Total Score,-5.896045194148048
+E07000107,Dartford,Suburban Traits,Total Score,-1.758317076722012
+E07000108,Dover,Remoter Coastal Living,Total Score,8.576095182651656
+E07000109,Gravesham,Suburban Traits,Total Score,5.94367246287168
+E07000110,Maidstone,Thriving Rural,Total Score,-0.15798854429126952
+E07000111,Sevenoaks,Thriving Rural,Total Score,-6.010868044612482
+E07000112,Folkestone and Hythe,Remoter Coastal Living,Total Score,8.152298786394363
+E07000113,Swale,Country Living,Total Score,9.18504418168974
+E07000114,Thanet,Remoter Coastal Living,Total Score,14.879909867006564
+E07000115,Tonbridge and Malling,Thriving Rural,Total Score,-6.344703640448471
+E07000116,Tunbridge Wells,Thriving Rural,Total Score,-7.943010296271996
+E07000117,Burnley,Manufacturing Traits,Total Score,20.153446366675105
+E07000118,Chorley,Town Living,Total Score,-0.9827524590250374
+E07000119,Fylde,English and Welsh Countryside,Total Score,-3.250630985140062
+E07000120,Hyndburn,Manufacturing Traits,Total Score,15.653514612115108
+E07000121,Lancaster,Larger Towns and Cities,Total Score,-1.0711855305785867
+E07000122,Pendle,Manufacturing Traits,Total Score,10.176635255059256
+E07000123,Preston,Larger Towns and Cities,Total Score,8.011846430753598
+E07000124,Ribble Valley,English and Welsh Countryside,Total Score,-16.232464010043827
+E07000125,Rossendale,"Services, Manufacturing and Mining Legacy",Total Score,8.824960033030784
+E07000126,South Ribble,Town Living,Total Score,0.40196039035578535
+E07000127,West Lancashire,Town Living,Total Score,-1.371525735422649
+E07000128,Wyre,English and Welsh Countryside,Total Score,5.518754344817978
+E07000129,Blaby,Town Living,Total Score,-6.628974219105439
+E07000130,Charnwood,Town Living,Total Score,-10.099610616489315
+E07000131,Harborough,Country Living,Total Score,-13.539971530123742
+E07000132,Hinckley and Bosworth,Country Living,Total Score,-3.826975468148421
+E07000133,Melton,Country Living,Total Score,-8.198891202244697
+E07000134,North West Leicestershire,Country Living,Total Score,-4.007063100173183
+E07000135,Oadby and Wigston,Town Living,Total Score,-6.379872466352201
+E07000136,Boston,Manufacturing Traits,Total Score,13.008205232138707
+E07000137,East Lindsey,Remoter Coastal Living,Total Score,17.1258342819514
+E07000138,Lincoln,Larger Towns and Cities,Total Score,7.382292445523189
+E07000139,North Kesteven,English and Welsh Countryside,Total Score,-6.998216730409304
+E07000140,South Holland,Country Living,Total Score,3.854249711513671
+E07000141,South Kesteven,Country Living,Total Score,-4.787522862315036
+E07000142,West Lindsey,English and Welsh Countryside,Total Score,4.156829671963562
+E07000143,Breckland,English and Welsh Countryside,Total Score,4.763731187235632
+E07000144,Broadland,Country Living,Total Score,-8.295374361652382
+E07000145,Great Yarmouth,Remoter Coastal Living,Total Score,24.81331696683275
+E07000146,King's Lynn and West Norfolk,English and Welsh Countryside,Total Score,7.402637596074203
+E07000147,North Norfolk,Remoter Coastal Living,Total Score,1.2552319199264454
+E07000148,Norwich,Larger Towns and Cities,Total Score,6.784425964168486
+E07000149,South Norfolk,Country Living,Total Score,-8.567060098046635
+E07000163,Craven,English and Welsh Countryside,Total Score,-14.002835324672995
+E07000164,Hambleton,English and Welsh Countryside,Total Score,-10.236414630869918
+E07000165,Harrogate,English and Welsh Countryside,Total Score,-12.683631263012417
+E07000166,Richmondshire,English and Welsh Countryside,Total Score,-5.681230277948392
+E07000167,Ryedale,English and Welsh Countryside,Total Score,-10.969336907298194
+E07000168,Scarborough,Remoter Coastal Living,Total Score,10.4073723310246
+E07000169,Selby,Country Living,Total Score,-5.6396021415671385
+E07000170,Ashfield,"Services, Manufacturing and Mining Legacy",Total Score,13.238868351976729
+E07000171,Bassetlaw,Country Living,Total Score,10.883782968215954
+E07000172,Broxtowe,Town Living,Total Score,-4.124110901533456
+E07000173,Gedling,Town Living,Total Score,0.21931310554160216
+E07000174,Mansfield,"Services, Manufacturing and Mining Legacy",Total Score,16.89677042751746
+E07000175,Newark and Sherwood,Country Living,Total Score,3.6799046657170296
+E07000176,Rushcliffe,Thriving Rural,Total Score,-17.798569012432402
+E07000177,Cherwell,Thriving Rural,Total Score,-6.186133389589956
+E07000178,Oxford,University Towns and Cities,Total Score,-8.809314552050884
+E07000179,South Oxfordshire,Thriving Rural,Total Score,-14.475997460827388
+E07000180,Vale of White Horse,Thriving Rural,Total Score,-11.984651861450786
+E07000181,West Oxfordshire,Thriving Rural,Total Score,-11.393625665482636
+E07000187,Mendip,English and Welsh Countryside,Total Score,-4.103035593162494
+E07000188,Sedgemoor,English and Welsh Countryside,Total Score,4.204479273962975
+E07000189,South Somerset,English and Welsh Countryside,Total Score,1.9646087952384936
+E07000192,Cannock Chase,"Services, Manufacturing and Mining Legacy",Total Score,10.401565924770066
+E07000193,East Staffordshire,Country Living,Total Score,0.1683198207174607
+E07000194,Lichfield,Town Living,Total Score,-6.524024090376962
+E07000195,Newcastle-under-Lyme,Town Living,Total Score,2.7403889975326887
+E07000196,South Staffordshire,Town Living,Total Score,-4.634890240256524
+E07000197,Stafford,Town Living,Total Score,-3.8611630708250484
+E07000198,Staffordshire Moorlands,Country Living,Total Score,-2.7576036660003256
+E07000199,Tamworth,"Services, Manufacturing and Mining Legacy",Total Score,12.763601721260807
+E07000200,Babergh,Country Living,Total Score,-4.118014479958669
+E07000202,Ipswich,Manufacturing Traits,Total Score,12.89623730980225
+E07000203,Mid Suffolk,Country Living,Total Score,-8.329782123372752
+E07000207,Elmbridge,Rural-Urban Fringe,Total Score,-16.13435743101567
+E07000208,Epsom and Ewell,Rural-Urban Fringe,Total Score,-16.412596822947563
+E07000209,Guildford,Rural-Urban Fringe,Total Score,-14.569373991612173
+E07000210,Mole Valley,Thriving Rural,Total Score,-14.119330651569042
+E07000211,Reigate and Banstead,Rural-Urban Fringe,Total Score,-9.902611721673642
+E07000212,Runnymede,Rural-Urban Fringe,Total Score,-10.396815893887236
+E07000213,Spelthorne,Rural-Urban Fringe,Total Score,-3.5947502823868485
+E07000214,Surrey Heath,Rural-Urban Fringe,Total Score,-10.808949840673828
+E07000215,Tandridge,Thriving Rural,Total Score,-9.722947824699014
+E07000216,Waverley,Thriving Rural,Total Score,-17.328012663019408
+E07000217,Woking,Rural-Urban Fringe,Total Score,-8.602006422920876
+E07000218,North Warwickshire,Country Living,Total Score,6.569567218471488
+E07000219,Nuneaton and Bedworth,Manufacturing Traits,Total Score,13.217643508529969
+E07000220,Rugby,Suburban Traits,Total Score,-4.097126588271164
+E07000221,Stratford-on-Avon,English and Welsh Countryside,Total Score,-10.157754188881617
+E07000222,Warwick,Larger Towns and Cities,Total Score,-12.240420811695069
+E07000223,Adur,Town Living,Total Score,-2.8371351228193817
+E07000224,Arun,Remoter Coastal Living,Total Score,2.356033617142417
+E07000225,Chichester,English and Welsh Countryside,Total Score,-7.561293779359238
+E07000226,Crawley,Suburban Traits,Total Score,5.613134294636933
+E07000227,Horsham,Thriving Rural,Total Score,-13.650600676063153
+E07000228,Mid Sussex,Thriving Rural,Total Score,-14.874633816480028
+E07000229,Worthing,Manufacturing Traits,Total Score,-3.781666135503555
+E07000234,Bromsgrove,Town Living,Total Score,-8.805620746458732
+E07000235,Malvern Hills,English and Welsh Countryside,Total Score,-3.8050414712277822
+E07000236,Redditch,Manufacturing Traits,Total Score,8.340209248601573
+E07000237,Worcester,Manufacturing Traits,Total Score,-0.3647264270319953
+E07000238,Wychavon,Country Living,Total Score,-2.296798355889566
+E07000239,Wyre Forest,Country Living,Total Score,6.495881119062408
+E07000240,St Albans,Rural-Urban Fringe,Total Score,-18.584556135318156
+E07000241,Welwyn Hatfield,Larger Towns and Cities,Total Score,-6.915443330196098
+E07000242,East Hertfordshire,Thriving Rural,Total Score,-14.43427928255276
+E07000243,Stevenage,Suburban Traits,Total Score,5.677280941729136
+E07000244,East Suffolk,,Total Score,6.171024387599427
+E07000245,West Suffolk,,Total Score,-2.3144999034176728
+E07000246,Somerset West and Taunton,,Total Score,2.9575268346390517
+E08000001,Bolton,Manufacturing Traits,Total Score,10.673062589401122
+E08000002,Bury,Manufacturing Traits,Total Score,4.316133732630979
+E08000003,Manchester,University Towns and Cities,Total Score,10.11096326187113
+E08000004,Oldham,Manufacturing Traits,Total Score,15.63150099882513
+E08000005,Rochdale,Manufacturing Traits,Total Score,18.919545527860613
+E08000006,Salford,Manufacturing Traits,Total Score,13.509638366987557
+E08000007,Stockport,Town Living,Total Score,0.811991155103581
+E08000008,Tameside,Manufacturing Traits,Total Score,17.76261089896246
+E08000009,Trafford,Suburban Traits,Total Score,-10.640066609640066
+E08000010,Wigan,"Services, Manufacturing and Mining Legacy",Total Score,11.244069296465776
+E08000011,Knowsley,"Services, Manufacturing and Mining Legacy",Total Score,26.750609466925166
+E08000012,Liverpool,Larger Towns and Cities,Total Score,17.521574085609963
+E08000013,St. Helens,"Services, Manufacturing and Mining Legacy",Total Score,19.532720490543806
+E08000014,Sefton,"Services, Manufacturing and Mining Legacy",Total Score,9.345853481307804
+E08000015,Wirral,"Services, Manufacturing and Mining Legacy",Total Score,13.862064912753075
+E08000016,Barnsley,"Services, Manufacturing and Mining Legacy",Total Score,18.477643513288285
+E08000017,Doncaster,"Services, Manufacturing and Mining Legacy",Total Score,20.983744106436053
+E08000018,Rotherham,"Services, Manufacturing and Mining Legacy",Total Score,19.914219342165445
+E08000019,Sheffield,Larger Towns and Cities,Total Score,7.103328304686419
+E08000021,Newcastle upon Tyne,Larger Towns and Cities,Total Score,7.963262884296613
+E08000022,North Tyneside,"Services, Manufacturing and Mining Legacy",Total Score,6.6525967038361244
+E08000023,South Tyneside,"Services, Manufacturing and Mining Legacy",Total Score,18.738533322252387
+E08000024,Sunderland,"Services, Manufacturing and Mining Legacy",Total Score,21.359793387474244
+E08000025,Birmingham,Ethnically Diverse Metropolitan  Living,Total Score,12.504752087211312
+E08000026,Coventry,Larger Towns and Cities,Total Score,4.720821641915738
+E08000027,Dudley,"Services, Manufacturing and Mining Legacy",Total Score,11.47290455858997
+E08000028,Sandwell,Manufacturing Traits,Total Score,16.418302305964648
+E08000029,Solihull,Town Living,Total Score,0.5187897394036148
+E08000030,Walsall,Manufacturing Traits,Total Score,16.634446805698513
+E08000031,Wolverhampton,Manufacturing Traits,Total Score,16.004663041917308
+E08000032,Bradford,Manufacturing Traits,Total Score,17.3161039823573
+E08000033,Calderdale,Manufacturing Traits,Total Score,8.229827204580682
+E08000034,Kirklees,Manufacturing Traits,Total Score,4.1766320226142275
+E08000035,Leeds,Larger Towns and Cities,Total Score,0.4933907689020425
+E08000036,Wakefield,"Services, Manufacturing and Mining Legacy",Total Score,14.646206215878609
+E08000037,Gateshead,"Services, Manufacturing and Mining Legacy",Total Score,15.280334043747407
+E09000001,City of London,,Total Score,-27.489855768177772
+E09000002,Barking and Dagenham,Ethnically Diverse Metropolitan  Living,Total Score,8.123352581606369
+E09000003,Barnet,Ethnically Diverse Metropolitan  Living,Total Score,-13.047877792543947
+E09000004,Bexley,Suburban Traits,Total Score,-7.246209842214456
+E09000005,Brent,Ethnically Diverse Metropolitan  Living,Total Score,-4.0453152443787745
+E09000006,Bromley,Rural-Urban Fringe,Total Score,-12.595859866355521
+E09000007,Camden,London Cosmopolitan,Total Score,-5.384180141773388
+E09000008,Croydon,Ethnically Diverse Metropolitan  Living,Total Score,-0.8912072614474873
+E09000009,Ealing,Ethnically Diverse Metropolitan  Living,Total Score,-10.754327099741017
+E09000010,Enfield,Ethnically Diverse Metropolitan  Living,Total Score,-1.4518826395441178
+E09000011,Greenwich,Ethnically Diverse Metropolitan  Living,Total Score,3.8508776481511378
+E09000012,Hackney,London Cosmopolitan,Total Score,9.960718324963743
+E09000013,Hammersmith and Fulham,London Cosmopolitan,Total Score,-11.480424835826325
+E09000014,Haringey,London Cosmopolitan,Total Score,0.9143454054198774
+E09000015,Harrow,Ethnically Diverse Metropolitan  Living,Total Score,-13.97269654457207
+E09000016,Havering,Suburban Traits,Total Score,-8.022213275800318
+E09000017,Hillingdon,Ethnically Diverse Metropolitan  Living,Total Score,-6.122186779030701
+E09000018,Hounslow,Ethnically Diverse Metropolitan  Living,Total Score,-3.5602612309415287
+E09000019,Islington,London Cosmopolitan,Total Score,5.3213564008685035
+E09000020,Kensington and Chelsea,London Cosmopolitan,Total Score,-14.30814660945711
+E09000021,Kingston upon Thames,University Towns and Cities,Total Score,-20.099321028185383
+E09000022,Lambeth,London Cosmopolitan,Total Score,-4.351787219252147
+E09000023,Lewisham,Ethnically Diverse Metropolitan  Living,Total Score,1.532691781257203
+E09000024,Merton,Ethnically Diverse Metropolitan  Living,Total Score,-13.039607152701869
+E09000025,Newham,Ethnically Diverse Metropolitan  Living,Total Score,-0.3270368729679799
+E09000026,Redbridge,Ethnically Diverse Metropolitan  Living,Total Score,-11.864043987233519
+E09000027,Richmond upon Thames,Rural-Urban Fringe,Total Score,-22.073426623535312
+E09000028,Southwark,London Cosmopolitan,Total Score,-1.2781334575213552
+E09000029,Sutton,Suburban Traits,Total Score,-6.367532187022149
+E09000030,Tower Hamlets,London Cosmopolitan,Total Score,-4.657334651972278
+E09000031,Waltham Forest,Ethnically Diverse Metropolitan  Living,Total Score,-1.2581211798726457
+E09000032,Wandsworth,London Cosmopolitan,Total Score,-17.0941551355992
+E09000033,Westminster,,Total Score,-10.458722534319701

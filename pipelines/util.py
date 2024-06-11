@@ -28,6 +28,10 @@ def iso_to_unix(row):
     dt = datetime.fromisoformat(iso_date)
     return int(dt.timestamp())
 
+def decimal_date(row):
+    timestamp = row['unix_timestamp']
+    return round((timestamp / (86400*365.25)) + 1970, 2)
+
 def slugify_column_names(headers):
     return [slugify(header, separator='_') for header in headers]
 

@@ -33,21 +33,25 @@ stages:
     deps:
     - path: ../../pipelines/util.py
       hash: md5
-      md5: 36ef11ec36aad93bd1f7b596d8f635ce
-      size: 1301
+      md5: 17aacff551ae438adc3bd465dbecdd05
+      size: 1420
     - path: ../../working/cs/cs-true-north.csv
       hash: md5
       md5: af140a62c1f7e4fffc6c5b797be97290
       size: 1480442
     - path: employment.py
       hash: md5
-      md5: 4f9a0b99b9d722b105eba138f5989adc
-      size: 640
+      md5: 6ac3d1ef02e1a99afa6c4800d3fd1046
+      size: 1301
     outs:
-    - path: ../../src/themes/people-skills-future/_data/unemployment.csv
+    - path: ../../src/themes/people-skills-future/_data/economic_inactivity.csv
       hash: md5
-      md5: b60d9a2d17a38edc13552071bf2187c0
-      size: 2943
+      md5: 7e4807e59f4b6f80201ca37f68a28319
+      size: 3566
+    - path: ../../src/themes/people-skills-future/_data/employment.csv
+      hash: md5
+      md5: 04fb8c28d58910c5beb477f72bc00a30
+      size: 3572
   qualifications:
     cmd: PYTHONPATH=../.. python qualifications.py
     deps:
@@ -88,12 +92,21 @@ stages:
       hash: md5
       checksum: '"14ccdbb3a4299537b8eb04d5d83a1ac0f8eed61d0847d29812fa42b3b7c0b694"'
       size: 367480
+    - path: 
+        https://raw.githubusercontent.com/open-innovations/yff-data-pipelines/main/data/processed/yff/neet-factors.csv
+      hash: md5
+      checksum: '"7334c58ffd7f27be60a5f4bac77d8b7fa378686479246ecde1a4bc63235850de"'
+      size: 555225
     - path: neet.py
       hash: md5
-      md5: 46288d019d453a255f52a168a00e1c54
-      size: 1549
+      md5: 8c17c33ee343cf2a7bb71c0d8f96728a
+      size: 1106
     outs:
     - path: ../../src/themes/people-skills-future/_data/neet.csv
       hash: md5
       md5: 9388a8604edf7c27235d8d27aeede084
       size: 160
+    - path: ../../src/themes/people-skills-future/_data/risk_of_neet_by_la.csv
+      hash: md5
+      md5: 121be03fe40ba8f11044310423afd4bb
+      size: 23551

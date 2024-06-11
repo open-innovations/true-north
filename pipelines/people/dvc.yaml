@@ -20,7 +20,9 @@ stages:
       - ${TOP}/pipelines/util.py
       - ${TOP}/working/cs/cs-true-north.csv
     outs:
-      - ${TOP}/src/themes/people-skills-future/_data/unemployment.csv:
+      - ${TOP}/src/themes/people-skills-future/_data/employment.csv:
+          cache: false
+      - ${TOP}/src/themes/people-skills-future/_data/economic_inactivity.csv:
           cache: false
   qualifications:
     cmd: PYTHONPATH=${TOP} python qualifications.py
@@ -36,6 +38,9 @@ stages:
     deps:
       - neet.py
       - https://raw.githubusercontent.com/open-innovations/yff-data-pipelines/main/data/processed/neet.csv
+      - https://raw.githubusercontent.com/open-innovations/yff-data-pipelines/main/data/processed/yff/neet-factors.csv
     outs:
       - ${TOP}/src/themes/people-skills-future/_data/neet.csv:
+          cache: false
+      - ${TOP}/src/themes/people-skills-future/_data/risk_of_neet_by_la.csv:
           cache: false
