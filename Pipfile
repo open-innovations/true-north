@@ -13,6 +13,7 @@ python-slugify = "*"
 openpyxl = "*"
 duckdb = "*"
 ipykernel = "*"
+matplotlib = "*"
 
 [dev-packages]
 
