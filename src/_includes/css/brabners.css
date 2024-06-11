@@ -139,3 +139,4 @@ input[type="range"].oi-slider-control:focus::-moz-range-thumb{ outline: 4px soli
 
 .toggle-section button:hover, .toggle-section button:focus { cursor: help; }
 .toggle-section button:hover svg, .toggle-section button:focus svg { color: rgb(38 38 38)!important; }
+.toggle-section + * { margin-top: 1rem; }
