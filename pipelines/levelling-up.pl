@@ -10,7 +10,7 @@ use POSIX qw(strftime);
 binmode STDOUT, 'utf8';
 binmode STDERR, 'utf8';
 
-my ($basedir, $path,@rows,$r,@las,@lads,$l,%la,$lad,$hexjson,$fh);
+my ($basedir, $path,@rows,$r,@las,@lads,$l,%la,$lad,$hexjson,$fh,$percap);
 
 # Get the real base directory for this script
 BEGIN { ($basedir, $path) = abs_path($0) =~ m{(.*/)?([^/]+)$}; push @INC, $basedir; }
@@ -36,8 +36,15 @@ for($r = 0; $r < @rows; $r++){
 @rows = LoadCSV($basedir."../working/levelling-up/levelling-up-fund-round-1.csv");
 for($r = 0; $r < @rows; $r++){
 	@las = split(/;/,$rows[$r]->{'LADs'});
-	print Dumper @las;
-	print "$rows[$r]->{'Bid Value'}\n";
+	for($l = 0; $l < @las; $l++){
+		$lad = $las[$l];
+		$la{$lad}{'total'} += $rows[$r]->{'Bid Value'}/@las;
+		$la{$lad}{'bids'}++;
+	}
+}
+@rows = LoadCSV($basedir."../working/levelling-up/levelling-up-fund-round-2.csv");
+for($r = 0; $r < @rows; $r++){
+	@las = split(/;/,$rows[$r]->{'LADs'});
 	for($l = 0; $l < @las; $l++){
 		$lad = $las[$l];
 		$la{$lad}{'total'} += $rows[$r]->{'Bid Value'}/@las;
@@ -45,14 +52,15 @@ for($r = 0; $r < @rows; $r++){
 	}
 }
 
-open($fh,">:utf8",$basedir."../src/themes/purpose-social-impact/_data/levelling-up.csv");
-print $fh "LAD23CD,LA name,Population (mid 2022 est),Bids,Total (£),Per capita (£)\n";
+open($fh,">:utf8",$basedir."../src/themes/purpose-social-impact/levelling-up/_data/levelling_up.csv");
+print $fh "LAD23CD,LA name,Population (mid 2022 est),Bids,Total (£),Total,Per capita (£),Per capita\n";
 foreach $lad (@lads){
 	print $fh "$lad,\"$la{$lad}->{'name'}\",$la{$lad}->{'population'},";
 	if($la{$lad}->{'bids'} > 0){
-		print $fh "$la{$lad}->{'bids'},".sprintf("%0d",$la{$lad}->{'total'}).",".sprintf("%0.2f",($la{$lad}->{'total'}/$la{$lad}->{'population'}))."\n";
+		$percap = ($la{$lad}->{'total'}/$la{$lad}->{'population'});
+		print $fh "$la{$lad}->{'bids'},".sprintf("%0.2d",$la{$lad}->{'total'}).",\"".formatPounds($la{$lad}->{'total'})."\",".sprintf("%0.2f",$percap).",\"".formatPounds($percap)."\"\n";
 	}else{
-		print $fh ",,\n";
+		print $fh ",,none,,none\n";
 	}
 }
 close($fh);
@@ -184,4 +192,18 @@ sub LoadJSON {
 	close(FILE);
 	$str = (join("",@lines));
 	return ParseJSON($str);
+}
+sub formatPounds {
+	my $v = shift;
+	my ($a,$b,@c,$d,$e);
+	$a = int($v);
+	$v = $v-int($v);
+	$b = reverse $a;               # reverse the number order
+	@c = unpack("(A3)*", $b);      # split into groups of three
+	$d = join ',', @c;             # join with commas
+	$e = reverse $d;               # reverse it again
+	if($v <= 0){ $v = ""; }
+	else{ $v = sprintf("%.2f",$v); }
+	$v =~ s/^0//g;
+	return "£".$e.$v;
 }

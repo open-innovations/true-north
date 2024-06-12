@@ -4,9 +4,7 @@ theme: purpose-social-impact
 nicetheme: Purpose & Social Impact
 ---
 <p>
-    This page shows data on successful bids from round one of Levelling up funding. This data comes from the 2021 dataset published by the
-    <a href="https://www.gov.uk/government/publications/levelling-up-fund-first-round-successful-bidders">
-    Department for Levelling Up, Housing and Communities</a>.
+    This page shows local-authority-level data on successful bids for <a href="https://www.gov.uk/government/publications/levelling-up-fund-first-round-successful-bidders">Round 1</a> (2021) and <a href="https://www.gov.uk/government/publications/levelling-up-fund-round-2-successful-bidders">Round 2</a> (2022-3) of Levelling Up funding from the Department for Levelling Up, Housing and Communities. 
 </p>
 
 {{ comp.oi.dashboard ({ config: {
@@ -23,17 +21,17 @@ nicetheme: Purpose & Social Impact
   })
 }}
 
-<h3>Successful bids by local authority</h3>
+<h2>Successful bids by local authority</h2>
 <p>
-    This map shows the funding of successful bids in round one of Levelling up, divided by the population of that local authority (funding per capita).
-    Where a bid was successful, we have attempted to match the "Legal name of lead applicant organisation" to a local authority.
+    This map shows the funding of successful bids in rounds one and two of Levelling Up, divided by the population of that local authority (funding per capita).
+    Where a bid was successful, we have attempted to match the name of lead applicant organisation to a local authority.
     In some cases, the lead organisation covers multiple local authorities. In this instance, we divide the grant funding equally 
-    across all local authorities that the organisation could feasibly claim to cover. There are some local authorities which did not receive funding in round 1; 
-    these are shown as null values.
+    across all local authorities that the lead organisation could feasibly claim to cover. There are some local authorities which did not receive funding in rounds one or two; 
+    these are shown with a value of "none".
 </p>
 <p class='warning padded'>
     Important note: the Isles of Scilly has an extreme per capita value as the Isles of Scilly has very few people.
-    We have set the upper range to a more sensible vaue to truncate the scale on the hex map.
+    We have set the upper range to a more sensible value to truncate the scale on the hex map.
 </p>
 {{ comp.oi.map.hex_cartogram({
 	"config": {
@@ -76,6 +74,6 @@ nicetheme: Purpose & Social Impact
 				"label": "filterLabel"
 			}
 		},
-		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />GBP per person: <strong class=\"number\">£{{ {{ _value }} | toLocaleString() }} / person</strong><br />Allocation: <strong>£{{ Total (£) | toLocaleString() }}</strong>"
+		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />Per person: <strong class=\"number\">{{ Per capita }}</strong><br />Total allocation: <strong class=\"number\">{{ Total }}</strong>"
 	}
 }) }}
