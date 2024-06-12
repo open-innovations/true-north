@@ -3,17 +3,27 @@
 library(dotenv)
 
 geographies <- list(
-  regions = c(
-    "E12000001",
-    "E12000002",
-    "E12000003"
-    )
+  lad = c(
+    "E06000001", "E06000004", "E06000002", "E06000003", "E06000005",
+    "E06000047", "E06000057", "E08000021", "E08000022", "E08000023",
+    "E08000037", "E08000024", "E06000063", "E06000064", "E08000003",
+    "E08000006", "E08000009", "E08000007", "E08000008", "E08000001",
+    "E08000010", "E08000002", "E08000004", "E08000005", "E06000008",
+    "E06000009", "E07000121", "E07000128", "E07000119", "E07000123",
+    "E07000124", "E07000126", "E07000117", "E07000120", "E07000122",
+    "E07000125", "E07000118", "E07000127", "E06000007", "E06000049",
+    "E06000050", "E06000006", "E08000011", "E08000013", "E08000012",
+    "E08000014", "E08000015", "E06000010", "E06000011", "E06000012",
+    "E06000013", "E06000014", "E06000065", "E08000016", "E08000017",
+    "E08000018", "E08000019", "E08000032", "E08000035", "E08000033",
+    "E08000034", "E08000036"
+  )
 )
 
 geogs <- unlist(geographies)
-
+ 
 variables <- list(
-  employment = c(employment = 45 #,
+  employment = c(employment = 45 #, 
                  # employment_by_industry = 1329:1338
   ),
   unemployment = 84,
@@ -122,6 +132,6 @@ data$qualifications <- retrieve_nomis_data(
 data_out <- dplyr::bind_rows(data, .id = "theme") |>
   dplyr::select(-category, -is_summary)
 
-readr::write_csv(data_out, "working/cs/cs-true-north.csv")
-arrow::write_parquet(data_out, "working/cs/cs-true-north.parquet")
+readr::write_csv(data_out, "working/cs/nomis-lad.csv")
+arrow::write_parquet(data_out, "working/cs/nomis-lad.parquet")
 
