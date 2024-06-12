@@ -4,15 +4,20 @@ theme: people-skills-future
 nicetheme: "People, Skills and The Future"
 ---
 <h3>Vacancies by sector over the last 10 years</h3>
-
+<p>
+    This chart shows the number of vacancies in different sectors of the economy over the last 10 years. This data comes 
+    from the Labour Market Statistics (LMS) dataset in the <a href="https://github.com/economic-analytics/edd/raw/main/data/parquet/LMS.parquet">
+    Economic Data Dashboard (EDD)</a>. You can find the data source in the <a href="https://github.com/economic-analytics/edd/blob/main/data/edd_dict.csv">
+    EDD lookup table.</a>
+</p>
 {{ comp.oi.chart.line({ config: {
     data: vacancies_by_sector,
     height: 600,
     legend: {
         show: true },
     axis: {
-        x: { title: { label: "Date" }, grid: { 'stroke-dasharray': "6 2", 'stroke-width': "1"}, ticks: comp.buildYearTicks({ data: vacancies_by_sector, field: "date", step: 2})  },
-        y: { title: { label: "000s of Vacancies" }, grid: { "stroke-width": "1"}, tick: { spacing: 50} }
+        x: { title: { label: "Date" }, grid: { show: true, 'stroke-dasharray': "6 2", 'stroke-width': "1"} },
+        y: { title: { label: "000s of Vacancies" }, grid: { "stroke-width": "1"}, tick: { spacing: 50 } }
     },
     series: [{
         title: "Real Estate Activities",
