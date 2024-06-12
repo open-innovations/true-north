@@ -1,63 +1,63 @@
-dataset,dates.freq,variable.name,geography.code,geography.name,industry.code,industry.name,2019-01-01,2022-01-01,growth_2019_2022
-RGVA_LAD,a,GVA Constant Prices £m,E06000001,Hartlepool,H (49-53),Transportation and storage,22,33,50
-RGVA_LAD,a,GVA Constant Prices £m,E06000004,Stockton-on-Tees,J (58-63),Information and communication,99,211,113.13131313131312
-RGVA_LAD,a,GVA Constant Prices £m,E06000002,Middlesbrough,Q (86-88),Human health and social work activities,606,766,26.4026402640264
-RGVA_LAD,a,GVA Constant Prices £m,E06000003,Redcar and Cleveland,J (58-63),Information and communication,7,11,57.14285714285714
-RGVA_LAD,a,GVA Constant Prices £m,E06000005,Darlington,J (58-63),Information and communication,335,669,99.70149253731343
-RGVA_LAD,a,GVA Constant Prices £m,E06000047,County Durham,F (41-43),Construction,635,788,24.094488188976378
-RGVA_LAD,a,GVA Constant Prices £m,E06000057,Northumberland,I (55-56),Accommodation and food service activities,206,278,34.95145631067961
-RGVA_LAD,a,GVA Constant Prices £m,E08000021,Newcastle upon Tyne,J (58-63),Information and communication,854,1274,49.18032786885246
-RGVA_LAD,a,GVA Constant Prices £m,E08000022,North Tyneside,C (10-33),Manufacturing,400,568,42
-RGVA_LAD,a,GVA Constant Prices £m,E08000023,South Tyneside,J (58-63),Information and communication,53,70,32.075471698113205
-RGVA_LAD,a,GVA Constant Prices £m,E08000037,Gateshead,R (90-93),"Arts, entertainment and recreation",32,40,25
-RGVA_LAD,a,GVA Constant Prices £m,E08000024,Sunderland,J (58-63),Information and communication,109,223,104.58715596330275
-RGVA_LAD,a,GVA Constant Prices £m,E06000063,Cumberland,J (58-63),Information and communication,75,94,25.333333333333336
-RGVA_LAD,a,GVA Constant Prices £m,E06000064,Westmorland and Furness,N (77-82),Administrative and support service activities,123,172,39.83739837398374
-RGVA_LAD,a,GVA Constant Prices £m,E08000003,Manchester,J (58-63),Information and communication,1837,2687,46.271094175285796
-RGVA_LAD,a,GVA Constant Prices £m,E08000006,Salford,R (90-93),"Arts, entertainment and recreation",59,101,71.1864406779661
-RGVA_LAD,a,GVA Constant Prices £m,E08000009,Trafford,M (69-75),"Professional, scientific and technical activities",643,1385,115.39657853810263
-RGVA_LAD,a,GVA Constant Prices £m,E08000007,Stockport,M (69-75),"Professional, scientific and technical activities",436,618,41.74311926605505
-RGVA_LAD,a,GVA Constant Prices £m,E08000008,Tameside,J (58-63),Information and communication,45,57,26.666666666666668
-RGVA_LAD,a,GVA Constant Prices £m,E08000001,Bolton,T (97-98),Activities of households,5,6,20
-RGVA_LAD,a,GVA Constant Prices £m,E08000010,Wigan,T (97-98),Activities of households,5,7,40
-RGVA_LAD,a,GVA Constant Prices £m,E08000002,Bury,T (97-98),Activities of households,3,4,33.33333333333333
-RGVA_LAD,a,GVA Constant Prices £m,E08000004,Oldham,R (90-93),"Arts, entertainment and recreation",19,47,147.36842105263156
-RGVA_LAD,a,GVA Constant Prices £m,E08000005,Rochdale,J (58-63),Information and communication,96,182,89.58333333333334
-RGVA_LAD,a,GVA Constant Prices £m,E06000008,Blackburn with Darwen,K (64-66),Financial and insurance activities,71,116,63.38028169014085
-RGVA_LAD,a,GVA Constant Prices £m,E06000009,Blackpool,I (55-56),Accommodation and food service activities,184,248,34.78260869565217
-RGVA_LAD,a,GVA Constant Prices £m,E07000121,Lancaster,J (58-63),Information and communication,74,132,78.37837837837837
-RGVA_LAD,a,GVA Constant Prices £m,E07000128,Wyre,I (55-56),Accommodation and food service activities,74,106,43.24324324324324
-RGVA_LAD,a,GVA Constant Prices £m,E07000119,Fylde,M (69-75),"Professional, scientific and technical activities",212,352,66.0377358490566
-RGVA_LAD,a,GVA Constant Prices £m,E07000123,Preston,C (10-33),Manufacturing,195,258,32.30769230769231
-RGVA_LAD,a,GVA Constant Prices £m,E07000124,Ribble Valley,N (77-82),Administrative and support service activities,22,43,95.45454545454545
-RGVA_LAD,a,GVA Constant Prices £m,E07000126,South Ribble,C (10-33),Manufacturing,691,1370,98.26338639652677
-RGVA_LAD,a,GVA Constant Prices £m,E07000117,Burnley,K (64-66),Financial and insurance activities,87,152,74.71264367816092
-RGVA_LAD,a,GVA Constant Prices £m,E07000120,Hyndburn,J (58-63),Information and communication,80,113,41.25
-RGVA_LAD,a,GVA Constant Prices £m,E07000122,Pendle,T (97-98),Activities of households,3,4,33.33333333333333
-RGVA_LAD,a,GVA Constant Prices £m,E07000125,Rossendale,I (55-56),Accommodation and food service activities,18,28,55.55555555555556
-RGVA_LAD,a,GVA Constant Prices £m,E07000118,Chorley,C (10-33),Manufacturing,165,231,40
-RGVA_LAD,a,GVA Constant Prices £m,E07000127,West Lancashire,M (69-75),"Professional, scientific and technical activities",155,210,35.483870967741936
-RGVA_LAD,a,GVA Constant Prices £m,E06000007,Warrington,M (69-75),"Professional, scientific and technical activities",785,1135,44.5859872611465
-RGVA_LAD,a,GVA Constant Prices £m,E06000049,Cheshire East,I (55-56),Accommodation and food service activities,330,408,23.636363636363637
-RGVA_LAD,a,GVA Constant Prices £m,E06000050,Cheshire West and Chester,M (69-75),"Professional, scientific and technical activities",536,708,32.08955223880597
-RGVA_LAD,a,GVA Constant Prices £m,E06000006,Halton,I (55-56),Accommodation and food service activities,58,69,18.96551724137931
-RGVA_LAD,a,GVA Constant Prices £m,E08000011,Knowsley,Q (86-88),Human health and social work activities,624,786,25.961538461538463
-RGVA_LAD,a,GVA Constant Prices £m,E08000013,St. Helens,Q (86-88),Human health and social work activities,196,276,40.816326530612244
-RGVA_LAD,a,GVA Constant Prices £m,E08000012,Liverpool,ABDE (1-9; 35-39),"Agriculture, mining, electricity, gas, water and waste",203,254,25.12315270935961
-RGVA_LAD,a,GVA Constant Prices £m,E08000014,Sefton,J (58-63),Information and communication,55,82,49.09090909090909
-RGVA_LAD,a,GVA Constant Prices £m,E08000015,Wirral,M (69-75),"Professional, scientific and technical activities",521,838,60.84452975047985
-RGVA_LAD,a,GVA Constant Prices £m,E06000010,"Kingston upon Hull, City of",I (55-56),Accommodation and food service activities,143,230,60.83916083916085
-RGVA_LAD,a,GVA Constant Prices £m,E06000011,East Riding of Yorkshire,I (55-56),Accommodation and food service activities,233,321,37.76824034334764
-RGVA_LAD,a,GVA Constant Prices £m,E06000012,North East Lincolnshire,I (55-56),Accommodation and food service activities,91,143,57.14285714285714
-RGVA_LAD,a,GVA Constant Prices £m,E06000013,North Lincolnshire,I (55-56),Accommodation and food service activities,70,108,54.285714285714285
-RGVA_LAD,a,GVA Constant Prices £m,E06000014,York,J (58-63),Information and communication,205,332,61.951219512195124
-RGVA_LAD,a,GVA Constant Prices £m,E06000065,North Yorkshire,K (64-66),Financial and insurance activities,424,569,34.19811320754717
-RGVA_LAD,a,GVA Constant Prices £m,E08000016,Barnsley,O (84),Public administration and defence,103,140,35.92233009708738
-RGVA_LAD,a,GVA Constant Prices £m,E08000017,Doncaster,J (58-63),Information and communication,129,169,31.007751937984494
-RGVA_LAD,a,GVA Constant Prices £m,E08000018,Rotherham,G (45-47),Wholesale and retail trade; repair of motor vehicles,482,567,17.634854771784234
-RGVA_LAD,a,GVA Constant Prices £m,E08000019,Sheffield,J (58-63),Information and communication,850,1447,70.23529411764706
-RGVA_LAD,a,GVA Constant Prices £m,E08000032,Bradford,K (64-66),Financial and insurance activities,469,649,38.37953091684435
-RGVA_LAD,a,GVA Constant Prices £m,E08000035,Leeds,J (58-63),Information and communication,2151,3087,43.51464435146444
-RGVA_LAD,a,GVA Constant Prices £m,E08000033,Calderdale,S (94-96),Other service activities,173,284,64.16184971098265
-RGVA_LAD,a,GVA Constant Prices £m,E08000034,Kirklees,K (64-66),Financial and insurance activities,71,121,70.4225352112676
-RGVA_LAD,a,GVA Constant Prices £m,E08000036,Wakefield,ABDE (1-9; 35-39),"Agriculture, mining, electricity, gas, water and waste",256,468,82.8125
+dataset,dates.freq,variable.name,geography.code,geography.name,industry.code,industry.name,share_2019-01-01,share_2022-01-01,value_2019-01-01,value_2022-01-01,growth_2019_2022
+RGVA_LAD,a,GVA Constant Prices £m,E06000001,Hartlepool,H (49-53),Transportation and storage,0.016046681254558718,0.024868123587038434,22,33,50
+RGVA_LAD,a,GVA Constant Prices £m,E06000004,Stockton-on-Tees,J (58-63),Information and communication,0.01904578684109273,0.03871559633027523,99,211,113.13131313131312
+RGVA_LAD,a,GVA Constant Prices £m,E06000002,Middlesbrough,Q (86-88),Human health and social work activities,0.2014627659574468,0.24426020408163265,606,766,26.4026402640264
+RGVA_LAD,a,GVA Constant Prices £m,E06000003,Redcar and Cleveland,J (58-63),Information and communication,0.0038975501113585748,0.006134969325153374,7,11,57.14285714285714
+RGVA_LAD,a,GVA Constant Prices £m,E06000005,Darlington,J (58-63),Information and communication,0.1342685370741483,0.2528344671201814,335,669,99.70149253731343
+RGVA_LAD,a,GVA Constant Prices £m,E06000047,County Durham,F (41-43),Construction,0.07016574585635359,0.08142178135978508,635,788,24.094488188976378
+RGVA_LAD,a,GVA Constant Prices £m,E06000057,Northumberland,I (55-56),Accommodation and food service activities,0.03845435878290088,0.04958972529432751,206,278,34.95145631067961
+RGVA_LAD,a,GVA Constant Prices £m,E08000021,Newcastle upon Tyne,J (58-63),Information and communication,0.09040863857717553,0.12645161290322582,854,1274,49.18032786885246
+RGVA_LAD,a,GVA Constant Prices £m,E08000022,North Tyneside,C (10-33),Manufacturing,0.08686210640608034,0.11357728454309138,400,568,42
+RGVA_LAD,a,GVA Constant Prices £m,E08000023,South Tyneside,J (58-63),Information and communication,0.028027498677948175,0.03865267807840972,53,70,32.075471698113205
+RGVA_LAD,a,GVA Constant Prices £m,E08000037,Gateshead,R (90-93),"Arts, entertainment and recreation",0.0071000665631240295,0.009494422027059102,32,40,25
+RGVA_LAD,a,GVA Constant Prices £m,E08000024,Sunderland,J (58-63),Information and communication,0.01513258364570318,0.0341448476496708,109,223,104.58715596330275
+RGVA_LAD,a,GVA Constant Prices £m,E06000063,Cumberland,J (58-63),Information and communication,0.011978917105893628,0.016173434273916036,75,94,25.333333333333336
+RGVA_LAD,a,GVA Constant Prices £m,E06000064,Westmorland and Furness,N (77-82),Administrative and support service activities,0.01998375304630382,0.028524046434494195,123,172,39.83739837398374
+RGVA_LAD,a,GVA Constant Prices £m,E08000003,Manchester,J (58-63),Information and communication,0.07266326490249594,0.09467935165609584,1837,2687,46.271094175285796
+RGVA_LAD,a,GVA Constant Prices £m,E08000006,Salford,R (90-93),"Arts, entertainment and recreation",0.007305596830113918,0.010784837159636946,59,101,71.1864406779661
+RGVA_LAD,a,GVA Constant Prices £m,E08000009,Trafford,M (69-75),"Professional, scientific and technical activities",0.06878476679503637,0.13887496239847588,643,1385,115.39657853810263
+RGVA_LAD,a,GVA Constant Prices £m,E08000007,Stockport,M (69-75),"Professional, scientific and technical activities",0.06334447188725846,0.08139075464243382,436,618,41.74311926605505
+RGVA_LAD,a,GVA Constant Prices £m,E08000008,Tameside,J (58-63),Information and communication,0.013208100968594072,0.01702000597193192,45,57,26.666666666666668
+RGVA_LAD,a,GVA Constant Prices £m,E08000001,Bolton,T (97-98),Activities of households,8.501955449753444e-4,9.91899487518598e-4,5,6,20
+RGVA_LAD,a,GVA Constant Prices £m,E08000010,Wigan,T (97-98),Activities of households,9.815469179426776e-4,0.0012598992080633548,5,7,40
+RGVA_LAD,a,GVA Constant Prices £m,E08000002,Bury,T (97-98),Activities of households,8.605851979345956e-4,0.001193673530289466,3,4,33.33333333333333
+RGVA_LAD,a,GVA Constant Prices £m,E08000004,Oldham,R (90-93),"Arts, entertainment and recreation",0.004634146341463414,0.01175,19,47,147.36842105263156
+RGVA_LAD,a,GVA Constant Prices £m,E08000005,Rochdale,J (58-63),Information and communication,0.02589695171297545,0.047309591889784244,96,182,89.58333333333334
+RGVA_LAD,a,GVA Constant Prices £m,E06000008,Blackburn with Darwen,K (64-66),Financial and insurance activities,0.02259707192870783,0.0330672748004561,71,116,63.38028169014085
+RGVA_LAD,a,GVA Constant Prices £m,E06000009,Blackpool,I (55-56),Accommodation and food service activities,0.06472036581076328,0.08683473389355742,184,248,34.78260869565217
+RGVA_LAD,a,GVA Constant Prices £m,E07000121,Lancaster,J (58-63),Information and communication,0.02599227256761503,0.044821731748726654,74,132,78.37837837837837
+RGVA_LAD,a,GVA Constant Prices £m,E07000128,Wyre,I (55-56),Accommodation and food service activities,0.04195011337868481,0.06077981651376147,74,106,43.24324324324324
+RGVA_LAD,a,GVA Constant Prices £m,E07000119,Fylde,M (69-75),"Professional, scientific and technical activities",0.07949006374203224,0.13590733590733592,212,352,66.0377358490566
+RGVA_LAD,a,GVA Constant Prices £m,E07000123,Preston,C (10-33),Manufacturing,0.04312251216275984,0.05700397702165267,195,258,32.30769230769231
+RGVA_LAD,a,GVA Constant Prices £m,E07000124,Ribble Valley,N (77-82),Administrative and support service activities,0.013597033374536464,0.023230686115613183,22,43,95.45454545454545
+RGVA_LAD,a,GVA Constant Prices £m,E07000126,South Ribble,C (10-33),Manufacturing,0.18874624419557498,0.31079854809437385,691,1370,98.26338639652677
+RGVA_LAD,a,GVA Constant Prices £m,E07000117,Burnley,K (64-66),Financial and insurance activities,0.04343484772840739,0.0745829244357213,87,152,74.71264367816092
+RGVA_LAD,a,GVA Constant Prices £m,E07000120,Hyndburn,J (58-63),Information and communication,0.056617126680820945,0.07771664374140302,80,113,41.25
+RGVA_LAD,a,GVA Constant Prices £m,E07000122,Pendle,T (97-98),Activities of households,0.001694915254237288,0.0024154589371980675,3,4,33.33333333333333
+RGVA_LAD,a,GVA Constant Prices £m,E07000125,Rossendale,I (55-56),Accommodation and food service activities,0.017341040462427744,0.025901942645698426,18,28,55.55555555555556
+RGVA_LAD,a,GVA Constant Prices £m,E07000118,Chorley,C (10-33),Manufacturing,0.07551487414187644,0.10052219321148825,165,231,40
+RGVA_LAD,a,GVA Constant Prices £m,E07000127,West Lancashire,M (69-75),"Professional, scientific and technical activities",0.05706921944035346,0.0707070707070707,155,210,35.483870967741936
+RGVA_LAD,a,GVA Constant Prices £m,E06000007,Warrington,M (69-75),"Professional, scientific and technical activities",0.09647290156077179,0.13499048525214083,785,1135,44.5859872611465
+RGVA_LAD,a,GVA Constant Prices £m,E06000049,Cheshire East,I (55-56),Accommodation and food service activities,0.023166023166023165,0.029253602925360292,330,408,23.636363636363637
+RGVA_LAD,a,GVA Constant Prices £m,E06000050,Cheshire West and Chester,M (69-75),"Professional, scientific and technical activities",0.047416843595187545,0.061431670281995664,536,708,32.08955223880597
+RGVA_LAD,a,GVA Constant Prices £m,E06000006,Halton,I (55-56),Accommodation and food service activities,0.013510365711623572,0.016265912305516265,58,69,18.96551724137931
+RGVA_LAD,a,GVA Constant Prices £m,E08000011,Knowsley,Q (86-88),Human health and social work activities,0.16919739696312364,0.2167677881963596,624,786,25.961538461538463
+RGVA_LAD,a,GVA Constant Prices £m,E08000013,St. Helens,Q (86-88),Human health and social work activities,0.07022572554639914,0.1,196,276,40.816326530612244
+RGVA_LAD,a,GVA Constant Prices £m,E08000012,Liverpool,ABDE (1-9; 35-39),"Agriculture, mining, electricity, gas, water and waste",0.01441966188379031,0.016888297872340426,203,254,25.12315270935961
+RGVA_LAD,a,GVA Constant Prices £m,E08000014,Sefton,J (58-63),Information and communication,0.01317680881648299,0.018602540834845735,55,82,49.09090909090909
+RGVA_LAD,a,GVA Constant Prices £m,E08000015,Wirral,M (69-75),"Professional, scientific and technical activities",0.09967476563994643,0.15404411764705883,521,838,60.84452975047985
+RGVA_LAD,a,GVA Constant Prices £m,E06000010,"Kingston upon Hull, City of",I (55-56),Accommodation and food service activities,0.023679417122040074,0.03622047244094488,143,230,60.83916083916085
+RGVA_LAD,a,GVA Constant Prices £m,E06000011,East Riding of Yorkshire,I (55-56),Accommodation and food service activities,0.03267882187938289,0.04055078322385043,233,321,37.76824034334764
+RGVA_LAD,a,GVA Constant Prices £m,E06000012,North East Lincolnshire,I (55-56),Accommodation and food service activities,0.028034504004929142,0.0392318244170096,91,143,57.14285714285714
+RGVA_LAD,a,GVA Constant Prices £m,E06000013,North Lincolnshire,I (55-56),Accommodation and food service activities,0.013897161008536827,0.0187565126780132,70,108,54.285714285714285
+RGVA_LAD,a,GVA Constant Prices £m,E06000014,York,J (58-63),Information and communication,0.03193643869761645,0.04790073582455634,205,332,61.951219512195124
+RGVA_LAD,a,GVA Constant Prices £m,E06000065,North Yorkshire,K (64-66),Financial and insurance activities,0.02791310072416063,0.035101789019123995,424,569,34.19811320754717
+RGVA_LAD,a,GVA Constant Prices £m,E08000016,Barnsley,O (84),Public administration and defence,0.025931520644511583,0.03329369797859691,103,140,35.92233009708738
+RGVA_LAD,a,GVA Constant Prices £m,E08000017,Doncaster,J (58-63),Information and communication,0.02257612880644032,0.028412911903160726,129,169,31.007751937984494
+RGVA_LAD,a,GVA Constant Prices £m,E08000018,Rotherham,G (45-47),Wholesale and retail trade; repair of motor vehicles,0.1014096360193562,0.1218568665377176,482,567,17.634854771784234
+RGVA_LAD,a,GVA Constant Prices £m,E08000019,Sheffield,J (58-63),Information and communication,0.0646584512399209,0.10107571947471361,850,1447,70.23529411764706
+RGVA_LAD,a,GVA Constant Prices £m,E08000032,Bradford,K (64-66),Financial and insurance activities,0.04828083178917027,0.06307094266277939,469,649,38.37953091684435
+RGVA_LAD,a,GVA Constant Prices £m,E08000035,Leeds,J (58-63),Information and communication,0.07848932676518884,0.10622483741096314,2151,3087,43.51464435146444
+RGVA_LAD,a,GVA Constant Prices £m,E08000033,Calderdale,S (94-96),Other service activities,0.032796208530805684,0.056856856856856854,173,284,64.16184971098265
+RGVA_LAD,a,GVA Constant Prices £m,E08000034,Kirklees,K (64-66),Financial and insurance activities,0.009464142895227939,0.015396360860160326,71,121,70.4225352112676
+RGVA_LAD,a,GVA Constant Prices £m,E08000036,Wakefield,ABDE (1-9; 35-39),"Agriculture, mining, electricity, gas, water and waste",0.03235182610893467,0.056385542168674696,256,468,82.8125
