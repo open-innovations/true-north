@@ -1,9 +1,17 @@
 ---
-title: GVA
+title: Gross Value Added
 theme: sustainable-growth
 nicetheme: "Sustainable Growth"
 ---
-<h3>GVA (current prices) in millions of pounds</h3>
+<p>GVA is an economic productivity metric... <p> {{# Christian to fill in #}}
+
+<h3>GVA in millions of pounds</h3>
+<p>
+	This chart shows GVA (in millions of pounds) by local authority in current (real-terms) prices.
+
+	You can use the slider at the bottom of the chart to switch between current and constant prices.
+</p>
+
 {{ comp.oi.map.hex_cartogram({
 	"config": {
 		"width": 600,
@@ -59,7 +67,16 @@ nicetheme: "Sustainable Growth"
 }) }}
 
 <h3>Fastest growing sectors by Local Authority</h3>
-
+<p>
+	This chart shows the fastest growing sectors in the North by local authority. 
+	The fastest growing sector here is defined as the one with the largest positive percentage 
+	change in GVA from 2019 to 2022.
+	A change of 100% means a sector's GVA doubled from 2019 to 2022.
+	A change of 50% means a sector's GVA was 1.5 times larger in 2022 than in 2019.
+</p>
+<p>
+	You can hover over the hexes to see the growth rate and which sector it occured in.
+</p>
 {{ comp.oi.map.hex_cartogram({
 	"config": {
 		"width": 600,
