@@ -12,9 +12,10 @@
       <div class="holder">
       <nav>
         <ul>
-          {{ for page of search.pages("nav!=undefined") }}
-            <li><a href="{{ page.url }}"{{ if page.url==url || (page.url!="/" && url.match("^"+page.url)) }} class="b6-bg in-section"{{ /if }}>{{ page.nav }}</a></li>
-          {{ /for }}
+          <li><a href="/"{{ if url=="/" }} class="b6-bg in-section"{{ /if }}>About</a></li>
+          <li><a href="/themes"{{ if url.match("^/themes") }} class="b6-bg in-section"{{ /if }}>Themes</a></li>
+          <li><a href="/stories"{{ if url.match("^/stories") }} class="b6-bg in-section"{{ /if }}>Stories</a></li>
+          <li><a href="/resources"{{ if url.match("^/resources") }} class="b6-bg in-section"{{ /if }}>Resources</a></li>
         </ul>
       </nav>
     </div>
