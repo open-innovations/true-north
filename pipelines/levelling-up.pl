@@ -205,5 +205,6 @@ sub formatPounds {
 	if($v <= 0){ $v = ""; }
 	else{ $v = sprintf("%.2f",$v); }
 	$v =~ s/^0//g;
+	$v = "";
 	return "£".$e.$v;
 }
