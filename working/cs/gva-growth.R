@@ -21,11 +21,14 @@ rgva |>
   dplyr::filter(geography.type == "ITL2") |>
   dplyr::filter(grepl("^TL[CDE]", geography.code)) |>
   dplyr::filter(variable.name == "Constant prices") |>
-  dplyr::filter(grepl("^[A-Z]{1} ", industry.code)) |>
+  dplyr::filter(grepl("^[A-Z]{1} |Total", industry.code)) |>
   dplyr::filter(dates.date == "2019-01-01" | dates.date == "2022-01-01") |>
   dplyr::collect() |>
-  tidyr::pivot_wider(names_from = dates.date, values_from = value) |>
-  dplyr::mutate(growth_2019_2022 = (`2022-01-01` - `2019-01-01`) / `2019-01-01` * 100) |>
+  dplyr::group_by(dates.date, geography.code) |>
+  dplyr::mutate(share = value / value[industry.code == "Total"]) |>
+  dplyr::filter(industry.code != "Total") |>
+  tidyr::pivot_wider(names_from = dates.date, values_from = c(share, value)) |>
+  dplyr::mutate(growth_2019_2022 = (`value_2022-01-01` - `value_2019-01-01`) / `value_2019-01-01` * 100) |>
   dplyr::group_by(geography.code, geography.name) |>
   dplyr::filter(growth_2019_2022 == max(growth_2019_2022)) |>
   readr::write_csv("working/cs/fasting-growing-sector-by-itl2.csv")
