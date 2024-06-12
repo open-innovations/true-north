@@ -1,0 +1,81 @@
+---
+title: Levelling up
+theme: purpose-social-impact
+nicetheme: Purpose & Social Impact
+---
+<p>
+    This page shows data on successful bids from round one of Levelling up funding. This data comes from the 2021 dataset published by the
+    <a href="https://www.gov.uk/government/publications/levelling-up-fund-first-round-successful-bidders">
+    Department for Levelling Up, Housing and Communities</a>.
+</p>
+
+{{ comp.oi.dashboard ({ config: {
+	title: "name",
+	value: "value",
+  note: "footnote",
+  data: headlines,
+  panels: [
+      { name: "Highest total funding" },
+      { name: "Highest funding per person" }
+      ],
+  units: { postfix: "post", prefix: 'pre' },
+    }
+  })
+}}
+
+<h3>Successful bids by local authority</h3>
+<p>
+    This map shows the funding per capita of successful bids in round one of Levelling up.
+    Where a bid was successful, we have attempted to match the "Legal name of lead applicant organisation" to a local authority.
+    In some cases, the lead organisation covers multiple local authorities. In this instance, we divide the grant funding equally 
+    across all local authorities that the organisation represents. There are some local authorities which did not receive funding in round 1; 
+    these are shown as null values.
+</p>
+<p class='warning padded'>
+    Important note: the Isles of Scilly has an extreme per capita value as the Isles of Scilly has very few people.
+    We have set the upper range to a more sensible vaue to truncate the scale on the hex map.
+</p>
+{{ comp.oi.map.hex_cartogram({
+	"config": {
+		"width": 600,
+		"hexjson": "hexjson.uk-local-authority-districts-2023",
+		"data": levelling_up,
+		"columns":[{
+			"name": "filterLabel",
+			"template": "{{ n }}"
+		}],
+		"value": "Per capita (£)",
+		"scale": "TrueNorth",
+		"min": 0,
+		"max": 250,
+		"matchKey": "LAD23CD",
+		"legend": {
+			"position": "top right",
+			"continuous": true,
+			"items": [{
+				"value": 250,
+				"label": "£250+ / person"
+			},{
+				"value": 150,
+				"label": "£150 / person"
+			},{
+				"value": 0,
+				"label": "£0 / person"
+			}]
+		},
+		"boundaries": {
+			"country": {
+				"stroke": "#181b25",
+				"stroke-width": 2,
+				"stroke-linecap": "round",
+				"stroke-opacity": 0.5
+			}
+		},
+		"tools":{
+			"filter":{
+				"label": "filterLabel"
+			}
+		},
+		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />GBP per person: <strong class=\"number\">£{{ {{ _value }} | toLocaleString() }} / person</strong><br />Allocation: <strong>£{{ Total (£) | toLocaleString() }}</strong>"
+	}
+}) }}

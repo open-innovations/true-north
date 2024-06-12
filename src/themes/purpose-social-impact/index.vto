@@ -5,3 +5,9 @@ title: Purpose & Social Impact
     This group will focus on developing initiatives that deliver purpose and social 
     impact for the benefit of underserved communities across the North
 </p>
+<h3>Topics</h3>
+<ol>
+    {{ for page of search.pages("theme=purpose-social-impact") }}
+    <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+    {{ /for }}
+</ol>
