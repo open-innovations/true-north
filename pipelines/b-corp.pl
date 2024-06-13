@@ -341,6 +341,7 @@ sub fixPostcode {
 	if($pcd eq "UK" && $name eq "By Sarah"){ $pcd = "B798RH"; }
 	if($pcd eq "WC2A0HF"){ $pcd = "WC2H0HF"; }
 	if($pcd eq "TA11FH"){ $pcd = "TA11QN"; }
+	if($pcd eq "SE28EA" && $name eq "ZeroBees"){ $pcd = "SE228EA"; }
 	return $pcd;
 }
 
