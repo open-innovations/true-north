@@ -10,7 +10,7 @@ use POSIX qw(strftime);
 binmode STDOUT, 'utf8';
 binmode STDERR, 'utf8';
 
-my ($basedir, $path,@rows,$r,@las,@lads,$l,%la,$lad,$hexjson,$fh,$percap);
+my ($basedir, $path,@rows,$r,@las,@lads,$l,%la,$lad,$hexjson,$fh,$percap,$stats,@segments,$s,$total);
 
 # Get the real base directory for this script
 BEGIN { ($basedir, $path) = abs_path($0) =~ m{(.*/)?([^/]+)$}; push @INC, $basedir; }
@@ -20,7 +20,7 @@ $hexjson = LoadJSON($basedir."../src/_data/hexjson/uk-local-authority-districts-
 # Get the full list of local authorities and create a structure
 @lads = sort(keys(%{$hexjson->{'hexes'}}));
 for($r = 0; $r < @lads; $r++){
-	$la{$lads[$r]} = {'total'=>0,'bids'=>0,'population'=>0,'name'=>$hexjson->{'hexes'}{$lads[$r]}{'n'}};
+	$la{$lads[$r]} = {'total'=>{'round1'=>0,'round2'=>0},'bids'=>{'round1'=>0,'round2'=>0},'population'=>0,'name'=>$hexjson->{'hexes'}{$lads[$r]}{'n'}};
 }
 
 # Load the population estimates - this is a flat file
@@ -38,8 +38,8 @@ for($r = 0; $r < @rows; $r++){
 	@las = split(/;/,$rows[$r]->{'LADs'});
 	for($l = 0; $l < @las; $l++){
 		$lad = $las[$l];
-		$la{$lad}{'total'} += $rows[$r]->{'Bid Value'}/@las;
-		$la{$lad}{'bids'}++;
+		$la{$lad}{'total'}{'round1'} += $rows[$r]->{'Bid Value'}/@las;
+		$la{$lad}{'bids'}{'round1'}++;
 	}
 }
 @rows = LoadCSV($basedir."../working/levelling-up/levelling-up-fund-round-2.csv");
@@ -47,23 +47,58 @@ for($r = 0; $r < @rows; $r++){
 	@las = split(/;/,$rows[$r]->{'LADs'});
 	for($l = 0; $l < @las; $l++){
 		$lad = $las[$l];
-		$la{$lad}{'total'} += $rows[$r]->{'Bid Value'}/@las;
-		$la{$lad}{'bids'}++;
+		$la{$lad}{'total'}{'round2'} += $rows[$r]->{'Bid Value'}/@las;
+		$la{$lad}{'bids'}{'round2'}++;
 	}
 }
 
+@segments = ('all','round1','round2');
+$stats = {'total'=>{'name'=>'','value'=>0},'percapita'=>{'name'=>'','value'=>0}};
+$total = 0;
+
 open($fh,">:utf8",$basedir."../src/themes/purpose-social-impact/levelling-up/_data/levelling_up.csv");
-print $fh "LAD23CD,LA name,Population (mid 2022 est),Bids,Total (£),Total,Per capita (£),Per capita\n";
+print $fh "LAD23CD,LA name,Population (mid 2022 est),All,All,All,All,All,Round 1,Round 1,Round 1,Round 1,Round 1,Round 2,Round 2,Round 2,Round 2,Round 2\n";
+print $fh ",,,Bids,Total (£),Total,Per capita (£),Per capita,Bids,Total (£),Total,Per capita (£),Per capita,Bids,Total (£),Total,Per capita (£),Per capita\n";
+print $fh "---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---\n";
 foreach $lad (@lads){
-	print $fh "$lad,\"$la{$lad}->{'name'}\",$la{$lad}->{'population'},";
-	if($la{$lad}->{'bids'} > 0){
-		$percap = ($la{$lad}->{'total'}/$la{$lad}->{'population'});
-		print $fh "$la{$lad}->{'bids'},".sprintf("%0.2d",$la{$lad}->{'total'}).",\"".formatPounds($la{$lad}->{'total'})."\",".sprintf("%0.2f",$percap).",\"".formatPounds($percap)."\"\n";
-	}else{
-		print $fh ",,none,,none\n";
+	print $fh "$lad,\"$la{$lad}->{'name'}\",$la{$lad}->{'population'}";
+	$la{$lad}->{'bids'}{'all'} = $la{$lad}->{'bids'}{'round1'}+$la{$lad}->{'bids'}{'round2'};
+	$la{$lad}->{'total'}{'all'} = $la{$lad}->{'total'}{'round1'}+$la{$lad}->{'total'}{'round2'};
+	$total += $la{$lad}->{'total'}{'all'};
+	for($s = 0; $s < @segments; $s++){
+		if($la{$lad}->{'bids'}{$segments[$s]} > 0){
+			$percap = ($la{$lad}->{'total'}{$segments[$s]}/$la{$lad}->{'population'});
+			print $fh ",".$la{$lad}->{'bids'}{$segments[$s]}.",".sprintf("%0.2d",$la{$lad}->{'total'}{$segments[$s]}).",\"".formatPounds($la{$lad}->{'total'}{$segments[$s]})."\",".sprintf("%0.2f",$percap).",\"".formatPounds($percap)."\"";
+			if($segments[$s] eq "all"){
+				if($la{$lad}->{'total'}{'all'} > $stats->{'total'}{'value'}){
+					$stats->{'total'}{'value'} = $la{$lad}->{'total'}{'all'};
+					$stats->{'total'}{'name'} = $la{$lad}->{'name'};
+				}
+				if($percap > $stats->{'percapita'}{'value'}){
+					$stats->{'percapita'}{'value'} = sprintf("%0.2f",$percap);
+					$stats->{'percapita'}{'name'} = $la{$lad}->{'name'};
+				}
+			}
+		}else{
+			print $fh ",,,none,,none";
+		}
 	}
+	print $fh "\n";
 }
 close($fh);
+
+$total = sprintf("%0d",$total);
+
+open($fh,">:utf8",$basedir."../src/themes/purpose-social-impact/levelling-up/_data/headlines.csv");
+print $fh "name,value,pre,post,footnote\n";
+print $fh "Total funding,$total,£,,Rounds 1 and 2\n";
+print $fh "Highest total funding,$stats->{'total'}{'value'},£,,$stats->{'total'}{'name'}\n";
+print $fh "Highest funding per person,$stats->{'percapita'}{'value'},£,,$stats->{'percapita'}{'name'}\n";
+close($fh);
+
+msg("Total funding: <yellow>£$total<none>\n");
+msg("Highest total: <yellow>£$stats->{'total'}{'value'}<none> ($stats->{'total'}{'name'})\n");
+msg("Highest per capita: <yellow>£$stats->{'percapita'}{'value'}<none> ($stats->{'percapita'}{'name'})\n");
 
 
 

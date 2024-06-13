@@ -13,6 +13,7 @@ nicetheme: Purpose & Social Impact
   note: "footnote",
   data: headlines,
   panels: [
+      { name: "Total funding" },
       { name: "Highest total funding" },
       { name: "Highest funding per person" }
       ],
@@ -21,7 +22,6 @@ nicetheme: Purpose & Social Impact
   })
 }}
 
-<h2>Successful bids by local authority</h2>
 <p>
     This map shows the funding of successful bids in rounds one and two of Levelling Up, divided by the population of that local authority (funding per capita).
     Where a bid was successful, we have attempted to match the name of lead applicant organisation to a local authority.
@@ -30,8 +30,7 @@ nicetheme: Purpose & Social Impact
     these are shown with a value of "none".
 </p>
 <p class='warning padded'>
-    Important note: the Isles of Scilly has an extreme per capita value as the Isles of Scilly has very few people.
-    We have set the upper range to a more sensible value to truncate the scale on the hex map.
+    Important note: the Isles of Scilly and the Shetland Islands have much higher per capita values than the mainland. We have limited the colour scale so that variation elsewhere can be seen.
 </p>
 {{ comp.oi.map.hex_cartogram({
 	"config": {
@@ -42,7 +41,7 @@ nicetheme: Purpose & Social Impact
 			"name": "filterLabel",
 			"template": "{{ n }}"
 		}],
-		"value": "Per capita (£)",
+		"value": "All→Per capita (£)",
 		"scale": "TrueNorth",
 		"min": 0,
 		"max": 250,
@@ -74,6 +73,6 @@ nicetheme: Purpose & Social Impact
 				"label": "filterLabel"
 			}
 		},
-		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />Per person: <strong class=\"number\">{{ Per capita }}</strong><br />Total allocation: <strong class=\"number\">{{ Total }}</strong><br />Population (mid 2022): <strong class=\"number\">{{ Population (mid 2022 est) | toLocaleString() }}</strong>"
+		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />Per person: <strong class=\"number\">{{ All→Per capita }}</strong><br />Total allocation: <strong class=\"number\">{{ All→Total }}</strong><br />Round 1: <strong class=\"number\">{{ Round 1→Total }}</strong><br />Round 2: <strong class=\"number\">{{ Round 2→Total }}</strong><br />Population (mid 2022): <strong class=\"number\">{{ Population (mid 2022 est) | toLocaleString() }}</strong>"
 	}
 }) }}
