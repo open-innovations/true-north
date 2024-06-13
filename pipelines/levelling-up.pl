@@ -10,10 +10,13 @@ use POSIX qw(strftime);
 binmode STDOUT, 'utf8';
 binmode STDERR, 'utf8';
 
-my ($basedir, $path,@rows,$r,@las,@lads,$l,%la,$lad,$hexjson,$fh,$percap,$stats,@segments,$s,$total);
+my ($basedir, $path,@rows,$r,@las,@lads,$l,%la,$lad,$hexjson,$fh,$percap,$stats,@segments,$s,$total,$north,$northtotal);
 
 # Get the real base directory for this script
 BEGIN { ($basedir, $path) = abs_path($0) =~ m{(.*/)?([^/]+)$}; push @INC, $basedir; }
+
+$north = {"E06000001"=>1,"E06000002"=>1,"E06000003"=>1,"E06000004"=>1,"E06000010"=>1,"E06000011"=>1,"E06000005"=>1,"E06000006"=>1,"E06000007"=>1,"E06000008"=>1,"E06000009"=>1,"E06000012"=>1,"E06000014"=>1,"E06000013"=>1,"E06000047"=>1,"E06000049"=>1,"E06000050"=>1,"E06000057"=>1,"E06000063"=>1,"E06000064"=>1,"E06000065"=>1,"E07000117"=>1,"E07000122"=>1,"E07000123"=>1,"E08000005"=>1,"E07000118"=>1,"E07000126"=>1,"E07000119"=>1,"E07000120"=>1,"E07000121"=>1,"E08000006"=>1,"E07000124"=>1,"E07000125"=>1,"E07000127"=>1,"E07000128"=>1,"E08000013"=>1,"E08000003"=>1,"E08000004"=>1,"E08000022"=>1,"E08000001"=>1,"E08000002"=>1,"E08000023"=>1,"E08000007"=>1,"E08000008"=>1,"E08000009"=>1,"E08000010"=>1,"E08000011"=>1,"E08000012"=>1,"E08000014"=>1,"E08000015"=>1,"E08000016"=>1,"E08000024"=>1,"E08000017"=>1,"E08000018"=>1,"E08000019"=>1,"E08000021"=>1,"E08000032"=>1,"E08000033"=>1,"E08000034"=>1,"E08000036"=>1,"E08000035"=>1,"E08000037"=>1};
+
 
 $hexjson = LoadJSON($basedir."../src/_data/hexjson/uk-local-authority-districts-2023.hexjson");
 
@@ -53,7 +56,7 @@ for($r = 0; $r < @rows; $r++){
 }
 
 @segments = ('all','round1','round2');
-$stats = {'total'=>{'name'=>'','value'=>0},'percapita'=>{'name'=>'','value'=>0}};
+$stats = {'total'=>{'name'=>'','value'=>0},'percapita'=>{'name'=>'','value'=>0},'totalnorth'=>{'name'=>'','value'=>0},'percapitanorth'=>{'name'=>'','value'=>0}};
 $total = 0;
 
 open($fh,">:utf8",$basedir."../src/themes/purpose-social-impact/levelling-up/_data/levelling_up.csv");
@@ -65,6 +68,7 @@ foreach $lad (@lads){
 	$la{$lad}->{'bids'}{'all'} = $la{$lad}->{'bids'}{'round1'}+$la{$lad}->{'bids'}{'round2'};
 	$la{$lad}->{'total'}{'all'} = $la{$lad}->{'total'}{'round1'}+$la{$lad}->{'total'}{'round2'};
 	$total += $la{$lad}->{'total'}{'all'};
+	if($north->{$lad}){ $northtotal += $la{$lad}->{'total'}{'all'}; }
 	for($s = 0; $s < @segments; $s++){
 		if($la{$lad}->{'bids'}{$segments[$s]} > 0){
 			$percap = ($la{$lad}->{'total'}{$segments[$s]}/$la{$lad}->{'population'});
@@ -73,10 +77,18 @@ foreach $lad (@lads){
 				if($la{$lad}->{'total'}{'all'} > $stats->{'total'}{'value'}){
 					$stats->{'total'}{'value'} = $la{$lad}->{'total'}{'all'};
 					$stats->{'total'}{'name'} = $la{$lad}->{'name'};
+					if($north->{$lad}){
+						$stats->{'totalnorth'}{'value'} = $la{$lad}->{'total'}{'all'};
+						$stats->{'totalnorth'}{'name'} = $la{$lad}->{'name'};
+					}
 				}
 				if($percap > $stats->{'percapita'}{'value'}){
-					$stats->{'percapita'}{'value'} = sprintf("%0.2f",$percap);
+					$stats->{'percapita'}{'value'} = sprintf("%0d",$percap);
 					$stats->{'percapita'}{'name'} = $la{$lad}->{'name'};
+					if($north->{$lad}){
+						$stats->{'percapitanorth'}{'value'} = sprintf("%0d",$percap);
+						$stats->{'percapitanorth'}{'name'} = $la{$lad}->{'name'};
+					}
 				}
 			}
 		}else{
@@ -92,11 +104,15 @@ $total = sprintf("%0d",$total);
 open($fh,">:utf8",$basedir."../src/themes/purpose-social-impact/levelling-up/_data/headlines.csv");
 print $fh "name,value,pre,post,footnote\n";
 print $fh "Total funding,$total,£,,Rounds 1 and 2\n";
-print $fh "Highest total funding,$stats->{'total'}{'value'},£,,$stats->{'total'}{'name'}\n";
-print $fh "Highest funding per person,$stats->{'percapita'}{'value'},£,,$stats->{'percapita'}{'name'}\n";
+print $fh "Highest total,$stats->{'total'}{'value'},£,,$stats->{'total'}{'name'}\n";
+print $fh "Highest per person,$stats->{'percapita'}{'value'},£,,$stats->{'percapita'}{'name'}\n";
+print $fh "Funding to the North,".sprintf("%0.1f",100*$northtotal/$total).",,%,\"North includes: North East, North West, Yorkshire and the Humber\"\n";
+print $fh "Highest total (North),$stats->{'totalnorth'}{'value'},£,,$stats->{'totalnorth'}{'name'}\n";
+print $fh "Highest per person (North),$stats->{'percapitanorth'}{'value'},£,,$stats->{'percapitanorth'}{'name'}\n";
 close($fh);
 
 msg("Total funding: <yellow>£$total<none>\n");
+msg("North funding: <yellow>£$northtotal<none> (".sprintf("%0.1f",100*$northtotal/$total)."%)\n");
 msg("Highest total: <yellow>£$stats->{'total'}{'value'}<none> ($stats->{'total'}{'name'})\n");
 msg("Highest per capita: <yellow>£$stats->{'percapita'}{'value'}<none> ($stats->{'percapita'}{'name'})\n");
 
