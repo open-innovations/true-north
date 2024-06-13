@@ -8,7 +8,7 @@ nicetheme: True North
     This page explores the data behind this thinking.
 </p>
 
-{{ comp collapse { 'classes': 'warning padded'} }}
+{{ comp collapse { 'classes': ''} }}
 <h3>About the data on this page</h3>
 <p>The data on this page was calculated using a custom filter on The Data City's database of over 5 million U.K. companies. In order to be classed as an owner-managed firm, we said the following must be true:
 <ul>
@@ -33,6 +33,10 @@ nicetheme: True North
     and <a href="https://help.thedatacity.com/knowledge/using-analyse#analysis-summary-box">explanations of the headline statistics</a>.
 </p>
 {{ /comp }}
+
+<p class='warning padded'>
+    Known issue: The data provided by The Data City does not yet contain any companies incorporated after 2011. We are working through this with them to find a solution.
+</p>
 
 {{ comp.oi.dashboard ({ config: {
 	title: "name",
