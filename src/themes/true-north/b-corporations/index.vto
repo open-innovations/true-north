@@ -24,6 +24,7 @@ updated: 2024-06-13T11:07
 
 <p><a href="https://www.bcorporation.net/en-us/certification/">B Corp Certification</a> is a designation that a business is meeting high standards of verified performance, accountability, and transparency on factors from employee benefits and charitable giving to supply chain practices and input materials. The aggregate data shown on this page comes from <a href="https://www.bcorporation.net/en-us/find-a-b-corp/">B Labs' dataset</a> and is based on the location of each B Corp's headquarters. We have local authority breakdowns for <a href="#all">all B Corps</a>, <a href="#size">by size of company</a>, <a href="#ownership">by ownership</a>, and <a href="#sector">by sector</a>.</p>
 
+<p class='warning padded'>Important note: company headquarters may not be where they carry out most of their business.</p>
 
 <h2 id="all">All B Corporations</h2>
 
@@ -82,7 +83,7 @@ updated: 2024-06-13T11:07
 }) }}
 
 <h3 id="size">By size of company</h3>
-<p>We can see the geographic distribution of B Corps headquarters by size of company.</p>
+<p>We can see the geographic distribution of B Corps headquarters by size of company. Use the slider below the map to change the selected size.</p>
 {{ comp.oi.map.hex_cartogram({
 	"config": {
 		"width": 600,
@@ -139,7 +140,7 @@ updated: 2024-06-13T11:07
 
 
 <h3 id="ownership">By ownership</h3>
-<p>We can see the geographic distribution of B Corps headquarters by the demographics of ownership.</p>
+<p>We can see the geographic distribution of B Corps headquarters by the demographics of ownership. Use the slider below the map to change the selected ownership type.</p>
 {{ comp.oi.map.hex_cartogram({
 	"config": {
 		"width": 600,
@@ -197,7 +198,8 @@ updated: 2024-06-13T11:07
 }) }}
 
 <h3 id="sector">By sector</h3>
-<p>We can see the geographic distribution of B Corps headquarters by sector.</p>
+<p>We can see the geographic distribution of B Corps headquarters by sector. Use the slider below the map to change the selected sector.</p>
+
 {{ comp.oi.map.hex_cartogram({
 	"config": {
 		"width": 600,
