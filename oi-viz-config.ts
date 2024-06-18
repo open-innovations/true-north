@@ -2,11 +2,30 @@ export default {
 	"assetPath": '/assets',
 	"componentNamespace": 'oi',
 	"colour": {
-		"background": "#fbf9f8",
+		"background": "#FBF9F8",
 		"scales": {
-			"TrueNorth": "#efe9e5 0%, #3b7ea1 50%, #175677 65%, #181B25 91%, #000000 100%",
+			"TrueNorth": "#EFE9E5 0%, #3B7EA1 50%, #175677 65%, #181B25 91%, #000000 100%",
 		},
-		"series": [ '#dc8c5d', '#9d6646', '#f4b16d', '#175677', '#3b7ea1', '#181b25', '#475062' ]
+		"series": [ '#DC8C5D', '#9D6646', '#F4B16D', '#175677', '#3B7EA1', '#181B25', '#475062' ],
+		"names": {
+			"copper": "#9D6646",
+			"light-copper": "#DC8C5D",
+			"navy": "#181B25",
+			"light-navy": "#475062",
+			"blue": "#175677",
+			"light-blue": "#3B7EA1",
+			"dark-stone-pink": "#E1A1B8",
+			"stone-pink": "#F8DBDB",
+			"dark-sunset-yellow": "#CF7F00",
+			"sunset-yellow": "#F4B16D",
+			"lunar-green": "#274E37",
+			"light-lunar-green": "#5F6C3B",
+			"storm": "#DBCABE",
+			"mushroom": "#EFE9E5",
+			"cream": "#FBF9F8",
+			"mid-grey": "#C7C8C9",
+			"light-grey": "#F5F5F5"
+		}
 	},
 	"font": {
 		"family": 'Poppins,CenturyGothicStd,"Century Gothic",Arial,sans-serif',
