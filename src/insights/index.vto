@@ -10,8 +10,12 @@ nav: insights
     organisations are known as "Northern Stars".
 </p>
 
+<p>
+    Read about them below:
+</p>
+
 <ol>
-    {{for item of dashboard.northern_stars.rows }}
-            <li><a href="{{ item['article_link'] }}">{{ item['company_name'] }}</a>, {{ item['date_published'] }}</li>
+    {{for item of northern_stars.rows }}
+            <li><a href="{{ item['article_link'] }}">{{ item['company_name'] }}</a><p>{{ item['description'] }}</p></li>
     {{ /for }}
 </ol>
