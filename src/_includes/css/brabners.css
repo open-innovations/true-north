@@ -43,7 +43,7 @@
 .breadcrumb li { display: inline-block; }
 .breadcrumb a { text-decoration: none; }
 .breadcrumb a:hover, .breadcrumb a:focus { text-decoration: underline; }
-.breadcrumb li:after { content: ""; width: 0.5em; height: 0.5em; transform: rotate(45deg); border: 1px solid black; display: inline-block; border-left: 0; border-bottom: 0; margin-right: 0.25em; top: -0.1em; position: relative; }
+.breadcrumb li:after { content: ""; width: 0.5em; height: 0.5em; transform: rotate(45deg); border: 1px solid black; display: inline-block; border-left: 0; border-bottom: 0; margin: 0 0.25em; top: -0.1em; position: relative; }
 .breadcrumb li:last-child:after { border: 0; } 
 
 html, body { line-height: 1.875rem; }

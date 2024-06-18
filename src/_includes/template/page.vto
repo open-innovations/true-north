@@ -4,8 +4,8 @@ layout: template/base.vto
 {{ if nicetheme!=undefined }}
     <nav>
 		<ul class="breadcrumb">
-			<li><a href="/">Home</a> <span aria-hidden="true" class="spacer"></span></li>
-			<li><a href="/themes/">Themes</a> <span aria-hidden="true" class="spacer"></span></li>
+			<li><a href="/">Home</a></li>
+			<li><a href="/themes/">Themes</a></li>
 			<li><a href="/themes/{{ theme }}">{{ nicetheme }}</a></li>
 			<li><a href="{{ url }}">{{ title }}</a></li>
 		</ul>
@@ -14,7 +14,7 @@ layout: template/base.vto
 {{ if themepage==true }}
     <nav>
 		<ul class="breadcrumb">
-			<li><a href="/">Home</a> <span aria-hidden="true" class="spacer"></span></li>
+			<li><a href="/">Home</a></li>
 			<li><a href="/themes/">Themes</a></li>
 			<li><a href="{{ url }}">{{ title }}</a></li>
 		</ul>
@@ -23,7 +23,7 @@ layout: template/base.vto
 {{ if nicesection!=undefined }}
     <nav>
 		<ul class="breadcrumb">
-			<li><a href="/">Home</a> <span aria-hidden="true" class="spacer"></span></li>
+			<li><a href="/">Home</a></li>
 			<li><a href="/{{ section }}/">{{ nicesection }}</a></li>
 			<li><a href="{{ url }}">{{ title }}</a></li>
 		</ul>
