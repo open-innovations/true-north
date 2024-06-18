@@ -13,6 +13,7 @@ binmode STDERR, 'utf8';
 # Get the real base directory for this script
 my ($basedir, $path);
 BEGIN { ($basedir, $path) = abs_path($0) =~ m{(.*/)?([^/]+)$}; push @INC, $basedir; }
+require $basedir."lib.pl";
 
 
 # Set some paths
@@ -209,60 +210,6 @@ updateCreationTimestamp($vfile);
 
 ##############################
 # Sub routines
-sub msg {
-	my $str = $_[0];
-	my $dest = $_[1]||"STDOUT";
-	
-	my %colours = (
-		'black'=>"\033[0;30m",
-		'red'=>"\033[0;31m",
-		'green'=>"\033[0;32m",
-		'yellow'=>"\033[0;33m",
-		'blue'=>"\033[0;34m",
-		'magenta'=>"\033[0;35m",
-		'cyan'=>"\033[0;36m",
-		'white'=>"\033[0;37m",
-		'none'=>"\033[0m"
-	);
-	foreach my $c (keys(%colours)){ $str =~ s/\< ?$c ?\>/$colours{$c}/g; }
-	if($dest eq "STDERR"){
-		print STDERR $str;
-	}else{
-		print STDOUT $str;
-	}
-}
-
-sub error {
-	my $str = $_[0];
-	$str =~ s/(^[\t\s]*)/$1<red>ERROR:<none> /;
-	msg($str,"STDERR");
-}
-
-sub warning {
-	my $str = $_[0];
-	$str =~ s/(^[\t\s]*)/$1<yellow>WARNING:<none> /;
-	msg($str,"STDERR");
-}
-
-sub ParseJSON {
-	my $str = shift;
-	my ($json);
-	eval {
-		$json = JSON::XS->new->decode($str);
-	};
-	if($@){ error("\tInvalid output in input: \"".substr($str,0,100)."...\".\n"); $json = {}; }
-	return $json;
-}
-
-sub LoadJSON {
-	my (@files,$str,@lines,$json);
-	my $file = $_[0];
-	open(FILE,"<:utf8",$file) || error("Unable to load <cyan>$file<none>.");
-	@lines = <FILE>;
-	close(FILE);
-	$str = (join("",@lines));
-	return ParseJSON($str);
-}
 
 sub getEnvironment {
 	my ($fh,@lines,$env,$k,$v,$line);
