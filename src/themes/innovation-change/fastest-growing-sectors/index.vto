@@ -1,0 +1,63 @@
+---
+title: Fastest Growing Sectors
+theme: innovation-change
+nicetheme: Innovation & Change
+---
+<h3>Fastest growing sectors by local authority</h3>
+<p>
+	This hex map shows the fastest growing sectors in the North by local authority. 
+	The fastest growing sector here is defined as the one with the largest positive percentage 
+	change in GVA from 2019 to 2022.
+	A change of 100% means a sector's GVA doubled from 2019 to 2022.
+	A change of 50% means a sector's GVA was 1.5 times larger in 2022 than in 2019.
+</p>
+<p>
+	You can hover over the hexes to see the growth rate and which sector it occured in for each local authority.
+</p>
+{{ comp.oi.map.hex_cartogram({
+	"config": {
+		"width": 600,
+		"hexjson": "hexjson.uk-local-authority-districts-2023",
+		"data": fastest_growing_sector_by_LAD23,
+		"columns":[{
+			"name": "filterLabel",
+			"template": "{{ n }}"
+		}],
+		"value": "growth_2019_2022",
+		"scale": "TrueNorth",
+		"min": 0,
+		"max": 150,
+		"matchKey": "geography.code",
+		"legend": {
+			"position": "top right",
+			"continuous": true,
+			"items": [{
+				"value": 150,
+				"label": "150%"
+			},{
+				"value": 100,
+				"label": "100%"
+			},{
+				"value": 50,
+				"label": "50%"
+			},{
+				"value": 0,
+				"label": "0"
+			}]
+		},
+		"boundaries": {
+			"country": {
+				"stroke": "#181b25",
+				"stroke-width": 2,
+				"stroke-linecap": "round",
+				"stroke-opacity": 0.5
+			}
+		},
+		"tools":{
+			"filter":{
+				"label": "filterLabel"
+			}
+		},
+		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />Fastest growing sector: <strong>{{ industry.name }}</strong> <br />Percetange change in GVA 2019-22: <strong class=\"number\">{{ {{ _value }} | toLocaleString() | toFixed(1) }} %</strong>"
+	}
+}) }}
