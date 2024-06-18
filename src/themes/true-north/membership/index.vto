@@ -3,6 +3,15 @@ title: Membership
 theme: true-north
 nicetheme: True North
 ---
+
+{{ comp collapse {'classes':'warning padded'} }}
+  <h4>About this data</h4>
+  <p>
+    The data above was generated from questionnaire responses. As the questionnaire has changed over time, some fields were incomplete for some responses. 
+    You can read the details on <a href="themes/true-north/membership/">how we processed this data</a>.
+  </p>
+{{ /comp }}
+
 <h3>Current membership at a glance</h3>
 {{ comp.oi.dashboard ({ config: {
 	title: "name",
@@ -98,11 +107,3 @@ nicetheme: True North
     }
     })
 }}
-
-{{ comp collapse {'classes':'warning padded'} }}
-  <h4>About this data</h4>
-  <p>
-    The data above was generated from questionnaire responses. As the questionnaire has changed over time, some fields were incomplete for some responses. 
-    You can read the details on <a href="themes/true-north/membership/">how we processed this data</a>.
-  </p>
-{{ /comp }}
