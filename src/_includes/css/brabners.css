@@ -25,7 +25,6 @@
 
 .warning { color: var(--color-dark); background-color: #f8d3b0; filter: drop-shadow(0px 0px 1px #643f10); }
 
-
 .bg-navy-radial { background-image: radial-gradient(44.76% 50% at 50% 50%,var(--color-light-navy) 5.11%,var(--color-navy) 100%); }
 .brabners-bg-dark { background: var(--color-navy); color: white; }
 .brabners-bg-light { background: white; color: rgb(43, 43, 43); }
@@ -161,3 +160,10 @@ input[type="range"].oi-slider-control:focus::-moz-range-thumb{ outline: 4px soli
 .toggle-section button:hover, .toggle-section button:focus { cursor: help; }
 .toggle-section button:hover svg, .toggle-section button:focus svg { color: rgb(38 38 38)!important; }
 .toggle-section + * { margin-top: 1rem; }
+
+
+@media only screen and (max-width: 640px) {
+	header .logo svg { width: auto; }
+	header nav ul { font-size: 1rem; }
+	header nav ul > li > a { padding: 0.5rem; }
+}
