@@ -14,6 +14,8 @@ my ($basedir, $path,@rows,$r,@las,@lads,$l,%la,$lad,$hexjson,$fh,$percap,$stats,
 
 # Get the real base directory for this script
 BEGIN { ($basedir, $path) = abs_path($0) =~ m{(.*/)?([^/]+)$}; push @INC, $basedir; }
+require $basedir."lib.pl";
+
 
 $north = {"E06000001"=>1,"E06000002"=>1,"E06000003"=>1,"E06000004"=>1,"E06000010"=>1,"E06000011"=>1,"E06000005"=>1,"E06000006"=>1,"E06000007"=>1,"E06000008"=>1,"E06000009"=>1,"E06000012"=>1,"E06000014"=>1,"E06000013"=>1,"E06000047"=>1,"E06000049"=>1,"E06000050"=>1,"E06000057"=>1,"E06000063"=>1,"E06000064"=>1,"E06000065"=>1,"E07000117"=>1,"E07000122"=>1,"E07000123"=>1,"E08000005"=>1,"E07000118"=>1,"E07000126"=>1,"E07000119"=>1,"E07000120"=>1,"E07000121"=>1,"E08000006"=>1,"E07000124"=>1,"E07000125"=>1,"E07000127"=>1,"E07000128"=>1,"E08000013"=>1,"E08000003"=>1,"E08000004"=>1,"E08000022"=>1,"E08000001"=>1,"E08000002"=>1,"E08000023"=>1,"E08000007"=>1,"E08000008"=>1,"E08000009"=>1,"E08000010"=>1,"E08000011"=>1,"E08000012"=>1,"E08000014"=>1,"E08000015"=>1,"E08000016"=>1,"E08000024"=>1,"E08000017"=>1,"E08000018"=>1,"E08000019"=>1,"E08000021"=>1,"E08000032"=>1,"E08000033"=>1,"E08000034"=>1,"E08000036"=>1,"E08000035"=>1,"E08000037"=>1};
 
@@ -120,130 +122,6 @@ msg("Highest per capita: <yellow>£$stats->{'percapita'}{'value'}<none> ($stats-
 
 ##############################
 # Sub routines
-sub msg {
-	my $str = $_[0];
-	my $dest = $_[1]||"STDOUT";
-	
-	my %colours = (
-		'black'=>"\033[0;30m",
-		'red'=>"\033[0;31m",
-		'green'=>"\033[0;32m",
-		'yellow'=>"\033[0;33m",
-		'blue'=>"\033[0;34m",
-		'magenta'=>"\033[0;35m",
-		'cyan'=>"\033[0;36m",
-		'white'=>"\033[0;37m",
-		'none'=>"\033[0m"
-	);
-	foreach my $c (keys(%colours)){ $str =~ s/\< ?$c ?\>/$colours{$c}/g; }
-	if($dest eq "STDERR"){
-		print STDERR $str;
-	}else{
-		print STDOUT $str;
-	}
-}
-
-sub error {
-	my $str = $_[0];
-	$str =~ s/(^[\t\s]*)/$1<red>ERROR:<none> /;
-	msg($str,"STDERR");
-}
-
-sub warning {
-	my $str = $_[0];
-	$str =~ s/(^[\t\s]*)/$1<yellow>WARNING:<none> /;
-	msg($str,"STDERR");
-}
-
-# Version 1.3
-sub ParseCSV {
-	my $str = shift;
-	my $config = shift;
-	my (@rows,@cols,@header,$r,$c,@features,$data,$key,$k,$f,$n,$n2,$compact,$sline,$col);
-
-	$compact = $config->{'compact'};
-	$sline = $config->{'startrow'}||0;
-	$col = $config->{'key'};
-
-	$n = () = $str =~ /\r\n/g;
-	$n2 = () = $str =~ /\n/g;
-	if($n < $n2 * 0.25){ 
-		# Replace CR LF with escaped newline
-		$str =~ s/\r\n/\\n/g;
-	}
-	@rows = split(/[\n]/,$str);
-
-	$n = @rows;
-	
-	for($r = $sline; $r < @rows; $r++){
-		$rows[$r] =~ s/[\n\r]//g;
-		@cols = split(/,(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))/,$rows[$r]);
-
-		if($r < $sline+1){
-			# Header
-			if(!@header){
-				for($c = 0; $c < @cols; $c++){
-					$cols[$c] =~ s/(^\"|\"$)//g;
-				}
-				@header = @cols;
-			}else{
-				for($c = 0; $c < @cols; $c++){
-					$header[$c] .= "\n".$cols[$c];
-				}
-			}
-		}else{
-			$data = {};
-			for($c = 0; $c < @cols; $c++){
-				$cols[$c] =~ s/(^\"|\"$)//g;
-				$data->{$header[$c]} = $cols[$c];
-			}
-			push(@features,$data);
-		}
-	}
-	if($col){
-		$data = {};
-		for($r = 0; $r < @features; $r++){
-			$f = $features[$r]->{$col};
-			if($compact){ $f =~ s/ //g; }
-			$data->{$f} = $features[$r];
-		}
-		return $data;
-	}else{
-		return @features;
-	}
-}
-
-sub LoadCSV {
-	# version 1.3
-	my $file = shift;
-	my $config = shift;
-	
-	msg("Processing CSV from <cyan>$file<none>\n");
-	open(FILE,"<:utf8",$file);
-	my @lines = <FILE>;
-	close(FILE);
-	return ParseCSV(join("",@lines),$config);
-}
-
-sub ParseJSON {
-	my $str = shift;
-	my ($json);
-	eval {
-		$json = JSON::XS->new->decode($str);
-	};
-	if($@){ error("\tInvalid output in input: \"".substr($str,0,100)."...\".\n"); $json = {}; }
-	return $json;
-}
-
-sub LoadJSON {
-	my (@files,$str,@lines,$json);
-	my $file = $_[0];
-	open(FILE,"<:utf8",$file) || error("Unable to load <cyan>$file<none>.");
-	@lines = <FILE>;
-	close(FILE);
-	$str = (join("",@lines));
-	return ParseJSON($str);
-}
 sub formatPounds {
 	my $v = shift;
 	my ($a,$b,@c,$d,$e);
