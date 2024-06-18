@@ -30,7 +30,7 @@
 .brabners-bg-navy { background: #252935; color: white; }
 .brabners-bg-light { background: white; color: rgb(43, 43, 43); }
 .tallpadded { padding-top: 5rem; padding-bottom: 5rem; }
-.button { padding: 1em; text-decoration: none; color: black; border: 0px; background: var(--color-light-copper); border-radius: 1.5em; transition: background 0.3s ease-in; }
+.button { padding: 1em; text-decoration: none; color: black!important; border: 0px; background: var(--color-light-copper); border-radius: 1.5em; transition: background 0.3s ease-in; }
 .button:hover, .button:focus { background: white; }
 .container { min-height: 600px; background-position:center center; text-align:center;background-cover: cover;color: white; display: flex; position:relative; overflow: hidden; }
 .container .holder { align-items: center; flex-direction: column; }
