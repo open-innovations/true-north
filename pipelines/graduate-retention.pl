@@ -18,10 +18,11 @@ require "lib.pl";
 use OpenInnovations::ProgressBar;
 
 
-my ($csvfile, $ofile, $total, $totals, $segment, $worksegment, $size, @rows, $fh, $regionlookup, $regions, $section, $tab, $line, @cols, @head, $header, $c, $r, $l, $region, $row, $yy, $progress, $workregion, $other, $years);
+my ($csvfile, $ofile, $ofile2, $total, $totals, $segment, $worksegment, $size, @rows, $fh, $regionlookup, $regions, $section, $tab, $line, @cols, @head, $header, $c, $r, $l, $region, $row, $yy, $progress, $workregion, $other, $years);
 
 $csvfile = $basedir."../working/hesa/figure-16.csv";
-$ofile = $basedir."../src/themes/people-skills-future/_data/graduate-retention.csv";
+$ofile = $basedir."../src/themes/people-skills-future/_data/graduate_retention.csv";
+$ofile2 = $basedir."../src/themes/people-skills-future/_data/graduate_retention_by_date.csv";
 
 $regionlookup = {
 	'East Midlands'=>'E12000004',
@@ -162,20 +163,20 @@ foreach $region (sort(keys(%{$regions}))){
 msg("Saving output to <cyan>$ofile<none>\n");
 open($fh,">",$ofile);
 print $fh "Region of provider,Region";
-foreach $yy (sort(keys(%{$years}))){
-	print $fh ",Work in same region (%)";
-}
-print $fh "\n";
-print $fh ",";
+#foreach $yy (sort(keys(%{$years}))){
+#	print $fh ",Work in same region (%)";
+#}
+#print $fh "\n";
+#print $fh ",";
 foreach $yy (sort(keys(%{$years}))){
 	print $fh ",$yy";
 }
 print $fh "\n";
-print $fh "---,---";
-foreach $yy (sort(keys(%{$years}))){
-	print $fh ",---";
-}
-print $fh "\n";
+#print $fh "---,---";
+#foreach $yy (sort(keys(%{$years}))){
+#	print $fh ",---";
+#}
+#print $fh "\n";
 foreach $region (sort(keys(%{$regions}))){
 	print $fh "$region,$regionlookup->{$region}";
 	foreach $yy (sort(keys(%{$years}))){
@@ -193,9 +194,25 @@ foreach $region (sort(keys(%{$regions}))){
 #	print $fh ",".sprintf("%0.1f",100*$totals->{'elsewhere'}{$yy}{'same'}/$totals->{'elsewhere'}{$yy}{'all'});
 #}
 #print $fh "\n";
-
 close($fh);
 
+
+msg("Saving output to <cyan>$ofile2<none>\n");
+open($fh,">",$ofile2);
+print $fh "Year,Date";
+foreach $region (sort(keys(%{$regions}))){
+	print $fh ",$regionlookup->{$region}";
+}
+print $fh "\n";
+foreach $yy (sort(keys(%{$years}))){
+	print $fh "$yy,".int($yy).".5";
+	foreach $region (sort(keys(%{$regions}))){
+		print "region ($yy): $region ()\n";
+		print $fh ",$regions->{$region}{$yy}{'same'}";
+	}
+	print $fh "\n";
+}
+close($fh);
 
 
 
