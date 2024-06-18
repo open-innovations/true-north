@@ -13,8 +13,8 @@ nicetheme: "Sustainable Growth"
 	a broad summary of the results below.
 </p>
 
-{{ comp collapse {'classes':''} }}
-    <h3>About this data</h3>
+<details>
+    <summary><h3>About this data</h3></summary>
     <p>
         The data on this page was calculated using The Data City's "Net Zero" Real-time industrial classification (RTIC).
         These statistics are estimates calculated using their analyse tool, which has important limitations to be aware of.
@@ -31,7 +31,7 @@ nicetheme: "Sustainable Growth"
             <li>Exclude <a href="https://help.thedatacity.com/knowledge/what-are-companies-with-potential-anomalies">outliers</a>.</li>
         </ul>
     </p>
-{{ /comp }}
+</details>
 
 {{ comp.oi.dashboard ({ config: {
 	title: "name",

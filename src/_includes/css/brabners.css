@@ -163,9 +163,32 @@ input[type="range"].oi-slider-control:focus::-moz-range-thumb{ outline: 4px soli
 .oi-filter-results { padding: 0 1rem; }
 .oi-filter-results button { border: 0; }
 
-.toggle-section button:hover, .toggle-section button:focus { cursor: help; }
-.toggle-section button:hover svg, .toggle-section button:focus svg { color: rgb(38 38 38)!important; }
-.toggle-section + * { margin-top: 1rem; }
+details summary { cursor: pointer; }
+details summary > :first-child {
+	position: relative;
+}
+details summary > :first-child:after {
+	content: "";
+	width: 0.8em;
+	height: 0.8em;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='currentColor' viewBox='0 0 32 32'%3E%3Crect class='vert' height='30' width='8' y='1' x='12'%3E%3C/rect%3E%3Crect height='8' width='30' y='12' x='1'%3E%3C/rect%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center right;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translate3d(0,-50%,0);
+}
+details summary + * { margin-top: 1rem; }
+details[open] summary > :first-child:after {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect height='8' width='30' y='12' x='1'%3E%3C/rect%3E%3C/svg%3E");
+}
+details summary::marker {
+	font-size: 0;
+	content: "";
+}
+details + * { margin-top: 1rem; }
 
 
 @media only screen and (max-width: 640px) {

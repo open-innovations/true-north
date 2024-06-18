@@ -4,13 +4,13 @@ section: true-north
 nicesection: True North
 ---
 
-{{ comp collapse {'classes':''} }}
-  <h4>About this data</h4>
-  <p>
-    The data above was generated from questionnaire responses. As the questionnaire has changed over time, some fields were incomplete for some responses. 
-    {{# You can read the details on <a href="true-north/membership/">how we processed this data</a>. #}}
-  </p>
-{{ /comp }}
+<details>
+	<summary><h4>About this data</h4></summary>
+	<p>
+	The data above was generated from questionnaire responses. As the questionnaire has changed over time, some fields were incomplete for some responses. 
+	{{# You can read the details on <a href="true-north/membership/">how we processed this data</a>. #}}
+	</p>
+</details>
 
 <h3>Current membership at a glance</h3>
 {{ comp.oi.dashboard ({ config: {
