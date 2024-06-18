@@ -5,7 +5,7 @@ nicetheme: "People, Skills and The Future"
 ---
 
 <h2>By region</h2>
-<p>Using <a href="https://www.hesa.ac.uk/data-and-analysis/sb268/figure-16">Higher Education Graduate Outcomes Statistics</a> we can look at how well different regions and nations of the UK retain their graduates after education. We calculate the percentage of graduates who remain in the same region/nation for work as the region/nation of their higher education provider.</p>
+<p>Using <a href="https://www.hesa.ac.uk/data-and-analysis/sb268/figure-16">Higher Education Graduate Outcomes Statistics</a> we can look at how well different regions and nations of the UK retain their graduates after education. We calculate the percentage of graduates who work in the same region/nation for work as the region/nation of their higher education provider.</p>
 
 {{ comp.oi.chart.line({ config: {
     data: graduate_retention_by_date,
@@ -90,6 +90,8 @@ nicetheme: "People, Skills and The Future"
 		tooltip: "<strong class=\"subtitle\">Wales</strong><br />{{ Year}}: <strong class=\"number\">{{ _y }}%</strong>"
 	}]
 } }) }}
+
+<p>The East Midlands, South East, and East of England all have graduate retention below 50% (2021/22). This <a href="https://blog.bham.ac.uk/cityredi/regional-brain-drain-and-gain-in-the-uk-regional-patterns-of-graduate-retention-and-attraction/">does not necessarily mean recent graduates relocate for work</a> as a significant portion may commute to work in London given the transport links available. Also, the Covid-19 pandemic allowed for many more options around remote working meaning that recent graduates my reside in one region but work for an organisation in another.</p>
 
 
 {{ comp.oi.map.hex_cartogram({
