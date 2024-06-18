@@ -27,6 +27,7 @@
 
 .bg-navy-radial { background-image: radial-gradient(44.76% 50% at 50% 50%,var(--color-light-navy) 5.11%,var(--color-navy) 100%); }
 .brabners-bg-dark { background: var(--color-navy); color: white; }
+.brabners-bg-navy { background: #252935; color: white; }
 .brabners-bg-light { background: white; color: rgb(43, 43, 43); }
 
 html, body { line-height: 1.875rem; }
@@ -36,6 +37,11 @@ header .logo, header .title { color: var(--color-heading-light); }
 header .logo svg { height: 22px; }
 header .title { padding-top: 1rem; font-size: 2.6875rem; }
 header a:hover, header a:focus { text-decoration: none; }
+footer a { text-decoration: none; }
+footer section { padding: 0; }
+footer .logo { display: block; text-align: center; }
+footer .logo svg { max-width: 50%; width: 400px; }
+/*footer .logo .st0 { fill: var(--color-light-copper); }*/
 
 .holder { width: 1200px; }
 
