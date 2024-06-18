@@ -25,7 +25,7 @@ $ofile = $basedir."../src/themes/people-skills-future/_data/graduate-retention.c
 
 
 if(!-e $csvfile){
-	msg("Download data from: <green>https://www.hesa.ac.uk/data-and-analysis/sb268/figure-16.csv<none>\n");
+	msg("Download data from: <green>https://www.hesa.ac.uk/data-and-analysis/sb268/figure-16.csv<none> to <cyan>$ofile<none>\n");
 	exit;
 }
 
