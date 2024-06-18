@@ -31,7 +31,7 @@ stages:
       - ${TOP}/pipelines/util.py
       - ${TOP}/working/cs/cs-true-north.csv
     outs:
-      - ${TOP}/src/themes/people-skills-future/_data/nvq_3plus.csv:
+      - ${TOP}/src/themes/people-skills-future/_data/nvq_4plus.csv:
           cache: false
   neet:
     cmd: PYTHONPATH=${TOP} python neet.py

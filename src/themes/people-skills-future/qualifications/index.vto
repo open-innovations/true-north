@@ -3,11 +3,13 @@ title: Qualifications
 theme: people-skills-future
 nicetheme: "People, Skills & The Future"
 ---
-<h3>People with NVQ Level 3+ (or equivalent)</h3>
+<h3>People with NVQ Level 4+ (or equivalent)</h3>
 <p>
     The national vocational qualification (NVQ) is a work-based qualification that recognises the 
-    skills and knowledge a person needs to do a job. NVQ Level 3 is equivalent to A-Level. This chart shows
-    the percentage of the working age population (16-64) with a NVQ Level 3 qualification or above.
+    skills and knowledge a person needs to do a job. A Level 4 NVQ is considered equivalent to a Higher Education 
+    Certificate or a BTEC qualification, demonstrating a comparable level of knowledge, skills, and competency 
+    in a specific field of study. This chart showsthe percentage of the working age population (16-64) with a 
+    NVQ Level 4 qualification or above.
 </p>
 <p>
     This data captures the percentage of people who have skills for work at a nationally recognised standard. 
@@ -16,17 +18,17 @@ nicetheme: "People, Skills & The Future"
 </p>
 <p>
     Across all three regions in the North of England, there is a clear upwards, linear trend in attainment of 
-    NVQ Level 3+ (or equivalent) qualifications. This suggests that the working-age population of North England is becoming more 
+    NVQ Level 4+ (or equivalent) qualifications. This suggests that the working-age population of North England is becoming more 
     skilled.
 </p>
 
 {{ comp.oi.chart.line({ config: {
-    data: nvq_3plus,
+    data: nvq_4plus,
     height: 600,
     legend: {
         show: true },
     axis: {
-        x: { title: { label: "Date" }, grid: { 'stroke-dasharray': "6 2", 'stroke-width': "1"}, ticks: comp.buildYearTicks({ data: nvq_3plus, field: "date", step: 2})  },
+        x: { title: { label: "Date" }, grid: { 'stroke-dasharray': "6 2", 'stroke-width': "1"}, ticks: comp.buildYearTicks({ data: nvq_4plus, field: "date", step: 2})  },
         y: { title: { label: "Percentage - aged 16-64" }, grid: { "stroke-width": "1"}, tick: { spacing: 5} }
     },
     series: [{
