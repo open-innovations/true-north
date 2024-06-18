@@ -18,7 +18,7 @@ require "lib.pl";
 use OpenInnovations::ProgressBar;
 
 
-my ($csvfile, $ofile, $total, $totals, $segment, $size, @rows, $fh, $regions, $section, $tab, $line, @cols, @head, $header, $c, $r, $l, $region, $row, $yy, $progress, $workregion, $other, $years);
+my ($csvfile, $ofile, $total, $totals, $segment, $worksegment, $size, @rows, $fh, $regions, $section, $tab, $line, @cols, @head, $header, $c, $r, $l, $region, $row, $yy, $progress, $workregion, $other, $years);
 
 $csvfile = $basedir."../working/hesa/figure-16.csv";
 $ofile = $basedir."../src/themes/people-skills-future/_data/graduate-retention.csv";
@@ -97,28 +97,33 @@ while(<$fh>){
 close($fh);
 
 
-$totals = {'north'=>{},'elsewhere'=>{}};
 # Build summaries for North and Elsewhere
-foreach $region (sort(keys(%{$regions}))){
-	foreach $yy (sort(keys(%{$regions->{$region}}))){
-		foreach $workregion (keys(%{$regions->{$region}{$yy}{'work'}})){
-			if($region eq "North East" || $region eq "North West" || $region eq "Yorkshire and The Humber"){
-				$segment = "north";
-			}else{
-				$segment = "elsewhere";
-			}
-
-			if(!defined($totals->{$segment}{$yy})){
-				$totals->{$segment}{$yy} = {'all'=>0,'same'=>0};
-			}
-
-			$totals->{$segment}{$yy}{'all'} += $regions->{$region}{$yy}{'work'}{$workregion};
-			if($workregion eq $region){
-				$totals->{$segment}{$yy}{'same'} += $regions->{$region}{$yy}{'work'}{$workregion};
-			}
-		}
-	}
-}
+#$totals = {'north'=>{},'elsewhere'=>{}};
+#foreach $region (sort(keys(%{$regions}))){
+#	if($region eq "North East" || $region eq "North West" || $region eq "Yorkshire and The Humber"){
+#		$segment = "north";
+#	}else{
+#		$segment = "elsewhere";
+#	}
+#	foreach $yy (sort(keys(%{$regions->{$region}}))){
+#		foreach $workregion (keys(%{$regions->{$region}{$yy}{'work'}})){
+#			if($workregion eq "North East" || $workregion eq "North West" || $workregion eq "Yorkshire and The Humber"){
+#				$worksegment = "north";
+#			}else{
+#				$worksegment = "elsewhere";
+#			}
+#
+#			if(!defined($totals->{$segment}{$yy})){
+#				$totals->{$segment}{$yy} = {'all'=>0,'same'=>0};
+#			}
+#
+#			$totals->{$segment}{$yy}{'all'} += $regions->{$region}{$yy}{'work'}{$workregion};
+#			if($worksegment eq $segment){
+#				$totals->{$segment}{$yy}{'same'} += $regions->{$region}{$yy}{'work'}{$workregion};
+#			}
+#		}
+#	}
+#}
 
 foreach $region (sort(keys(%{$regions}))){
 	foreach $yy (sort(keys(%{$regions->{$region}}))){
@@ -163,16 +168,16 @@ foreach $region (sort(keys(%{$regions}))){
 	}
 	print $fh "\n";
 }
-print $fh "The North";
-foreach $yy (sort(keys(%{$years}))){
-	print $fh ",".sprintf("%0.1f",100*$totals->{'north'}{$yy}{'same'}/$totals->{'north'}{$yy}{'all'});
-}
-print $fh "\n";
-print $fh "Outside The North";
-foreach $yy (sort(keys(%{$years}))){
-	print $fh ",".sprintf("%0.1f",100*$totals->{'elsewhere'}{$yy}{'same'}/$totals->{'elsewhere'}{$yy}{'all'});
-}
-print $fh "\n";
+#print $fh "The North";
+#foreach $yy (sort(keys(%{$years}))){
+#	print $fh ",".sprintf("%0.1f",100*$totals->{'north'}{$yy}{'same'}/$totals->{'north'}{$yy}{'all'});
+#}
+#print $fh "\n";
+#print $fh "Outside The North";
+#foreach $yy (sort(keys(%{$years}))){
+#	print $fh ",".sprintf("%0.1f",100*$totals->{'elsewhere'}{$yy}{'same'}/$totals->{'elsewhere'}{$yy}{'all'});
+#}
+#print $fh "\n";
 
 close($fh);
 
