@@ -18,11 +18,25 @@ require "lib.pl";
 use OpenInnovations::ProgressBar;
 
 
-my ($csvfile, $ofile, $total, $totals, $segment, $worksegment, $size, @rows, $fh, $regions, $section, $tab, $line, @cols, @head, $header, $c, $r, $l, $region, $row, $yy, $progress, $workregion, $other, $years);
+my ($csvfile, $ofile, $total, $totals, $segment, $worksegment, $size, @rows, $fh, $regionlookup, $regions, $section, $tab, $line, @cols, @head, $header, $c, $r, $l, $region, $row, $yy, $progress, $workregion, $other, $years);
 
 $csvfile = $basedir."../working/hesa/figure-16.csv";
 $ofile = $basedir."../src/themes/people-skills-future/_data/graduate-retention.csv";
 
+$regionlookup = {
+	'East Midlands'=>'E12000004',
+	'East of England'=>'E12000006',
+	'London'=>'E12000007',
+	'North East'=>'E12000001',
+	'North West'=>'E12000002',
+	'Northern Ireland'=>'N92000002',
+	'Scotland'=>'S92000003',
+	'South East'=>'E12000008',
+	'South West'=>'E12000009',
+	'Wales'=>'W92000004',
+	'West Midlands'=>'E12000005',
+	'Yorkshire and The Humber'=>'E12000003'
+};
 
 if(!-e $csvfile){
 	msg("Download data from: <green>https://www.hesa.ac.uk/data-and-analysis/sb268/figure-16.csv<none> to <cyan>$ofile<none>\n");
@@ -147,22 +161,23 @@ foreach $region (sort(keys(%{$regions}))){
 
 msg("Saving output to <cyan>$ofile<none>\n");
 open($fh,">",$ofile);
-print $fh "Region of provider";
+print $fh "Region of provider,Region";
 foreach $yy (sort(keys(%{$years}))){
 	print $fh ",Work in same region (%)";
 }
 print $fh "\n";
+print $fh ",";
 foreach $yy (sort(keys(%{$years}))){
 	print $fh ",$yy";
 }
 print $fh "\n";
-print $fh "---";
+print $fh "---,---";
 foreach $yy (sort(keys(%{$years}))){
 	print $fh ",---";
 }
 print $fh "\n";
 foreach $region (sort(keys(%{$regions}))){
-	print $fh "$region";
+	print $fh "$region,$regionlookup->{$region}";
 	foreach $yy (sort(keys(%{$years}))){
 		print $fh ",$regions->{$region}{$yy}{'same'}";
 	}
