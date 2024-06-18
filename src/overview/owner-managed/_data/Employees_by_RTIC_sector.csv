@@ -1,59 +1,59 @@
-"","RTIC","Count","Location Quotient"
-"1","Business Support Services",36324,3.61
-"2","Legal Services",13970,3.17
-"3","Life Sciences",13774,0.97
-"4","Net Zero",12401,1
-"5","Agency Market",10098,6.15
-"6","Advanced Manufacturing",8648,2.17
-"7","Digital Creative Industries",6184,5.34
-"8","Research and Consulting - Physical Sciences and Engineering",5280,0.67
-"9","Data Infrastructure",4631,0.62
-"10","Media and Publishing",4117,2.39
-"11","Energy Generation",4048,1.89
-"12","Electronics Manufacturing",3857,1.11
-"13","Software Development",3327,2.34
-"14","Cyber",3065,0.39
-"15","Telecommunications",2821,0.51
-"16","Rehabilitation",2803,2.39
-"17","Supply Chain Logistics",2485,0.82
-"18","FinTech",2122,0.54
-"19","Energy Management",2094,0.71
-"20","Food Tech",1929,1.11
-"21","Advanced Materials",1890,1.38
-"22","Marine and Maritime",1761,0.49
-"23","CleanTech",1748,0.62
-"24","Geospatial Economy",1484,2.18
-"25","Land Remediation",1421,2.03
-"26","Software as a Service (SaaS)",1392,0.14
-"27","Immersive Technologies",1380,3.46
-"28","EdTech",1277,2.44
-"29","E-Commerce",1237,2.15
-"30","Energy Storage",1229,2.52
-"31","Artificial Intelligence",1193,0.24
-"32","Computer Hardware",1177,1.82
-"33","Design and Modelling Technologies",1002,1.08
-"34","Gaming",956,2
-"35","Sensors",883,0.85
-"36","Pharma",763,0.08
-"37","Space Economy",692,0.15
-"38","Modular Construction",583,0.89
-"39","Photonics",552,0.32
-"40","In-Orbit Servicing and Manufacturing",515,0.25
-"41","Engineering Biology Application",495,0.15
-"42","AgriTech",492,1.41
-"43","MedTech",488,0.35
-"44","Autonomy and Robotics",438,1.67
-"45","Omics",390,0.6
-"46","Biopharmaceutical",381,0.43
-"47","Data Intermediaries",361,0.88
-"48","Engineering Biology Supply Chain",331,0.14
-"49","Internet of Things",307,0.07
-"50","AdTech",257,0.14
-"51","Wearables and Quantified Self",257,1.56
-"52","Space Energy",241,0.1
-"53","ESG",230,0.98
-"54","Cryptocurrency Economy",212,0.68
-"55","Quantum Economy",211,0.13
-"56","Streaming Economy",197,0.18
-"57","Quantum Technology",74,0.01
-"58","Dan Test",45,NA
+RTIC,Count,Location Quotient
+Business Support Services,36324,3.61
+Legal Services,13970,3.17
+Life Sciences,13774,0.97
+Net Zero,12401,1
+Agency Market,10098,6.15
+Advanced Manufacturing,8648,2.17
+Digital Creative Industries,6184,5.34
+Research and Consulting - Physical Sciences and Engineering,5280,0.67
+Data Infrastructure,4631,0.62
+Media and Publishing,4117,2.39
+Energy Generation,4048,1.89
+Electronics Manufacturing,3857,1.11
+Software Development,3327,2.34
+Cyber,3065,0.39
+Telecommunications,2821,0.51
+Rehabilitation,2803,2.39
+Supply Chain Logistics,2485,0.82
+FinTech,2122,0.54
+Energy Management,2094,0.71
+Food Tech,1929,1.11
+Advanced Materials,1890,1.38
+Marine and Maritime,1761,0.49
+CleanTech,1748,0.62
+Geospatial Economy,1484,2.18
+Land Remediation,1421,2.03
+Software as a Service (SaaS),1392,0.14
+Immersive Technologies,1380,3.46
+EdTech,1277,2.44
+E-Commerce,1237,2.15
+Energy Storage,1229,2.52
+Artificial Intelligence,1193,0.24
+Computer Hardware,1177,1.82
+Design and Modelling Technologies,1002,1.08
+Gaming,956,2
+Sensors,883,0.85
+Pharma,763,0.08
+Space Economy,692,0.15
+Modular Construction,583,0.89
+Photonics,552,0.32
+In-Orbit Servicing and Manufacturing,515,0.25
+Engineering Biology Application,495,0.15
+AgriTech,492,1.41
+MedTech,488,0.35
+Autonomy and Robotics,438,1.67
+Omics,390,0.6
+Biopharmaceutical,381,0.43
+Data Intermediaries,361,0.88
+Engineering Biology Supply Chain,331,0.14
+Internet of Things,307,0.07
+AdTech,257,0.14
+Wearables and Quantified Self,257,1.56
+Space Energy,241,0.1
+ESG,230,0.98
+Cryptocurrency Economy,212,0.68
+Quantum Economy,211,0.13
+Streaming Economy,197,0.18
+Quantum Technology,74,0.01
+Dan Test,45,NA
