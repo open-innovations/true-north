@@ -17,10 +17,10 @@ BEGIN { ($basedir, $path) = abs_path($0) =~ m{(.*/)?([^/]+)$}; push @INC, $based
 
 # Set some paths
 my $dir = $basedir."../working/b-corp/";
-my $ofile = $basedir."../src/true-north/_data/bcorp_list.csv";
-my $lfile = $basedir."../src/true-north/_data/bcorp_by_la.csv";
+my $ofile = $basedir."../src/overview/_data/bcorp_list.csv";
+my $lfile = $basedir."../src/overview/_data/bcorp_by_la.csv";
 my $sfile = $basedir."../src/_data/dashboard/bcorp_north.csv";
-my $vfile = $basedir."../src/true-north/b-corporations/index.vto";
+my $vfile = $basedir."../src/overview/b-corporations/index.vto";
 my $pcdfile = $dir."postcodes.csv";
 my $hexfile = $basedir."../src/_data/hexjson/uk-local-authority-districts-2023.hexjson";
 
