@@ -31,7 +31,7 @@
 .brabners-bg-light { background: white; color: rgb(43, 43, 43); }
 
 html, body { line-height: 1.875rem; }
-p, iframe, h2, h3, figure, ul, ol, .block, .padded-bottom { margin-bottom: 1.25rem; letter-spacing: .03rem; }
+p, iframe, h2, h3, figure, ul, ol, .block, .padded-bottom, .p { margin-bottom: 1.25rem; letter-spacing: .03rem; }
 
 header .logo, header .title { color: var(--color-heading-light); }
 header .logo svg { height: 22px; }
