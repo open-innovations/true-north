@@ -1,0 +1,63 @@
+,geography.code,industry.name,2019-01-01,2022-01-01,growth_2019_2022
+0,E06000001,Transportation and storage,22,33,50.0
+1,E06000004,Information and communication,99,211,113.13131313131312
+2,E06000002,Human health and social work activities,606,766,26.4026402640264
+3,E06000003,Information and communication,7,11,57.14285714285714
+4,E06000005,Information and communication,335,669,99.70149253731344
+5,E06000047,Construction,635,788,24.094488188976374
+6,E06000057,Accommodation and food service activities,206,278,34.95145631067961
+7,E08000021,Information and communication,854,1274,49.18032786885246
+8,E08000022,Manufacturing,400,568,42.0
+9,E08000023,Information and communication,53,70,32.075471698113205
+10,E08000037,"Arts, entertainment and recreation",32,40,25.0
+11,E08000024,Information and communication,109,223,104.58715596330276
+12,E06000063,Information and communication,75,94,25.333333333333336
+13,E06000064,Administrative and support service activities,123,172,39.83739837398374
+14,E08000003,Information and communication,1837,2687,46.27109417528579
+15,E08000006,"Arts, entertainment and recreation",59,101,71.1864406779661
+16,E08000009,"Professional, scientific and technical activities",643,1385,115.39657853810264
+17,E08000007,"Professional, scientific and technical activities",436,618,41.74311926605505
+18,E08000008,Information and communication,45,57,26.666666666666668
+19,E08000001,Activities of households,5,6,20.0
+20,E08000010,Activities of households,5,7,40.0
+21,E08000002,Activities of households,3,4,33.33333333333333
+22,E08000004,"Arts, entertainment and recreation",19,47,147.36842105263156
+23,E08000005,Information and communication,96,182,89.58333333333334
+24,E06000008,Financial and insurance activities,71,116,63.38028169014085
+25,E06000009,Accommodation and food service activities,184,248,34.78260869565217
+26,E07000121,Information and communication,74,132,78.37837837837837
+27,E07000128,Accommodation and food service activities,74,106,43.24324324324324
+28,E07000119,"Professional, scientific and technical activities",212,352,66.0377358490566
+29,E07000123,Manufacturing,195,258,32.30769230769231
+30,E07000124,Administrative and support service activities,22,43,95.45454545454544
+31,E07000126,Manufacturing,691,1370,98.26338639652676
+32,E07000117,Financial and insurance activities,87,152,74.71264367816092
+33,E07000120,Information and communication,80,113,41.25
+34,E07000122,Activities of households,3,4,33.33333333333333
+35,E07000125,Accommodation and food service activities,18,28,55.55555555555556
+36,E07000118,Manufacturing,165,231,40.0
+37,E07000127,"Professional, scientific and technical activities",155,210,35.483870967741936
+38,E06000007,"Professional, scientific and technical activities",785,1135,44.5859872611465
+39,E06000049,Accommodation and food service activities,330,408,23.636363636363637
+40,E06000050,"Professional, scientific and technical activities",536,708,32.08955223880597
+41,E06000006,Accommodation and food service activities,58,69,18.96551724137931
+42,E08000011,Human health and social work activities,624,786,25.961538461538463
+43,E08000013,Human health and social work activities,196,276,40.81632653061224
+44,E08000012,"Agriculture, mining, electricity, gas, water and waste",203,254,25.12315270935961
+45,E08000014,Information and communication,55,82,49.09090909090909
+46,E08000015,"Professional, scientific and technical activities",521,838,60.84452975047985
+47,E06000010,Accommodation and food service activities,143,230,60.83916083916085
+48,E06000011,Accommodation and food service activities,233,321,37.76824034334764
+49,E06000012,Accommodation and food service activities,91,143,57.14285714285714
+50,E06000013,Accommodation and food service activities,70,108,54.285714285714285
+51,E06000014,Information and communication,205,332,61.95121951219512
+52,E06000065,Financial and insurance activities,424,569,34.19811320754717
+53,E08000016,Public administration and defence,103,140,35.92233009708738
+54,E08000017,Information and communication,129,169,31.007751937984494
+55,E08000018,Wholesale and retail trade; repair of motor vehicles,482,567,17.634854771784234
+56,E08000019,Information and communication,850,1447,70.23529411764706
+57,E08000032,Financial and insurance activities,469,649,38.37953091684435
+58,E08000035,Information and communication,2151,3087,43.51464435146444
+59,E08000033,Other service activities,173,284,64.16184971098265
+60,E08000034,Financial and insurance activities,71,121,70.4225352112676
+61,E08000036,"Agriculture, mining, electricity, gas, water and waste",256,468,82.8125
