@@ -1,0 +1,48 @@
+---
+title: Productivity
+theme: innovation-change
+nicetheme: Innovation & Change
+---
+{{ comp.oi.map.hex_cartogram({
+	"config": {
+		"width": 600,
+		"hexjson": "hexjson.uk-local-authority-districts-2023",
+		"data": most_recent_productivity_local_authority,
+		"columns":[{
+			"name": "filterLabel",
+			"template": "{{ n }}"
+		}],
+		"value": "GVA per hour worked (UKX = 100)",
+		"scale": "TrueNorth",
+		"matchKey": "geography.code",
+		"legend": {
+			"position": "top right",
+			"continuous": true,
+			"items": [{
+				"value": 200,
+				"label": "£200 / hour"
+			},
+            {
+				"value": 100,
+				"label": "£100 / hour"
+			},{
+				"value": 0,
+				"label": "£0 / hour"
+			}]
+		},
+		"boundaries": {
+			"country": {
+				"stroke": "#181b25",
+				"stroke-width": 2,
+				"stroke-linecap": "round",
+				"stroke-opacity": 0.5
+			}
+		},
+		"tools":{
+			"filter":{
+				"label": "filterLabel"
+			}
+		},
+		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />thing: <strong class=\"number\">{{ GVA per hour worked (UKX = 100) | toFixed(1) }}</strong>"
+	}
+}) }}
