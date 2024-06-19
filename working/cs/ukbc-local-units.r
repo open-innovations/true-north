@@ -110,11 +110,3 @@ ukbc <- readr::read_csv(url, name_repair = tolower) |>
 
 readr::write_csv(ukbc, "working/cs/ukbc_lu.csv")
 arrow::write_parquet(ukbc, "working/cs/ukbc_lu.parquet")
-
-ukbc |>
-  dplyr::filter(
-    employment_sizeband_code == 0,
-    legal_status_code == 7
-  ) |>
-  dplyr::group_by(date) |>
-  dplyr::summarise(obs_value = sum(obs_value))
