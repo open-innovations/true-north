@@ -1,0 +1,23 @@
+---
+title: Community Interest Companies
+theme: purpose-social-impact
+nicetheme: Purpose & Social Impact
+---
+<p>This page shows...</p>
+
+{{ comp.oi.dashboard ({ config: {
+	title: "name",
+	value: "value",
+    note: "footnote",
+    data: headlines,
+    panels: [
+        { name: "Total companies considered" },
+        { name: "Estimated total employees" },
+        { name: "Estimated total turnover" },
+        { name: "Estimated growth per year" },
+        { name: "Total investment funding" }
+        ],
+    units: { postfix: "post", prefix: "pre" },
+        }
+    })
+}}
