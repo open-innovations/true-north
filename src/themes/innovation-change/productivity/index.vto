@@ -3,6 +3,11 @@ title: Productivity
 theme: innovation-change
 nicetheme: Innovation & Change
 ---
+<details>
+    <summary><h4>About this data</h4></summary>
+    <p>This data comes from...</p>
+</details>
+<h3>GVA per hour worked</h3>
 {{ comp.oi.map.hex_cartogram({
 	"config": {
 		"width": 600,
@@ -12,7 +17,7 @@ nicetheme: Innovation & Change
 			"name": "filterLabel",
 			"template": "{{ n }}"
 		}],
-		"value": "GVA per hour worked (UKX = 100)",
+		"value": "GVA per hour worked (£)",
 		"scale": "TrueNorth",
 		"matchKey": "geography.code",
 		"legend": {
@@ -43,6 +48,6 @@ nicetheme: Innovation & Change
 				"label": "filterLabel"
 			}
 		},
-		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />thing: <strong class=\"number\">{{ GVA per hour worked (UKX = 100) | toFixed(1) }}</strong>"
+		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />GVA per hour worked (£): <strong class=\"number\">{{ GVA per hour worked (UKX = 100) | toFixed(1) }}</strong>"
 	}
 }) }}
