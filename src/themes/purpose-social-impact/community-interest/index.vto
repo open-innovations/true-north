@@ -35,7 +35,9 @@ nicetheme: Purpose & Social Impact
 </details>
 
 <h3>Northern Community Interest Companies</h3>
-
+<p>
+    Summary statistics for all active Community Interest Companies in the North.
+</p>
 {{ comp.oi.dashboard ({ config: {
 	title: "name",
 	value: "value",
@@ -54,7 +56,7 @@ nicetheme: Purpose & Social Impact
 }}
 
 <h3>Business counts by local authority</h3>
-<p>Estimates for the number of businesses classified as community interest</p>
+<p>Estimates for the number of Community Interest Companies with resgitered addresses in the North.</p>
 {{ comp.oi.map.hex_cartogram({
 	"config": {
 		"width": 600,
@@ -102,7 +104,7 @@ nicetheme: Purpose & Social Impact
 
 <h3>Employee counts by local authority</h3>
 
-<p>Estimates for the number of employees working at Community Interest Companies</p>
+<p>Estimates for the number of employees working at Community Interest Companies with registered addresses in the North.</p>
 
 {{ comp.oi.map.hex_cartogram({
 	"config": {
@@ -151,7 +153,7 @@ nicetheme: Purpose & Social Impact
 
 <h3>Turnover by local authority</h3>
 
-<p>Estimates for the turnover of Community Interest Companies</p>
+<p>Estimates for the turnover of Community Interest Companies with registered addresses in the North</p>
 
 {{ comp.oi.map.hex_cartogram({
 	"config": {
@@ -200,7 +202,7 @@ nicetheme: Purpose & Social Impact
 
 <h3>Company size by number of employees</h3>
 <p>
-	This chart shows the size of Community Interest Companies according to employee counts.
+	This chart shows the size of Community Interest Companies with registered addresses in the North according to employee counts.
 	The standard definitions of company sizes are: Micro: 0-9, Small: 10-49, Medium: 50-249.
 </p>
 
@@ -215,14 +217,77 @@ nicetheme: Purpose & Social Impact
 		},
 	series: [{
 		title: 'Number of Companies',
-		value: 'Count'
+		value: 'Count',
+        tooltip: '<strong class=\"subtitle\">Number of companies</strong><br />{{ Company size }}: {{ Count }}'
+		}]
+	} 
+	})
+}}
+<h3>Top 6 sectors by business counts</h3>
+<p>
+    Ths chart shows the top 6 sectors by the number of businesses for Community Interest Companies with registered addresses in the North.
+</p>
+<details>
+    <summary><h4>SIC section lookup</h4></summary>
+    {{ for element of business_counts_by_sic_section.rows }}
+        <p>{{ element['letter'] }}: {{ element['SIC'] }}</p>
+    {{ /for }}
+</details>
+
+{{ comp.oi.chart.bar ({ config: {
+	data: business_counts_by_sic_section,
+	height: 600,
+	category: 'letter',
+	axis: {
+		x:{
+			grid: { "stroke-dasharray": '6 2', "stroke-width": 1 },
+            max: 2500
+			}
+		},
+	series: [{
+		title: 'Number of Companies',
+		value: 'Count',
+        tooltip: '<strong class=\"subtitle\">Number of companies</strong><br />{{ letter }} - {{ SIC }}: {{ Count | toLocaleString() }}'
 		}]
 	} 
 	})
 }}
 
-<h3>All of the U.K.</h3>
+<h3>Top 6 sectors by employee counts</h3>
+<p>
+    Ths chart shows the top 6 sectors by the number of employees working at Community Interest Companies with registered addresses in the North.
+</p>
+<details>
+    <summary><h4>SIC section lookup</h4></summary>
+    {{ for element of business_counts_by_sic_section.rows }}
+        <p>{{ element['letter'] }}: {{ element['SIC'] }}</p>
+    {{ /for }}
+</details>
 
+{{ comp.oi.chart.bar ({ config: {
+	data: employees_by_sic_section,
+	height: 600,
+	category: 'letter',
+	axis: {
+		x:{
+			grid: { "stroke-dasharray": '6 2', "stroke-width": 1 },
+            max: 6000
+			}
+		},
+	series: [{
+		title: 'Number of Employees',
+		value: 'Count',
+        tooltip: '<strong class=\"subtitle\">Number of employees</strong><br />{{ letter }} - {{ SIC }}: {{ Count | toLocaleString() }}'
+		}]
+	} 
+	})
+}}
+
+<h3>U.K. community interest companies at a glance</h3>
+<p>
+    This dashboard shows the same statistics as the one at the top of the page, but for all active 
+    Community Interest Companies in the UK.
+</p>
 {{ comp.oi.dashboard ({ config: {
 	title: "name",
 	value: "value",
@@ -235,7 +300,7 @@ nicetheme: Purpose & Social Impact
         { name: "Estimated growth per year" },
         { name: "Total investment funding" }
         ],
-    units: { postfix: "post", prefix: "pre" },
+    units: { postfix: "post", prefix: "pre" }
         }
     })
 }}
