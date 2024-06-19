@@ -200,7 +200,7 @@ details summary + * { margin-top: 1rem; }
 details[open] summary > :first-child:after {
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect height='8' width='30' y='12' x='1'%3E%3C/rect%3E%3C/svg%3E");
 }
-details summary::marker {
+details summary::marker, details summary::-webkit-details-marker {
 	font-size: 0;
 	content: "";
 }
