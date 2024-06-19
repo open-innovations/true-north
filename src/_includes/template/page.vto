@@ -2,10 +2,32 @@
 layout: template/base.vto
 ---
 {{ if nicetheme!=undefined }}
-    <p>Back to <a href="/themes/{{ theme }}">{{ nicetheme }}</a><p>
+    <nav>
+		<ul class="breadcrumb">
+			<li><a href="/">Home</a></li>
+			<li><a href="/themes/">Themes</a></li>
+			<li><a href="/themes/{{ theme }}">{{ nicetheme }}</a></li>
+			<li><a href="{{ url }}">{{ title }}</a></li>
+		</ul>
+	</nav>
 {{ /if }}
 {{ if themepage==true }}
-    <p>Back to <a href="/themes/">Themes</a></p>
+    <nav>
+		<ul class="breadcrumb">
+			<li><a href="/">Home</a></li>
+			<li><a href="/themes/">Themes</a></li>
+			<li><a href="{{ url }}">{{ title }}</a></li>
+		</ul>
+	</nav>
+{{ /if }}
+{{ if nicesection!=undefined }}
+    <nav>
+		<ul class="breadcrumb">
+			<li><a href="/">Home</a></li>
+			<li><a href="/{{ section }}/">{{ nicesection }}</a></li>
+			<li><a href="{{ url }}">{{ title }}</a></li>
+		</ul>
+	</nav>
 {{ /if }}
 <h1>{{ title }}</h1>
 {{ if updated }}
