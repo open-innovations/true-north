@@ -1,63 +1,63 @@
-LAD23NM,Count,Location quotient,LAD23CD
-Leeds,32134,2.6,E08000035
-North Yorkshire,27908,8.72,E06000065
-Manchester,21265,3.19,E08000003
-Sheffield,20239,4.48,E08000019
-Cheshire East,19545,6.71,E06000049
-East Riding of Yorkshire,15599,9.2,E06000011
-Kirklees,15084,11.28,E08000034
-Cheshire West and Chester,14573,7.08,E06000050
-Liverpool,14311,4.61,E08000012
-Bradford,14305,2.39,E08000032
-Stockport,13941,5.9,E08000007
-County Durham,13289,10.64,E06000047
-Westmorland and Furness,12578,15.74,E06000064
-Bolton,12267,6.64,E08000001
-Trafford,12010,3.31,E08000009
-Cumberland,11185,12.52,E06000063
-Warrington,9987,2.63,E06000007
-Newcastle upon Tyne,9952,3.55,E08000021
-Salford,9539,3.49,E08000006
-Wakefield,9492,4.93,E08000036
-Northumberland,9287,13.4,E06000057
-Wigan,9202,9.71,E08000010
-Wirral,9135,3.83,E08000015
-Calderdale,8967,9.24,E08000033
-"Kingston upon Hull, City of",8900,7.61,E06000010
-Doncaster,8596,7.14,E08000017
-Bury,8351,5.82,E08000002
-Sefton,8267,9.26,E08000014
-York,8207,4.79,E06000014
-Gateshead,7973,8.52,E08000037
-Tameside,7248,10.17,E08000008
-Preston,7236,8.72,E07000123
-Rotherham,6929,7.0,E08000018
-Oldham,6862,8.69,E08000004
-Barnsley,6817,9.41,E08000016
-North East Lincolnshire,6662,11.53,E06000012
-Stockton-on-Tees,6488,8.96,E06000004
-Rochdale,6238,9.16,E08000005
-Blackburn with Darwen,6040,2.32,E06000008
-Chorley,5725,10.16,E07000118
-Lancaster,5520,13.38,E07000121
-Sunderland,5403,4.48,E08000024
-North Lincolnshire,5375,7.7,E06000013
-West Lancashire,5334,11.51,E07000127
-North Tyneside,4897,3.23,E08000022
-South Ribble,4695,9.05,E07000126
-St. Helens,4464,6.14,E08000013
-Fylde,4457,7.96,E07000119
-Wyre,4395,16.26,E07000128
-Halton,4057,4.31,E06000006
-South Tyneside,3764,11.18,E08000023
-Ribble Valley,3580,17.34,E07000124
-Knowsley,3483,6.83,E08000011
-Burnley,3379,8.12,E07000117
-Blackpool,3148,9.23,E06000009
-Middlesbrough,3107,7.53,E06000002
-Darlington,3012,2.9,E06000005
-Pendle,2890,7.62,E07000122
-Hyndburn,2796,7.97,E07000120
-Redcar and Cleveland,2728,13.08,E06000003
-Rossendale,2477,11.08,E07000125
-Hartlepool,1975,13.35,E06000001
+LAD23NM,LAD23CD,Name,Count,Location quotient
+Leeds,E08000035,Leeds,105092,2.79
+Manchester,E08000003,Manchester,96118,4.69
+North Yorkshire,E06000065,North Yorkshire,71077,7.22
+Sheffield,E08000019,Sheffield,60872,4.41
+Cheshire East,E06000049,Cheshire East,57446,6.41
+Liverpool,E08000012,Liverpool,55936,5.98
+Bradford,E08000032,Bradford,49807,2.72
+Kirklees,E08000034,Kirklees,46214,11.35
+Stockport,E08000007,Stockport,43112,6.1
+Cheshire West and Chester,E06000050,Cheshire West and Chester,40788,6.48
+Bolton,E08000001,Bolton,39976,7.12
+East Riding of Yorkshire,E06000011,East Riding of Yorkshire,39407,7.64
+Trafford,E08000009,Trafford,38751,3.48
+County Durham,E06000047,County Durham,37068,9.77
+Newcastle upon Tyne,E08000021,Newcastle upon Tyne,35573,4.14
+Warrington,E06000007,Warrington,32695,2.8
+Salford,E08000006,Salford,32037,3.84
+Bury,E08000002,Bury,31006,7.08
+Wakefield,E08000036,Wakefield,30048,5.11
+Doncaster,E08000017,Doncaster,27237,7.33
+Wirral,E08000015,Wirral,27130,3.72
+Westmorland and Furness,E06000064,Westmorland and Furness,26972,11.06
+Northumberland,E06000057,Northumberland,25745,12.28
+Oldham,E08000004,Oldham,25695,10.63
+Wigan,E08000010,Wigan,25614,8.84
+Calderdale,E08000033,Calderdale,25438,8.58
+Cumberland,E06000063,Cumberland,24958,9.13
+York,E06000014,York,24498,4.72
+"Kingston upon Hull, City of",E06000010,"Kingston upon Hull, City of",24249,6.78
+Sefton,E08000014,Sefton,23454,8.76
+Preston,E07000123,Preston,23128,9.1
+Stockton-on-Tees,E06000004,Stockton-on-Tees,22679,10.27
+Gateshead,E08000037,Gateshead,22482,7.85
+Rotherham,E08000018,Rotherham,21833,7.23
+Rochdale,E08000005,Rochdale,19970,9.61
+Barnsley,E08000016,Barnsley,19689,8.89
+Blackburn with Darwen,E06000008,Blackburn with Darwen,19175,2.41
+Chorley,E07000118,Chorley,19082,11.15
+Tameside,E08000008,Tameside,18985,8.89
+North Tyneside,E08000022,North Tyneside,18206,3.91
+Sunderland,E08000024,Sunderland,17513,4.75
+North East Lincolnshire,E06000012,North East Lincolnshire,17103,9.61
+West Lancashire,E07000127,West Lancashire,14640,10.48
+North Lincolnshire,E06000013,North Lincolnshire,14409,6.75
+Lancaster,E07000121,Lancaster,14338,11.36
+St. Helens,E08000013,St. Helens,13277,5.78
+Fylde,E07000119,Fylde,12772,7.46
+Blackpool,E06000009,Blackpool,12403,11.94
+South Ribble,E07000126,South Ribble,12390,7.87
+Middlesbrough,E06000002,Middlesbrough,11867,9.39
+Halton,E06000006,Halton,11365,3.79
+Wyre,E07000128,Wyre,11063,13.44
+Darlington,E06000005,Darlington,10576,3.33
+Burnley,E07000117,Burnley,10346,8.01
+South Tyneside,E08000023,South Tyneside,10336,10.42
+Knowsley,E08000011,Knowsley,9151,5.84
+Pendle,E07000122,Pendle,8620,7.43
+Redcar and Cleveland,E06000003,Redcar and Cleveland,8347,13.07
+Ribble Valley,E07000124,Ribble Valley,8306,13.21
+Hyndburn,E07000120,Hyndburn,7008,6.53
+Rossendale,E07000125,Rossendale,6734,10.06
+Hartlepool,E06000001,Hartlepool,6135,13.34

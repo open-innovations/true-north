@@ -10,7 +10,7 @@ nicetheme: Innovation & Change
 
 <details>
 	<summary><h3>About this data</h3></summary>
-	<p>The data on this page was calculated using a custom filter on The Data City's database of over 5 million U.K. companies. In order to be classed as an owner-managed firm, we said the following must be true:
+	<p>The data on this page was calculated using a custom filter on The Data City's database of over 5 million UK companies. In order to be classed as an owner-managed firm, we said the following must be true:
 	<ul>
 		<li>A director is appointed within two years of the company being incorporated.</li>
 		<li>The same director is, or has been, a person of significant control at the company. A person of significant control means they have shares or voting rights in the company.</li>
@@ -33,11 +33,6 @@ nicetheme: Innovation & Change
 		and <a href="https://help.thedatacity.com/knowledge/using-analyse#analysis-summary-box">explanations of the headline statistics</a>.
 	</p>
 </details>
-
-
-<p class='warning padded'>
-    This data contains a bug and a fix is in the pipeline.
-</p>
 
 {{ comp.oi.dashboard ({ config: {
 	title: "name",
@@ -70,20 +65,20 @@ nicetheme: Innovation & Change
 		"value": "Count",
 		"scale": "TrueNorth",
 		"min": 0,
-		"max": 6000,
+		"max": 25000,
 		"matchKey": "LAD23CD",
 		"legend": {
 			"position": "top right",
 			"continuous": true,
 			"items": [{
-				"value": 6000,
-				"label": "6k+"
+				"value": 25000,
+				"label": "25k"
 			},{
-				"value": 4000,
-				"label": "4k"
+				"value": 15000,
+				"label": "15k"
 			},{
-				"value": 2000,
-				"label": "2k"
+				"value": 5000,
+				"label": "5k"
 			},{
 				"value": 0,
 				"label": "0"
@@ -122,20 +117,17 @@ nicetheme: Innovation & Change
 		"value": "Count",
 		"scale": "TrueNorth",
 		"min": 0,
-		"max": 35000,
+		"max": 100000,
 		"matchKey": "LAD23CD",
 		"legend": {
 			"position": "top right",
 			"continuous": true,
 			"items": [{
-				"value": 30000,
-				"label": "30k+"
+				"value": 100000,
+				"label": "100k+"
 			},{
-				"value": 20000,
-				"label": "20k"
-			},{
-				"value": 10000,
-				"label": "10k"
+				"value": 50000,
+				"label": "50k"
 			},{
 				"value": 0,
 				"label": "0"
@@ -174,29 +166,20 @@ nicetheme: Innovation & Change
 		"value": "Count",
 		"scale": "TrueNorth",
 		"min": 0,
-		"max": 2500000000,
+		"max": 7000000000,
 		"matchKey": "LAD23CD",
 		"legend": {
 			"position": "top right",
 			"continuous": true,
 			"items": [{
-				"value": 2500000000,
-				"label": "£2.5B"
+				"value": 7000000000,
+				"label": "£7B"
 			},{
-				"value": 2000000000,
-				"label": "£2B"
-			},{
-				"value": 1500000000,
-				"label": "£1.5B"
-			},{
-				"value": 1000000000,
-				"label": "£1B"
-			},{
-				"value": 500000000,
-				"label": "£500M"
+				"value": 3500000000,
+				"label": "£3.5B"
 			},{
 				"value": 0,
-				"label": "£0M"
+				"label": "£0B"
 			}]
 		},
 		"boundaries": {
@@ -217,6 +200,11 @@ nicetheme: Innovation & Change
 }) }}
 
 <h3>RTIC Sector counts</h3>
+
+<p>Top 10 RTIC sectors by number of businesses</p>
+
+<p class='warning padded'>Important note: companies can be classified under multiple RTICs</p>
+
 {{ comp.oi.chart.bar ({ config: {
     data: RTIC_sector_counts,
     height: 600,
@@ -225,16 +213,13 @@ nicetheme: Innovation & Change
     axis: { 
         x: { 
             min: 0,
-            max: 1500,
+            max: 5000,
             ticks: [{
-                value: 1500,
-                label: "1500"},
+                value: 5000,
+                label: "5000"},
                 {
-                value: 1000,
-                label: "1000"},
-                {
-                value: 500,
-                label: "500"},
+                value: 2500,
+                label: "2500"},
                 {
                 value: 0,
                 label: "0"}
@@ -252,6 +237,9 @@ nicetheme: Innovation & Change
 }}
 
 <h3>Employees by RTIC sector</h3>
+
+<p>Top 10 RTIC sectors by number of emloyees</p>
+
 {{ comp.oi.chart.bar ({ config: {
     data: Employees_by_RTIC_sector,
     height: 600,
@@ -260,16 +248,19 @@ nicetheme: Innovation & Change
     axis: { 
         x: { 
             min: 0,
-            max: 15000,
+            max: 40000,
             ticks: [{
-                value: 15000,
-                label: "15k"},
+                value: 40000,
+                label: "40k"},
+				{
+                value: 30000,
+                label: "30k"},
+                {
+                value: 20000,
+                label: "20k"},
                 {
                 value: 10000,
                 label: "10k"},
-                {
-                value: 5000,
-                label: "5k"},
                 {
                 value: 0,
                 label: "0"}
@@ -287,6 +278,9 @@ nicetheme: Innovation & Change
 }}
 
 <h3>Turnover by RTIC sector</h3>
+
+<p>Top 10 RTIC sectors by turnover</p>
+
 {{ comp.oi.chart.bar ({ config: {
     data: Turnovers_by_RTIC_sector,
     height: 600,
@@ -295,16 +289,16 @@ nicetheme: Innovation & Change
     axis: { 
         x: { 
             min: 0,
-            max: 1000000000,
+            max: 2000000000,
             ticks: [{
-                value: 250000000,
-                label: "£250M"},
+                value: 1500000000,
+                label: "£1.5B"},
                 {
                 value: 500000000,
                 label: "£500M"},
                 {
-                value: 750000000,
-                label: "£750M"},
+                value: 2000000000,
+                label: "£2B"},
                 {
                 value: 1000000000,
                 label: "£1B"},
