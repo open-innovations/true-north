@@ -10,7 +10,7 @@ use POSIX qw(strftime);
 binmode STDOUT, 'utf8';
 binmode STDERR, 'utf8';
 
-my ($basedir,$path,$datafile,$hexfile,@rows,$i,$n,$r,@las,@lads,$l,%la,$lad,$hexjson,$fh,$percap,$stats,@segments,$s,$total,$north,$northtotal,$fraction,$industry,$size,$status,@industries,$tooltip);
+my ($basedir,$path,$datafile,$hexfile,$dashfile,@rows,$i,$n,$r,@las,@lads,$l,%la,$lad,$hexjson,$fh,$percap,$stats,@segments,$s,$total,$north,$northtotal,$fraction,$northfraction,$industry,$size,$status,@industries,$tooltip);
 
 # Get the real base directory for this script
 BEGIN { ($basedir, $path) = abs_path($0) =~ m{(.*/)?([^/]+)$}; push @INC, $basedir; }
@@ -24,6 +24,7 @@ $north = {"E06000001"=>1,"E06000002"=>1,"E06000003"=>1,"E06000004"=>1,"E06000010
 "E07000187"=>1,"E07000188"=>1,"E07000246"=>1,"E07000189"=>1};
 
 $datafile = $basedir."../src/themes/purpose-social-impact/non-profit/_data/ukbc_lu.csv";
+$dashfile = $basedir."../src/themes/purpose-social-impact/non-profit/_data/headlines.csv";
 $hexfile = $basedir."../src/_data/hexjson/uk-local-authority-districts-2021.hexjson";
 
 # Get the HexJSON file
@@ -65,10 +66,12 @@ for($r = 0; $r < @rows; $r++){
 msg("Saving data to <cyan>$datafile<none>\n");
 open($fh,">:utf8",$datafile);
 print $fh "LAD21CD,LAD21NM,All,Non-profit,Non-profit (%),Summary\n";
+$total = {'all'=>0,'non-profit'=>0};
+$northtotal = {'all'=>0,'non-profit'=>0};
 foreach $lad (sort(keys(%la))){
 
 	# Get a sorted list of industries by the total non-profit bodies
-	@industries = reverse(sort{ $la{$lad}{'industry'}{$a}{'Total'}{'Non-profit body or mutual association'} <=> $la{$lad}{'industry'}{$b}{'Total'}{'Non-profit body or mutual association'} }(keys(%{$la{$lad}{'industry'}})));
+	@industries = reverse(sort{ $la{$lad}{'industry'}{$a}{'Total'}{'Non-profit body or mutual association'} <=> $la{$lad}{'industry'}{$b}{'Total'}{'Non-profit body or mutual association'} || $b cmp $a }(keys(%{$la{$lad}{'industry'}})));
 	for($i = 0; $i < @industries; $i++){
 		if(!defined($la{$lad}{'totals'}{'all'})){
 			$la{$lad}{'totals'}{'all'} = 0;
@@ -80,9 +83,18 @@ foreach $lad (sort(keys(%la))){
 		$la{$lad}{'totals'}{'non-profit'} += $la{$lad}{'industry'}{$industries[$i]}{'Total'}{'Non-profit body or mutual association'};
 	}
 
+
 	# Work out fraction of all businesses
 	if(defined($la{$lad}{'totals'}{'all'}) && $la{$lad}{'totals'}{'all'} > 0){
 		$fraction = sprintf("%0.1f",100*$la{$lad}{'totals'}{'non-profit'}/$la{$lad}{'totals'}{'all'});
+
+		$total->{'all'} += $la{$lad}{'totals'}{'all'};
+		$total->{'non-profit'} += $la{$lad}{'totals'}{'non-profit'};
+		if($north->{$lad}){
+			$northtotal->{'all'} += $la{$lad}{'totals'}{'all'};
+			$northtotal->{'non-profit'} += $la{$lad}{'totals'}{'non-profit'};
+		}
+
 	}else{
 		$fraction = "";
 	}
@@ -116,6 +128,29 @@ foreach $lad (sort(keys(%la))){
 close($fh);
 
 
+# Calculate percentages
+if($total->{'all'} > 0){
+	$fraction = sprintf("%0.1f",100*$total->{'non-profit'}/$total->{'all'});
+}else{
+	$fraction = "";
+}
+if($northtotal->{'all'} > 0){
+	$northfraction = sprintf("%0.1f",100*$northtotal->{'non-profit'}/$northtotal->{'all'});
+}else{
+	$northfraction = "";
+}
+
+
+msg("Saving headlines to <cyan>$dashfile<none>\n");
+open($fh,">:utf8",$dashfile);
+print $fh "name,value,footnote,post,pre\n";
+print $fh "Total companies,$total->{'all'},In the UK,,\n";
+print $fh "Non-profit companies,$total->{'non-profit'},In the UK,,\n";
+print $fh "Non-profits,$fraction,In the UK,%,\n";
+print $fh "Total companies,$northtotal->{'all'},In The North,,\n";
+print $fh "Non-profit companies,$northtotal->{'non-profit'},In The North,,\n";
+print $fh "Non-profits,$northfraction,In The North,%,\n";
+close($fh);
 
 ##############################
 # Sub routines
