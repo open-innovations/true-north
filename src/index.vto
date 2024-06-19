@@ -41,5 +41,82 @@ nav: about
    The Humber, the North East, and the North West.
 </p>
 
+
+{{ comp.oi.map.svg({
+	"config": {
+		"data": [{
+			"ITL121CD": "TLC",
+			"ITL121NM":"North East (England)",
+			"colour":"#9D6646"
+		},{
+			"ITL121CD": "TLD",
+			"ITL121NM":"North West (England)",
+			"colour":"#9D6646"
+		},{
+			"ITL121CD": "TLE",
+			"ITL121NM":"Yorkshire and The Humber",
+			"colour":"#9D6646"
+		},{
+			"ITL121CD": "TLF",
+			"ITL121NM":"East Midlands (England)",
+			"colour":"#EFE9E5"
+		},{
+			"ITL121CD": "TLG",
+			"ITL121NM":"West Midlands (England)",
+			"colour":"#EFE9E5"
+		},{
+			"ITL121CD": "TLH",
+			"ITL121NM":"East",
+			"colour":"#EFE9E5"
+		},{
+			"ITL121CD": "TLI",
+			"ITL121NM":"London",
+			"colour":"#EFE9E5"
+		},{
+			"ITL121CD": "TLJ",
+			"ITL121NM":"South East (England)",
+			"colour":"#EFE9E5"
+		},{
+			"ITL121CD": "TLK",
+			"ITL121NM":"South West (England)",
+			"colour":"#EFE9E5"
+		},{
+			"ITL121CD": "TLL",
+			"ITL121NM":"Wales",
+			"colour":"#EFE9E5"
+		},{
+			"ITL121CD": "TLM",
+			"ITL121NM":"Scotland",
+			"colour":"#EFE9E5"
+		},{
+			"ITL121CD": "TLN",
+			"ITL121NM":"Northern Ireland",
+			"colour":"#EFE9E5"
+		}],
+		"geojson": {
+			"key": "ITL121CD",
+			"data": "geojson.ITL_north"
+		},
+		"key": "ITL121CD",
+		"tooltip": "ITL121NM",
+		"value": "colour",
+		"background": {
+			"geojson": "geojson.british-isles",
+			"colour": "storm"
+		},
+		"height": 400,
+		"bounds": {
+			"lat": {
+				"min": 49.7,
+				"max": 61
+			},
+			"lon": {
+				"min": -12,
+				"max": 2
+			}
+		}
+	}
+}) }}
+
 <h3>North of England vs U.K. economy</h3>
 <p>Headline stats on the North vs U.K. economy to help set context</p>
