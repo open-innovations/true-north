@@ -1,0 +1,138 @@
+---
+title: Non-profits
+theme: purpose-social-impact
+nicetheme: Purpose & Social Impact
+---
+
+<p>Blurb on non-profit bodies or mutual associations.</p>
+
+<details>
+    <summary><h4>About this data</h4></summary>
+    <p>
+        
+    </p>
+</details>
+
+<h3>Northern non-profits</h3>
+<p>
+    Summary statistics for all active non-profits in the North.
+</p>
+{{# comp.oi.dashboard ({ config: {
+	title: "name",
+	value: "value",
+    note: "footnote",
+    data: headlines_north,
+    panels: [
+        { name: "Total companies considered" },
+        { name: "Estimated total employees" },
+        { name: "Estimated total turnover" },
+        { name: "Estimated growth per year" },
+        { name: "Total investment funding" }
+        ],
+    units: { postfix: "post", prefix: "pre" },
+        }
+    })
+#}}
+
+<h3>Business counts by local authority</h3>
+<p>Estimates for the number of non-profits or mutual associations with registered addresses in the North.</p>
+{{ comp.oi.map.hex_cartogram({
+	"config": {
+		"width": 600,
+		"hexjson": "hexjson.uk-local-authority-districts-2021",
+		"data": ukbc_lu,
+		"columns":[{
+			"name": "filterLabel",
+			"template": "{{ n }}"
+		}],
+		"value": "Non-profit",
+		"scale": "TrueNorth",
+		"min": 0,
+		"max": 1600,
+		"matchKey": "LAD21CD",
+		"legend": {
+			"position": "top right",
+			"continuous": true,
+			"items": [{
+				"value": 1600,
+				"label": "1600+"
+			},{
+				"value": 1200,
+				"label": "1200"
+			},{
+				"value": 800,
+				"label": "800"
+			},{
+				"value": 400,
+				"label": "400"
+			},{
+				"value": 0,
+				"label": "0"
+			}]
+		},
+		"boundaries": {
+			"country": {
+				"stroke": "#181b25",
+				"stroke-width": 2,
+				"stroke-linecap": "round",
+				"stroke-opacity": 0.5
+			}
+		},
+		"tools":{
+			"filter":{
+				"label": "filterLabel"
+			}
+		},
+		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong>{{ Summary }}"
+	}
+}) }}
+
+{{# comp.oi.chart.bar ({ config: {
+	data: Company_size_by_employees,
+	height: 600,
+	category: 'Company size',
+	axis: {
+		x:{
+			grid: { "stroke-dasharray": '6 2', "stroke-width": 1 }
+			}
+		},
+	series: [{
+		title: 'Number of Companies',
+		value: 'Count',
+        tooltip: '<strong class=\"subtitle\">Number of companies</strong><br />{{ Company size }}: {{ Count }}'
+		}]
+	} 
+	})
+#}}
+
+{{#
+<h3>Top 6 sectors by business counts</h3>
+<p>
+    Ths chart shows the top 6 sectors by the number of businesses for Community Interest Companies with registered addresses in the North.
+</p>
+<details>
+    <summary><h4>SIC section lookup</h4></summary>
+    {{ for element of business_counts_by_sic_section.rows }}
+        <p>{{ element['letter'] }}: {{ element['SIC'] }}</p>
+    {{ /for }}
+</details>
+
+{{ comp.oi.chart.bar ({ config: {
+	data: business_counts_by_sic_section,
+	height: 600,
+	category: 'letter',
+	axis: {
+		x:{
+			grid: { "stroke-dasharray": '6 2', "stroke-width": 1 },
+            max: 2500
+			}
+		},
+	series: [{
+		title: 'Number of Companies',
+		value: 'Count',
+        tooltip: '<strong class=\"subtitle\">Number of companies</strong><br />{{ letter }} - {{ SIC }}: {{ Count | toLocaleString() }}'
+		}]
+	} 
+	})
+}}
+#}}
