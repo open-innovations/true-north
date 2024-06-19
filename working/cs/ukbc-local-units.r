@@ -83,10 +83,33 @@ build_nomis_url_2 <- function(
 
 url <- build_nomis_url_2(dataset, geogs, date, industries, emp_sizeband, lgl_status, meas)
 
-ukbc <- readr::read_csv(url, name_repair = tolower)
+ukbc <- readr::read_csv(url, name_repair = tolower) |>
+  dplyr::mutate(
+    date = as.Date(paste0(date, "-01-01")),
+    dates.freq = "a"
+  ) |>
+  dplyr::mutate(dataset = "UKBC_LU") |>
+  dplyr::mutate(geography.type = "LAD21") |>
+  dplyr::mutate(industry.name = gsub("[A-Za-z0-9] : ", "", industry_name)) |>
+  dplyr::mutate(variable.name = "Number of local units") |>
+  dplyr::select(
+    dataset,
+    dates.date = date, dates.freq,
+    geography.code = geography_code,
+    geography.name = geography_name,
+    geography.type,
+    industry.code = industry_code,
+    industry.name,
+    employment_sizeband.code = employment_sizeband_code,
+    employment_sizeband.name = employment_sizeband_name,
+    legal_status.code = legal_status_code,
+    legal_status.name = legal_status_name,
+    variable.name,
+    value = obs_value
+  )
 
-readr::write_csv(ukbc, "working/cs/ukbc.csv")
-arrow::write_parquet(ukbc, "working/cs/ukbc.parquet")
+readr::write_csv(ukbc, "working/cs/ukbc_lu.csv")
+arrow::write_parquet(ukbc, "working/cs/ukbc_lu.parquet")
 
 ukbc |>
   dplyr::filter(
