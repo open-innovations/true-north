@@ -1,0 +1,60 @@
+---
+title: Business Demography
+theme: innovation-change
+nicetheme: Innovation & Change
+---
+<h3>Businesss births and deaths</h3>
+
+<p>
+    This hex map shows the birth and death rates (percentage) of businesses, with at least one employee, in 2022. 
+    You can use the slider at the bottom of the chart to switch between Births and Deaths.
+</p>
+
+{{ comp.oi.map.hex_cartogram({
+	config: {
+		width: 600,
+		hexjson: "hexjson.uk-local-authority-districts-2021",
+		data: demography,
+		max: 20,
+        min: 5,
+		columns:[{
+			name: "filterLabel",
+			template: "{{ n }}"
+			}],
+		value: "Births (%)",
+		scale: "TrueNorth",
+		matchKey: "geography.code",
+		legend: {
+			position: "top right",
+			continuous: true,
+			items: [{
+				value: 20,
+				label: "20%"
+			},{
+				value: 10,
+				label: "10%"
+			},{
+				value: 5,
+				label: "5%"
+				}]
+			},
+		boundaries: {
+			country: {
+				stroke: "#181b25",
+				"stroke-width": 2,
+				"stroke-linecap": "round",
+				"stroke-opacity": 0.5
+				}
+			},
+		tools:{
+			filter:{
+				label: "filterLabel"
+				},
+			slider:{
+				columns: ["Births (%)", "Deaths (%)"]
+			}
+			},
+		tooltip: "<strong class=\"subtitle\">{{ n }}</strong><br /> {{ _value }} : <strong class=\"number\">{{ {{ _value }} }}</strong>"
+			}
+	}) 
+}}
