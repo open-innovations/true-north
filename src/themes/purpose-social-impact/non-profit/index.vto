@@ -84,8 +84,12 @@ nicetheme: Purpose & Social Impact
 	}
 }) }}
 
-{{# comp.oi.chart.bar ({ config: {
-	data: Company_size_by_employees,
+<h2>Business counts by size of company</h2>
+
+<p class="warning padded">Note that the source data is rounded, at local authority level, for disclosure purposes. This means that the sum of company sizes will be slightly lower than the <em>total</em> of all non-profits given in the dashboard above.</p>
+
+{{ comp.oi.chart.bar ({ config: {
+	data: by_size,
 	height: 600,
 	category: 'Company size',
 	axis: {
@@ -96,11 +100,11 @@ nicetheme: Purpose & Social Impact
 	series: [{
 		title: 'Number of Companies',
 		value: 'Count',
-        tooltip: '<strong class=\"subtitle\">Number of companies</strong><br />{{ Company size }}: {{ Count }}'
+        tooltip: '<strong class=\"subtitle\">Number of companies</strong><br />{{ Company size }}: <span class="number">{{ Count | toLocaleString() }}</span>'
 		}]
 	} 
 	})
-#}}
+}}
 
 {{#
 <h3>Top 6 sectors by business counts</h3>

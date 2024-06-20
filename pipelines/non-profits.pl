@@ -10,7 +10,7 @@ use POSIX qw(strftime);
 binmode STDOUT, 'utf8';
 binmode STDERR, 'utf8';
 
-my ($basedir,$path,$datafile,$hexfile,$dashfile,@rows,$i,$n,$r,@las,@lads,$l,%la,$lad,$hexjson,$fh,$percap,$stats,@segments,$s,$total,$north,$northtotal,$fraction,$northfraction,$industry,$size,$status,@industries,$tooltip);
+my ($basedir,$path,$datafile,$hexfile,$dashfile,$sizefile,@rows,$i,$n,$r,@las,@lads,$l,%la,$lad,$hexjson,$fh,$percap,$stats,@segments,$s,$total,$north,$northtotal,$sizes,$fraction,$northfraction,$industry,$size,$status,@industries,$tooltip);
 
 # Get the real base directory for this script
 BEGIN { ($basedir, $path) = abs_path($0) =~ m{(.*/)?([^/]+)$}; push @INC, $basedir; }
@@ -26,6 +26,7 @@ $north = {"E06000001"=>1,"E06000002"=>1,"E06000003"=>1,"E06000004"=>1,"E06000010
 $datafile = $basedir."../src/themes/purpose-social-impact/non-profit/_data/ukbc_lu.csv";
 $dashfile = $basedir."../src/themes/purpose-social-impact/non-profit/_data/headlines.csv";
 $hexfile = $basedir."../src/_data/hexjson/uk-local-authority-districts-2021.hexjson";
+$sizefile = $basedir."../src/themes/purpose-social-impact/non-profit/_data/by_size.csv";
 
 # Get the HexJSON file
 $hexjson = LoadJSON($hexfile);
@@ -62,12 +63,12 @@ for($r = 0; $r < @rows; $r++){
 	}
 }
 
-
 msg("Saving data to <cyan>$datafile<none>\n");
 open($fh,">:utf8",$datafile);
 print $fh "LAD21CD,LAD21NM,All,Non-profit,Non-profit (%),Summary\n";
 $total = {'all'=>0,'non-profit'=>0};
 $northtotal = {'all'=>0,'non-profit'=>0};
+$sizes = {};
 foreach $lad (sort(keys(%la))){
 
 	# Get a sorted list of industries by the total non-profit bodies
@@ -81,6 +82,12 @@ foreach $lad (sort(keys(%la))){
 		}
 		$la{$lad}{'totals'}{'all'} += $la{$lad}{'industry'}{$industries[$i]}{'Total'}{'Total'};
 		$la{$lad}{'totals'}{'non-profit'} += $la{$lad}{'industry'}{$industries[$i]}{'Total'}{'Non-profit body or mutual association'};
+		foreach $size (sort(keys(%{$la{$lad}{'industry'}{$industries[$i]}}))){
+			if(!defined($sizes->{$size})){
+				$sizes->{$size} = 0;
+			}
+			$sizes->{$size} += $la{$lad}{'industry'}{$industries[$i]}{$size}{'Non-profit body or mutual association'};
+		}
 	}
 
 
@@ -124,6 +131,16 @@ foreach $lad (sort(keys(%la))){
 	}
 	print $fh "\n";
 
+}
+close($fh);
+
+
+msg("Saving size breakdown to <cyan>$sizefile<none>\n");
+open($fh,">:utf8",$sizefile);
+my @sizeorder = ('Large (250+)','Medium-sized (50 to 249)','Small (10 to 49)','Micro (0 to 9)');
+print $fh "Company size,Count\n";
+foreach $size (@sizeorder){
+	print $fh "$size,$sizes->{$size}\n";
 }
 close($fh);
 
