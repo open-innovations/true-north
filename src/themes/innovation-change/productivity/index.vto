@@ -9,45 +9,155 @@ nicetheme: Innovation & Change
 </details>
 <h3>GVA per hour worked</h3>
 {{ comp.oi.map.hex_cartogram({
-	"config": {
-		"width": 600,
-		"hexjson": "hexjson.uk-local-authority-districts-2023",
-		"data": most_recent_productivity_local_authority,
-		"columns":[{
-			"name": "filterLabel",
-			"template": "{{ n }}"
+	config: {
+		width: 600,
+		hexjson: "hexjson.uk-local-authority-districts-2023",
+		data: most_recent_productivity_local_authority,
+		max: 80,
+		columns:[{
+			name: "filterLabel",
+			template: "{{ n }}"
 		}],
-		"value": "GVA per hour worked (£)",
-		"scale": "TrueNorth",
-		"matchKey": "geography.code",
-		"legend": {
-			"position": "top right",
-			"continuous": true,
-			"items": [{
-				"value": 200,
-				"label": "£200 / hour"
+		value: "GVA per hour worked (£)",
+		scale: "TrueNorth",
+		matchKey: "geography.code",
+		legend: {
+			position: "top right",
+			continuous: true,
+			items: [{
+				value: 80,
+				label: "£80 / hour"
 			},
             {
-				"value": 100,
-				"label": "£100 / hour"
+				value: 40,
+				label: "£40 / hour"
 			},{
-				"value": 0,
-				"label": "£0 / hour"
+				value: 0,
+				label: "£0 / hour"
 			}]
 		},
-		"boundaries": {
-			"country": {
-				"stroke": "#181b25",
+		boundaries: {
+			country: {
+				stroke: "#181b25",
 				"stroke-width": 2,
 				"stroke-linecap": "round",
 				"stroke-opacity": 0.5
 			}
 		},
-		"tools":{
-			"filter":{
-				"label": "filterLabel"
+		tools:{
+			filter:{
+				label: "filterLabel"
 			}
 		},
-		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />GVA per hour worked (£): <strong class=\"number\">{{ GVA per hour worked (UKX = 100) | toFixed(1) }}</strong>"
+		tooltip: "<strong class=\"subtitle\">{{ n }}</strong><br />GVA per hour worked (£): <strong class=\"number\">£{{ GVA per hour worked (£) | toFixed(1) }} / hour</strong>"
 	}
 }) }}
+
+<h3>GVA per job (£)</h3>
+{{ comp.oi.map.hex_cartogram({
+	config: {
+		width: 600,
+		hexjson: "hexjson.uk-local-authority-districts-2023",
+		data: most_recent_productivity_local_authority,
+		max: 150000,
+		columns:[{
+			name: "filterLabel",
+			template: "{{ n }}"
+			}],
+		value: "GVA per job (£)",
+		scale: "TrueNorth",
+		matchKey: "geography.code",
+		legend: {
+			position: "top right",
+			continuous: true,
+			items: [{
+				value: 150000,
+				label: "£150k / job"
+			},{
+				value: 100000,
+				label: "£100k / job"
+			},
+            {
+				value: 50000,
+				label: "£50k / job"
+			},{
+				value: 0,
+				label: "£0 / job"
+				}]
+			},
+		boundaries: {
+			country: {
+				stroke: "#181b25",
+				"stroke-width": 2,
+				"stroke-linecap": "round",
+				"stroke-opacity": 0.5
+				}
+			},
+		tools:{
+			filter:{
+				label: "filterLabel"
+				}
+			},
+		tooltip: "<strong class=\"subtitle\">{{ n }}</strong><br />GVA per job: <strong class=\"number\">£{{ GVA per job (£) | toFixed(0) | toLocaleString() }} / job</strong>"
+			}
+	}) 
+}}
+
+<h3>GVA per hour worked and GVA per job (Indexed)</h3>
+
+<p>
+	This hex map shows the GVA per hour worked and GVA per job by local authority. 
+	You can use the slider at the bottom of the chart to switch between GVA per hour worked
+	and GVA per job.
+</p>
+<p>
+	UKX is ...
+	An index value of 100 is equal to UKX. A value of 110 is 10% more than UKX and a value of 90 is 10% less than UKX.
+</p>
+{{ comp.oi.map.hex_cartogram({
+	config: {
+		width: 600,
+		hexjson: "hexjson.uk-local-authority-districts-2023",
+		data: most_recent_productivity_local_authority,
+		max: 200,
+		columns:[{
+			name: "filterLabel",
+			template: "{{ n }}"
+			}],
+		value: "GVA per hour worked (UKX = 100)",
+		scale: "TrueNorth",
+		matchKey: "geography.code",
+		legend: {
+			position: "top right",
+			continuous: true,
+			items: [{
+				value: 200,
+				label: "200+"
+			},{
+				value: 100,
+				label: "100"
+			},{
+				value: 0,
+				label: "0"
+				}]
+			},
+		boundaries: {
+			country: {
+				stroke: "#181b25",
+				"stroke-width": 2,
+				"stroke-linecap": "round",
+				"stroke-opacity": 0.5
+				}
+			},
+		tools:{
+			filter:{
+				label: "filterLabel"
+				},
+			slider:{
+				columns: ["GVA per hour worked (UKX = 100)", "GVA per job (UKX = 100)"]
+			}
+			},
+		tooltip: "<strong class=\"subtitle\">{{ n }}</strong><br /> {{ _value }} : <strong class=\"number\">{{ {{ _value }} | toLocaleString() }}</strong>"
+			}
+	}) 
+}}
