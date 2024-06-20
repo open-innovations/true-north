@@ -17,22 +17,19 @@ nicetheme: Purpose & Social Impact
 <p>
     Summary statistics for all active non-profits in the North.
 </p>
-{{# comp.oi.dashboard ({ config: {
-	title: "name",
-	value: "value",
-    note: "footnote",
-    data: headlines_north,
-    panels: [
-        { name: "Total companies considered" },
-        { name: "Estimated total employees" },
-        { name: "Estimated total turnover" },
-        { name: "Estimated growth per year" },
-        { name: "Total investment funding" }
-        ],
-    units: { postfix: "post", prefix: "pre" },
-        }
-    })
-#}}
+{{ comp.oi.dashboard ({
+	config: {
+		title: "name",
+		value: "value",
+		note: "footnote",
+		data: headlines,
+		panels: [
+			{ name: "Non-profit companies" },
+			{ name: "Non-profit percentage" }
+		],
+		units: { postfix: "post", prefix: "pre" },
+	}
+}) }}
 
 <h3>Business counts by local authority</h3>
 <p>Estimates for the number of non-profits or mutual associations with registered addresses in the North.</p>

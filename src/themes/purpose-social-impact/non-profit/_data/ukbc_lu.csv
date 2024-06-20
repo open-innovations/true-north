@@ -63,12 +63,12 @@ E07000009,"East Cambridgeshire",,,,
 E07000010,"Fenland",,,,
 E07000011,"Huntingdonshire",,,,
 E07000012,"South Cambridgeshire",,,,
-E07000026,"Allerdale",,,,
-E07000027,"Barrow-in-Furness",,,,
-E07000028,"Carlisle",,,,
-E07000029,"Copeland",,,,
-E07000030,"Eden",,,,
-E07000031,"South Lakeland",,,,
+E07000026,"Allerdale",4825,260,5.4,"<br />Non-profits: <strong class='number'>260</strong> (5.4%)<br />Top non-profit industries:<ol><li>Human health and social work activities: <strong class='number'>85</strong></li><li>Financial and insurance activities: <strong class='number'>40</strong></li><li>Other service activities: <strong class='number'>35</strong></li></ol>"
+E07000027,"Barrow-in-Furness",2085,120,5.8,"<br />Non-profits: <strong class='number'>120</strong> (5.8%)<br />Top non-profit industries:<ol><li>Human health and social work activities: <strong class='number'>40</strong></li><li>Arts, entertainment and recreation: <strong class='number'>25</strong></li><li>Other service activities: <strong class='number'>25</strong></li></ol>"
+E07000028,"Carlisle",6140,885,14.4,"<br />Non-profits: <strong class='number'>885</strong> (14.4%)<br />Top non-profit industries:<ol><li>Financial and insurance activities: <strong class='number'>590</strong></li><li>Human health and social work activities: <strong class='number'>85</strong></li><li>Real estate activities: <strong class='number'>80</strong></li></ol>"
+E07000029,"Copeland",2390,150,6.3,"<br />Non-profits: <strong class='number'>150</strong> (6.3%)<br />Top non-profit industries:<ol><li>Human health and social work activities: <strong class='number'>45</strong></li><li>Other service activities: <strong class='number'>35</strong></li><li>Accommodation and food service activities: <strong class='number'>25</strong></li></ol>"
+E07000030,"Eden",4175,155,3.7,"<br />Non-profits: <strong class='number'>155</strong> (3.7%)<br />Top non-profit industries:<ol><li>Human health and social work activities: <strong class='number'>40</strong></li><li>Other service activities: <strong class='number'>25</strong></li><li>Arts, entertainment and recreation: <strong class='number'>20</strong></li></ol>"
+E07000031,"South Lakeland",7260,320,4.4,"<br />Non-profits: <strong class='number'>320</strong> (4.4%)<br />Top non-profit industries:<ol><li>Human health and social work activities: <strong class='number'>90</strong></li><li>Other service activities: <strong class='number'>60</strong></li><li>Arts, entertainment and recreation: <strong class='number'>40</strong></li></ol>"
 E07000032,"Amber Valley",,,,
 E07000033,"Bolsover",,,,
 E07000034,"Chesterfield",,,,
@@ -170,13 +170,13 @@ E07000146,"King's Lynn and West Norfolk",,,,
 E07000147,"North Norfolk",,,,
 E07000148,"Norwich",,,,
 E07000149,"South Norfolk",,,,
-E07000163,"Craven",,,,
-E07000164,"Hambleton",,,,
-E07000165,"Harrogate",,,,
-E07000166,"Richmondshire",,,,
-E07000167,"Ryedale",,,,
-E07000168,"Scarborough",,,,
-E07000169,"Selby",,,,
+E07000163,"Craven",4105,155,3.8,"<br />Non-profits: <strong class='number'>155</strong> (3.8%)<br />Top non-profit industries:<ol><li>Human health and social work activities: <strong class='number'>45</strong></li><li>Other service activities: <strong class='number'>30</strong></li><li>Arts, entertainment and recreation: <strong class='number'>20</strong></li></ol>"
+E07000164,"Hambleton",6105,220,3.6,"<br />Non-profits: <strong class='number'>220</strong> (3.6%)<br />Top non-profit industries:<ol><li>Human health and social work activities: <strong class='number'>70</strong></li><li>Other service activities: <strong class='number'>40</strong></li><li>Financial and insurance activities: <strong class='number'>25</strong></li></ol>"
+E07000165,"Harrogate",10610,385,3.6,"<br />Non-profits: <strong class='number'>385</strong> (3.6%)<br />Top non-profit industries:<ol><li>Human health and social work activities: <strong class='number'>105</strong></li><li>Financial and insurance activities: <strong class='number'>60</strong></li><li>Other service activities: <strong class='number'>50</strong></li></ol>"
+E07000166,"Richmondshire",3210,140,4.4,"<br />Non-profits: <strong class='number'>140</strong> (4.4%)<br />Top non-profit industries:<ol><li>Arts, entertainment and recreation: <strong class='number'>25</strong></li><li>Human health and social work activities: <strong class='number'>25</strong></li><li>Financial and insurance activities: <strong class='number'>20</strong></li></ol>"
+E07000167,"Ryedale",4075,125,3.1,"<br />Non-profits: <strong class='number'>125</strong> (3.1%)<br />Top non-profit industries:<ol><li>Human health and social work activities: <strong class='number'>35</strong></li><li>Arts, entertainment and recreation: <strong class='number'>15</strong></li><li>Financial and insurance activities: <strong class='number'>15</strong></li></ol>"
+E07000168,"Scarborough",5095,260,5.1,"<br />Non-profits: <strong class='number'>260</strong> (5.1%)<br />Top non-profit industries:<ol><li>Human health and social work activities: <strong class='number'>85</strong></li><li>Other service activities: <strong class='number'>35</strong></li><li>Arts, entertainment and recreation: <strong class='number'>30</strong></li></ol>"
+E07000169,"Selby",4445,120,2.7,"<br />Non-profits: <strong class='number'>120</strong> (2.7%)<br />Top non-profit industries:<ol><li>Human health and social work activities: <strong class='number'>35</strong></li><li>Arts, entertainment and recreation: <strong class='number'>15</strong></li><li>Financial and insurance activities: <strong class='number'>15</strong></li></ol>"
 E07000170,"Ashfield",,,,
 E07000171,"Bassetlaw",,,,
 E07000172,"Broxtowe",,,,

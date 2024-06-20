@@ -18,10 +18,10 @@ require $basedir."lib.pl";
 
 # Define the LADs that make up the north in 2021
 $north = {"E06000001"=>1,"E06000002"=>1,"E06000003"=>1,"E06000004"=>1,"E06000010"=>1,"E06000011"=>1,"E06000005"=>1,"E06000006"=>1,"E06000007"=>1,"E06000008"=>1,"E06000009"=>1,"E06000012"=>1,"E06000014"=>1,"E06000013"=>1,"E06000047"=>1,"E06000049"=>1,"E06000050"=>1,"E06000057"=>1,"E06000064"=>1,"E07000117"=>1,"E07000122"=>1,"E07000123"=>1,"E08000005"=>1,"E07000118"=>1,"E07000126"=>1,"E07000119"=>1,"E07000120"=>1,"E07000121"=>1,"E08000006"=>1,"E07000124"=>1,"E07000125"=>1,"E07000127"=>1,"E07000128"=>1,"E08000013"=>1,"E08000003"=>1,"E08000004"=>1,"E08000022"=>1,"E08000001"=>1,"E08000002"=>1,"E08000023"=>1,"E08000007"=>1,"E08000008"=>1,"E08000009"=>1,"E08000010"=>1,"E08000011"=>1,"E08000012"=>1,"E08000014"=>1,"E08000015"=>1,"E08000016"=>1,"E08000024"=>1,"E08000017"=>1,"E08000018"=>1,"E08000019"=>1,"E08000021"=>1,"E08000032"=>1,"E08000033"=>1,"E08000034"=>1,"E08000036"=>1,"E08000035"=>1,"E08000037"=>1,
-"E07000026"=>1,"E07000028"=>1,"E07000029"=>1,
-"E07000027"=>1,"E07000030"=>1,"E07000031"=>1,
-"E07000163"=>1,"E07000164"=>1,"E07000165"=>1,"E07000166"=>1,"E07000167"=>1,"E07000168"=>1,"E07000169"=>1,
-"E07000187"=>1,"E07000188"=>1,"E07000246"=>1,"E07000189"=>1};
+"E07000026"=>1,"E07000028"=>1,"E07000029"=>1,"E07000027"=>1,"E07000030"=>1,"E07000031"=>1,	# Westmorland and Furness / Cumberland
+"E07000163"=>1,"E07000164"=>1,"E07000165"=>1,"E07000166"=>1,"E07000167"=>1,"E07000168"=>1,"E07000169"=>1 # North Yorkshire
+};
+# "E07000187"=>1,"E07000188"=>1,"E07000246"=>1,"E07000189"=>1 # Somerset
 
 $datafile = $basedir."../src/themes/purpose-social-impact/non-profit/_data/ukbc_lu.csv";
 $dashfile = $basedir."../src/themes/purpose-social-impact/non-profit/_data/headlines.csv";
@@ -144,12 +144,12 @@ if($northtotal->{'all'} > 0){
 msg("Saving headlines to <cyan>$dashfile<none>\n");
 open($fh,">:utf8",$dashfile);
 print $fh "name,value,footnote,post,pre\n";
-print $fh "Total companies,$total->{'all'},In the UK,,\n";
-print $fh "Non-profit companies,$total->{'non-profit'},In the UK,,\n";
-print $fh "Non-profits,$fraction,In the UK,%,\n";
+#print $fh "Total companies,$total->{'all'},In the UK,,\n";
+#print $fh "Non-profit companies,$total->{'non-profit'},In the UK,,\n";
+#print $fh "Non-profits,$fraction,In the UK,%,\n";
 print $fh "Total companies,$northtotal->{'all'},In The North,,\n";
 print $fh "Non-profit companies,$northtotal->{'non-profit'},In The North,,\n";
-print $fh "Non-profits,$northfraction,In The North,%,\n";
+print $fh "Non-profit percentage,$northfraction,Of all businesses in The North,%,\n";
 close($fh);
 
 ##############################
