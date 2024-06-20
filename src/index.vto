@@ -117,4 +117,21 @@ nav: about
 }) }}
 
 <h3>North of England vs UK economy</h3>
-<p>Headline stats on the North vs UK economy to help set context</p>
+{{ comp.oi.dashboard ({ config: {
+	title: "name",
+	value: "value",
+  	note: "Link",
+  	data: dashboard.north_headlines,
+  	columns: [{ 
+    	name: 'Link',
+    	template: '<a href="{{ url }}">{{ footnote }}</a>' 
+    	}],
+	panels: [
+		{ name: "North Share of GVA" },
+		{ name: "North Share of UK Businesses" },
+		{ name: "North Share of UK population" }
+		],
+	units: { postfix: "post" },
+		}
+	})
+}}
