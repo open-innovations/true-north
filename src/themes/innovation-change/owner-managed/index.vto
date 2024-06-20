@@ -199,13 +199,42 @@ nicetheme: Innovation & Change
 	}
 }) }}
 
-<h3>RTIC Sector counts</h3>
+<h3>SIC Sector counts</h3>
 
-<p>Top 10 RTIC sectors by number of businesses</p>
-
-<p class='warning padded'>Important note: companies can be classified under multiple RTICs</p>
+<p>Top 10 SIC sectors by number of businesses</p>
 
 {{ comp.oi.chart.bar ({ config: {
+    data: SICHLU_sector_counts,
+    height: 600,
+    legend: { show: true },
+    category: "SICHLU",
+    axis: { 
+        x: { 
+            min: 0,
+            max: 65000,
+            ticks: [{
+                value: 60000,
+                label: "60k+"},
+                {
+                value: 30000,
+                label: "30k+"},
+                {
+                value: 0,
+                label: "0"}
+                ]},
+            grid: { 'stroke-dasharray': '6 2', 'stroke-width': 1 } 
+        },
+    series: [
+        {
+        title: "Count",
+        value: "Count",
+        tooltip: '<strong>{{ sic_name }}</strong><br />Count: {{ Count }}' }
+        ]
+    } 
+    })
+}}
+{{# <p class='warning padded'>Important note: companies can be classified under multiple RTICs</p> #}}
+{{# {{ comp.oi.chart.bar ({ config: {
     data: RTIC_sector_counts,
     height: 600,
     legend: { show: true },
@@ -234,13 +263,34 @@ nicetheme: Innovation & Change
         ]
     } 
     })
+}} #}}
+
+
+<h3>Employees by SIC sector</h3>
+
+<p>Top 10 SIC sectors by number of emloyees</p>
+{{ comp.oi.chart.bar ({ config: {
+    data: Employees_by_SICHLU_sector,
+    height: 600,
+    legend: { show: true },
+    category: "SICHLU",
+    axis: { 
+        x: { 
+            min: 0,
+            max: 250000,
+            grid: { 'stroke-dasharray': '6 2', 'stroke-width': 1 } },
+        },
+    series: [
+        {
+        title: "Estimated employees",
+        value: "Count",
+        tooltip: '<strong>{{ sic_name }}</strong><br />Estimated employees: {{ Count | toLocaleString() }}' }
+        ]
+    } 
+    })
 }}
 
-<h3>Employees by RTIC sector</h3>
-
-<p>Top 10 RTIC sectors by number of emloyees</p>
-
-{{ comp.oi.chart.bar ({ config: {
+{{# {{ comp.oi.chart.bar ({ config: {
     data: Employees_by_RTIC_sector,
     height: 600,
     legend: { show: true },
@@ -275,13 +325,47 @@ nicetheme: Innovation & Change
         ]
     } 
     })
-}}
+}} #}}
 
-<h3>Turnover by RTIC sector</h3>
+<h3>Turnover by SIC sector</h3>
 
-<p>Top 10 RTIC sectors by turnover</p>
+<p>Top 10 SIC sectors by turnover</p>
 
 {{ comp.oi.chart.bar ({ config: {
+    data: Turnovers_by_SICHLU_sector,
+    height: 600,
+    legend: { show: true },
+    category: "SICHLU",
+    axis: { 
+        x: { 
+            min: 0,
+            max: 30000000000,
+            ticks: [{
+                value: 30000000000,
+                label: "£30B"},
+                {
+                value: 20000000000,
+                label: "£20B"},
+                {
+                value: 10000000000,
+                label: "£10B"},
+                {
+                value: 0,
+                label: "0"}
+                ]},
+            grid: { 'stroke-dasharray': '6 2', 'stroke-width': 1 } 
+        },
+    series: [
+        {
+        title: "Estimated turnover",
+        value: "Count", 
+        tooltip: '<strong>{{ sic_name }}</strong><br />Estimated turnover: £{{ Count | toLocaleString() }}' }
+        ]
+    } 
+    })
+}}
+
+{{# {{ comp.oi.chart.bar ({ config: {
     data: Turnovers_by_RTIC_sector,
     height: 600,
     legend: { show: true },
@@ -316,4 +400,4 @@ nicetheme: Innovation & Change
         ]
     } 
     })
-}}
+}} #}}

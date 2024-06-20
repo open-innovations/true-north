@@ -230,7 +230,7 @@ nicetheme: Purpose & Social Impact
 <details>
     <summary><h4>SIC section lookup</h4></summary>
     {{ for element of business_counts_by_sic_section.rows }}
-        <p>{{ element['letter'] }}: {{ element['SIC'] }}</p>
+        <p>{{ element['SICHLU'] }}: {{ element['sic_name'] }}</p>
     {{ /for }}
 </details>
 
