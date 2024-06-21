@@ -4,23 +4,36 @@ theme: people-skills-future
 nicetheme: "People, Skills and The Future"
 ---
 <h3>Vacancies by sector over the last 10 years</h3>
+
+<details>
+	<summary><h3>About this data</h3></summary>
+	<p>
+		This data comes from the Office for National Statistics Labour Market Statistics (LMS) dataset, 
+        accessed through the <a href="https://github.com/economic-analytics/edd/raw/main/data/parquet/LMS.parquet">
+        Economic Data Dashboard (EDD)</a>. You can find the data source in the <a href="https://github.com/economic-analytics/edd/blob/main/data/edd_dict.csv">
+        EDD lookup table.</a>
+	</p>
+
+    <p>
+        <em>Note:</em> Vacancy data is only available at a UK-level.
+    </p>
+</details>
+
 <p>
-    This chart shows the number of vacancies in different sectors of the economy over the last 10 years. This data comes 
-    from the Office for National Statistics Labour Market Statistics (LMS) dataset, accessed through the <a href="https://github.com/economic-analytics/edd/raw/main/data/parquet/LMS.parquet">
-    Economic Data Dashboard (EDD)</a>. You can find the data source in the <a href="https://github.com/economic-analytics/edd/blob/main/data/edd_dict.csv">
-    EDD lookup table.</a>
-</p>
     Vacancy rates rose sharply in the aftermath of the Covid-19 pandemic, with a combination of EU27 citizens returning home, changes to UK immigration policy
     and people's wider reactions to their relationship with work changed after the distortions of the pandemic. Overall, vacancy rates have been returning to their
     pre-pandemic levels suggesting that the labour market is at least starting to loosen, even though it remains tight compared to historic levels. However, there after
-    still some sectors where vacancy levels remain elevated. Sectors such as construction, manufacturing, health and social care and the wider public sector continue to
-    experience difficulties in filling posts, but there are different reasons. Construction and manufacturing have long suffered skills challenges through both poor public
-    perception of those sectors (even though they pay above the national average), whereas more public-sector driven areas like health and social care are heavily reliant
-    on lower-paid workers and immigrants. Though the minimum wage has risen sharply over the past decade, these sectors, along with consumer-facing services such as arts,
-    entertainment and recreation and hotels and restaurants all relied heavily on overseas labour to fill the demand, and this availability has reduced sharply post-Covid.
-<p>
-
+    still some sectors where vacancy levels remain elevated.
 </p>
+
+<p>
+    Sectors such as construction, manufacturing, health and social care and the wider public sector continue to experience difficulties in filling posts, but there are 
+    different reasons. Construction and manufacturing have long suffered skills challenges through both poor public perception of those sectors (even though they pay 
+    above the national average), whereas more public-sector driven areas like health and social care are heavily reliant on lower-paid workers and immigrants. 
+    Though the minimum wage has risen sharply over the past decade, these sectors, along with consumer-facing services such as arts, entertainment and recreation 
+    and hotels and restaurants all relied heavily on overseas labour to fill the demand, and this availability has reduced sharply post-Covid.
+</p>
+
 {{ comp.oi.chart.line({ config: {
     data: vacancies_by_sector,
     height: 600,
