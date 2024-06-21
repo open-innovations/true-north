@@ -16,7 +16,6 @@ nicetheme: "Sustainable Growth"
 <h3>GVA in millions of pounds</h3>
 <p>
 	This hex map shows GVA (in millions of pounds) by local authority in current (real-terms) prices.
-	You can use the slider at the bottom of the chart to switch between current and constant prices.
 </p>
 
 {{ comp.oi.map.hex_cartogram({
@@ -64,9 +63,6 @@ nicetheme: "Sustainable Growth"
 		"tools":{
 			"filter":{
 				"label": "filterLabel"
-			},
-			"slider":{
-				"columns": ["GVA Constant Prices £m","GVA Current Prices £m"]
 			}
 		},
 		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />GVA: <strong class=\"number\">£{{ {{ _value }} | toLocaleString() }} M</strong>"
