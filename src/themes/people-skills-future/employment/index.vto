@@ -94,6 +94,20 @@ nicetheme: "People, Skills and The Future"
 
 <h3>Economic inactivity rate by region</h3>
 
+<p>
+	Economic inactivity is a status which describes people as not being engaged with the labour market: those are neither in work, nor looking for work. 
+	It is dominated by the retired, but also includes students, long-term and short-term sick, those with caring responsibilities or are looking after 
+	the home, and the discouraged (those who have given up looking for work).
+</p>
+
+<p>
+	Economic inactivity increased in all developed nations during the Covid-19 pandemic, but the UK is unique in not seeing its economic inactivity 
+	rate return to pre-pandemic levels. The increase in the UK's economic inactivity rate is dominated by strong growth in the number of long-term sick 
+	individuals, likely exacerbated by the current long waiting lists for NHS treatment. It is also driven by a large increase in the number of students, 
+	partially explained by an increase in the number of 18-21-year-olds, but also by the number of international students which has grown since the pandemic 
+	mostly due to a form of "catch-up" from those who would have arrived in 2020-2022 but didn't because of mobility restrictions.
+</p>
+
 {{ comp.oi.chart.line({ config: {
     data: economic_inactivity,
     height: 600,
@@ -127,7 +141,7 @@ nicetheme: "People, Skills and The Future"
 	Therefore, some areas are not directly comparable. For more details on the boundaries, please visit the 
 	<a href="https://geoportal.statistics.gov.uk/search?q=NAC_LAD&sort=Date%20Created%7Ccreated%7Cdesc">Open Geography Portal</a>.
 	<details>
-		<summary><h4>Changes since 2021</h4></summary>
+		<summary><h4>Changes to local authorities since 2021</h4></summary>
 		<ul>
 		<li>Allerdale, Carlisle, and Copeland merged into Cumberland</li>
 		<li>Barrow-in-Furness, Eden, and South Lakeland merged into Westmorland and Furness</li>
@@ -198,7 +212,7 @@ nicetheme: "People, Skills and The Future"
 	Therefore, some areas are not directly comparable. For more details on the boundaries, please visit the 
 	<a href="https://geoportal.statistics.gov.uk/search?q=NAC_LAD&sort=Date%20Created%7Ccreated%7Cdesc">Open Geography Portal</a>.
 	<details>
-		<summary><h4>Changes since 2021</h4></summary>
+		<summary><h4>Changes to local authorities since 2021</h4></summary>
 		<ul>
 		<li>Allerdale, Carlisle, and Copeland merged into Cumberland</li>
 		<li>Barrow-in-Furness, Eden, and South Lakeland merged into Westmorland and Furness</li>
@@ -251,8 +265,10 @@ nicetheme: "People, Skills and The Future"
 }) }}
 
 <h3>Youth unemployment by region</h3>
-{{# christian to add below #}}
-<p>This chart shows the percentage of people aged 16-24 who want to work but are not currently employed.</p> 
+
+<p>
+	This chart shows the percentage of unemployed people who are aged 16-24.
+</p> 
 {{ comp.oi.chart.line({ config: {
     data: youth_employment_RGN,
     height: 600,
@@ -282,7 +298,19 @@ nicetheme: "People, Skills and The Future"
 
 <h3>Youth employment by type of unemployment</h3>
 
-<p>This chart shows ... for the latest available data.</p>
+<p>
+	The technical definition of unemployment is rarely understood by the wider public. Unemployment is defined as not being in work, actively looking for work, 
+	and available to start work. But there is another technical category, economically inactive, which contains those who are not in work and are not actively 
+	seeking work. It is dominated by the retired, but also includes people who are sick (long-term or short-term), students, those who are looking after a 
+	person or a home, as well as those who are disenfranchised (who may have given up looking for work). However, we also know that, of those who are economically 
+	inactive, how many would like a job, even if they're not currently looking.
+</p>
+
+<p>
+	In this chart, we present this data for 16-24-year-olds in the three regions of the north (current problems with the Office for National Statistics' Labour Force 
+	survey mean we can't present this data at a local authority level), showing that the technical unemployment rate signficantly understates that number of young 
+	people who would like to engage with the labour force.
+</p>
 
 {{ comp.oi.chart.bar ({ config: {
     data: youth_employment_RGN_bar_chart,
