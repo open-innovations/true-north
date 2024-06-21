@@ -1,5 +1,24 @@
 from pipelines.util import *
 
+
+def employment_LAD_hexmap():
+    data = etl_load(WDIR, 'cs/nomis-lad.csv')
+    data = etl.select(data, "{variable_name} == 'Employment rate - aged 16-64' and {measures_code} == '20599' and {measures_name} == 'Variable' and {theme} == 'employment' ")
+    data = etl.cut(data, 'date', 'geography_code', 'value')
+    # make na values blank strings
+    data = etl.convert(data, {'value': lambda v: v if v != 'NA' else ''})
+    data = etl.recast(data, key='geography_code', variablefield='date', valuefield='value', samplesize=10000)
+    etl_write(data, os.path.join(TOP, 'src/themes/people-skills-future/_data/employment_LAD.csv'))
+
+def economic_inactivity_LAD_hexmap():
+    data = etl_load(WDIR, 'cs/nomis-lad.csv')
+    data = etl.select(data, "{variable_name} == '% who are economically inactive - aged 16-64' and {measures_code} == '20599' and {measures_name} == 'Variable' ")
+    data = etl.cut(data, 'date', 'geography_code', 'value')
+    # make NA values blank strings
+    data = etl.convert(data, {'value': lambda v: v if v != 'NA' else ''})
+    data = etl.recast(data, key='geography_code', variablefield='date', valuefield='value', samplesize=10000)
+    etl_write(data, os.path.join(TOP, 'src/themes/people-skills-future/_data/economic_inactivity_LAD.csv'))
+
 if __name__ == "__main__":
     data = etl_load(WDIR, "cs/cs-true-north.csv")
 
@@ -30,3 +49,7 @@ if __name__ == "__main__":
     ei_data = etl.addfield(ei_data, 'decimal_date', decimal_date)
 
     etl_write(ei_data, os.path.join(TOP, 'src/themes/people-skills-future/_data/economic_inactivity.csv'))
+
+    employment_LAD_hexmap()
+
+    economic_inactivity_LAD_hexmap()

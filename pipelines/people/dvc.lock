@@ -41,8 +41,8 @@ stages:
       size: 1480442
     - path: employment.py
       hash: md5
-      md5: 6ac3d1ef02e1a99afa6c4800d3fd1046
-      size: 1301
+      md5: d643664ca73e36468e1eed9bd878ab0a
+      size: 2633
     outs:
     - path: ../../src/themes/people-skills-future/_data/economic_inactivity.csv
       hash: md5

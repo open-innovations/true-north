@@ -32,6 +32,55 @@ nicetheme: "People, Skills and The Future"
 	}]
 } }) }}
 
+<h3>Employment rate by local authority</h3>
+
+{{ comp.oi.map.hex_cartogram({
+	"config": {
+		"width": 600,
+		"hexjson": "hexjson.uk-local-authority-districts-2023",
+		"data": employment_LAD,
+		"columns":[{
+			"name": "filterLabel",
+			"template": "{{ n }}"
+		}],
+		"value": "2023-12-01",
+		"scale": "TrueNorth",
+		"min": 50,
+		"max": 100,
+		"matchKey": "geography_code",
+		"legend": {
+			"position": "top right",
+			"continuous": true,
+			"items": [{
+				"value": 100,
+				"label": "100%"
+			},{
+				"value": 75,
+				"label": "75%"
+			},{
+				"value": 50,
+				"label": "50%"
+			}]
+		},
+		"boundaries": {
+			"country": {
+				"stroke": "#181b25",
+				"stroke-width": 2,
+				"stroke-linecap": "round",
+				"stroke-opacity": 0.5
+			}
+		},
+		"tools":{
+			"filter":{
+				"label": "filterLabel"
+			}
+		},
+		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />Employment rate: <strong class=\"number\">{{ {{ _value }} | toFixed(1) }}</strong>"
+	}
+}) }}
+
+<h3>Economic inactivity rate by region</h3>
+
 {{ comp.oi.chart.line({ config: {
     data: economic_inactivity,
     height: 600,
@@ -58,6 +107,53 @@ nicetheme: "People, Skills and The Future"
 		tooltip: "<strong class=\"subtitle\">Yorkshire and The Humber</strong><br />{{ date }}: <strong class=\"number\">{{ _y }}%</strong>"
 	}]
 } }) }}
+
+<h3>Economic inactivity rate by local authority</h3>
+
+{{ comp.oi.map.hex_cartogram({
+	"config": {
+		"width": 600,
+		"hexjson": "hexjson.uk-local-authority-districts-2023",
+		"data": economic_inactivity_LAD,
+		"columns":[{
+			"name": "filterLabel",
+			"template": "{{ n }}"
+		}],
+		"value": "2023-12-01",
+		"scale": "TrueNorth",
+		"min": 0,
+		"max": 50,
+		"matchKey": "geography_code",
+		"legend": {
+			"position": "top right",
+			"continuous": true,
+			"items": [{
+				"value": 50,
+				"label": "50%"
+			},{
+				"value": 25,
+				"label": "25%"
+			},{
+				"value": 0,
+				"label": "0%"
+			}]
+		},
+		"boundaries": {
+			"country": {
+				"stroke": "#181b25",
+				"stroke-width": 2,
+				"stroke-linecap": "round",
+				"stroke-opacity": 0.5
+			}
+		},
+		"tools":{
+			"filter":{
+				"label": "filterLabel"
+			}
+		},
+		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />Economic inactivity rate: <strong class=\"number\">{{ {{ _value }} | toFixed(1) }}</strong>"
+	}
+}) }}
 
 <h3>Risk of NEET factors</h3>
 <p>
