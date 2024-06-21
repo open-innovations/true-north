@@ -249,3 +249,80 @@ nicetheme: "People, Skills and The Future"
 		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />Risk of NEET: <strong class=\"number\">{{ value | toFixed(1) }}</strong>"
 	}
 }) }}
+
+<h3>Youth unemployment by region</h3>
+{{# christian to add below #}}
+<p>This chart shows the percentage of people aged 16-24 who want to work but are not currently employed.</p> 
+{{ comp.oi.chart.line({ config: {
+    data: youth_employment_RGN,
+    height: 600,
+    legend: {
+        show: true },
+    axis: {
+        x: { title: { label: "Date" }, grid: { show: true, 'stroke-dasharray': "6 2", 'stroke-width': "1"}, tick: { spacing: 2 } },
+        y: { title: { label: "Percentage aged 16-24 who want to work" }, tick: { spacing: 5 } }
+    },
+    series: [{
+        title: "North East",
+        x: "decimal_date",
+        y: "E12000001",
+		tooltip: "<strong class=\"subtitle\">North East</strong><br />{{ date }}: <strong class=\"number\">{{ _y }}%</strong>"
+	},{
+        title: "North West",
+        x: "decimal_date",
+        y: "E12000002",
+		tooltip: "<strong class=\"subtitle\">North West</strong><br />{{ date }}: <strong class=\"number\">{{ _y }}%</strong>"
+	},{
+        title: "Yorkshire and The Humber",
+        x: "decimal_date",
+        y: "E12000003",
+		tooltip: "<strong class=\"subtitle\">Yorkshire and The Humber</strong><br />{{ date }}: <strong class=\"number\">{{ _y }}%</strong>"
+	}]
+} }) }}
+
+<h3>Youth employment by type of unemployment</h3>
+
+<p>This chart shows ... for the latest available data.</p>
+
+{{ comp.oi.chart.bar ({ config: {
+    data: youth_employment_RGN_bar_chart,
+    height: 600,
+    legend: { show: true },
+    category: "geography_name",
+	stacked: true,
+    axis: { 
+        x: { 
+            min: 0,
+            max: 20,
+            grid: { "stroke-dasharray": '6 2', "stroke-width": 1 },
+            ticks: [{
+                value: 0,
+                label: "0%"},
+                {
+                value: 5,
+                label: "5%"},
+                {
+                value: 10,
+                label: "1%"},
+                {
+                value: 15,
+                label: "15%"},
+				{
+                value: 20,
+                label: "20%"}
+            ]} 
+        },
+    series: [{
+        title: "Unemployed (%)",
+        value: "unemployed_percent",
+        tooltip: '<strong>Unemployed (%)</strong><br />{{ geography_name }}: {{ unemployed_percent }}'
+        },
+		{
+        title: "Wants a job (%)",
+        value: "wants_a_job_percent",
+        tooltip: '<strong>Wants a job (%)</strong><br />{{ geography_name }}: {{ wants_a_job_percent }}'
+        }]    
+    }
+    })
+}}
+
