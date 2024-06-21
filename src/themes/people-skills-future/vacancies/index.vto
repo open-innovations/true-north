@@ -6,9 +6,20 @@ nicetheme: "People, Skills and The Future"
 <h3>Vacancies by sector over the last 10 years</h3>
 <p>
     This chart shows the number of vacancies in different sectors of the economy over the last 10 years. This data comes 
-    from the Labour Market Statistics (LMS) dataset in the <a href="https://github.com/economic-analytics/edd/raw/main/data/parquet/LMS.parquet">
+    from the Office for National Statistics Labour Market Statistics (LMS) dataset, accessed through the <a href="https://github.com/economic-analytics/edd/raw/main/data/parquet/LMS.parquet">
     Economic Data Dashboard (EDD)</a>. You can find the data source in the <a href="https://github.com/economic-analytics/edd/blob/main/data/edd_dict.csv">
     EDD lookup table.</a>
+</p>
+    Vacancy rates rose sharply in the aftermath of the Covid-19 pandemic, with a combination of EU27 citizens returning home, changes to UK immigration policy
+    and people's wider reactions to their relationship with work changed after the distortions of the pandemic. Overall, vacancy rates have been returning to their
+    pre-pandemic levels suggesting that the labour market is at least starting to loosen, even though it remains tight compared to historic levels. However, there after
+    still some sectors where vacancy levels remain elevated. Sectors such as construction, manufacturing, health and social care and the wider public sector continue to
+    experience difficulties in filling posts, but there are different reasons. Construction and manufacturing have long suffered skills challenges through both poor public
+    perception of those sectors (even though they pay above the national average), whereas more public-sector driven areas like health and social care are heavily reliant
+    on lower-paid workers and immigrants. Though the minimum wage has risen sharply over the past decade, these sectors, along with consumer-facing services such as arts,
+    entertainment and recreation and hotels and restaurants all relied heavily on overseas labour to fill the demand, and this availability has reduced sharply post-Covid.
+<p>
+
 </p>
 {{ comp.oi.chart.line({ config: {
     data: vacancies_by_sector,
@@ -59,6 +70,13 @@ nicetheme: "People, Skills and The Future"
     } }) 
 }}
 <h3>Vacancies percentage change on previous year by sector</h3>
+
+<p>
+    This chart shows the scale of the fall in vacanices over the past two years as the labour market reverts more closely to its pre-pandemic norm. Overall, only a small
+    part of the fall in vacancies is due to weaker economic demand, and this has been focused in consumer-facing sectors such as retail and hotels and restaurants where
+    sharp inflation has softened consumer spending power. There is also some evidence of demand-side weakness in sectors such as financial and professional services where
+    consulting and deal-making has eased back after a pandemic-related flurry.
+</p>
 
 {{ comp.oi.chart.bar ({ config: { 
     data: vacancies_yearly_change_by_sector,
