@@ -4,6 +4,25 @@ theme: people-skills-future
 nicetheme: "People, Skills and The Future"
 ---
 <h3>Employment rate by region</h3>
+<details>
+	<summary><h3>About this data</h3></summary>
+	<p>
+		Data is from the Office for National Statistics' Annual Population Survey, accessed via NOMIS.
+	</p>
+</details>
+
+<p>
+	The employment rate is the percentage of the working-age (16-64) population who are in employment (employees and self-employed). 
+	It can be used as a measure of the economic effectiveness of an economy in producing jobs, but it can be skewed by other factors 
+	which should be taken into account.
+</p>
+
+<p>
+	The entire working-age population is economically split into three broad parts: the employed (employees and self-employed) and the unemployed 
+	(those not in work but looking for work), these first two groups being known as the economically active population, and the economically inactive 
+	(those not in work and not looking for work). Areas with high student populations, and higher than average retired populations will naturally have a lower 
+	employment rate that doesn't necessarily mean that an area has higher unemployment.
+</p>
 
 {{ comp.oi.chart.line({ config: {
     data: employment,
@@ -93,6 +112,13 @@ nicetheme: "People, Skills and The Future"
 }) }}
 
 <h3>Economic inactivity rate by region</h3>
+
+<details>
+	<summary><h3>About this data</h3></summary>
+	<p>
+		Data is from the Office for National Statistics' Annual Population Survey, accessed via NOMIS.
+	</p>
+</details>
 
 <p>
 	Economic inactivity is a status which describes people as not being engaged with the labour market: those are neither in work, nor looking for work. 
