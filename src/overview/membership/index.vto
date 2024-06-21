@@ -17,7 +17,7 @@ nicesection: True North
 	title: "name",
 	value: "value",
   note: "Link",
-  data: dashboard.true_north_members_list,
+  data: true_north_members_list,
   columns: [{ 
     name: 'Link',
     template: '<a href="{{ url }}">{{ footnote }}</a>' 
@@ -27,9 +27,10 @@ nicesection: True North
       { name: "Total companies" },
       { name: "Membership increase" },
       { name: "Companies with 0-9 employees" },
+      { name: "Top industry" },
       { name: "Advisory council" },
       { name: "Northern stars" },
-      { name: "B Corps" },
+      { name: "B Corps" }
       ],
   units: { postfix: "post" },
     }
