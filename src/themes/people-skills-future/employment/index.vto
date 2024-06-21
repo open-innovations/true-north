@@ -33,11 +33,24 @@ nicetheme: "People, Skills and The Future"
 } }) }}
 
 <h3>Employment rate by local authority</h3>
-
+<div class="warning padded p">
+	Important note: Unlike other hex maps on this site, this map uses the 2021 local authority boundaries. 
+	Therefore, some areas are not directly comparable. For more details on the boundaries, please visit the 
+	<a href="https://geoportal.statistics.gov.uk/search?q=NAC_LAD&sort=Date%20Created%7Ccreated%7Cdesc">Open Geography Portal</a>.
+	<details>
+		<summary><h4>Changes since 2021</h4></summary>
+		<ul>
+		<li>Allerdale, Carlisle, and Copeland merged into Cumberland</li>
+		<li>Barrow-in-Furness, Eden, and South Lakeland merged into Westmorland and Furness</li>
+		<li>Craven, Hambleton, Harrogate, Richmondshire, Ryedale, Scarborough and Selby merged into North Yorkshire</li>
+		<li>Mendip, Sedgemoor, Somerset West and Taunton, and South Somerset merged into Somerset Council</li>
+		</ul>
+	</details>
+</div>
 {{ comp.oi.map.hex_cartogram({
 	"config": {
 		"width": 600,
-		"hexjson": "hexjson.uk-local-authority-districts-2023",
+		"hexjson": "hexjson.uk-local-authority-districts-2021",
 		"data": employment_LAD,
 		"columns":[{
 			"name": "filterLabel",
@@ -109,11 +122,24 @@ nicetheme: "People, Skills and The Future"
 } }) }}
 
 <h3>Economic inactivity rate by local authority</h3>
-
+<div class="warning padded p">
+	Important note: Unlike other hex maps on this site, this map uses the 2021 local authority boundaries. 
+	Therefore, some areas are not directly comparable. For more details on the boundaries, please visit the 
+	<a href="https://geoportal.statistics.gov.uk/search?q=NAC_LAD&sort=Date%20Created%7Ccreated%7Cdesc">Open Geography Portal</a>.
+	<details>
+		<summary><h4>Changes since 2021</h4></summary>
+		<ul>
+		<li>Allerdale, Carlisle, and Copeland merged into Cumberland</li>
+		<li>Barrow-in-Furness, Eden, and South Lakeland merged into Westmorland and Furness</li>
+		<li>Craven, Hambleton, Harrogate, Richmondshire, Ryedale, Scarborough and Selby merged into North Yorkshire</li>
+		<li>Mendip, Sedgemoor, Somerset West and Taunton, and South Somerset merged into Somerset Council</li>
+		</ul>
+	</details>
+</div>
 {{ comp.oi.map.hex_cartogram({
 	"config": {
 		"width": 600,
-		"hexjson": "hexjson.uk-local-authority-districts-2023",
+		"hexjson": "hexjson.uk-local-authority-districts-2021",
 		"data": economic_inactivity_LAD,
 		"columns":[{
 			"name": "filterLabel",

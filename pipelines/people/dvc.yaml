@@ -19,10 +19,15 @@ stages:
       - employment.py
       - ${TOP}/pipelines/util.py
       - ${TOP}/working/cs/cs-true-north.csv
+      - ${TOP}/working/cs/nomis-lad.csv
     outs:
       - ${TOP}/src/themes/people-skills-future/_data/employment.csv:
           cache: false
       - ${TOP}/src/themes/people-skills-future/_data/economic_inactivity.csv:
+          cache: false
+      - ${TOP}/src/themes/people-skills-future/_data/employment_LAD.csv:
+          cache: false
+      - ${TOP}/src/themes/people-skills-future/_data/economic_inactivity_LAD.csv:
           cache: false
   qualifications:
     cmd: PYTHONPATH=${TOP} python qualifications.py

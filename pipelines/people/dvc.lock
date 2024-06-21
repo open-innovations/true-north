@@ -39,6 +39,10 @@ stages:
       hash: md5
       md5: af140a62c1f7e4fffc6c5b797be97290
       size: 1480442
+    - path: ../../working/cs/nomis-lad.csv
+      hash: md5
+      md5: 0338b5283e35c8cbda616319f3738467
+      size: 45889578
     - path: employment.py
       hash: md5
       md5: d643664ca73e36468e1eed9bd878ab0a
@@ -48,10 +52,18 @@ stages:
       hash: md5
       md5: 7e4807e59f4b6f80201ca37f68a28319
       size: 3566
+    - path: ../../src/themes/people-skills-future/_data/economic_inactivity_LAD.csv
+      hash: md5
+      md5: 057e81fac703f9fb2688fc3d7a406413
+      size: 28180
     - path: ../../src/themes/people-skills-future/_data/employment.csv
       hash: md5
       md5: 04fb8c28d58910c5beb477f72bc00a30
       size: 3572
+    - path: ../../src/themes/people-skills-future/_data/employment_LAD.csv
+      hash: md5
+      md5: 4ef259d3c48d6feeeb67306a24b69ac4
+      size: 28269
   qualifications:
     cmd: PYTHONPATH=../.. python qualifications.py
     deps:
