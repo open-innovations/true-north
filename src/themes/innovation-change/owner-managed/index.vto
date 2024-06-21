@@ -202,7 +202,12 @@ nicetheme: Innovation & Change
 <h3>SIC Sector counts</h3>
 
 <p>Top 10 SIC sectors by number of businesses</p>
-
+<details>
+    <summary><h4>SIC section lookup</h4></summary>
+    {{ for element of SICHLU_sector_counts.rows }}
+        <p>{{ element['SICHLU'] }}: {{ element['sic_name'] }}</p>
+    {{ /for }}
+</details>
 {{ comp.oi.chart.bar ({ config: {
     data: SICHLU_sector_counts,
     height: 600,
@@ -269,6 +274,14 @@ nicetheme: Innovation & Change
 <h3>Employees by SIC sector</h3>
 
 <p>Top 10 SIC sectors by number of emloyees</p>
+
+<details>
+    <summary><h4>SIC section lookup</h4></summary>
+    {{ for element of Employees_by_SICHLU_sector.rows }}
+        <p>{{ element['SICHLU'] }}: {{ element['sic_name'] }}</p>
+    {{ /for }}
+</details>
+
 {{ comp.oi.chart.bar ({ config: {
     data: Employees_by_SICHLU_sector,
     height: 600,
@@ -330,6 +343,13 @@ nicetheme: Innovation & Change
 <h3>Turnover by SIC sector</h3>
 
 <p>Top 10 SIC sectors by turnover</p>
+
+<details>
+    <summary><h4>SIC section lookup</h4></summary>
+    {{ for element of Turnovers_by_SICHLU_sector.rows }}
+        <p>{{ element['SICHLU'] }}: {{ element['sic_name'] }}</p>
+    {{ /for }}
+</details>
 
 {{ comp.oi.chart.bar ({ config: {
     data: Turnovers_by_SICHLU_sector,
