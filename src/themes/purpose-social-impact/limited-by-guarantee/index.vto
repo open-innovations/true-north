@@ -1,0 +1,26 @@
+---
+title: Limited by guarantee
+theme: purpose-social-impact
+nicetheme: Purpose & Social Impact
+---
+
+<h3>Northern limited by guarantee companies</h3>
+<p>
+    Summary statistics for all active Community Interest Companies in the North.
+</p>
+{{ comp.oi.dashboard ({ config: {
+	title: "name",
+	value: "value",
+    note: "footnote",
+    data: headlines_north,
+    panels: [
+        { name: "Total companies considered" },
+        { name: "Estimated total employees" },
+        { name: "Estimated total turnover" },
+        { name: "Estimated growth per year" },
+        { name: "Total investment funding" }
+        ],
+    units: { postfix: "post", prefix: "pre" },
+        }
+    })
+}}
