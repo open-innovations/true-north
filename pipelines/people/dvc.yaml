@@ -6,10 +6,9 @@ stages:
     deps:
       - vacancies.py
       - ${TOP}/pipelines/util.py
-      - ${TOP}/working/cs/vacancies_by_sector_percentage_change_on_previous.csv
       - https://github.com/economic-analytics/edd/raw/main/data/parquet/LMS.parquet
     outs:
-      - ${TOP}/src/themes/people-skills-future/_data/growth_by_sector.csv:
+      - ${TOP}/src/themes/people-skills-future/_data/vacancies_yearly_change_by_sector.csv:
           cache: false
       - ${TOP}/src/themes/people-skills-future/_data/vacancies_by_sector.csv:
           cache: false

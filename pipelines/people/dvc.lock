@@ -5,29 +5,26 @@ stages:
     deps:
     - path: ../../pipelines/util.py
       hash: md5
-      md5: 17aacff551ae438adc3bd465dbecdd05
-      size: 1420
-    - path: ../../working/cs/vacancies_by_sector_percentage_change_on_previous.csv
-      hash: md5
-      md5: f7ada6a8f6bf1c292871898fa47fed07
-      size: 497028
+      md5: 539e317fb1ff73675eba0177fe0ff274
+      size: 2174
     - path: https://github.com/economic-analytics/edd/raw/main/data/parquet/LMS.parquet
       hash: md5
       checksum: '"894a6d8eca95b80b9657ea9b446db15b6af00a588665acc1952c27e225039f04"'
       size: 3186667
     - path: vacancies.py
       hash: md5
-      md5: db744713bdf2e2d5e619c33954b6fc09
-      size: 2978
+      md5: 2935901f55fc5fe436601c8af9b08aca
+      size: 2258
     outs:
-    - path: ../../src/themes/people-skills-future/_data/growth_by_sector.csv
-      hash: md5
-      md5: d299bf8d940b93bb089c0cd7ed979cfe
-      size: 58294
     - path: ../../src/themes/people-skills-future/_data/vacancies_by_sector.csv
       hash: md5
       md5: 523269f391d223f6649ed17e86ca9d32
       size: 13528
+    - path: 
+        ../../src/themes/people-skills-future/_data/vacancies_yearly_change_by_sector.csv
+      hash: md5
+      md5: c1a52a77ff6ce9382225810604408a42
+      size: 1497
   employment:
     cmd: PYTHONPATH=../.. python employment.py
     deps:
