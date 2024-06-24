@@ -3,6 +3,7 @@ import duckdb
 import petl as etl
 from datetime import datetime
 from slugify import slugify
+import pandas as pd
 
 #set some directory paths
 THIS_DIR = os.path.dirname(__file__)
