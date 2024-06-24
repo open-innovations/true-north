@@ -73,3 +73,16 @@ def time_updated(file_path, where):
         file.writelines(lines)
     
     print(f"Timestamp added to file {file_path}")
+
+def add_decimal_date_to_dataframe(data, datename, div=10**9):
+    '''
+    ---
+    Adds a decimal date column.
+    ---
+        data: the dataframe
+        datename: the name of the date column
+        div: the amount to divide the unix timestamp by, default is 10**9
+    '''
+    data['unix'] = pd.to_datetime(data[datename], format=f'%Y-%m-%d').astype(int).div(div).astype(int)
+    data['decimal_date'] = data['unix'].div((86400*365.25)).add(1970).round(2)
+    return data
