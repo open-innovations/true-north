@@ -45,7 +45,30 @@ def split_text(on, headers):
             l.append(header) 
     return l
 
-# def parquet_from_url(URL):
-#     con = duckdb.connect()
-#     data = con.execute(f"SELECT * FROM read_parquet('{URL}')").fetchdf()
-#     return data
+def time_updated(file_path, where):
+    # Get the current time
+    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    update_line = f"updated: {current_time}\n"
+
+    
+    # Read the file and modify its contents
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
+    
+    # Find the line with "updated:" and update it
+    for i, line in enumerate(lines):
+        if line.startswith("updated:"):
+            lines[i] = update_line
+            break
+    else:
+        # If "updated:" is not found, find `where` and insert after it
+        for i, line in enumerate(lines):
+            if where in line:
+                lines.insert(i + 1, update_line)
+                break
+    
+    # Write the modified contents back to the file
+    with open(file_path, 'w') as file:
+        file.writelines(lines)
+    
+    print(f"Timestamp added to file {file_path}")
