@@ -111,8 +111,8 @@ stages:
       size: 555225
     - path: neet.py
       hash: md5
-      md5: 8c17c33ee343cf2a7bb71c0d8f96728a
-      size: 1106
+      md5: 7af288d7c31ed5c2fa41ddbd06ed0d70
+      size: 1072
     outs:
     - path: ../../src/themes/people-skills-future/_data/neet.csv
       hash: md5

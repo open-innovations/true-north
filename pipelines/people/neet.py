@@ -1,6 +1,4 @@
 from pipelines.util import *
-import duckdb
-import pandas as pd
 
 HEADLINE_URL = "https://raw.githubusercontent.com/open-innovations/yff-data-pipelines/main/data/processed/neet.csv"
 
