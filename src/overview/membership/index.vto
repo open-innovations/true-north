@@ -8,6 +8,7 @@ nicesection: True North
 	<summary><h4>About this data</h4></summary>
 	<p>
 	The data below was generated from questionnaire responses. As the questionnaire has changed over time, some fields were incomplete for some responses. 
+    All percentages are calculated as a fraction of the people who answered that question.
 	{{# You can read the details on <a href="true-north/membership/">how we processed this data</a>. #}}
 	</p>
 </details>
@@ -39,8 +40,9 @@ nicesection: True North
 
 <h3>Membership growth</h3>
 <p>
+    The True North Network started in May 2023. 
     The chart below shows the cumulative number of members, and the cumulutive number of unique organisations, 
-    in the True North network. In some months no one joined the network, so the data points are not evenly spaced.
+    who have joined the True North network since then.
 </p>
 {{ comp.oi.chart.line({ config: {
     data: cumsum,
@@ -69,7 +71,8 @@ nicesection: True North
 
 <h3>Membership sectors</h3>
 <p>
-    This chart shows the frequency of words mentioned in the question "What sector do you operate in?".
+    This chart shows the frequency of words mentioned in the question "What sector do you operate in?". Note that "services" generally pairs
+    with other words, which explains its high frequency.
 </p>
 {{ comp.oi.chart.bar ({ config: {
     data: sector_word_counts,
