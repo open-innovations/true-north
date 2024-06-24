@@ -119,3 +119,23 @@ stages:
       hash: md5
       md5: 121be03fe40ba8f11044310423afd4bb
       size: 23551
+  youth-employment:
+    cmd: papermill --no-progress-bar --no-report-mode youth_employment.ipynb ../../output/youth_employment.ipynb
+    deps:
+    - path: ../../working/cs/youth-unemployment-adjusted.csv
+      hash: md5
+      md5: 666b3a41e5b413f8ab738ccdd1cb3d2a
+      size: 26728
+    - path: youth_employment.ipynb
+      hash: md5
+      md5: c7079b96e21ce303072f7b8760054459
+      size: 10505
+    outs:
+    - path: ../../src/themes/people-skills-future/_data/youth_employment_RGN.csv
+      hash: md5
+      md5: cd7f7fca9117146f7178e4e076e459f9
+      size: 2666
+    - path: ../../src/themes/people-skills-future/_data/youth_employment_RGN_bar_chart.csv
+      hash: md5
+      md5: 9f432360b6e848c5969954a0880248b6
+      size: 337

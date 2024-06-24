@@ -48,3 +48,13 @@ stages:
           cache: false
       - ${TOP}/src/themes/people-skills-future/_data/risk_of_neet_by_la.csv:
           cache: false
+  youth-employment: 
+    cmd: papermill --no-progress-bar --no-report-mode youth_employment.ipynb ${TOP}/output/youth_employment.ipynb 
+    deps: 
+      - youth_employment.ipynb
+      - ${TOP}/working/cs/youth-unemployment-adjusted.csv
+    outs: 
+      - ${TOP}/src/themes/people-skills-future/_data/youth_employment_RGN.csv:
+          cache: false
+      - ${TOP}/src/themes/people-skills-future/_data/youth_employment_RGN_bar_chart.csv:
+          cache: false
