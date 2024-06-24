@@ -10,3 +10,6 @@ stages:
     outs:
       - ${TOP}/src/themes/sustainable-growth/gva/_data/gva_lad.csv:
           cache: false
+      - ${TOP}/src/themes/sustainable-growth/gva/index.vto:
+          cache: false
+          persist: true
