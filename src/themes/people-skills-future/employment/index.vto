@@ -3,14 +3,6 @@ title: Employment
 theme: people-skills-future
 nicetheme: "People, Skills and The Future"
 ---
-<h3>Employment rate by region</h3>
-<details>
-	<summary><h3>About this data</h3></summary>
-	<p>
-		Data is from the Office for National Statistics' Annual Population Survey, accessed via NOMIS.
-	</p>
-</details>
-
 <p>
 	The employment rate is the percentage of the working-age (16-64) population who are in employment (employees and self-employed). 
 	It can be used as a measure of the economic effectiveness of an economy in producing jobs, but it can be skewed by other factors 
@@ -23,6 +15,16 @@ nicetheme: "People, Skills and The Future"
 	(those not in work and not looking for work). Areas with high student populations, and higher than average retired populations will naturally have a lower 
 	employment rate that doesn't necessarily mean that an area has higher unemployment.
 </p>
+
+<details>
+	<summary><h4>About this data</h4></summary>
+	<p>
+		Data is from the Office for National Statistics' Annual Population Survey, accessed via NOMIS.
+	</p>
+</details>
+
+<h3>By region</h3>
+
 
 {{ comp.oi.chart.line({ config: {
     data: employment,
@@ -51,7 +53,7 @@ nicetheme: "People, Skills and The Future"
 	}]
 } }) }}
 
-<h3>Employment rate by local authority</h3>
+<h3>By local authority</h3>
 <div class="warning padded p">
 	Important note: Unlike other hex maps on this site, this map uses the 2021 local authority boundaries. 
 	Therefore, some areas are not directly comparable. For more details on the boundaries, please visit the 
@@ -111,14 +113,8 @@ nicetheme: "People, Skills and The Future"
 	}
 }) }}
 
-<h3>Economic inactivity rate by region</h3>
+<h1>Economic Inactivity</h1>
 
-<details>
-	<summary><h3>About this data</h3></summary>
-	<p>
-		Data is from the Office for National Statistics' Annual Population Survey, accessed via NOMIS.
-	</p>
-</details>
 
 <p>
 	Economic inactivity is a status which describes people as not being engaged with the labour market: those are neither in work, nor looking for work. 
@@ -133,6 +129,15 @@ nicetheme: "People, Skills and The Future"
 	partially explained by an increase in the number of 18-21-year-olds, but also by the number of international students which has grown since the pandemic 
 	mostly due to a form of "catch-up" from those who would have arrived in 2020-2022 but didn't because of mobility restrictions.
 </p>
+
+<details>
+	<summary><h3>About this data</h3></summary>
+	<p>
+		Data is from the Office for National Statistics' Annual Population Survey, accessed via NOMIS.
+	</p>
+</details>
+
+<h3>By region</h3>
 
 {{ comp.oi.chart.line({ config: {
     data: economic_inactivity,
@@ -161,7 +166,8 @@ nicetheme: "People, Skills and The Future"
 	}]
 } }) }}
 
-<h3>Economic inactivity rate by local authority</h3>
+<h3>By local authority</h3>
+
 <div class="warning padded p">
 	Important note: Unlike other hex maps on this site, this map uses the 2021 local authority boundaries. 
 	Therefore, some areas are not directly comparable. For more details on the boundaries, please visit the 
@@ -176,6 +182,7 @@ nicetheme: "People, Skills and The Future"
 		</ul>
 	</details>
 </div>
+
 {{ comp.oi.map.hex_cartogram({
 	"config": {
 		"width": 600,
@@ -290,11 +297,14 @@ nicetheme: "People, Skills and The Future"
 	}
 }) }}
 
-<h3>Youth unemployment by region</h3>
+<h1>Youth unemployment</h1>
+
+<h3>By region</h3>
 
 <p>
 	This chart shows the percentage of unemployed people who are aged 16-24.
 </p> 
+
 {{ comp.oi.chart.line({ config: {
     data: youth_employment_RGN,
     height: 600,
@@ -322,7 +332,7 @@ nicetheme: "People, Skills and The Future"
 	}]
 } }) }}
 
-<h3>Youth employment by type of unemployment</h3>
+<h3>By type of unemployment</h3>
 
 <p>
 	The technical definition of unemployment is rarely understood by the wider public. Unemployment is defined as not being in work, actively looking for work, 
@@ -334,7 +344,7 @@ nicetheme: "People, Skills and The Future"
 
 <p>
 	In this chart, we present this data for 16-24-year-olds in the three regions of the north (current problems with the Office for National Statistics' Labour Force 
-	survey mean we can't present this data at a local authority level), showing that the technical unemployment rate signficantly understates that number of young 
+	survey mean we can't present this data at a local authority level), showing that the technical unemployment rate signficantly understates the number of young 
 	people who would like to engage with the labour force.
 </p>
 
