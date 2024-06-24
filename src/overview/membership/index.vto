@@ -103,3 +103,38 @@ nicesection: True North
     }
     })
 }}
+
+<h3>Locations</h3>
+<p>
+    This chart shows the top 5 responses to the question "Where is your organisation based?". 
+    Some organsiations gave multiple locations so each location was counted individually.
+</p>
+{{ comp.oi.chart.bar ({ config: {
+    data: top_locations,
+    height: 600,
+    legend: { show: true },
+    category: "location",
+    axis: { 
+        x: { 
+            min: 0,
+            max: 50,
+            grid: { "stroke-dasharray": '6 2', "stroke-width": 1 },
+            ticks: [{
+                value: 0,
+                label: "0"},
+                {
+                value: 25,
+                label: "25"},
+                {
+                value: 50,
+                label: "50"}
+            ]} 
+        },
+    series: [{
+        title: "Frequency",
+        value: "count",
+        tooltip: '<strong>Frequency</strong><br />{{ location }}: {{ count }}'
+        }]    
+    }
+    })
+}}
