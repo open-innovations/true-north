@@ -49,7 +49,7 @@
 html, body { line-height: 1.875rem; }
 p, iframe, h2, h3, figure, ul, ol, .block, .padded-bottom, .p { margin-bottom: 1.25rem; letter-spacing: .03rem; }
 
-header .logo, header .title { color: var(--color-heading-light); }
+header .logo, header { color: white; }
 header .logo svg { height: 22px; }
 header .title { padding-top: 1rem; font-size: 2.6875rem; }
 header a:hover, header a:focus { text-decoration: none; }
