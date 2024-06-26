@@ -8,9 +8,9 @@ stages:
       - ${TOP}/pipelines/util.py
       - https://github.com/economic-analytics/edd/raw/main/data/parquet/LMS.parquet
     outs:
-      - ${TOP}/src/themes/people-skills-future/_data/vacancies_yearly_change_by_sector.csv:
+      - ${TOP}/src/themes/people-skills-future/vacancies/_data/vacancies_yearly_change_by_sector.csv:
           cache: false
-      - ${TOP}/src/themes/people-skills-future/_data/vacancies_by_sector.csv:
+      - ${TOP}/src/themes/people-skills-future/vacancies/_data/vacancies_by_sector.csv:
           cache: false
   employment:
     cmd: PYTHONPATH=${TOP} python employment.py
@@ -20,13 +20,13 @@ stages:
       - ${TOP}/working/cs/cs-true-north.csv
       - ${TOP}/working/cs/nomis-lad.csv
     outs:
-      - ${TOP}/src/themes/people-skills-future/_data/employment.csv:
+      - ${TOP}/src/themes/people-skills-future/employment/_data/employment.csv:
           cache: false
-      - ${TOP}/src/themes/people-skills-future/_data/economic_inactivity.csv:
+      - ${TOP}/src/themes/people-skills-future/employment/_data/economic_inactivity.csv:
           cache: false
-      - ${TOP}/src/themes/people-skills-future/_data/employment_LAD.csv:
+      - ${TOP}/src/themes/people-skills-future/employment/_data/employment_LAD.csv:
           cache: false
-      - ${TOP}/src/themes/people-skills-future/_data/economic_inactivity_LAD.csv:
+      - ${TOP}/src/themes/people-skills-future/employment/_data/economic_inactivity_LAD.csv:
           cache: false
   qualifications:
     cmd: PYTHONPATH=${TOP} python qualifications.py
@@ -35,7 +35,7 @@ stages:
       - ${TOP}/pipelines/util.py
       - ${TOP}/working/cs/cs-true-north.csv
     outs:
-      - ${TOP}/src/themes/people-skills-future/_data/nvq_4plus.csv:
+      - ${TOP}/src/themes/people-skills-future/qualifications/_data/nvq_4plus.csv:
           cache: false
   neet:
     cmd: PYTHONPATH=${TOP} python neet.py
@@ -44,9 +44,9 @@ stages:
       - https://raw.githubusercontent.com/open-innovations/yff-data-pipelines/main/data/processed/neet.csv
       - https://raw.githubusercontent.com/open-innovations/yff-data-pipelines/main/data/processed/yff/neet-factors.csv
     outs:
-      - ${TOP}/src/themes/people-skills-future/_data/neet.csv:
+      - ${TOP}/src/themes/people-skills-future/employment/_data/neet.csv:
           cache: false
-      - ${TOP}/src/themes/people-skills-future/_data/risk_of_neet_by_la.csv:
+      - ${TOP}/src/themes/people-skills-future/employment/_data/risk_of_neet_by_la.csv:
           cache: false
   youth-employment: 
     cmd: papermill --no-progress-bar --no-report-mode youth_employment.ipynb ${TOP}/output/youth_employment.ipynb 
@@ -54,7 +54,7 @@ stages:
       - youth_employment.ipynb
       - ${TOP}/working/cs/youth-unemployment-adjusted.csv
     outs: 
-      - ${TOP}/src/themes/people-skills-future/_data/youth_employment_RGN.csv:
+      - ${TOP}/src/themes/people-skills-future/employment/_data/youth_employment_RGN.csv:
           cache: false
-      - ${TOP}/src/themes/people-skills-future/_data/youth_employment_RGN_bar_chart.csv:
+      - ${TOP}/src/themes/people-skills-future/employment/_data/youth_employment_RGN_bar_chart.csv:
           cache: false

@@ -8,7 +8,7 @@ def employment_LAD_hexmap():
     # make na values blank strings
     data = etl.convert(data, {'value': lambda v: v if v != 'NA' else ''})
     data = etl.recast(data, key='geography_code', variablefield='date', valuefield='value', samplesize=10000)
-    etl_write(data, os.path.join(TOP, 'src/themes/people-skills-future/_data/employment_LAD.csv'))
+    etl_write(data, os.path.join(TOP, 'src/themes/people-skills-future/employment/_data/employment_LAD.csv'))
 
 def economic_inactivity_LAD_hexmap():
     data = etl_load(WDIR, 'cs/nomis-lad.csv')
@@ -17,7 +17,7 @@ def economic_inactivity_LAD_hexmap():
     # make NA values blank strings
     data = etl.convert(data, {'value': lambda v: v if v != 'NA' else ''})
     data = etl.recast(data, key='geography_code', variablefield='date', valuefield='value', samplesize=10000)
-    etl_write(data, os.path.join(TOP, 'src/themes/people-skills-future/_data/economic_inactivity_LAD.csv'))
+    etl_write(data, os.path.join(TOP, 'src/themes/people-skills-future/employment/_data/economic_inactivity_LAD.csv'))
 
 if __name__ == "__main__":
     data = etl_load(WDIR, "cs/cs-true-north.csv")
@@ -33,7 +33,7 @@ if __name__ == "__main__":
 
     data = etl.addfield(data, 'decimal_date', decimal_date)
 
-    etl_write(data, os.path.join(TOP, 'src/themes/people-skills-future/_data/employment.csv'))
+    etl_write(data, os.path.join(TOP, 'src/themes/people-skills-future/employment/_data/employment.csv'))
 
     ei_data = etl_load(WDIR, "cs/cs-true-north.csv")
 
@@ -48,7 +48,7 @@ if __name__ == "__main__":
 
     ei_data = etl.addfield(ei_data, 'decimal_date', decimal_date)
 
-    etl_write(ei_data, os.path.join(TOP, 'src/themes/people-skills-future/_data/economic_inactivity.csv'))
+    etl_write(ei_data, os.path.join(TOP, 'src/themes/people-skills-future/employment/_data/economic_inactivity.csv'))
 
     employment_LAD_hexmap()
 

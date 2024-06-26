@@ -14,7 +14,7 @@ def nvq():
     # Convert the iso dates to unix
     data = etl.addfield(data, 'unix_timestamp', iso_to_unix)
     # Write to file
-    etl_write(data, os.path.join(SRC_DIR, 'themes/people-skills-future/_data/nvq_4plus.csv'))
+    etl_write(data, os.path.join(SRC_DIR, 'themes/people-skills-future/qualifications/_data/nvq_4plus.csv'))
     return 
 
 if __name__ == "__main__":

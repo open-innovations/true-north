@@ -25,7 +25,7 @@ def vacancies_by_sector():
     # limit the time series to last 10 years -> 12months x 10 years = 120 values.
     data = data.tail(120)
 
-    data.to_csv(os.path.join(SRC_DIR,'themes/people-skills-future/_data/vacancies_by_sector.csv'))
+    data.to_csv(os.path.join(SRC_DIR,'themes/people-skills-future/vacancies/_data/vacancies_by_sector.csv'))
     return data
 
 def yearly_change_by_sector(data):
@@ -41,7 +41,7 @@ def yearly_change_by_sector(data):
     data.set_index('decimal_date', inplace=True)
     data = data.T
     data.index.rename('sector', inplace=True)
-    data.to_csv(os.path.join(SRC_DIR, 'themes/people-skills-future/_data/vacancies_yearly_change_by_sector.csv'))
+    data.to_csv(os.path.join(SRC_DIR, 'themes/people-skills-future/vacancies/_data/vacancies_yearly_change_by_sector.csv'))
     
     return
 

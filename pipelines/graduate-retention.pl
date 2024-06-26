@@ -21,8 +21,8 @@ use OpenInnovations::ProgressBar;
 my ($csvfile, $ofile, $ofile2, $total, $totals, $segment, $worksegment, $size, @rows, $fh, $regionlookup, $regions, $section, $tab, $line, @cols, @head, $header, $c, $r, $l, $region, $row, $yy, $progress, $workregion, $other, $years);
 
 $csvfile = $basedir."../working/hesa/figure-16.csv";
-$ofile = $basedir."../src/themes/people-skills-future/_data/graduate_retention.csv";
-$ofile2 = $basedir."../src/themes/people-skills-future/_data/graduate_retention_by_date.csv";
+$ofile = $basedir."../src/themes/people-skills-future/graduate-retention/_data/graduate_retention.csv";
+$ofile2 = $basedir."../src/themes/people-skills-future/graduate-retention/_data/graduate_retention_by_date.csv";
 
 $regionlookup = {
 	'East Midlands'=>'E12000004',

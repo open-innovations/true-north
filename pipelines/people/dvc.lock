@@ -5,23 +5,23 @@ stages:
     deps:
     - path: ../../pipelines/util.py
       hash: md5
-      md5: f878c2051409d61714f3381d28d87d3b
-      size: 2647
+      md5: 4339ffbc976b069992b6f61e482b567f
+      size: 3489
     - path: https://github.com/economic-analytics/edd/raw/main/data/parquet/LMS.parquet
       hash: md5
       checksum: '"894a6d8eca95b80b9657ea9b446db15b6af00a588665acc1952c27e225039f04"'
       size: 3186667
     - path: vacancies.py
       hash: md5
-      md5: 2935901f55fc5fe436601c8af9b08aca
-      size: 2258
+      md5: e7202141bcf8de5b8e50329eda6d0b45
+      size: 2278
     outs:
-    - path: ../../src/themes/people-skills-future/_data/vacancies_by_sector.csv
+    - path: ../../src/themes/people-skills-future/vacancies/_data/vacancies_by_sector.csv
       hash: md5
       md5: 523269f391d223f6649ed17e86ca9d32
       size: 13528
     - path: 
-        ../../src/themes/people-skills-future/_data/vacancies_yearly_change_by_sector.csv
+        ../../src/themes/people-skills-future/vacancies/_data/vacancies_yearly_change_by_sector.csv
       hash: md5
       md5: c1a52a77ff6ce9382225810604408a42
       size: 1497
@@ -30,8 +30,8 @@ stages:
     deps:
     - path: ../../pipelines/util.py
       hash: md5
-      md5: f878c2051409d61714f3381d28d87d3b
-      size: 2647
+      md5: 4339ffbc976b069992b6f61e482b567f
+      size: 3489
     - path: ../../working/cs/cs-true-north.csv
       hash: md5
       md5: af140a62c1f7e4fffc6c5b797be97290
@@ -42,22 +42,23 @@ stages:
       size: 45889578
     - path: employment.py
       hash: md5
-      md5: d643664ca73e36468e1eed9bd878ab0a
-      size: 2633
+      md5: 9c51d3c5f0d7e712b226543232afbf89
+      size: 2677
     outs:
-    - path: ../../src/themes/people-skills-future/_data/economic_inactivity.csv
+    - path: ../../src/themes/people-skills-future/employment/_data/economic_inactivity.csv
       hash: md5
       md5: 7e4807e59f4b6f80201ca37f68a28319
       size: 3566
-    - path: ../../src/themes/people-skills-future/_data/economic_inactivity_LAD.csv
+    - path: 
+        ../../src/themes/people-skills-future/employment/_data/economic_inactivity_LAD.csv
       hash: md5
       md5: 057e81fac703f9fb2688fc3d7a406413
       size: 28180
-    - path: ../../src/themes/people-skills-future/_data/employment.csv
+    - path: ../../src/themes/people-skills-future/employment/_data/employment.csv
       hash: md5
       md5: 04fb8c28d58910c5beb477f72bc00a30
       size: 3572
-    - path: ../../src/themes/people-skills-future/_data/employment_LAD.csv
+    - path: ../../src/themes/people-skills-future/employment/_data/employment_LAD.csv
       hash: md5
       md5: 4ef259d3c48d6feeeb67306a24b69ac4
       size: 28269
@@ -66,18 +67,18 @@ stages:
     deps:
     - path: ../../pipelines/util.py
       hash: md5
-      md5: f878c2051409d61714f3381d28d87d3b
-      size: 2647
+      md5: 4339ffbc976b069992b6f61e482b567f
+      size: 3489
     - path: ../../working/cs/cs-true-north.csv
       hash: md5
       md5: af140a62c1f7e4fffc6c5b797be97290
       size: 1480442
     - path: qualifications.py
       hash: md5
-      md5: 86b6a7b5705e575d5e88512616e3a4d4
-      size: 860
+      md5: 14f95f85aced30e4d81013d40e60271a
+      size: 875
     outs:
-    - path: ../../src/themes/people-skills-future/_data/nvq_4plus.csv
+    - path: ../../src/themes/people-skills-future/qualifications/_data/nvq_4plus.csv
       hash: md5
       md5: 3990161ad18da32662be4cb08145d336
       size: 727
@@ -108,14 +109,14 @@ stages:
       size: 555225
     - path: neet.py
       hash: md5
-      md5: 7af288d7c31ed5c2fa41ddbd06ed0d70
-      size: 1072
+      md5: 9699c9674e43fa07fc405a1f5529c686
+      size: 1094
     outs:
-    - path: ../../src/themes/people-skills-future/_data/neet.csv
+    - path: ../../src/themes/people-skills-future/employment/_data/neet.csv
       hash: md5
       md5: 9388a8604edf7c27235d8d27aeede084
       size: 160
-    - path: ../../src/themes/people-skills-future/_data/risk_of_neet_by_la.csv
+    - path: ../../src/themes/people-skills-future/employment/_data/risk_of_neet_by_la.csv
       hash: md5
       md5: 121be03fe40ba8f11044310423afd4bb
       size: 23551
@@ -128,14 +129,15 @@ stages:
       size: 26728
     - path: youth_employment.ipynb
       hash: md5
-      md5: c7079b96e21ce303072f7b8760054459
-      size: 10505
+      md5: 0cda02984753f4301b9787be2d939e3b
+      size: 10527
     outs:
-    - path: ../../src/themes/people-skills-future/_data/youth_employment_RGN.csv
+    - path: ../../src/themes/people-skills-future/employment/_data/youth_employment_RGN.csv
       hash: md5
       md5: cd7f7fca9117146f7178e4e076e459f9
       size: 2666
-    - path: ../../src/themes/people-skills-future/_data/youth_employment_RGN_bar_chart.csv
+    - path: 
+        ../../src/themes/people-skills-future/employment/_data/youth_employment_RGN_bar_chart.csv
       hash: md5
       md5: 9f432360b6e848c5969954a0880248b6
       size: 337
