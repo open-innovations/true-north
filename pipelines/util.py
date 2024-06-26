@@ -86,3 +86,18 @@ def add_decimal_date_to_dataframe(data, datename, div=10**9):
     data['unix'] = pd.to_datetime(data[datename], format=f'%Y-%m-%d').astype(int).div(div).astype(int)
     data['decimal_date'] = data['unix'].div((86400*365.25)).add(1970).round(2)
     return data
+
+def most_recent_date(data, datename):
+    '''
+    ---
+    Get rows where the date is the most recent value
+    ---
+        data: pandas dataframe
+        datename: the name of the date column
+    '''
+    assert datename in data.columns.to_list(), f"The date name: {datename} is not a column in the dataframe."
+    max_date = max(data[datename])
+    print(f'Getting data for {datename} == {max_date}')
+    data = data[data[datename]==max_date]
+
+    return data
