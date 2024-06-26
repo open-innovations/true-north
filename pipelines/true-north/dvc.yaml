@@ -1,0 +1,22 @@
+vars:
+  - TOP: ../..
+stages: 
+  clean:
+    cmd: papermill --no-progress-bar --no-report-mode clean_members_list.ipynb ${TOP}/output/clean_members_list.ipynb
+    deps: 
+      - clean_members_list.ipynb
+      - ${TOP}/working/true-north/True North June data (updated).xlsx
+      - ${TOP}/working/true-north/true north_additional_members_list_19_06_24.xlsx
+    outs:
+      - ${TOP}/working/true-north/true_north_clean.csv
+  analyse:
+    cmd: papermill --no-progress-bar --no-report-mode analyse_members_list.ipynb ${TOP}/output/analyse_members_list.ipynb
+    deps: 
+      - analyse_members_list.ipynb
+      - ${TOP}/working/true-north/true_north_clean.csv
+    outs:
+      - ${TOP}/src/overview/membership/_data/cumsum.csv
+      - ${TOP}/src/overview/membership/_data/sector_word_counts.csv
+      - ${TOP}/src/overview/membership/_data/top_locations.csv
+      - ${TOP}/src/overview/membership/_data/true_north_members_list.csv
+
