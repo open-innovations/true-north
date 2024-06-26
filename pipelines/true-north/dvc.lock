@@ -1,0 +1,22 @@
+schema: '2.0'
+stages:
+  clean:
+    cmd: papermill --no-progress-bar --no-report-mode clean_members_list.ipynb ../../output/clean_members_list.ipynb
+    deps:
+    - path: ../../working/true-north/True North June data (updated).xlsx
+      hash: md5
+      md5: 8c453fa7fd4bcc20491ebe7080e28c7a
+      size: 35099
+    - path: ../../working/true-north/true north_additional_members_list_19_06_24.xlsx
+      hash: md5
+      md5: 8d8fb8b7768ae7a2349df0a252c1e25e
+      size: 9712
+    - path: clean_members_list.ipynb
+      hash: md5
+      md5: 80d4c08d1bb1a2b28e0f1bf1a0b32e66
+      size: 15618
+    outs:
+    - path: ../../working/true-north/true_north_clean.csv
+      hash: md5
+      md5: 4382c75c5d97e014925b742d1616f2e0
+      size: 49895
