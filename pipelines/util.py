@@ -101,3 +101,12 @@ def most_recent_date(data, datename):
     data = data[data[datename]==max_date]
 
     return data
+
+def remote_parquet_as_dataframe(query):
+    con = duckdb.connect()
+    data = con.execute(query).fetchdf()
+    return data
+
+def edd_last_updated_next_updated(id):
+    data = remote_parquet_as_dataframe(f"SELECT id, \"desc\", last_update, next_update FROM 'https://raw.githubusercontent.com/economic-analytics/edd/main/data/edd_dict.csv' WHERE id=='{id}';")
+    return print(data)
