@@ -29,8 +29,8 @@ stages:
       size: 49895
     - path: analyse_members_list.ipynb
       hash: md5
-      md5: a7d601e7ac5dad7cbe2af9e314379cb3
-      size: 48822
+      md5: 03571a5235e37848ef9c31272f3ed20b
+      size: 48888
     outs:
     - path: ../../src/overview/membership/_data/cumsum.csv
       hash: md5
@@ -57,8 +57,8 @@ stages:
       size: 1289
     - path: northern_stars.ipynb
       hash: md5
-      md5: b343cc6be16463dc0794036caf3070c8
-      size: 1245
+      md5: 3c301bc1ba2c16bc4bc2a9927e3ee647
+      size: 1104
     outs:
     - path: ../../src/overview/northern-stars/_data/northern_stars.csv
       hash: md5
