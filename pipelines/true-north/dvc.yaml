@@ -8,15 +8,28 @@ stages:
       - ${TOP}/working/true-north/True North June data (updated).xlsx
       - ${TOP}/working/true-north/true north_additional_members_list_19_06_24.xlsx
     outs:
-      - ${TOP}/working/true-north/true_north_clean.csv
+      - ${TOP}/working/true-north/true_north_clean.csv:
+          cache: false
   analyse:
     cmd: papermill --no-progress-bar --no-report-mode analyse_members_list.ipynb ${TOP}/output/analyse_members_list.ipynb
     deps: 
       - analyse_members_list.ipynb
       - ${TOP}/working/true-north/true_north_clean.csv
     outs:
-      - ${TOP}/src/overview/membership/_data/cumsum.csv
-      - ${TOP}/src/overview/membership/_data/sector_word_counts.csv
-      - ${TOP}/src/overview/membership/_data/top_locations.csv
-      - ${TOP}/src/overview/membership/_data/true_north_members_list.csv
+      - ${TOP}/src/overview/membership/_data/cumsum.csv:
+          cache: false
+      - ${TOP}/src/overview/membership/_data/sector_word_counts.csv:
+          cache: false
+      - ${TOP}/src/overview/membership/_data/top_locations.csv:
+          cache: false
+      - ${TOP}/src/overview/membership/_data/true_north_members_list.csv:
+          cache: false
+  northern-stars:
+    cmd: papermill --no-progress-bar --no-report-mode northern_stars.ipynb ${TOP}/output/northern_stars.ipynb
+    deps: 
+      - northern_stars.ipynb
+      - ${TOP}/working/true-north/TN Data Explorer_Northern Star Data List_06062024.csv
+    outs:
+      - ${TOP}/src/overview/northern-stars/_data/northern_stars.csv:
+          cache: false
 

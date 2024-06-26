@@ -48,3 +48,19 @@ stages:
       hash: md5
       md5: 444df14148705233e1c6ebc06d9454a0
       size: 750
+  northern-stars:
+    cmd: papermill --no-progress-bar --no-report-mode northern_stars.ipynb ../../output/northern_stars.ipynb
+    deps:
+    - path: ../../working/true-north/TN Data Explorer_Northern Star Data List_06062024.csv
+      hash: md5
+      md5: 4b3ca6e6361fba31d3574e21da059a97
+      size: 1289
+    - path: northern_stars.ipynb
+      hash: md5
+      md5: b343cc6be16463dc0794036caf3070c8
+      size: 1245
+    outs:
+    - path: ../../src/overview/northern-stars/_data/northern_stars.csv
+      hash: md5
+      md5: e2a314c3e41427b97311f40e616ec309
+      size: 1282
