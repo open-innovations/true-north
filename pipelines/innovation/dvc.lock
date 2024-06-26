@@ -21,3 +21,53 @@ stages:
       hash: md5
       md5: 06958cfdde4875ace8dffd0f042169dd
       size: 568
+  fastest_sector:
+    cmd: papermill --no-progress-bar --no-report-mode fastest_sector.ipynb ../../output/fastest_sector.ipynb
+    deps:
+    - path: ../../working/cs/fasting-growing-sector-by-lad23.csv
+      hash: md5
+      md5: 76550e2964dbd0be3eb386be76f05c83
+      size: 10516
+    - path: fastest_sector.ipynb
+      hash: md5
+      md5: 48270d6ec8931433a648e1a0514696bd
+      size: 1377
+    outs:
+    - path: 
+        ../../src/themes/innovation-change/fastest-growing-sectors/_data/fastest_growing_sector_by_LAD23.csv
+      hash: md5
+      md5: 883ff305299daaf59c0c8c3d998c1022
+      size: 4741
+  business-demography:
+    cmd: papermill --no-progress-bar --no-report-mode business-demography.ipynb ../../output/business-demography.ipynb
+    deps:
+    - path: ../../working/cs/business-demography.csv
+      hash: md5
+      md5: 4303bba16ae560f12ffee05401454202
+      size: 6520
+    - path: business-demography.ipynb
+      hash: md5
+      md5: 7a955675a4aa6dfbd96002fc50f90bb3
+      size: 1716
+    outs:
+    - path: ../../src/themes/innovation-change/business-demography/_data/demography.csv
+      hash: md5
+      md5: 365332e0a36e18a5821df026ca278aa0
+      size: 2564
+  productivity:
+    cmd: papermill --no-progress-bar --no-report-mode productivity.ipynb ../../output/productivity.ipynb
+    deps:
+    - path: https://github.com/economic-analytics/edd/raw/main/data/parquet/PROD_LAD.parquet
+      hash: md5
+      checksum: '"269dea0d1ec3694294688a5bd802276a77e8b216879ceba666ae5d32cad00e6d"'
+      size: 109520
+    - path: productivity.ipynb
+      hash: md5
+      md5: 2be9b30691673a7f2e66588c13258561
+      size: 2170
+    outs:
+    - path: 
+        ../../src/themes/innovation-change/productivity/_data/most_recent_productivity_local_authority.csv
+      hash: md5
+      md5: 7c31bf5bdeb9c64437bb508983616f94
+      size: 16816

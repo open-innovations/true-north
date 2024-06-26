@@ -1,12 +1,28 @@
 vars:
   - TOP: ../..
 stages:
-  vacancies:
-    cmd: PYTHONPATH=${TOP} python gtv.py
-    deps:
-      - gtv.py
-      - ${TOP}/pipelines/util.py
-      - ${TOP}/working/innovation-change/entry-clearance-visa-outcomes-datasets-dec-2023.xlsx
+  fastest_sector:
+    cmd: papermill --no-progress-bar --no-report-mode fastest_sector.ipynb ${TOP}/output/fastest_sector.ipynb
+    deps: 
+      - fastest_sector.ipynb
+      - ${TOP}/working/cs/fasting-growing-sector-by-lad23.csv
     outs:
-      - ${TOP}/src/themes/innovation-change/_data/global_talent.csv:
+      - ${TOP}/src/themes/innovation-change/fastest-growing-sectors/_data/fastest_growing_sector_by_LAD23.csv:
           cache: false
+  business-demography:
+    cmd: papermill --no-progress-bar --no-report-mode business-demography.ipynb ${TOP}/output/business-demography.ipynb
+    deps: 
+      - business-demography.ipynb
+      - ${TOP}/working/cs/business-demography.csv
+    outs:
+      - ${TOP}/src/themes/innovation-change/business-demography/_data/demography.csv:
+          cache: false
+  productivity:
+    cmd: papermill --no-progress-bar --no-report-mode productivity.ipynb ${TOP}/output/productivity.ipynb
+    deps: 
+      - productivity.ipynb
+      - https://github.com/economic-analytics/edd/raw/main/data/parquet/PROD_LAD.parquet
+    outs:
+      - ${TOP}/src/themes/innovation-change/productivity/_data/most_recent_productivity_local_authority.csv:
+          cache: false
+ 
