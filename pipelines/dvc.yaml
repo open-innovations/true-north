@@ -3,13 +3,11 @@ vars:
 stages:
   b-corp:
     always_changed: true
-    frozen: true
     wdir: ../
     cmd: perl pipelines/b-corp.pl
     deps:
       - pipelines/b-corp.pl
       - pipelines/lib.pl
-      - working/b-corp
     outs: 
       # - ${DATADIR}/bcorp_list.csv:
       #     cache: false
