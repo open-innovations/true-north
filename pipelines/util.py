@@ -14,6 +14,9 @@ DATA_DIR = os.path.join(TOP, 'src/_data')
 SRC_DIR = os.path.join(TOP, 'src')
 METADATA_DIR = os.path.join(TOP, 'metadata')
 
+# Load the SIC-code lookup file.
+sic_lookup = pd.read_csv(os.path.join(METADATA_DIR, 'SIC_section_lookup.csv'))
+
 def etl_load(working, fname):
     '''load `fname`.csv from `working`.'''
     assert fname[-3:] == 'csv', 'Not a csv file'  
@@ -110,3 +113,29 @@ def remote_parquet_as_dataframe(query):
 def edd_last_updated_next_updated(id):
     data = remote_parquet_as_dataframe(f"SELECT id, \"desc\", last_update, next_update FROM 'https://raw.githubusercontent.com/economic-analytics/edd/main/data/edd_dict.csv' WHERE id=='{id}';")
     return print(data)
+
+def sic_code_bar_chart(IN, OUTDIR, FNAME, top=6):
+    '''
+    ---
+    Read the raw datacity data split by sic section, and format into a bar chart
+    ---
+        IN: the raw data file, as downloaded from TDC
+        OUTDIR: directory to store output file
+        FNAME: name for the output file
+        top: how many values to get.
+    '''
+    # Read the csv located at `IN`
+    d = pd.read_csv(f'{IN}')
+
+    # Sort values according to count, highest at the top
+    d.sort_values(by='Count', ascending=False, inplace=True)
+
+    # Take the top 6 largest counts only
+    assert top <= len(d)
+    d = d.head(top)
+
+    # Add the code's full name.
+    d = d.merge(sic_lookup, 'inner', on='SICHLU')
+
+    d.to_csv(os.path.join(OUTDIR, FNAME), index=False)
+    return
