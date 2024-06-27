@@ -1,0 +1,22 @@
+vars:
+  - DATADIR: src/themes/sustainable-growth/b-corporations/_data/
+stages:
+  b-corp:
+    always_changed: true
+    frozen: true
+    wdir: ../
+    cmd: perl pipelines/b-corp.pl
+    deps:
+      - pipelines/b-corp.pl
+      - pipelines/lib.pl
+      - working/b-corp
+    outs: 
+      # - ${DATADIR}/bcorp_list.csv:
+      #     cache: false
+      - ${DATADIR}/bcorp_by_la.csv:
+          cache: false
+      - ${DATADIR}/bcorp_north.csv:
+          cache: false
+      - src/themes/sustainable-growth/b-corporations/index.vto:
+          cache: false
+          persist: true

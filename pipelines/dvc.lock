@@ -1,0 +1,31 @@
+schema: '2.0'
+stages:
+  b-corp:
+    cmd: perl pipelines/b-corp.pl
+    deps:
+    - path: pipelines/b-corp.pl
+      hash: md5
+      md5: 83c17cfec6b5a1186d31482b81e78b0b
+      size: 10742
+    - path: pipelines/lib.pl
+      hash: md5
+      md5: 89f073c99fdb2dc988646aa10e75df19
+      size: 2534
+    - path: working/b-corp
+      hash: md5
+      md5: 522b336ce4eaf3add1ee2f1ebd944d5c.dir
+      size: 13036138
+      nfiles: 7
+    outs:
+    - path: src/themes/sustainable-growth/b-corporations/_data//bcorp_by_la.csv
+      hash: md5
+      md5: c2522ed4cf6d6d660be9d28e2febadba
+      size: 116053
+    - path: src/themes/sustainable-growth/b-corporations/_data//bcorp_north.csv
+      hash: md5
+      md5: f76f04bdf85789450e90e2cd1a550744
+      size: 83
+    - path: src/themes/sustainable-growth/b-corporations/index.vto
+      hash: md5
+      md5: d5fb3f6907b1269732cd1d3390cb281f
+      size: 12442
