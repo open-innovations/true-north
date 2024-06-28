@@ -25,4 +25,6 @@ stages:
     outs:
       - ${TOP}/src/themes/innovation-change/productivity/_data/most_recent_productivity_local_authority.csv:
           cache: false
+      - ${TOP}/src/themes/innovation-change/productivity/_data/updated.yaml:
+          cache: false
  

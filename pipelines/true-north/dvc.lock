@@ -29,8 +29,8 @@ stages:
       size: 49895
     - path: analyse_members_list.ipynb
       hash: md5
-      md5: 03571a5235e37848ef9c31272f3ed20b
-      size: 48888
+      md5: bccef8f4607c7cfc90c6753f7eeb83e6
+      size: 48890
     outs:
     - path: ../../src/overview/membership/_data/cumsum.csv
       hash: md5
@@ -48,6 +48,10 @@ stages:
       hash: md5
       md5: 444df14148705233e1c6ebc06d9454a0
       size: 750
+    - path: ../../src/overview/membership/_data/updated.yaml
+      hash: md5
+      md5: 26915b49b846db022d4c9bc69bea579e
+      size: 20
   northern-stars:
     cmd: papermill --no-progress-bar --no-report-mode northern_stars.ipynb ../../output/northern_stars.ipynb
     deps:

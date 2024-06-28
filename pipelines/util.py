@@ -49,31 +49,31 @@ def split_text(on, headers):
             l.append(header) 
     return l
 
-def time_updated(file_path, where):
+def time_updated(file_path):
     # Get the current time
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    update_line = f"updated: {current_time}\n"
+    update_line = f"{current_time}\n"
 
     
     # Read the file and modify its contents
-    with open(file_path, 'r') as file:
-        lines = file.readlines()
+    # with open(file_path, 'r') as file:
+    #     lines = file.readlines()
     
-    # Find the line with "updated:" and update it
-    for i, line in enumerate(lines):
-        if line.startswith("updated:"):
-            lines[i] = update_line
-            break
-    else:
-        # If "updated:" is not found, find `where` and insert after it
-        for i, line in enumerate(lines):
-            if where in line:
-                lines.insert(i + 1, update_line)
-                break
+    # # Find the line with "updated:" and update it
+    # for i, line in enumerate(lines):
+    #     if line.startswith("updated:"):
+    #         lines[i] = update_line
+    #         break
+    # else:
+    #     # If "updated:" is not found, find `where` and insert after it
+    #     for i, line in enumerate(lines):
+    #         if where in line:
+    #             lines.insert(i + 1, update_line)
+    #             break
     
     # Write the modified contents back to the file
     with open(file_path, 'w') as file:
-        file.writelines(lines)
+        file.writelines(update_line)
     
     print(f"Timestamp added to file {file_path}")
 

@@ -24,6 +24,8 @@ stages:
           cache: false
       - ${TOP}/src/overview/membership/_data/true_north_members_list.csv:
           cache: false
+      - ${TOP}/src/overview/membership/_data/updated.yaml:
+          cache: false
   northern-stars:
     cmd: papermill --no-progress-bar --no-report-mode northern_stars.ipynb ${TOP}/output/northern_stars.ipynb
     deps: 

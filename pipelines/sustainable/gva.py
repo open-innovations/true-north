@@ -22,5 +22,5 @@ def gva_by_local_authority():
 
 if __name__ == "__main__":
     gva_by_local_authority()
-    time_updated(os.path.join(SRC_DIR, 'themes/sustainable-growth/gva/index.vto'), 'nicetheme:')
+    time_updated(os.path.join(SRC_DIR, 'themes/sustainable-growth/gva/_data/updated.yaml'))
     edd_last_updated_next_updated(id='RGVA_LAD')

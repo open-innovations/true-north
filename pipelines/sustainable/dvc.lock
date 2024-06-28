@@ -5,12 +5,12 @@ stages:
     deps:
     - path: ../../pipelines/util.py
       hash: md5
-      md5: 4339ffbc976b069992b6f61e482b567f
-      size: 3489
+      md5: 1172b55690c39d715757d498f98b9961
+      size: 4380
     - path: gva.py
       hash: md5
-      md5: 84fa23b347b950328a05de2f33cdf263
-      size: 981
+      md5: 5938ef4d669f96750ce6014e59ce9ce4
+      size: 976
     - path: https://github.com/economic-analytics/edd/raw/main/data/parquet/RGVA_LAD.parquet
       hash: md5
       checksum: '"c1be64ed511e603676b92efb34eb6f06a7543ca07cd563f7e52cee03c7cec9fa"'
@@ -20,7 +20,7 @@ stages:
       hash: md5
       md5: c03ed4626ef7608ee914050c06564611
       size: 6215
-    - path: ../../src/themes/sustainable-growth/gva/index.vto
+    - path: ../../src/themes/sustainable-growth/gva/_data/updated.yaml
       hash: md5
-      md5: 868d4a98e1aa9660c82f20eb75b82733
-      size: 1906
+      md5: e05c87e3b1cdf7d11f02e86f79a14a92
+      size: 20
