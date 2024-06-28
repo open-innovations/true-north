@@ -22,6 +22,7 @@ my $ofile = $basedir."../src/themes/sustainable-growth/b-corporations/_data/bcor
 my $lfile = $basedir."../src/themes/sustainable-growth/b-corporations/_data/bcorp_by_la.csv";
 my $sfile = $basedir."../src/themes/sustainable-growth/b-corporations/_data/bcorp_north.csv";
 my $vfile = $basedir."../src/themes/sustainable-growth/b-corporations/index.vto";
+my $yfile = $basedir."../src/themes/sustainable-growth/b-corporations/_data/updated.yaml";
 my $pcdfile = $dir."postcodes.csv";
 my $hexfile = $basedir."../src/_data/hexjson/uk-local-authority-districts-2023.hexjson";
 
@@ -204,7 +205,7 @@ close($fh);
 msg("Total of <yellow>$total<none> northern corps out of <yellow>$nbhits<none>.");
 
 
-updateCreationTimestamp($vfile);
+updateCreationTimestamp($yfile);
 
 
 
@@ -314,17 +315,10 @@ sub FindThatLocalAuthority {
 
 #######################
 sub updateCreationTimestamp {
-	my $file = shift;
-	my(@lines,$fh,$i,$dt);
-	open($fh,$file);
-	@lines = <$fh>;
-	close($fh);
-	$dt = strftime("%FT%H:%M", localtime);
-	for($i = 0; $i < @lines ; $i++){
-		$lines[$i] =~ s/^(updated: )(.*)/$1$dt/;
-	}
+	my ($file) = @_;
+	my $dt = strftime("%FT%H:%M", localtime);
+	open(my $fh, '>', $file);
+	print $fh $dt;
+	close $fh;
 	msg("Updating timestamp in <cyan>$file<none>\n");
-	open($fh,">",$file);
-	print $fh @lines;
-	close($fh);
 }
