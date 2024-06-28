@@ -5,17 +5,12 @@ stages:
     deps:
     - path: pipelines/b-corp.pl
       hash: md5
-      md5: 83c17cfec6b5a1186d31482b81e78b0b
-      size: 10742
+      md5: 4f65d29785d0ff477e4ac329182ac486
+      size: 10684
     - path: pipelines/lib.pl
       hash: md5
       md5: 89f073c99fdb2dc988646aa10e75df19
       size: 2534
-    - path: working/b-corp
-      hash: md5
-      md5: 522b336ce4eaf3add1ee2f1ebd944d5c.dir
-      size: 13036138
-      nfiles: 7
     outs:
     - path: src/themes/sustainable-growth/b-corporations/_data//bcorp_by_la.csv
       hash: md5
@@ -27,5 +22,5 @@ stages:
       size: 83
     - path: src/themes/sustainable-growth/b-corporations/index.vto
       hash: md5
-      md5: d5fb3f6907b1269732cd1d3390cb281f
+      md5: f51fd37e5b7a82e60b347e6563645c7b
       size: 12442

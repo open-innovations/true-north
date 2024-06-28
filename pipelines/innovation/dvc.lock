@@ -63,11 +63,15 @@ stages:
       size: 109520
     - path: productivity.ipynb
       hash: md5
-      md5: 09eed74b564fa5c26be769d6e50ebd83
-      size: 2955
+      md5: 6bb5512988dd45bcc08b68b93fad0a13
+      size: 2959
     outs:
     - path: 
         ../../src/themes/innovation-change/productivity/_data/most_recent_productivity_local_authority.csv
       hash: md5
       md5: 7c31bf5bdeb9c64437bb508983616f94
       size: 16816
+    - path: ../../src/themes/innovation-change/productivity/_data/updated.yaml
+      hash: md5
+      md5: dbab2282a5500a5e7383d06a700f1ced
+      size: 20

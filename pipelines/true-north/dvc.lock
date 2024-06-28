@@ -61,7 +61,7 @@ stages:
       size: 1289
     - path: northern_stars.ipynb
       hash: md5
-      md5: 3c301bc1ba2c16bc4bc2a9927e3ee647
+      md5: 6dae03827ffc82cc4c0f76719be42713
       size: 1104
     outs:
     - path: ../../src/overview/northern-stars/_data/northern_stars.csv

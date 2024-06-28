@@ -5,7 +5,7 @@ URL = 'https://github.com/economic-analytics/edd/raw/main/data/parquet/RGVA_LAD.
 query = f"SELECT \"dates.date\" AS date, \"variable.name\", \"geography.code\", \"industry.name\", value FROM '{URL}' WHERE \"industry.name\"=='All industries';"
 
 def gva_by_local_authority():
-    data = remote_parquet_as_dataframe(query)
+    data = remote_file_as_dataframe(query)
 
     # filter the frame
     data = data[(data['variable.name'] == 'GVA Current Prices £m')]

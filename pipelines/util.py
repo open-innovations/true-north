@@ -54,24 +54,6 @@ def time_updated(file_path):
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     update_line = f"{current_time}\n"
 
-    
-    # Read the file and modify its contents
-    # with open(file_path, 'r') as file:
-    #     lines = file.readlines()
-    
-    # # Find the line with "updated:" and update it
-    # for i, line in enumerate(lines):
-    #     if line.startswith("updated:"):
-    #         lines[i] = update_line
-    #         break
-    # else:
-    #     # If "updated:" is not found, find `where` and insert after it
-    #     for i, line in enumerate(lines):
-    #         if where in line:
-    #             lines.insert(i + 1, update_line)
-    #             break
-    
-    # Write the modified contents back to the file
     with open(file_path, 'w') as file:
         file.writelines(update_line)
     
@@ -105,13 +87,13 @@ def most_recent_date(data, datename):
 
     return data
 
-def remote_parquet_as_dataframe(query):
+def remote_file_as_dataframe(query):
     con = duckdb.connect()
     data = con.execute(query).fetchdf()
     return data
 
 def edd_last_updated_next_updated(id):
-    data = remote_parquet_as_dataframe(f"SELECT id, \"desc\", last_update, next_update FROM 'https://raw.githubusercontent.com/economic-analytics/edd/main/data/edd_dict.csv' WHERE id=='{id}';")
+    data = remote_file_as_dataframe(f"SELECT id, \"desc\", last_update, next_update FROM 'https://raw.githubusercontent.com/economic-analytics/edd/main/data/edd_dict.csv' WHERE id=='{id}';")
     return print(data)
 
 def sic_code_bar_chart(IN, OUTDIR, FNAME, top=6):
