@@ -4,6 +4,7 @@ theme: innovation-change
 nicetheme: Innovation & Change
 updated: 2024-06-26 16:32:29
 ---
+{{ import { describe_data } from "functions.vto" }}
 <p>	
 	The data shows a clear north-south divide, though there are noteable hotspots of productivity, particularly around South Ribble and East
 	Lancashire (driven by high-value advanced manufacturing, particularly in the aerospace industry), Cheshire (pharmaceuticals, chemicals and research) and with some higher levels
@@ -16,6 +17,7 @@ updated: 2024-06-26 16:32:29
 		This data comes from the Office for National Statistics Sub-Regional Productivity data. 
 		GVA per hour worked is the standard definition of productivity: the total economic
 		output created by one hour of work. 
+		{{ describe_data("PROD_LAD") }}
 	</p>
 </details>
 

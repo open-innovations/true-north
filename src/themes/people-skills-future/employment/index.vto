@@ -3,6 +3,8 @@ title: Employment
 theme: people-skills-future
 nicetheme: "People, Skills and The Future"
 ---
+{{ import { describe_data } from "functions.vto" }}
+
 <p>
 	The employment rate is the percentage of the working-age (16-64) population who are in employment (employees and self-employed). 
 	It can be used as a measure of the economic effectiveness of an economy in producing jobs, but it can be skewed by other factors 
@@ -20,6 +22,7 @@ nicetheme: "People, Skills and The Future"
 	<summary><h4>About this data</h4></summary>
 	<p>
 		Data is from the Office for National Statistics' Annual Population Survey, accessed via NOMIS.
+		{{ describe_data("LMS") }}
 	</p>
 </details>
 
@@ -134,6 +137,7 @@ nicetheme: "People, Skills and The Future"
 	<summary><h3>About this data</h3></summary>
 	<p>
 		Data is from the Office for National Statistics' Annual Population Survey, accessed via NOMIS.
+		{{ describe_data("LMS") }}
 	</p>
 </details>
 

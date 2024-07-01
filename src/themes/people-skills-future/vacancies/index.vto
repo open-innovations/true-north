@@ -3,6 +3,8 @@ title: Vacancies
 theme: people-skills-future
 nicetheme: "People, Skills and The Future"
 ---
+{{ import { describe_data } from "functions.vto" }}
+
 <p>
     Vacancy rates rose sharply in the aftermath of the Covid-19 pandemic, with a combination of EU27 citizens returning home, changes to UK immigration policy
     and people's wider reactions to their relationship with work changed after the distortions of the pandemic. Overall, vacancy rates have been returning to their
@@ -23,8 +25,8 @@ nicetheme: "People, Skills and The Future"
 	<p>
 		This data comes from the Office for National Statistics Labour Market Statistics (LMS) dataset, 
         accessed through the <a href="https://github.com/economic-analytics/edd/raw/main/data/parquet/LMS.parquet">
-        Economic Data Dashboard (EDD)</a>. You can find the data source in the <a href="https://github.com/economic-analytics/edd/blob/main/data/edd_dict.csv">
-        EDD lookup table.</a>
+        Economic Data Dashboard (EDD)</a>. 
+        {{ describe_data('LMS') }}
 	</p>
 
     <p>

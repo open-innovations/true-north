@@ -3,6 +3,7 @@ title: Fastest Growing Sectors
 theme: innovation-change
 nicetheme: Innovation & Change
 ---
+{{ import { describe_data } from "functions.vto" }}
 <p>
 	Information and communications has been the single fastest growing sector across the North compared to the pre-pandemic period, supported by wider trends in this industry.
 	Growth in this sector is well distributed across the North as a whole, with some significant activity in historically poorer areas. Other sectors such as arts, entertainment
@@ -10,7 +11,15 @@ nicetheme: Innovation & Change
 	are fundamentally different, and should play to their inherent strengths and uniqueness. Also clearly visible are our national centres of importance, such as the high-tech
 	manufacturing sector based in South Ribble and East Lancashire. 
 </p>
-
+<details>
+	<summary><h4>About this data</h4></summary>
+	<p>
+		This data comes from the Regional GVA (LAD) dataset, 
+        accessed through the <a href="https://github.com/economic-analytics/edd/raw/main/data/parquet/RGVA_LAD.parquet">
+        Economic Data Dashboard (EDD)</a>. 
+        {{ describe_data('RGVA_LAD') }}
+	</p>
+</details>
 <h3>By local authority</h3>
 
 <p>
