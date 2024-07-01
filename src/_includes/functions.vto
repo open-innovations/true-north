@@ -1,0 +1,5 @@
+{{ export function describe_data(id) }}
+	<p>Dataset: {{ metadata[id]['desc'] |> JSON.stringify |> replace(/"/g, '') }}</p>
+	<p>Last update: {{ metadata[id]['last_update'] |> JSON.stringify |> replace(/"/g, '') }}</p>
+	<p>Next update: {{ metadata[id]['next_update'] |> JSON.stringify |> replace(/"/g, '') }}</p>
+{{ /export }}

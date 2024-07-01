@@ -12,15 +12,47 @@ stages:
       md5: 89f073c99fdb2dc988646aa10e75df19
       size: 2534
     outs:
-    - path: src/themes/sustainable-growth/b-corporations/_data//bcorp_by_la.csv
+    - path: src/themes/sustainable-growth/b-corporations/_data/bcorp_by_la.csv
       hash: md5
       md5: c2522ed4cf6d6d660be9d28e2febadba
       size: 116053
-    - path: src/themes/sustainable-growth/b-corporations/_data//bcorp_north.csv
+    - path: src/themes/sustainable-growth/b-corporations/_data/bcorp_north.csv
       hash: md5
       md5: f76f04bdf85789450e90e2cd1a550744
       size: 83
-    - path: src/themes/sustainable-growth/b-corporations/index.vto
+    - path: src/themes/sustainable-growth/b-corporations/_data/updated.yaml
       hash: md5
-      md5: f51fd37e5b7a82e60b347e6563645c7b
-      size: 12442
+      md5: 5610497454642090f497f70aeb0c7d64
+      size: 16
+  metadata:
+    cmd: python pipelines/metadata.py
+    deps:
+    - path: https://raw.githubusercontent.com/economic-analytics/edd/main/data/edd_dict.csv
+      hash: md5
+      checksum: '"0ea3f540ec0b328626adfb0bd7b2b5051d570f4e0f8d681cdc180e80e81eb8d4"'
+      size: 8077
+    - path: pipelines/metadata.py
+      hash: md5
+      md5: d3c13ab1acd1c69e68718de3cca714fe
+      size: 825
+    outs:
+    - path: src/_data/metadata.yaml
+      hash: md5
+      md5: 88ec2df47c96988f128330bbe1349302
+      size: 7779
+  edd_dictionary:
+    cmd: python pipelines/edd_dictionary.py
+    deps:
+    - path: https://raw.githubusercontent.com/economic-analytics/edd/main/data/edd_dict.csv
+      hash: md5
+      checksum: '"0ea3f540ec0b328626adfb0bd7b2b5051d570f4e0f8d681cdc180e80e81eb8d4"'
+      size: 8077
+    - path: pipelines/edd_dictionary.py
+      hash: md5
+      md5: 447c3dbdee681c2e3d8865ea7dc82f66
+      size: 831
+    outs:
+    - path: src/_data/edd_dictionary.yaml
+      hash: md5
+      md5: 88ec2df47c96988f128330bbe1349302
+      size: 7779

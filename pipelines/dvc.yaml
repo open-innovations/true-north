@@ -1,5 +1,5 @@
 vars:
-  - DATADIR: src/themes/sustainable-growth/b-corporations/_data/
+  - B_CORP_DATADIR: src/themes/sustainable-growth/b-corporations/_data
 stages:
   b-corp:
     always_changed: true
@@ -11,10 +11,18 @@ stages:
     outs: 
       # - ${DATADIR}/bcorp_list.csv:
       #     cache: false
-      - ${DATADIR}/bcorp_by_la.csv:
+      - ${B_CORP_DATADIR}/bcorp_by_la.csv:
           cache: false
-      - ${DATADIR}/bcorp_north.csv:
+      - ${B_CORP_DATADIR}/bcorp_north.csv:
           cache: false
-      - src/themes/sustainable-growth/b-corporations/index.vto:
+      - ${B_CORP_DATADIR}/updated.yaml:
           cache: false
-          persist: true
+  edd_dictionary:
+    wdir: ../
+    cmd: python pipelines/edd_dictionary.py
+    deps:
+      - pipelines/edd_dictionary.py
+      - https://raw.githubusercontent.com/economic-analytics/edd/main/data/edd_dict.csv
+    outs:
+      - src/_data/edd_dictionary.yaml:
+          cache: false
