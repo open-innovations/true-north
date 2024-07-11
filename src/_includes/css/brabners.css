@@ -1,7 +1,7 @@
 @import 'css/brabners-fonts.css';
 :root {
-	--color-heading: var(--color-copper);
-	--color-heading-light: var(--color-light-copper);
+	--color-heading: black;
+	--color-heading-light: #555;
 	--color-copper: #9D6646;
 	--color-light-copper: #DC8C5D;
 	--color-navy: #181B25;
