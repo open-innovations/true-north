@@ -26,7 +26,7 @@
 .warning { color: var(--color-dark); background-color: #f8d3b0; filter: drop-shadow(0px 0px 1px #643f10); }
 
 .bg-navy-radial { background-image: radial-gradient(44.76% 50% at 50% 50%,var(--color-light-navy) 5.11%,var(--color-navy) 100%); }
-.brabners-bg-dark { background: var(--color-navy); color: white; }
+.brabners-bg-dark { background: black; color: white; }
 .brabners-bg-navy { background: #252935; color: white; }
 .brabners-bg-light { background: white; color: rgb(43, 43, 43); }
 .tallpadded { padding-top: 5rem; padding-bottom: 5rem; }
