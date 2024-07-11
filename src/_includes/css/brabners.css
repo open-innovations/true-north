@@ -57,6 +57,8 @@ footer a { text-decoration: none; }
 footer section { padding: 0; }
 footer .logo { display: block; text-align: center; }
 footer .logo svg { max-width: 50%; width: 400px; }
+footer .brabners-logo { display: block; text-align: center; }
+footer .brabners-logo svg { max-width: 50%; width: 200px; }
 /*footer .logo .st0 { fill: var(--color-light-copper); }*/
 
 .holder { width: 1200px; }
