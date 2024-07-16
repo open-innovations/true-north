@@ -8,30 +8,31 @@ nicetheme: Innovation & Change
     This page explores the data behind this thinking for the North of England.
 </p>
 
+<h3>Definitions</h3>
+<p>The data on this page was calculated using a custom filter on The Data City's database of over 5 million UK companies. In order to be classed as an owner-managed firm, we said the following must be true:
+<ul>
+    <li>A director is appointed within two years of the company being incorporated.</li>
+    <li>The same director is, or has been, a person of significant control at the company. A person of significant control means they have shares or voting rights in the company.</li>
+    <li>The director is still active at the company.</li>
+</ul>
+</p>
+<p>
+    In addition to the above, the following criteria were applied to the list of companies:
+    <ul>
+        <li>Must have its registered address in any of: the North East, North West, or Yorkshire and the Humber (ITL1 regions).</li>
+        <li>Up to 250 employees.</li>
+        <li>Up to £10 million annual turnover.</li>
+        <li>Exclude <a href="https://help.thedatacity.com/knowledge/what-are-companies-with-potential-anomalies">outliers</a>.</li>
+    </ul>
+</p>
 <details>
-	<summary><h3>About this data</h3></summary>
-	<p>The data on this page was calculated using a custom filter on The Data City's database of over 5 million UK companies. In order to be classed as an owner-managed firm, we said the following must be true:
-	<ul>
-		<li>A director is appointed within two years of the company being incorporated.</li>
-		<li>The same director is, or has been, a person of significant control at the company. A person of significant control means they have shares or voting rights in the company.</li>
-		<li>The director is still active at the company.</li>
-	</ul>
-	</p>
-	<p>
-		In addition to the above, the following criteria were applied to the list of companies:
-		<ul>
-			<li>Must have its registered address in any of: the North East, North West, or Yorkshire and the Humber (ITL1 regions).</li>
-			<li>Up to 250 employees.</li>
-			<li>Up to £10 million annual turnover.</li>
-			<li>Exclude <a href="https://help.thedatacity.com/knowledge/what-are-companies-with-potential-anomalies">outliers</a>.</li>
-		</ul>
-	</p>
-	<p>
-		These statistics are estimates calculated using their analyse tool, which has important limitations to be aware of.
-		Before interpreting these statistics, please read their blog on 
-		<a href="https://thedatacity.com/analyse-using-analyse-for-location-analysis/">how the analysis tool works</a>
-		and <a href="https://help.thedatacity.com/knowledge/using-analyse#analysis-summary-box">explanations of the headline statistics</a>.
-	</p>
+    <summary><h3>About this data</h3></summary>
+    <p>
+        These statistics are estimates calculated using their analyse tool, which has important limitations to be aware of.
+        Before interpreting these statistics, please read their blog on 
+        <a href="https://thedatacity.com/analyse-using-analyse-for-location-analysis/">how the analysis tool works</a>
+        and <a href="https://help.thedatacity.com/knowledge/using-analyse#analysis-summary-box">explanations of the headline statistics</a>.
+    </p>
 </details>
 
 {{ comp.oi.dashboard ({ config: {
@@ -219,7 +220,7 @@ nicetheme: Innovation & Change
 
 <h3>SIC Sector counts</h3>
 
-<p>Top 10 SIC sectors by number of businesses</p>
+<p>Top 10 SIC sectors by number of businesses. Hover over the chart to see the full name of each sector, or use the dropdown below.</p>
 <details>
     <summary><h4>SIC section lookup</h4></summary>
     {{ for element of SICHLU_sector_counts.rows }}
@@ -234,13 +235,13 @@ nicetheme: Innovation & Change
     axis: { 
         x: { 
             min: 0,
-            max: 65000,
+            max: 70000,
             ticks: [{
-                value: 60000,
-                label: "60k"},
+                value: 70000,
+                label: "70k"},
                 {
-                value: 30000,
-                label: "30k"},
+                value: 35000,
+                label: "35k"},
                 {
                 value: 0,
                 label: "0"}
@@ -251,7 +252,7 @@ nicetheme: Innovation & Change
         {
         title: "Count",
         value: "Count",
-        tooltip: '<strong>{{ sic_name }}</strong><br />Count: {{ Count }}' }
+        tooltip: '<strong class=\"subtitle\">{{ sic_name }}</strong><br />Count: <strong>{{ Count }}</strong>' }
         ]
     } 
     })
@@ -291,7 +292,7 @@ nicetheme: Innovation & Change
 
 <h3>Employees by SIC sector</h3>
 
-<p>Top 10 SIC sectors by number of emloyees</p>
+<p>Top 10 SIC sectors by number of emloyees. Hover over the chart to see the full name of each sector, or use the dropdown below.</p>
 
 <details>
     <summary><h4>SIC section lookup</h4></summary>
@@ -315,7 +316,7 @@ nicetheme: Innovation & Change
         {
         title: "Estimated employees",
         value: "Count",
-        tooltip: '<strong>{{ sic_name }}</strong><br />Estimated employees: {{ Count | toLocaleString() }}' }
+        tooltip: '<strong class=\"subtitle\">{{ sic_name }}</strong><br />Estimated employees: <strong>{{ Count | toLocaleString() }}</strong>' }
         ]
     } 
     })
@@ -360,7 +361,7 @@ nicetheme: Innovation & Change
 
 <h3>Turnover by SIC sector</h3>
 
-<p>Top 10 SIC sectors by turnover</p>
+<p>Top 10 SIC sectors by turnover. Hover over the chart to see the full name of each sector, or use the dropdown below.</p>
 
 <details>
     <summary><h4>SIC section lookup</h4></summary>
@@ -397,7 +398,7 @@ nicetheme: Innovation & Change
         {
         title: "Estimated turnover",
         value: "Count", 
-        tooltip: '<strong>{{ sic_name }}</strong><br />Estimated turnover: £{{ Count | toLocaleString() }}' }
+        tooltip: '<strong class=\"subtitle\">{{ sic_name }}</strong><br />Estimated turnover: <strong>£{{ Count | toLocaleString() }}</strong>' }
         ]
     } 
     })
