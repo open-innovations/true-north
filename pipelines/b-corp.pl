@@ -72,7 +72,6 @@ $csv = "Name,Industry,Size,Postcode,LADCD\n";
 for($i = 0; $i < @hits; $i++){
 	foreach $key (keys(%{$hits[$i]})){
 		$hits[$i]{$key} =~ s/(^\"|\"$)//g;
-		#print "$i - $key\n";
 	}
 	$hits[$i]{'name'} =~ s/\"//g;
 	$pcd = fixPostcode($hits[$i]{'hqPostalCode'},$hits[$i]{'name'});
@@ -252,7 +251,7 @@ sub GetPostcodeLookup {
 	
 	$pcds = {};
 	foreach $line (@lines){
-		chomp($line);
+		$line =~ s/[\n\r]//g;
 		($pcd,$la) = split(/,/,$line);
 		$pcd = uc($pcd);
 		$pcd =~ s/ //g;
