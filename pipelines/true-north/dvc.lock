@@ -13,44 +13,44 @@ stages:
       size: 9712
     - path: clean_members_list.ipynb
       hash: md5
-      md5: 80d4c08d1bb1a2b28e0f1bf1a0b32e66
-      size: 15618
+      md5: a85f566690502e9d9ae88f19e4fe8c0c
+      size: 14560
     outs:
     - path: ../../working/true-north/true_north_clean.csv
       hash: md5
-      md5: 4382c75c5d97e014925b742d1616f2e0
-      size: 49895
+      md5: f267b697b70841ec18fa4a5abc778e43
+      size: 58076
   analyse:
     cmd: papermill --no-progress-bar --no-report-mode analyse_members_list.ipynb ../../output/analyse_members_list.ipynb
     deps:
     - path: ../../working/true-north/true_north_clean.csv
       hash: md5
-      md5: 4382c75c5d97e014925b742d1616f2e0
-      size: 49895
+      md5: f267b697b70841ec18fa4a5abc778e43
+      size: 58076
     - path: analyse_members_list.ipynb
       hash: md5
-      md5: bccef8f4607c7cfc90c6753f7eeb83e6
-      size: 48890
+      md5: c558ab934490b16c81b58333dac1fbaa
+      size: 70680
     outs:
     - path: ../../src/overview/membership/_data/cumsum.csv
       hash: md5
-      md5: 279d9b43f0e02df2dfa2239c920fecd2
-      size: 532
+      md5: 53135febbdb33fffaa22de5a73f280c8
+      size: 572
     - path: ../../src/overview/membership/_data/sector_word_counts.csv
       hash: md5
-      md5: 6c8ace26a5f3c54414211f99c38c7e78
-      size: 205
+      md5: 3b9bb4d1f3a40ee19ef5d41fc8c0dc8f
+      size: 194
     - path: ../../src/overview/membership/_data/top_locations.csv
       hash: md5
-      md5: f4b101ad1a782fb74a0622d735c7e00c
+      md5: c5b96576d8b1879cf73f1be607e4f89b
       size: 95
     - path: ../../src/overview/membership/_data/true_north_members_list.csv
       hash: md5
-      md5: 444df14148705233e1c6ebc06d9454a0
-      size: 750
+      md5: 9515df69709f7b1c656ef4b5ae3e0e83
+      size: 752
     - path: ../../src/overview/membership/_data/updated.yaml
       hash: md5
-      md5: 26915b49b846db022d4c9bc69bea579e
+      md5: 023f40add7280d543f632f02b0e24048
       size: 20
   northern-stars:
     cmd: papermill --no-progress-bar --no-report-mode northern_stars.ipynb ../../output/northern_stars.ipynb
