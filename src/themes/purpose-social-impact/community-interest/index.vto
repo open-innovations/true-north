@@ -257,6 +257,7 @@ nicetheme: Purpose & Social Impact
 <h3>Top 6 sectors by business counts</h3>
 <p>
     This chart shows the top 6 sectors by the number of businesses for Community Interest Companies with registered addresses in the North.
+	Hover over the chart to see the full name of each sector, or use the dropdown below.
 </p>
 <details>
     <summary><h4>SIC section lookup</h4></summary>
@@ -278,7 +279,7 @@ nicetheme: Purpose & Social Impact
 	series: [{
 		title: 'Number of Companies',
 		value: 'Count',
-        tooltip: '<strong class=\"subtitle\">Number of companies</strong><br />{{ letter }} - {{ SIC }}: {{ Count | toLocaleString() }}'
+        tooltip: '<strong class=\"subtitle\">{{ letter }} - {{ SIC }}</strong><br />Estimated employees: {{ Count | toLocaleString() }}' 
 		}]
 	} 
 	})
@@ -287,6 +288,7 @@ nicetheme: Purpose & Social Impact
 <h3>Top 6 sectors by employee counts</h3>
 <p>
     Ths chart shows the top 6 sectors by the number of employees working at Community Interest Companies with registered addresses in the North.
+	Hover over the chart to see the full name of each sector, or use the dropdown below.
 </p>
 <details>
     <summary><h4>SIC section lookup</h4></summary>
@@ -308,7 +310,7 @@ nicetheme: Purpose & Social Impact
 	series: [{
 		title: 'Number of Employees',
 		value: 'Count',
-        tooltip: '<strong class=\"subtitle\">Number of employees</strong><br />{{ letter }} - {{ SIC }}: {{ Count | toLocaleString() }}'
+        tooltip: '<strong class=\"subtitle\">{{ letter }} - {{ SIC }}</strong><br />Estimated employees: {{ Count | toLocaleString() }}'
 		}]
 	} 
 	})
