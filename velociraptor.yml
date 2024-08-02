@@ -1,0 +1,7 @@
+scripts:
+  make-release:
+    cmd:
+      - deno task build --location https://www.brabners.com/true-north/data-explorer/
+      - rm site.zip
+      - zip -r site.zip _site/
+      - gh release create
