@@ -30,7 +30,6 @@ updated: 2024-06-26 16:33:35
       { name: "Membership increase" },
       { name: "Companies with 0-9 employees" },
       { name: "Advisory council" },
-      { name: "Top industry" },
       { name: "Northern stars" },
       { name: "B Corps" }
       ],
@@ -118,17 +117,20 @@ updated: 2024-06-26 16:33:35
     axis: { 
         x: { 
             min: 0,
-            max: 50,
+            max: 120,
             grid: { "stroke-dasharray": '6 2', "stroke-width": 1 },
             ticks: [{
                 value: 0,
                 label: "0"},
                 {
-                value: 25,
-                label: "25"},
+                value: 40,
+                label: "40"},
                 {
-                value: 50,
-                label: "50"}
+                value: 80,
+                label: "80"},
+                {
+                value: 120,
+                label: "120"}
             ]} 
         },
     series: [{
