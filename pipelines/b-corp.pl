@@ -37,17 +37,17 @@ my $hexes = LoadJSON($hexfile)->{'hexes'};
 my $total = 0;
 my $n = 0;
 my $nbhits = 1;
-my $page = 0;
-my $nperpage = 500;
-my ($json,$file,@hits,$i,$key,$csv,$fh,$pcds,$la,$ladata,$pcd,@sizes,$s,$industries,$industry,$sectors,$sector,$own,$owned);
+my $page = 1;
+my $nperpage = 250;
+my ($json,$file,@hits,$i,$key,$csv,$fh,$pcds,$la,$ladata,$pcd,@sizes,$s,$industries,$industry,$sectors,$sector,$own,$owned,$bcorp,$d);
 while($n < $nbhits){
 	$file = $dir."page-$page.json";
 	if(!-e $file || -s $file == 0){
 		msg("Getting page <green>$page<none>\n");
-		`curl 'https://bx1p6tr71m-dsn.algolia.net/1/indexes/*/queries?x-algolia-agent=Algolia%20for%20JavaScript%20(4.22.0)%3B%20Browser%20(lite)%3B%20instantsearch.js%20(4.66.0)%3B%20react%20(18.2.0)%3B%20react-instantsearch%20(7.7.0)%3B%20react-instantsearch-core%20(7.7.0)%3B%20JS%20Helper%20(3.16.3)&x-algolia-api-key=$env->{'B_CORP_API'}&x-algolia-application-id=$env->{'B_CORP_APP'}' --compressed -X POST -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:126.0) Gecko/20100101 Firefox/126.0' -H 'Accept: */*' -H 'Accept-Language: en-GB,en;q=0.5' -H 'Accept-Encoding: gzip, deflate, br, zstd' -H 'content-type: application/x-www-form-urlencoded' -H 'Origin: https://www.bcorporation.net' -H 'DNT: 1' -H 'Connection: keep-alive' -H 'Referer: https://www.bcorporation.net/' -H 'Sec-Fetch-Dest: empty' -H 'Sec-Fetch-Mode: cors' -H 'Sec-Fetch-Site: cross-site' -H 'Pragma: no-cache' -H 'Cache-Control: no-cache' --data-raw '{"requests":[{"indexName":"companies-production-en-us-latest-certification-desc","params":"facetFilters=%5B%5B%22hqCountry%3AUnited%20Kingdom%22%5D%5D&facets=%5B%22countries%22%2C%22demographicsList%22%2C%22hqCountry%22%2C%22industry%22%2C%22size%22%5D&highlightPostTag=__%2Fais-highlight__&highlightPreTag=__ais-highlight__&hitsPerPage=$nperpage&maxValuesPerFacet=500&page=$page&query=&tagFilters="},{"indexName":"companies-production-en-us-latest-certification-desc","params":"analytics=false&clickAnalytics=false&facets=hqCountry&highlightPostTag=__%2Fais-highlight__&highlightPreTag=__ais-highlight__&hitsPerPage=0&maxValuesPerFacet=500&page=0&query="}]}' -o $file`;
+		`curl 'https://94eo8lmsqa0nd3j5p.a1.typesense.net/multi_search?x-typesense-api-key=$env->{'B_CORP_API'}' --compressed -X POST -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:129.0) Gecko/20100101 Firefox/129.0' -H 'Accept: application/json, text/plain, */*' -H 'Accept-Language: en-GB,en;q=0.5' -H 'Accept-Encoding: gzip, deflate, br, zstd' -H 'Content-Type: text/plain' -H 'Origin: https://www.bcorporation.net' -H 'DNT: 1' -H 'Connection: keep-alive' -H 'Referer: https://www.bcorporation.net/' -H 'Sec-Fetch-Dest: empty' -H 'Sec-Fetch-Mode: cors' -H 'Sec-Fetch-Site: cross-site' -H 'Pragma: no-cache' -H 'Cache-Control: no-cache' -H 'TE: trailers' --data-raw '{"searches":[{"query_by":"name,description,websiteKeywords,countries,industry,sector,hqCountry,hqProvince,hqCity,hqPostalCode,provinces,cities,size,demographicsList","exhaustive_search":true,"sort_by":"initialCertificationDateTimestamp:asc","highlight_full_fields":"name,description,websiteKeywords,countries,industry,sector,hqCountry,hqProvince,hqCity,hqPostalCode,provinces,cities,size,demographicsList","collection":"companies-production-en-us","q":"*","facet_by":"countries,demographicsList,hqCountry,industry,size","filter_by":"hqCountry:=[\`United Kingdom\`]","max_facet_values":500,"page":$page,"per_page":$nperpage}]}' -o $file`;
 	}
 	$json = LoadJSON($file);
-	$nbhits = $json->{'results'}[0]{'nbHits'};
+	$nbhits = $json->{'results'}[0]{'found'};
 	$n += @{$json->{'results'}[0]{'hits'}};
 	push(@hits,@{$json->{'results'}[0]{'hits'}});
 	$page++;
@@ -70,11 +70,13 @@ $owned = {};
 # Build the CSV
 $csv = "Name,Industry,Size,Postcode,LADCD\n";
 for($i = 0; $i < @hits; $i++){
-	foreach $key (keys(%{$hits[$i]})){
-		$hits[$i]{$key} =~ s/(^\"|\"$)//g;
+	$bcorp = $hits[$i]{'document'};
+	foreach $key (keys(%{$bcorp})){
+		$bcorp->{$key} =~ s/(^\"|\"$)//g;
 	}
-	$hits[$i]{'name'} =~ s/\"//g;
-	$pcd = fixPostcode($hits[$i]{'hqPostalCode'},$hits[$i]{'name'});
+	$bcorp->{'name'} =~ s/\"//g;
+	$pcd = fixPostcode($bcorp->{'hqPostalCode'},$bcorp->{'name'});
+	$la = "";
 	$la = $pcds->{$pcd}||"";
 
 	if(!defined($pcds->{$pcd})){
@@ -84,39 +86,40 @@ for($i = 0; $i < @hits; $i++){
 	}
 
 	if(!$la){
-		warning("The postcode for $hits[$i]{'name'} ($i) seems invalid: <green>$pcd<none>\n");
+		warning("The postcode for $bcorp->{'name'} ($i) seems invalid: <green>$pcd<none>\n");
 	}else{
-		if(!$ladata->{$la}){ $ladata->{$la} = {'count'=>0,'employeeOwned'=>0,'industries'=>{},'sizes'=>{},'owned'=>{}}; }
+		if(!$ladata->{$la}){ $ladata->{$la} = {'count'=>0,'industries'=>{},'sizes'=>{},'owned'=>{}}; }
 		$ladata->{$la}{'count'}++;
-		if($hits[$i]{'demographics'}{'employeeOwned'}){ $ladata->{$la}{'employeeOwned'}++ }
 
-		if(!$ladata->{$la}{'industries'}{$hits[$i]{'industry'}}){ $ladata->{$la}{'industries'}{$hits[$i]{'industry'}} = 0; }
-		$ladata->{$la}{'industries'}{$hits[$i]{'industry'}}++;
-		if($hits[$i]{'industry'}){
-			if(!defined($industries->{$hits[$i]{'industry'}})){ $industries->{$hits[$i]{'industry'}} = 0; }
-			$industries->{$hits[$i]{'industry'}}++;
+		if(!$ladata->{$la}{'industries'}{$bcorp->{'industry'}}){ $ladata->{$la}{'industries'}{$bcorp->{'industry'}} = 0; }
+		$ladata->{$la}{'industries'}{$bcorp->{'industry'}}++;
+		if($bcorp->{'industry'}){
+			if(!defined($industries->{$bcorp->{'industry'}})){ $industries->{$bcorp->{'industry'}} = 0; }
+			$industries->{$bcorp->{'industry'}}++;
 		}
 
-		if(!$ladata->{$la}{'sectors'}{$hits[$i]{'sector'}}){ $ladata->{$la}{'sectors'}{$hits[$i]{'sector'}} = 0; }
-		$ladata->{$la}{'sectors'}{$hits[$i]{'sector'}}++;
-		if($hits[$i]{'sector'}){
-			if(!defined($sectors->{$hits[$i]{'sector'}})){ $sectors->{$hits[$i]{'sector'}} = 0; }
-			$sectors->{$hits[$i]{'sector'}}++;
+		if(!$ladata->{$la}{'sectors'}{$bcorp->{'sector'}}){ $ladata->{$la}{'sectors'}{$bcorp->{'sector'}} = 0; }
+		$ladata->{$la}{'sectors'}{$bcorp->{'sector'}}++;
+		if($bcorp->{'sector'}){
+			if(!defined($sectors->{$bcorp->{'sector'}})){ $sectors->{$bcorp->{'sector'}} = 0; }
+			$sectors->{$bcorp->{'sector'}}++;
 		}
 
-		foreach $own (keys(%{$hits[$i]{'demographics'}})){
+		for($d = 0; $d < @{$bcorp->{'demographicsList'}}; $d++){
+			$own = $bcorp->{'demographicsList'}[$d];
+			$own =~ s/Owned$//g;
 			if($own){
-				if(!$ladata->{$la}{'owned'}{$own}){ $ladata->{$la}{'owned'}{$own} = 0; }
-				if($hits[$i]{'demographics'}{$own}){ $ladata->{$la}{'owned'}{$own}++; }
+				if(!defined($ladata->{$la}{'owned'}{$own})){ $ladata->{$la}{'owned'}{$own} = 0; }
+				$ladata->{$la}{'owned'}{$own}++;
 				$owned->{$own} = 1;
 			}
 		}
 
-		if(!$ladata->{$la}{'sizes'}{$hits[$i]{'size'}}){ $ladata->{$la}{'sizes'}{$hits[$i]{'size'}} = 0; }
-		$ladata->{$la}{'sizes'}{$hits[$i]{'size'}}++;
+		if(!$ladata->{$la}{'sizes'}{$bcorp->{'size'}}){ $ladata->{$la}{'sizes'}{$bcorp->{'size'}} = 0; }
+		$ladata->{$la}{'sizes'}{$bcorp->{'size'}}++;
 
 	}
-	$csv .= "\"$hits[$i]{'name'}\",\"$hits[$i]{'industry'}\",$hits[$i]{'size'},$hits[$i]{'hqPostalCode'},$la\n";
+	$csv .= "\"$bcorp->{'name'}\",\"$bcorp->{'industry'}\",$bcorp->{'size'},$bcorp->{'hqPostalCode'},$la\n";
 }
 
 SavePostcodeLookup($pcdfile,$pcds);
@@ -172,7 +175,7 @@ print $fh "\n";
 
 # Make rows
 foreach $la (sort(keys(%{$hexes}))){
-	print $fh "$la,".($ladata->{$la}{'count'}||0).",".($ladata->{$la}{'employeeOwned'}||0);
+	print $fh "$la,".($ladata->{$la}{'count'}||0);
 
 	for($s = 0; $s < @sizes; $s++){
 		print $fh ",".($ladata->{$la}{'sizes'}{$sizes[$s]}||"0");

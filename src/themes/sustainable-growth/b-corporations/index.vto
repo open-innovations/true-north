@@ -2,7 +2,7 @@
 title: B Corporations
 theme: sustainable-growth
 nicetheme: "Sustainable Growth"
-updated: 2024-06-27T10:17
+updated: 2024-08-13T10:17
 ---
 <p>
     As a B Corp certified business, Brabners is particularly interested in the prevalence of B Corps and 
@@ -165,8 +165,17 @@ updated: 2024-06-27T10:17
 		"columns":[{
 			"name": "filterLabel",
 			"template": "{{ n }}"
+		},{
+			"name": "Employee",
+			"template": "{{ Owned→employee }}"
+		},{
+			"name": "Minority",
+			"template": "{{ Owned→minority }}"
+		},{
+			"name": "Women",
+			"template": "{{ Owned→women }}"
 		}],
-		"value": "Owned→employeeOwned",
+		"value": "Employee",
 		"scale": "TrueNorth",
 		"min": 0,
 		"max": 10,
@@ -212,7 +221,7 @@ updated: 2024-06-27T10:17
 				"label": "filterLabel"
 			},
 			"slider":{
-				"columns": ["Owned→employeeOwned","Owned→minorityOwned","Owned→womenOwned"]
+				"columns": ["Employee","Minority","Women"]
 			}
 		},
 		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />B corps: <strong class=\"number\">{{ {{ _value }} | toLocaleString() }}</strong>"
