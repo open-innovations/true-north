@@ -30,4 +30,6 @@ jobs:
 
       - name: Create new release
         shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: deno task vr make-release
