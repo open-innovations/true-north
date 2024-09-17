@@ -1,0 +1,33 @@
+name: Build site
+
+'on':
+  workflow_dispatch: {}
+  # schedule:
+  #   # * is a special character in YAML so you have to quote this string
+  #   - cron:  '45 23 * * *'
+  # push:
+  #   branches: [ main ]
+  #   paths:
+  #     - 'src/**'
+  #     - '_config.js'
+  #     - 'deno.json'
+  #     - 'import_map.json'
+  #     - '.github/workflows/build-site.yml'
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.44.2
+
+      - name: Create new release
+        shell: bash
+        run: deno task vr make-release
