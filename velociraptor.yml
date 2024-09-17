@@ -2,6 +2,6 @@ scripts:
   make-release:
     cmd:
       - deno task build --location https://www.brabners.com/true-north/data-explorer/
-      - rm site.zip
+      - rm --force site.zip
       - zip -r site.zip _site/
       - gh release create $(date +%Y%m%d-%H%M%S) site.zip --generate-notes --latest
