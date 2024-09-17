@@ -31,3 +31,17 @@ It is possible to override this when generating the site by setting the `--locat
 ```sh
 deno task build --location https://www.brabners.com/true-north/data-explorer/
 ```
+
+## Bulding a release
+
+The process for creating a release is to build the site, create a zip file and adding a new release to the GitHub repository.
+
+This has been scripted as a [Velociraptor](https://velociraptor.run) action, which can be run from the command line as follows:
+
+```sh
+deno task vr make-release
+```
+
+This will mint a new release with the name set to a timestamp. WARNING There is no guarantee that the release differs from a prior release.
+
+It is planned to place this in an action to automate the process.
