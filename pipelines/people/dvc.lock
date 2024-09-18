@@ -9,8 +9,8 @@ stages:
       size: 3763
     - path: https://github.com/economic-analytics/edd/raw/main/data/parquet/LMS.parquet
       hash: md5
-      checksum: '"dcc28d8d3ebcd8a1924f68a4437a29d71f24387973fd6fc03ad116151d84a781"'
-      size: 3124199
+      checksum: '"5c480b7ca56516bde94aef71e91cee537a4680ea347640caa661d4ddeb1ce753"'
+      size: 3230806
     - path: vacancies.py
       hash: md5
       md5: e7202141bcf8de5b8e50329eda6d0b45
@@ -18,13 +18,13 @@ stages:
     outs:
     - path: ../../src/themes/people-skills-future/vacancies/_data/vacancies_by_sector.csv
       hash: md5
-      md5: 7ee94c7611345476343600d8aeda6292
-      size: 13529
+      md5: 9d5a19693e8bbe37eac96277df204c14
+      size: 13530
     - path: 
         ../../src/themes/people-skills-future/vacancies/_data/vacancies_yearly_change_by_sector.csv
       hash: md5
-      md5: 2a114e87ec05254eb7c461a85b031de4
-      size: 1510
+      md5: a9e124bcd89ab6f76329f1299880e107
+      size: 1504
   employment:
     cmd: PYTHONPATH=../.. python employment.py
     deps:
@@ -100,8 +100,8 @@ stages:
     - path: 
         https://raw.githubusercontent.com/open-innovations/yff-data-pipelines/main/data/processed/neet.csv
       hash: md5
-      checksum: '"14ccdbb3a4299537b8eb04d5d83a1ac0f8eed61d0847d29812fa42b3b7c0b694"'
-      size: 367480
+      checksum: '"0c109f51e636df13abe0f3cbe36c68ec862a55ff02e6dc3c9587c34cb4462b50"'
+      size: 371562
     - path: 
         https://raw.githubusercontent.com/open-innovations/yff-data-pipelines/main/data/processed/yff/neet-factors.csv
       hash: md5
@@ -114,7 +114,7 @@ stages:
     outs:
     - path: ../../src/themes/people-skills-future/employment/_data/neet.csv
       hash: md5
-      md5: 9388a8604edf7c27235d8d27aeede084
+      md5: e151a335813d03cf77bc796758158ac7
       size: 160
     - path: ../../src/themes/people-skills-future/employment/_data/risk_of_neet_by_la.csv
       hash: md5

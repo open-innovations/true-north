@@ -19,53 +19,53 @@ BB:
   desc: 'UK National Accounts, The Blue Book'
   url: 'https://www.ons.gov.uk/file?uri=/economy/grossdomesticproductgdp/datasets/bluebook/current/bb.csv'
 CXNV:
-  last_update: '2024-06-28'
-  next_update: '2024-08-15'
+  last_update: '2024-08-15'
+  next_update: '2024-09-30'
   desc: 'Business Investment'
   url: 'https://www.ons.gov.uk/file?uri=/economy/grossdomesticproductgdp/datasets/businessinvestment/current/cxnv.csv'
 DIOP:
-  last_update: '2024-07-11'
-  next_update: '2024-08-15'
+  last_update: '2024-09-11'
+  next_update: '2024-10-11'
   desc: 'Index of Production'
   url: 'https://www.ons.gov.uk/file?uri=/economy/economicoutputandproductivity/output/datasets/indexofproduction/current/diop.csv'
 DRSI:
-  last_update: '2024-07-19'
-  next_update: '2024-08-16'
+  last_update: '2024-08-16'
+  next_update: '2024-09-20'
   desc: 'Retail Sales Index'
   url: 'https://www.ons.gov.uk/file?uri=/businessindustryandtrade/retailindustry/datasets/retailsales/current/drsi.csv'
 EMP:
-  last_update: '2024-07-18'
-  next_update: '2024-08-13'
+  last_update: '2024-09-10'
+  next_update: '2024-10-15'
   desc: 'Average Weekly Earnings'
   url: 'https://www.ons.gov.uk/file?uri=/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/averageweeklyearnings/current/emp.csv'
 IOS1:
-  last_update: '2024-07-11'
-  next_update: '2024-08-15'
+  last_update: '2024-09-11'
+  next_update: '2024-10-11'
   desc: 'Index of Services'
   url: 'https://www.ons.gov.uk/file?uri=/economy/economicoutputandproductivity/output/datasets/indexofservices/current/ios1.csv'
 LMS:
-  last_update: '2024-07-18'
-  next_update: '2024-08-13'
+  last_update: '2024-09-10'
+  next_update: '2024-10-15'
   desc: 'Labour Market Statistics'
   url: 'https://www.ons.gov.uk/file?uri=/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/datasets/labourmarketstatistics/current/lms.csv'
 MGDP:
-  last_update: '2024-07-11'
-  next_update: '2024-08-15'
+  last_update: '2024-09-11'
+  next_update: '2024-10-11'
   desc: 'Monthly GDP'
   url: 'https://www.ons.gov.uk/file?uri=/economy/grossdomesticproductgdp/datasets/gdpmonthlyestimateuktimeseriesdataset/current/mgdp.csv'
 MM22:
-  last_update: '2024-07-17'
-  next_update: '2024-08-14'
+  last_update: '2024-09-18'
+  next_update: '2024-10-16'
   desc: 'Producer Price Inflation'
   url: 'https://www.ons.gov.uk/file?uri=/economy/inflationandpriceindices/datasets/producerpriceindex/current/mm22.csv'
 MM23:
-  last_update: '2024-07-17'
-  next_update: '2024-08-14'
+  last_update: '2024-09-18'
+  next_update: '2024-10-16'
   desc: 'Consumer Price Inflation'
   url: 'https://www.ons.gov.uk/file?uri=/economy/inflationandpriceindices/datasets/consumerpriceindices/current/mm23.csv'
 MRET:
-  last_update: '2024-07-11'
-  next_update: '2024-08-15'
+  last_update: '2024-09-11'
+  next_update: '2024-10-11'
   desc: 'UK Trade'
   url: 'https://www.ons.gov.uk/file?uri=/economy/nationalaccounts/balanceofpayments/datasets/tradeingoodsmretsallbopeu2013timeseriesspreadsheet/current/mret.csv'
 PDGP:
@@ -80,17 +80,17 @@ PN2:
   url: 'https://www.ons.gov.uk/file?uri=/economy/grossdomesticproductgdp/datasets/secondestimateofgdp/current/pn2.csv'
 PRDY:
   last_update: '2024-02-15'
-  next_update: 'NA'
+  next_update: '2024-11-15'
   desc: 'Labour Productivity'
   url: 'https://www.ons.gov.uk/file?uri=/employmentandlabourmarket/peopleinwork/labourproductivity/datasets/labourproductivity/current/prdy.csv'
 PSE:
-  last_update: '2024-06-11'
-  next_update: '2024-09-10'
+  last_update: '2024-09-10'
+  next_update: '2024-12-17'
   desc: 'Public Sector Employment'
   url: 'https://www.ons.gov.uk/file?uri=/employmentandlabourmarket/peopleinwork/publicsectorpersonnel/datasets/publicsectoremploymenttimeseriesdataset/current/pse.csv'
 PUSF:
-  last_update: '2024-07-19'
-  next_update: '2024-08-21'
+  last_update: '2024-08-21'
+  next_update: '2024-09-20'
   desc: 'Public Sector Finances'
   url: 'https://www.ons.gov.uk/file?uri=/economy/governmentpublicsectorandtaxes/publicsectorfinance/datasets/publicsectorfinances/current/pusf.csv'
 QNA:
@@ -119,8 +119,8 @@ UKEA:
   desc: 'UK Economic Accounts'
   url: 'https://www.ons.gov.uk/file?uri=/economy/grossdomesticproductgdp/datasets/unitedkingdomeconomicaccounts/current/ukea.csv'
 UNEM:
-  last_update: '2024-07-18'
-  next_update: '2024-08-13'
+  last_update: '2024-09-10'
+  next_update: '2024-10-15'
   desc: 'Claimant Count and Vacancies'
   url: 'https://www.ons.gov.uk/file?uri=/employmentandlabourmarket/peoplenotinwork/unemployment/datasets/claimantcountandvacanciesdataset/current/unem.csv'
 PROD_LAD:
@@ -203,7 +203,7 @@ CC:
   next_update: 'NA'
   desc: 'Claimant Count'
   url: 'NA'
-RGDHI:
+RGDHI_LAD:
   last_update: '2023-09-14'
   next_update: 'NA'
   desc: 'Regional Gross Disposable Household Income'
@@ -214,13 +214,13 @@ RFDI:
   desc: 'Regional Foreign Direct Investment'
   url: 'NA'
 CONS:
-  last_update: '2024-07-11'
-  next_update: '2024-08-15'
+  last_update: '2024-09-11'
+  next_update: '2024-10-11'
   desc: 'Output in the Construction Industry'
   url: 'NA'
 INS1:
-  last_update: '2024-07-19'
-  next_update: '2024-08-20'
+  last_update: '2024-08-20'
+  next_update: '2024-09-20'
   desc: 'Monthly Insolvencies by Type'
   url: 'NA'
 INS2:

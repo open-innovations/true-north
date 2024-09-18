@@ -13,44 +13,44 @@ stages:
       size: 9712
     - path: clean_members_list.ipynb
       hash: md5
-      md5: b0cc805af988208b977d471453a8d4c3
-      size: 14508
+      md5: 38a2af2fc156c5ac9b60144b98b6384e
+      size: 14515
     outs:
     - path: ../../working/true-north/true_north_clean.csv
       hash: md5
-      md5: 50c98bc87ca91e57f1ea98e83e6d0366
-      size: 66802
+      md5: bbc2db00c2f66e95bdfb08104a9886a4
+      size: 76323
   analyse:
     cmd: papermill --no-progress-bar --no-report-mode analyse_members_list.ipynb ../../output/analyse_members_list.ipynb
     deps:
     - path: ../../working/true-north/true_north_clean.csv
       hash: md5
-      md5: 50c98bc87ca91e57f1ea98e83e6d0366
-      size: 66802
+      md5: bbc2db00c2f66e95bdfb08104a9886a4
+      size: 76323
     - path: analyse_members_list.ipynb
       hash: md5
-      md5: a1f73bead4b80e69134ef9af2bdee80f
-      size: 66298
+      md5: 1d417f023c4c12e0a26c417d092e1dff
+      size: 67720
     outs:
     - path: ../../src/overview/membership/_data/cumsum.csv
       hash: md5
-      md5: 6ebbcdc6af6758755be2a832514384b5
-      size: 607
+      md5: 4eba2a13cff76ba3821da7df2dcb227b
+      size: 642
     - path: ../../src/overview/membership/_data/sector_word_counts.csv
       hash: md5
-      md5: acb67707abe569f4a63b8b373233bc29
-      size: 303
+      md5: b1018dd25a05c99b01120baddc708267
+      size: 318
     - path: ../../src/overview/membership/_data/top_locations.csv
       hash: md5
-      md5: ade6fb3c6c571bd4d41834dbb83493ba
+      md5: 5c455423c1895bd32f4e8acfc23bfbb1
       size: 96
     - path: ../../src/overview/membership/_data/true_north_members_list.csv
       hash: md5
-      md5: 266d8d98c99a9839b409e17becb9946f
+      md5: b5dff2598785e7bbbde9c861ccba3dcb
       size: 719
     - path: ../../src/overview/membership/_data/updated.yaml
       hash: md5
-      md5: 0915cb00c9e58d4efa7411a6c66d48ca
+      md5: cd14408154993b809ccc0a6d1ee14b83
       size: 20
   northern-stars:
     cmd: papermill --no-progress-bar --no-report-mode northern_stars.ipynb ../../output/northern_stars.ipynb
