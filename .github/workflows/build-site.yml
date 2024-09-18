@@ -6,7 +6,7 @@ name: Build site
   #   # * is a special character in YAML so you have to quote this string
   #   - cron:  '45 23 * * *'
   push:
-    branches: [ main ]
+    branches: [ dev ]
     paths:
       - 'src/**'
       - '_config.js'
