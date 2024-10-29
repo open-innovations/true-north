@@ -45,41 +45,48 @@ nicetheme: "People, Skills and The Future"
         x: { title: { label: "Date" }, grid: { show: true, 'stroke-dasharray': "6 2", 'stroke-width': "1"} },
         y: { title: { label: "000s of Vacancies" }, grid: { "stroke-width": "1"}, tick: { spacing: 50 } }
     },
+    columns: [{
+            name: 'decimal_date',
+            template: '{{ date | strptime("%Y-%m-%d") | decimalYear() }}'
+            },{
+            name: 'human_date',
+            template: '{{ date | strftime("%b %Y") }}'
+            }],
     series: [{
         title: "Real Estate Activities",
         x: "decimal_date",
         y: "Real Estate Activities.",
-		tooltip: "<strong class=\"subtitle\">Real Estate Activities</strong><br />{{ decimal_date }}: <strong class=\"number\">{{ _y }},000</strong>"
+		tooltip: "<strong class=\"subtitle\">Real Estate Activities</strong><br />{{ human_date }}: <strong class=\"number\">{{ _y }},000</strong>"
 	    },
         {
         title: "Wholesale & Retail, Repair of motor vehicles",
         x: "decimal_date",
         y: "Wholesale & Retail, Repair of motor vehicles.",
-		tooltip: "<strong class=\"subtitle\">Wholesale & Retail, Repair of motor vehicles</strong><br />{{ decimal_date }}: <strong class=\"number\">{{ _y }},000</strong>"
+		tooltip: "<strong class=\"subtitle\">Wholesale & Retail, Repair of motor vehicles</strong><br />{{ human_date }}: <strong class=\"number\">{{ _y }},000</strong>"
 	    },
         {
         title: "Professional, Scientific & Technical Activities",
         x: "decimal_date",
         y: "Professional, Scientific & Technical Activities.",
-		tooltip: "<strong class=\"subtitle\">Professional, Scientific & Technical Activities</strong><br />{{ decimal_date }}: <strong class=\"number\">{{ _y }},000</strong>"
+		tooltip: "<strong class=\"subtitle\">Professional, Scientific & Technical Activities</strong><br />{{ human_date }}: <strong class=\"number\">{{ _y }},000</strong>"
 	    },
         {
         title: "Manufacturing",
         x: "decimal_date",
         y: "Manufacturing",
-		tooltip: "<strong class=\"subtitle\">Manufacturing</strong><br />{{ decimal_date }}: <strong class=\"number\">{{ _y }},000</strong>"
+		tooltip: "<strong class=\"subtitle\">Manufacturing</strong><br />{{ human_date }}: <strong class=\"number\">{{ _y }},000</strong>"
 	    },
         {
         title: "Human Health & Social Work",
         x: "decimal_date",
         y: "Human Health & Social Work.",
-		tooltip: "<strong class=\"subtitle\">Human Health & Social Work</strong><br />{{ decimal_date }}: <strong class=\"number\">{{ _y }},000</strong>"
+		tooltip: "<strong class=\"subtitle\">Human Health & Social Work</strong><br />{{ human_date }}: <strong class=\"number\">{{ _y }},000</strong>"
 	    },
         {
         title: "Arts, Entertainment & Recreation",
         x: "decimal_date",
         y: "Arts, Entertainment & Recreation.",
-		tooltip: "<strong class=\"subtitle\">Arts, Entertainment & Recreation</strong><br />{{ decimal_date }}: <strong class=\"number\">{{ _y }},000</strong>"
+		tooltip: "<strong class=\"subtitle\">Arts, Entertainment & Recreation</strong><br />{{ human_date }}: <strong class=\"number\">{{ _y }},000</strong>"
 	    }
         ]
     } }) 
@@ -100,35 +107,35 @@ nicetheme: "People, Skills and The Future"
     category: 'sector',
     axis: { 
         x: { 
-            min: -40,
-            max: 40,
+            min: -50,
+            max: 50,
             ticks: [{
-                value: -40,
-                label: "-40%"},
+                value: -50,
+                label: "-50%"},
                 {
-                value: -20,
-                label: "-20%"},
+                value: -25,
+                label: "-25%"},
                 {
                 value: 0,
                 label: "0%"},
                 {
-                value: 20,
-                label: "20%"},
+                value: 25,
+                label: "25%"},
                 {
-                value: 40,
-                label: "40%"}
+                value: 50,
+                label: "50%"}
             ]} 
         },
     series: [
         {
-        title: "July 2024",
-        value: "2024.5",
-        tooltip: '<strong class=\"subtitle\">{{ sector }}</strong><br />April 2023 - April 2024: <strong>{{ 2024.5 }}%</strong>' 
+        title: "August 2024",
+        value: "2024-08-01",
+        tooltip: '<strong class=\"subtitle\">{{ sector }}</strong><br />August 2023 - August 2024: <strong>{{ 2024-08-01 }}%</strong>' 
         },
         { 
-        title: "July 2023",
-        value: "2023.49",
-        tooltip: '<strong class=\"subtitle\">{{ sector }}</strong><br />April 2022 - April 2023: <strong>{{ 2023.49 }}%</strong>' }]
+        title: "August 2023",
+        value: "2023-08-01",
+        tooltip: '<strong class=\"subtitle\">{{ sector }}</strong><br />August 2022 - August 2023: <strong>{{ 2023-08-01 }}%</strong>' }]
         }
     }) 
 }}
