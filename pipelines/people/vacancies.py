@@ -17,10 +17,10 @@ def vacancies_by_sector():
     data['variable.name'] = data['variable.name'].str.replace(pat="UK Job Vacancies (thousands) - ", repl="")
 
     data['unix'] = pd.to_datetime(data['date'], format=f'%Y-%m-%d').astype(int).div(10**6).astype(int)
-    data['decimal_date'] = data['unix'].div((86400*365.25)).add(1970).round(2)
-
+    # data['decimal_date'] = data['unix'].div((86400*365.25)).add(1970).round(2)
+    print(data)
     # pivot data to wide format for visualisation
-    data = data.pivot(index=['decimal_date', 'date'], columns='variable.name', values='value')
+    data = data.pivot(index='date', columns='variable.name', values='value')
     
     # limit the time series to last 10 years -> 12months x 10 years = 120 values.
     data = data.tail(120)
@@ -31,14 +31,14 @@ def vacancies_by_sector():
 def yearly_change_by_sector(data):
     # Get yearly data going back from most recent data, then flip to put in correct order.
     data = data.iloc[-1::-12, :].copy()
-    data.sort_values(by='decimal_date', ascending=True, inplace=True)
+    data.sort_values(by='date', ascending=True, inplace=True)
     # iterate through each column to work out pct change.
     for col in data.columns.to_list():
         data[f'{col}'] = data[f'{col}'].pct_change().mul(100).round(1)
     
     data.reset_index(inplace=True)
-    data.drop(columns='date', inplace=True)
-    data.set_index('decimal_date', inplace=True)
+    # data.drop(columns='date', inplace=True)
+    data.set_index('date', inplace=True)
     data = data.T
     data.index.rename('sector', inplace=True)
     data.to_csv(os.path.join(SRC_DIR, 'themes/people-skills-future/vacancies/_data/vacancies_yearly_change_by_sector.csv'))
