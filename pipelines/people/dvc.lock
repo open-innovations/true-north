@@ -125,8 +125,8 @@ stages:
     deps:
     - path: ../../working/cs/youth-unemployment-adjusted.csv
       hash: md5
-      md5: 666b3a41e5b413f8ab738ccdd1cb3d2a
-      size: 26728
+      md5: ef3ec9671510872dd092d616f5a2bb5b
+      size: 27416
     - path: youth_employment.ipynb
       hash: md5
       md5: 0cda02984753f4301b9787be2d939e3b
@@ -134,10 +134,10 @@ stages:
     outs:
     - path: ../../src/themes/people-skills-future/employment/_data/youth_employment_RGN.csv
       hash: md5
-      md5: cd7f7fca9117146f7178e4e076e459f9
-      size: 2666
+      md5: b0687d5009b835af787101f8d4a1ca2e
+      size: 2734
     - path: 
         ../../src/themes/people-skills-future/employment/_data/youth_employment_RGN_bar_chart.csv
       hash: md5
-      md5: 9f432360b6e848c5969954a0880248b6
+      md5: 13b22c157a147fc3b5f86454390b6091
       size: 337

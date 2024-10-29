@@ -1,4 +1,4 @@
 geography_code,date,geography_name,wants_a_job,unemployed,population,unemployed_percent,wants_a_job_percent,total_who_want_to_work
-E12000001,2023-12-01,North East,24400,22600,285400,7.9,8.5,16.5
-E12000002,2023-12-01,North West,48900,45000,759100,5.9,6.4,12.4
-E12000003,2023-12-01,Yorkshire and The Humber,38500,24300,608800,4.0,6.3,10.3
+E12000001,2024-06-01,North East,21300,23200,286000,8.1,7.4,15.6
+E12000002,2024-06-01,North West,51300,65100,760100,8.6,6.7,15.3
+E12000003,2024-06-01,Yorkshire and The Humber,39200,22100,610000,3.6,6.4,10.0
