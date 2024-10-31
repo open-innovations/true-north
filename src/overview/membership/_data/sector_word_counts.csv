@@ -1,17 +1,17 @@
 name,count
-services,57
-professional,49
-technology,36
+services,58
+professional,50
+technology,38
 finance,31
+education,29
+business,28
 construction,28
-education,28
-business,27
-admin,26
+admin,27
+support,25
 manufacturing,25
 development,25
 notforprofit,25
 insurance,25
-support,24
 marketing,24
 communications,23
 engineering,22
@@ -19,7 +19,7 @@ software,21
 recruitment,16
 real estate,16
 legal,14
-health,12
-social,12
-information,11
-care,10
+health,13
+social,13
+information,13
+care,11
