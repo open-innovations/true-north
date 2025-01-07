@@ -12,6 +12,8 @@ stages:
           cache: false
       - ${TOP}/src/themes/people-skills-future/vacancies/_data/vacancies_by_sector.csv:
           cache: false
+      - ${TOP}/src/themes/people-skills-future/vacancies/_data/vis_dates.yaml:
+          cache: false
   employment:
     cmd: PYTHONPATH=${TOP} python employment.py
     deps:
