@@ -9,8 +9,8 @@ stages:
       size: 10305
     - path: pipelines/lib.pl
       hash: md5
-      md5: 89f073c99fdb2dc988646aa10e75df19
-      size: 2534
+      md5: 30b2e2bc3a113be89eb1e8ad993ac266
+      size: 3325
     outs:
     - path: src/themes/sustainable-growth/b-corporations/_data/bcorp_by_la.csv
       hash: md5
@@ -22,7 +22,7 @@ stages:
       size: 83
     - path: src/themes/sustainable-growth/b-corporations/_data/updated.yaml
       hash: md5
-      md5: fab252ea5f8ab347089eb74dc162b006
+      md5: d7a3092a496722824ab76408b092661e
       size: 16
   metadata:
     cmd: python pipelines/metadata.py

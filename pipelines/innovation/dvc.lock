@@ -73,5 +73,5 @@ stages:
       size: 16816
     - path: ../../src/themes/innovation-change/productivity/_data/updated.yaml
       hash: md5
-      md5: 96a74a816792646f2f7bc030a6ee3dfc
+      md5: cc1829fcf33c66ec517ea202262b9ecb
       size: 20

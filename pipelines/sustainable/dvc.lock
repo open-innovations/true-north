@@ -22,5 +22,5 @@ stages:
       size: 6215
     - path: ../../src/themes/sustainable-growth/gva/_data/updated.yaml
       hash: md5
-      md5: 7937013bd5f351aec08f68e2d1f855d9
+      md5: 23504a848695fc382e7c5c3ef17e0c84
       size: 20

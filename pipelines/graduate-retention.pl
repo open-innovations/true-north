@@ -18,6 +18,7 @@ require "lib.pl";
 use OpenInnovations::ProgressBar;
 
 
+
 my ($csvfile, $ofile, $ofile2, $total, $totals, $segment, $worksegment, $size, @rows, $fh, $regionlookup, $regions, $section, $tab, $line, @cols, @head, $header, $c, $r, $l, $region, $row, $yy, $progress, $workregion, $other, $years);
 
 $csvfile = $basedir."../working/hesa/figure-16.csv";
@@ -213,7 +214,3 @@ foreach $yy (sort(keys(%{$years}))){
 	print $fh "\n";
 }
 close($fh);
-
-
-
-

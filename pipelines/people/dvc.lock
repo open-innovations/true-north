@@ -13,8 +13,8 @@ stages:
       size: 3173661
     - path: vacancies.py
       hash: md5
-      md5: 90fc207f6ddc2eead9ae40a6ccdbe324
-      size: 2263
+      md5: 3f34c1d7317d5b07275bb766c766a47e
+      size: 2884
     outs:
     - path: ../../src/themes/people-skills-future/vacancies/_data/vacancies_by_sector.csv
       hash: md5
@@ -25,6 +25,10 @@ stages:
       hash: md5
       md5: b6bc2e122464d5002bf307173ade04e2
       size: 1543
+    - path: ../../src/themes/people-skills-future/vacancies/_data/vis_dates.yaml
+      hash: md5
+      md5: d4a8aff2b42964d616654038ce22f74a
+      size: 90
   employment:
     cmd: PYTHONPATH=../.. python employment.py
     deps:
