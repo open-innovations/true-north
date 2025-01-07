@@ -104,7 +104,9 @@ ol>li {
 	list-style-type:none;
 	counter-increment:item;
 }
- 
+ol>li>*{
+	text-indent:0em;
+}
 ol>li:before {
 	display:inline-block;
 	width:1.5em;
