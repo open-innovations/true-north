@@ -42,6 +42,7 @@ jobs:
           git config --local user.name "GitHub Action"
           git add working/true-north/api.json
           git add src/overview/northern-stars/_data/northern_stars.csv
+          git add src/overview/northern-stars/_data/updated.yaml
           git commit -m "Update Northern Stars" || exit 0
 
       - name: Push changes

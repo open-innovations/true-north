@@ -17,7 +17,7 @@ require $basedir."lib.pl";
 # Define some files
 my $apiresult = $basedir."../working/true-north/api.json";
 my $csvfile = $basedir."../src/overview/northern-stars/_data/northern_stars.csv";
-
+my $datefile = $basedir."../src/overview/northern-stars/_data/updated.yaml";
 
 
 my ($raw,$json,$csv,$i,$name,$link,$date,$desc,$article,$fh);
@@ -59,3 +59,5 @@ msg("Save CSV to <cyan>$csvfile<none>\n");
 open($fh,">:utf8",$csvfile);
 print $fh $csv;
 close($fh);
+
+updateCreationTimestamp($datefile);

@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 
 use utf8;
+use POSIX qw(strftime);
 use open ':encoding(UTF-8)', ':std';
 
 sub msg {
@@ -36,6 +37,16 @@ sub warning {
 	my $str = $_[0];
 	$str =~ s/(^[\t\s]*)/$1<yellow>WARNING:<none> /;
 	msg($str,"STDERR");
+}
+
+
+sub updateCreationTimestamp {
+	my ($file) = @_;
+	my $dt = strftime("%FT%H:%M", localtime);
+	open(my $fh, '>', $file);
+	print $fh $dt;
+	close $fh;
+	msg("Updating timestamp in <cyan>$file<none>\n");
 }
 
 # Version 1.3
