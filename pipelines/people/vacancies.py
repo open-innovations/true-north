@@ -43,9 +43,19 @@ def yearly_change_by_sector(data):
     data.index.rename('sector', inplace=True)
     data.to_csv(os.path.join(SRC_DIR, 'themes/people-skills-future/vacancies/_data/vacancies_yearly_change_by_sector.csv'))
     
-    return
+    return data
 
 if __name__ == "__main__":
     data = vacancies_by_sector()
-    yearly_change_by_sector(data)
+    d = yearly_change_by_sector(data)
+    last_upate = d.columns[-1].date().isoformat()
+    second_last_update = d.columns[-2:-1][0].date().isoformat()
+    third_last_update = d.columns[-3:-2][0].date().isoformat()
+    with open(os.path.join(SRC_DIR, 'themes/people-skills-future/vacancies/_data/vis_dates.yaml'), 'w') as f:
+        f.write('third_last_update: ' + f'"{third_last_update}"' + '\n')
+        f.write('second_last_update: ' + f'"{second_last_update}"' + '\n')
+        f.write('last_update: ' + f'"{last_upate}"')
+    print(SRC_DIR)
+    time_updated(os.path.join(SRC_DIR, 'themes/people-skills-future/vacancies/_data/updated.yaml'))
     print('Finished vacancies')
+    
