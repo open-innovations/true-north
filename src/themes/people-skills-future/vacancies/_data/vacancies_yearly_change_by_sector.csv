@@ -1,19 +1,19 @@
-sector,2015-08-01,2016-08-01,2017-08-01,2018-08-01,2019-08-01,2020-08-01,2021-08-01,2022-08-01,2023-08-01,2024-08-01
-Accommodation & Food Services Activities.,,-8.3,18.2,0.0,5.5,-64.6,332.4,6.1,-24.4,-19.5
-Administrative & Support Service Activities.,,0.0,-3.8,7.8,-5.5,-34.6,144.1,-9.6,-25.3,-1.8
-"Arts, Entertainment & Recreation.",,71.4,-29.2,0.0,11.8,-78.9,675.0,0.0,-16.1,-30.8
-Construction,,-12.5,42.9,-13.3,-3.8,-16.0,104.8,9.3,-27.7,14.7
-Education.,,0.0,6.1,-1.9,-2.0,-32.0,79.4,23.0,-13.3,-6.2
-"Electricity, Gas, Steam & Air Con Supply",,25.0,-20.0,-25.0,0.0,0.0,100.0,0.0,0.0,-33.3
-Financial & Insurance Activities.,,-11.4,29.0,-5.0,-15.8,-40.6,126.3,18.6,-31.4,-2.9
-Human Health & Social Work.,,1.7,0.8,8.2,6.1,-17.1,55.2,21.7,-18.3,-16.8
-Information & Communication.,,5.3,7.5,11.6,-10.4,-48.8,195.5,-1.5,-29.7,-15.6
-Manufacturing,,0.0,0.0,21.6,-16.1,-30.8,130.6,3.6,-18.6,-17.1
-Mining & Quarrying,,0.0,0.0,0.0,100.0,-100.0,inf,100.0,0.0,-50.0
-Other Service Activities.,,60.0,-12.5,19.0,-24.0,-57.9,212.5,-20.0,15.0,-34.8
-"Professional, Scientific & Technical Activities.",,-11.3,7.9,14.7,7.7,-44.0,125.5,20.8,-27.3,-5.4
-Public Administration & Defence.,,0.0,30.8,29.4,0.0,-13.6,57.9,36.7,-9.8,-8.1
-Real Estate Activities.,,-33.3,0.0,20.0,-16.7,-30.0,142.9,0.0,-41.2,20.0
-Transport & Storage,,6.7,3.1,24.2,-24.4,-29.0,113.6,10.6,-25.0,-17.9
-"Water Supply, Sewarage, Waste Management etc.",,33.3,-25.0,33.3,-25.0,0.0,133.3,14.3,-12.5,0.0
-"Wholesale & Retail, Repair of motor vehicles.",,8.8,6.6,-4.8,-2.9,-54.5,141.0,6.1,-11.5,-24.6
+sector,2015-10-01,2016-10-01,2017-10-01,2018-10-01,2019-10-01,2020-10-01,2021-10-01,2022-10-01,2023-10-01,2024-10-01
+Accommodation & Food Services Activities.,,-3.5,12.2,0.0,-3.3,-62.9,409.1,-15.5,-19.0,-21.7
+Administrative & Support Service Activities.,,5.7,-7.1,3.8,-3.7,-28.8,143.2,-21.1,-15.5,-5.0
+"Arts, Entertainment & Recreation.",,42.9,5.0,9.5,-30.4,-37.5,230.0,-21.2,-26.9,-10.5
+Construction,,17.4,3.7,-3.6,-3.7,-3.8,64.0,12.2,-21.7,-8.3
+Education.,,-2.0,10.4,-3.8,2.0,-25.0,61.5,19.0,-13.3,-7.7
+"Electricity, Gas, Steam & Air Con Supply",,0.0,0.0,-25.0,0.0,33.3,50.0,0.0,-16.7,-20.0
+Financial & Insurance Activities.,,3.3,29.0,-5.0,-15.8,-37.5,135.0,2.1,-25.0,-5.6
+Human Health & Social Work.,,0.0,6.7,3.9,5.3,-10.8,57.3,7.2,-16.7,-17.8
+Information & Communication.,,-5.0,5.3,27.5,-19.6,-29.3,137.9,-13.0,-28.3,-14.0
+Manufacturing,,10.4,7.5,10.5,-19.0,-17.6,121.4,-9.7,-20.2,-19.4
+Mining & Quarrying,,0.0,0.0,0.0,100.0,-50.0,100.0,0.0,0.0,0.0
+Other Service Activities.,,26.3,-12.5,14.3,-20.8,-42.1,145.5,-11.1,-16.7,-30.0
+"Professional, Scientific & Technical Activities.",,-3.0,13.8,8.1,0.0,-33.8,115.1,8.8,-25.8,-12.0
+Public Administration & Defence.,,0.0,30.8,41.2,0.0,-12.5,47.6,32.3,-4.9,-5.1
+Real Estate Activities.,,-42.9,25.0,20.0,-8.3,0.0,54.5,-11.8,-26.7,45.5
+Transport & Storage,,-3.2,16.7,17.1,-19.5,-12.1,96.6,-14.0,-32.7,15.2
+"Water Supply, Sewarage, Waste Management etc.",,-25.0,33.3,0.0,0.0,-25.0,200.0,-22.2,-14.3,16.7
+"Wholesale & Retail, Repair of motor vehicles.",,5.5,5.9,-2.1,-5.0,-49.6,134.3,-7.0,-10.3,-27.5

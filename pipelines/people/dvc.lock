@@ -9,8 +9,8 @@ stages:
       size: 3763
     - path: https://github.com/economic-analytics/edd/raw/main/data/parquet/LMS.parquet
       hash: md5
-      checksum: '"5c0d82ed1653d6c5ca9be522cfc36f8126124f8551f305a783229584ef3ed967"'
-      size: 3261273
+      checksum: '"eb31d53742df1e141b3bcc9a3fd0569b6e286fe1d138df58895da5ce5f3e58f8"'
+      size: 3173661
     - path: vacancies.py
       hash: md5
       md5: 90fc207f6ddc2eead9ae40a6ccdbe324
@@ -18,12 +18,12 @@ stages:
     outs:
     - path: ../../src/themes/people-skills-future/vacancies/_data/vacancies_by_sector.csv
       hash: md5
-      md5: ead133c4016e1e623670960b9044d9c5
-      size: 12576
+      md5: 58bb5febf499a88723719efe757047f5
+      size: 12575
     - path: 
         ../../src/themes/people-skills-future/vacancies/_data/vacancies_yearly_change_by_sector.csv
       hash: md5
-      md5: abc60b2147df631b8265b85b437e2f4c
+      md5: b6bc2e122464d5002bf307173ade04e2
       size: 1543
   employment:
     cmd: PYTHONPATH=../.. python employment.py
@@ -100,8 +100,8 @@ stages:
     - path: 
         https://raw.githubusercontent.com/open-innovations/yff-data-pipelines/main/data/processed/neet.csv
       hash: md5
-      checksum: '"0c109f51e636df13abe0f3cbe36c68ec862a55ff02e6dc3c9587c34cb4462b50"'
-      size: 371562
+      checksum: '"b730e2eaa5ec9c078938d0d91e6814f28f0b709e2a1d37fc610a2d587b0e4e6d"'
+      size: 375645
     - path: 
         https://raw.githubusercontent.com/open-innovations/yff-data-pipelines/main/data/processed/yff/neet-factors.csv
       hash: md5
@@ -114,8 +114,8 @@ stages:
     outs:
     - path: ../../src/themes/people-skills-future/employment/_data/neet.csv
       hash: md5
-      md5: e151a335813d03cf77bc796758158ac7
-      size: 160
+      md5: 53fc178350ac206e7f0d87854b4b7bf0
+      size: 159
     - path: ../../src/themes/people-skills-future/employment/_data/risk_of_neet_by_la.csv
       hash: md5
       md5: 121be03fe40ba8f11044310423afd4bb
@@ -129,7 +129,7 @@ stages:
       size: 27416
     - path: youth_employment.ipynb
       hash: md5
-      md5: 0cda02984753f4301b9787be2d939e3b
+      md5: 8e0a16924b5ff95016b01e0f9c92763e
       size: 10527
     outs:
     - path: ../../src/themes/people-skills-future/employment/_data/youth_employment_RGN.csv

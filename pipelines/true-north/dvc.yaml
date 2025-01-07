@@ -26,12 +26,12 @@ stages:
           cache: false
       - ${TOP}/src/overview/membership/_data/updated.yaml:
           cache: false
-  northern-stars:
-    cmd: papermill --no-progress-bar --no-report-mode northern_stars.ipynb ${TOP}/output/northern_stars.ipynb
-    deps: 
-      - northern_stars.ipynb
-      - ${TOP}/working/true-north/TN Data Explorer_Northern Star Data List_06062024.csv
-    outs:
-      - ${TOP}/src/overview/northern-stars/_data/northern_stars.csv:
-          cache: false
+  # northern-stars:
+  #   cmd: papermill --no-progress-bar --no-report-mode northern_stars.ipynb ${TOP}/output/northern_stars.ipynb
+  #   deps: 
+  #     - northern_stars.ipynb
+  #     - ${TOP}/working/true-north/TN Data Explorer_Northern Star Data List_06062024.csv
+  #   outs:
+  #     - ${TOP}/src/overview/northern-stars/_data/northern_stars.csv:
+  #         cache: false
 

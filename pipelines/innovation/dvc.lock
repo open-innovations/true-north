@@ -30,7 +30,7 @@ stages:
       size: 10516
     - path: fastest_sector.ipynb
       hash: md5
-      md5: f9efc2f6e6aa63078a730bcb2af23516
+      md5: 11c2824ed50817b3cd6acc29709b27f7
       size: 1377
     outs:
     - path: 
@@ -47,7 +47,7 @@ stages:
       size: 6520
     - path: business-demography.ipynb
       hash: md5
-      md5: 309836a503e6c334b3ee9d9f4485f6fc
+      md5: 3543c0ca68616dd462f7f26da24c8af3
       size: 1716
     outs:
     - path: ../../src/themes/innovation-change/business-demography/_data/demography.csv
@@ -63,7 +63,7 @@ stages:
       size: 109520
     - path: productivity.ipynb
       hash: md5
-      md5: 6bb5512988dd45bcc08b68b93fad0a13
+      md5: 4897391eb8cb2d2f203f9c973f9e9e28
       size: 2959
     outs:
     - path: 
@@ -73,5 +73,5 @@ stages:
       size: 16816
     - path: ../../src/themes/innovation-change/productivity/_data/updated.yaml
       hash: md5
-      md5: aa2b1a1d0cf784c29bb56fc5ff54013c
+      md5: 96a74a816792646f2f7bc030a6ee3dfc
       size: 20
