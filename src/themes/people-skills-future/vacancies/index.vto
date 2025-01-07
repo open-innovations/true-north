@@ -100,6 +100,13 @@ nicetheme: "People, Skills and The Future"
     consulting and deal-making has eased back after a pandemic-related flurry.
 </p>
 
+{{ set last_update = vis_dates.last_update |> date('DATE') }}
+{{ set last_update_f = vis_dates.last_update |> date('MMMM y') }}
+{{ set second_last_update = vis_dates.second_last_update |> date('DATE') }}
+{{ set second_last_update_f = vis_dates.last_update |> date('MMMM y') }}
+{{ set third_last_update = vis_dates.third_last_update |> date('DATE') }}
+{{ set third_last_update_f = vis_dates.last_update |> date('MMMM y') }}
+
 {{ comp.oi.chart.bar ({ config: { 
     data: vacancies_yearly_change_by_sector,
     height: 600,
@@ -128,14 +135,16 @@ nicetheme: "People, Skills and The Future"
         },
     series: [
         {
-        title: "November 2024",
-        value: "2024-10-01",
-        tooltip: '<strong class=\"subtitle\">{{ sector }}</strong><br />November 2023 - November 2024: <strong>{{ 2024-10-01 }}%</strong>' 
+        title: last_update_f,
+        value: last_update,
+        tooltip: '<strong class=\"subtitle\">{{ sector }}</strong><br />Percentage change on previous year: <strong>{{ 2024-10-01 }}%</strong>' 
         },
         { 
-        title: "November 2023",
-        value: "2023-10-01",
-        tooltip: '<strong class=\"subtitle\">{{ sector }}</strong><br />November 2022 - November 2023: <strong>{{ 2023-10-01 }}%</strong>' }]
+        title: second_last_update_f,
+        value: second_last_update,
+        tooltip: '<strong class=\"subtitle\">{{ sector }}</strong><br />Percentage change on previous year: <strong>{{ 2024-10-01 }}%</strong>' }]
         }
     }) 
 }}
+
+{{# {{ typeof last_update }} #}}
