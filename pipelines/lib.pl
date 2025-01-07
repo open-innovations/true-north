@@ -1,5 +1,8 @@
 #!/usr/bin/perl
 
+use utf8;
+use open ':encoding(UTF-8)', ':std';
+
 sub msg {
 	my $str = $_[0];
 	my $dest = $_[1]||"STDOUT";
@@ -99,7 +102,7 @@ sub LoadCSV {
 	my $config = shift;
 	
 	msg("Processing CSV from <cyan>$file<none>\n");
-	open(FILE,"<:utf8",$file);
+	open(FILE,"<",$file);
 	my @lines = <FILE>;
 	close(FILE);
 	return ParseCSV(join("",@lines),$config);
@@ -111,17 +114,47 @@ sub ParseJSON {
 	eval {
 		$json = JSON::XS->new->decode($str);
 	};
-	if($@){ error("\tInvalid output in input: \"".substr($str,0,100)."...\".\n"); $json = {}; }
+	if($@){ error("Invalid output in input: \"".substr($str,0,100)."...\".\n"); $json = {}; }
 	return $json;
 }
 
 sub LoadJSON {
 	my (@files,$str,@lines,$json);
 	my $file = $_[0];
-	open(FILE,"<:utf8",$file) || error("Unable to load <cyan>$file<none>.");
+	open(FILE,"<",$file) || error("Unable to load <cyan>$file<none>.\n");
 	@lines = <FILE>;
 	close(FILE);
 	$str = (join("",@lines));
 	return ParseJSON($str);
+}
+
+
+# Version 1.1
+sub SaveJSON {
+	my $json = shift;
+	my $file = shift;
+	my $depth = shift;
+	my $oneline = shift;
+	if(!defined($depth)){ $depth = 0; }
+	my $d = $depth+1;
+	my ($txt,$fh);
+	
+
+	$txt = JSON::XS->new->canonical(1)->pretty->space_before(0)->encode($json);
+	$txt =~ s/   /\t/g;
+	$txt =~ s/\n\t{$d,}//g;
+	$txt =~ s/\n\t{$depth}\}(\,|\n)/\}$1/g;
+	$txt =~ s/": /":/g;
+
+	if($oneline){
+		$txt =~ s/\n[\t\s]*//g;
+	}
+
+	msg("Save JSON to <cyan>$file<none>\n");
+	open($fh,">",$file);
+	print $fh $txt;
+	close($fh);
+
+	return $txt;
 }
 1;
