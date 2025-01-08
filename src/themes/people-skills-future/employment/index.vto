@@ -118,7 +118,7 @@ nicetheme: "People, Skills and The Future"
 				"label": "filterLabel"
 			}
 		},
-		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />Employment rate: <strong class=\"number\">{{ {{ _value }} | toFixed(1) }}</strong>"
+		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />Employment rate: <strong class=\"number\">{{ {{ _value }} | toFixed(1) }}%</strong>"
 	}
 }) }}
 
@@ -194,36 +194,36 @@ nicetheme: "People, Skills and The Future"
 </div>
 
 {{ comp.oi.map.hex_cartogram({
-	"config": {
-		"width": 600,
-		"hexjson": "hexjson.uk-local-authority-districts-2021",
-		"data": economic_inactivity_LAD,
-		"columns":[{
-			"name": "filterLabel",
-			"template": "{{ n }}"
+	config: {
+		width: 600,
+		hexjson: "hexjson.uk-local-authority-districts-2021",
+		data: economic_inactivity_LAD,
+		columns:[{
+			name: "filterLabel",
+			template: "{{ n }}"
 		}],
-		"value": "2023-12-01",
-		"scale": "TrueNorth",
-		"min": 0,
-		"max": 50,
-		"matchKey": "geography_code",
-		"legend": {
-			"position": "top right",
-			"continuous": true,
-			"items": [{
-				"value": 50,
-				"label": "50%"
+		value: "2023-12-01",
+		scale: "TrueNorth",
+		min: 0,
+		max: 50,
+		matchKey: "geography_code",
+		legend: {
+			position: "top right",
+			continuous: true,
+			items: [{
+				value: 50,
+				label: "50%"
 			},{
-				"value": 25,
-				"label": "25%"
+				value: 25,
+				label: "25%"
 			},{
-				"value": 0,
-				"label": "0%"
+				value: 0,
+				label: "0%"
 			}]
 		},
-		"boundaries": {
-			"country": {
-				"stroke": "#181b25",
+		boundaries: {
+			country: {
+				stroke: "#181b25",
 				"stroke-width": 2,
 				"stroke-linecap": "round",
 				"stroke-opacity": 0.5
@@ -235,12 +235,12 @@ nicetheme: "People, Skills and The Future"
 				"stroke-opacity": 0.5
 			}
 		},
-		"tools":{
-			"filter":{
-				"label": "filterLabel"
+		tools:{
+			filter:{
+				label: "filterLabel"
 			}
 		},
-		"tooltip": "<strong class=\"subtitle\">{{ n }}</strong><br />Economic inactivity rate: <strong class=\"number\">{{ {{ _value }} | toFixed(1) }}</strong>"
+		tooltip: "<strong class=\"subtitle\">{{ n }}</strong><br />Economic inactivity rate: <strong class=\"number\">{{ {{ _value }} | toFixed(1) }}%</strong>"
 	}
 }) }}
 

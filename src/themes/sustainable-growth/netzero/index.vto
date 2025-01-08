@@ -290,13 +290,13 @@ nicetheme: "Sustainable Growth"
 		title: "Measured total",
 		x: "Year", 
 		y: "measured_total",
-		tooltip: "<strong class=\"subtitle\">Measured total</strong><br />{{ Year }}: <strong class=\"number\">{{ _y }}%</strong>"
+		tooltip: "<strong class=\"subtitle\">Measured total</strong><br />{{ Year }}: <strong class=\"number\">{{ _y | toLocaleString() }}</strong>"
 		},
 		{
 		title: "Projected total",
 		x: "Year", 
 		y: "projected_total",
-		tooltip: "<strong class=\"subtitle\">Projected total</strong><br />{{ Year }}: <strong class=\"number\">{{ _y }}</strong>"
+		tooltip: "<strong class=\"subtitle\">Projected total</strong><br />{{ Year }}: <strong class=\"number\">{{ _y | toLocaleString() }}</strong>"
 		}]
 	}
 	})
