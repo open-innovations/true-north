@@ -103,7 +103,7 @@ nicetheme: "People, Skills and The Future"
 {{ set last_update = vis_dates.last_update |> date('DATE') }}
 {{ set last_update_f = vis_dates.last_update |> date('MMMM y') }}
 {{ set second_last_update = vis_dates.second_last_update |> date('DATE') }}
-{{ set second_last_update_f = vis_dates.last_update |> date('MMMM y') }}
+{{ set second_last_update_f = vis_dates.second_last_update |> date('MMMM y') }}
 {{ set third_last_update = vis_dates.third_last_update |> date('DATE') }}
 {{ set third_last_update_f = vis_dates.last_update |> date('MMMM y') }}
 
@@ -142,9 +142,7 @@ nicetheme: "People, Skills and The Future"
         { 
         title: second_last_update_f,
         value: second_last_update,
-        tooltip: '<strong class=\"subtitle\">{{ sector }}</strong><br />Percentage change on previous year: <strong>{{ 2024-10-01 }}%</strong>' }]
+        tooltip: '<strong class=\"subtitle\">{{ sector }}</strong><br />Percentage change on previous year: <strong>{{ 2023-10-01 }}%</strong>' }]
         }
     }) 
 }}
-
-{{# {{ typeof last_update }} #}}
