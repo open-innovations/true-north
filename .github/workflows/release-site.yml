@@ -5,14 +5,14 @@ name: Release site
   # schedule:
   #   # * is a special character in YAML so you have to quote this string
   #   - cron:  '45 23 * * *'
-  # push:
-  #   branches: [ main ]
-  #   paths:
-  #     - 'src/**'
-  #     - '_config.js'
-  #     - 'deno.json'
-  #     - 'import_map.json'
-  #     - '.github/workflows/build-site.yml'
+  push:
+    branches: [ main ]
+    paths:
+      - 'src/**'
+      - '_config.js'
+      - 'deno.json'
+      - 'import_map.json'
+      - '.github/workflows/build-site.yml'
 
 jobs:
   # Build job
@@ -31,5 +31,8 @@ jobs:
       - name: Create new release
         shell: bash
         env:
-          GH_TOKEN: ${{ github.token }}
-        run: deno task vr make-release
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PATH: ${{ secrets.SSH_PATH }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSHPASS: ${{ secrets.SSHPASS }}
+        run: deno task vr push-release

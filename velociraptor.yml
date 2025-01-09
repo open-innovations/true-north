@@ -5,3 +5,9 @@ scripts:
       - rm -f site.zip
       - zip -r site.zip _site/
       - gh release create $(date +%Y%m%d-%H%M%S) site.zip --generate-notes --latest
+  push-release:
+    cmd:
+      - deno task build --location https://www.brabners.com/true-north/data-explorer/
+      - rm -f site.zip
+      - zip -r site.zip _site/
+      - rsync --info=STATS2 --rsh="sshpass -e ssh -o StrictHostKeyChecking=no -l $SSH_USER" --rsync-path "sudo -u oi-cloud rsync" site.zip $SSH_HOST:$SSH_PATH
