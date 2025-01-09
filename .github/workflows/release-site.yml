@@ -12,7 +12,7 @@ name: Release site
       - '_config.js'
       - 'deno.json'
       - 'import_map.json'
-      - '.github/workflows/build-site.yml'
+      - '.github/workflows/release-site.yml'
 
 jobs:
   # Build job
