@@ -1,7 +1,7 @@
 # Lume site
 _site/
 site.zip
-
+_cache
 # I've had problems with deno.lock. It's in my bad books.
 deno.lock
 
