@@ -13,6 +13,10 @@ name: Release site
       - 'deno.json'
       - 'import_map.json'
       - '.github/workflows/release-site.yml'
+  workflow_run:
+    workflows: ["Update Northern Stars"]
+    types:
+      - completed
 
 jobs:
   # Build job
