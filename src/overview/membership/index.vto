@@ -81,18 +81,9 @@ nicesection: True North
     axis: { 
         x: { 
             min: 0,
-            max: 60,
             grid: { "stroke-dasharray": '6 2', "stroke-width": 1 },
-            ticks: [{
-                value: 0,
-                label: "0"},
-                {
-                value: 30,
-                label: "30"},
-                {
-                value: 60,
-                label: "60"}
-            ]} 
+            tick: { spacing: 25 } 
+            }
         },
     series: [{
         title: "Frequency",
@@ -116,21 +107,9 @@ nicesection: True North
     axis: { 
         x: { 
             min: 0,
-            max: 120,
             grid: { "stroke-dasharray": '6 2', "stroke-width": 1 },
-            ticks: [{
-                value: 0,
-                label: "0"},
-                {
-                value: 40,
-                label: "40"},
-                {
-                value: 80,
-                label: "80"},
-                {
-                value: 120,
-                label: "120"}
-            ]} 
+            tick: { spacing: 50 } 
+            } 
         },
     series: [{
         title: "Frequency",
