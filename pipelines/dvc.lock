@@ -22,7 +22,7 @@ stages:
       size: 83
     - path: src/themes/sustainable-growth/b-corporations/_data/updated.yaml
       hash: md5
-      md5: d7a3092a496722824ab76408b092661e
+      md5: ac43c5a75bf9a628ea374d45494f166e
       size: 16
   metadata:
     cmd: python pipelines/metadata.py
@@ -45,8 +45,8 @@ stages:
     deps:
     - path: https://raw.githubusercontent.com/economic-analytics/edd/main/data/edd_dict.csv
       hash: md5
-      checksum: '"a74e8c3db840fde7847ec2446c66bafcfa2047f27182d702eb98336bddf377a8"'
-      size: 10438
+      checksum: '"1cd90b05bbabf89f513b056a1b0cca43e4cf13e8ba206d24eff5d29c5284c17b"'
+      size: 10430
     - path: pipelines/edd_dictionary.py
       hash: md5
       md5: 447c3dbdee681c2e3d8865ea7dc82f66
@@ -54,5 +54,5 @@ stages:
     outs:
     - path: src/_data/edd_dictionary.yaml
       hash: md5
-      md5: d6f98b7c7c7909c1425525b0e772352b
+      md5: a788083e00b66a5b2e861da525be10b2
       size: 7791
