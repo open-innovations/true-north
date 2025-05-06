@@ -7,7 +7,7 @@ import postcss from "lume/plugins/postcss.ts";
 import favicon from "lume/plugins/favicon.ts";
 
 // Importing the OI Lume charts and utilities
-import oiViz from "https://deno.land/x/oi_lume_viz@v0.16.11/mod.ts";
+import oiViz from "https://deno.land/x/oi_lume_viz@v0.16.12/mod.ts";
 import autoDependency from "https://deno.land/x/oi_lume_utils@v0.4.0/processors/auto-dependency.ts";
 import csvLoader from "https://deno.land/x/oi_lume_utils@v0.4.0/loaders/csv-loader.ts";
 import jsonLoader from "lume/core/loaders/json.ts";
