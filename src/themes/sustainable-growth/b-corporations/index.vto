@@ -292,7 +292,7 @@ nicetheme: "Sustainable Growth"
 	}
 }) }}
 
-{{ function dropdown(values) }}
+{{# {{ function dropdown(values) }} #}}
 	{{ for value of values }}
 		<h4>{{ value }}</h4>
 		{{ comp.oi.map.hex_cartogram({
@@ -341,7 +341,7 @@ nicetheme: "Sustainable Growth"
 			}
 		}) }}
 	{{ /for }}
-{{ /function }}
+{{# {{ /function }} #}}
 
 {{#
 
