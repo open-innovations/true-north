@@ -59,8 +59,8 @@ stages:
     deps:
     - path: https://github.com/economic-analytics/edd/raw/main/data/parquet/PROD_LAD.parquet
       hash: md5
-      checksum: '"269dea0d1ec3694294688a5bd802276a77e8b216879ceba666ae5d32cad00e6d"'
-      size: 109520
+      checksum: '"1dde84dc5ef85ad2dbc1a150f1f1e1c71bae19b1237b8f2a9442bb17866ad124"'
+      size: 108865
     - path: productivity.ipynb
       hash: md5
       md5: 4897391eb8cb2d2f203f9c973f9e9e28
@@ -73,5 +73,5 @@ stages:
       size: 16816
     - path: ../../src/themes/innovation-change/productivity/_data/updated.yaml
       hash: md5
-      md5: cc1829fcf33c66ec517ea202262b9ecb
+      md5: a84431c6764c3a2f0b2e46e4b6782a0f
       size: 20
