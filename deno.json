@@ -1,10 +1,32 @@
 {
   "importMap": "./import_map.json",
+  "nodeModulesDir": "auto",
   "tasks": {
-    "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
+    "lume": "echo \"import 'lume/cli.ts'\" | deno run -A --allow-scripts -",
     "build": "deno task lume",
     "serve": "deno task lume -s",
-    "refresh-cache": "deno cache --lock-write _config.ts",
+    "refresh-cache": "deno cache --allow-scripts _config.ts",
     "vr": "deno run -qA https://code.velociraptor.run"
+  },
+  "compilerOptions": {
+    "types": [
+      "lume/types.ts"
+    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "lume"
+  },
+  "unstable": [
+    "temporal",
+    "fmt-component"
+  ],
+  "lint": {
+    "plugins": [
+      "https://deno.land/x/lume@v2.5.3/lint.ts"
+    ],
+    "rules": {
+      "exclude": [
+        "no-import-prefix"
+      ]
+    }
   }
 }

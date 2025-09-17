@@ -37,7 +37,12 @@ site.loadData([".hexjson"], jsonLoader);
 import oiVizConfig from "./oi-viz-config.ts";
 site.use(oiViz(oiVizConfig));
 
-site.use(favicon({ input: "/favicon.png" }));
+// TODO fix this
+// This causes the site to break.
+// Dependency svg2png is deprecated
+// npm:svg2png-wasm@1.4.1 (svg2png-wasm is no longer supported. Please use the resvg-js package instead.)
+// May need to upgrade to Lume 3 to receive fixes for this
+// site.use(favicon({ input: "/favicon.png" }));
 
 site.use(base_path());
 site.use(metas({
