@@ -28,6 +28,11 @@ my $hexfile = $basedir."../src/_data/hexjson/uk-local-authority-districts-2023.h
 
 # Get any .env environment variables
 my $env = getEnvironment();
+if(!defined($env->{'B_CORP_API'})){
+	error("You need to set <yellow>B_CORP_API<none> in your .env file\n");
+	exit;
+}
+
 
 my $hexes = LoadJSON($hexfile)->{'hexes'};
 
@@ -216,14 +221,19 @@ updateCreationTimestamp($yfile);
 
 sub getEnvironment {
 	my ($fh,@lines,$env,$k,$v,$line);
-	open($fh,$basedir."../.env");
-	@lines = <$fh>;
-	close($fh);
-	foreach $line (@lines){
-		$line =~ s/[\n\r]//g;
-		($k,$v) = split(/=/,$line);
-		$env->{$k} = $v;
-	}
+	if(-e $basedir."../.env"){
+		open($fh,$basedir."../.env");
+		@lines = <$fh>;
+		close($fh);
+		foreach $line (@lines){
+			$line =~ s/[\n\r]//g;
+			($k,$v) = split(/=/,$line);
+			$env->{$k} = $v;
+		}
+	}else{
+		error("You don't have a <cyan>.env<none> file\n");
+		exit;
+	}		
 	return $env;
 }
 
