@@ -7,27 +7,29 @@ stages:
       hash: md5
       md5: 3b0d2b1c688cf9992c1524e6a5de95b2
       size: 3763
-    - path: https://github.com/economic-analytics/edd/raw/main/data/parquet/LMS.parquet
+    - path: 
+        https://github.com/economic-analytics/edd/raw/main/data/parquet/LMS.parquet
       hash: md5
-      checksum: '"c8ed3ed6071a4800023cc7a493c3ea7290f18a93b7e6cf4e88663d24a9edb7e6"'
-      size: 3365953
+      checksum: '"46a9394b7211b4426617624fbe2aa6804a0129a017407cc4ea426e8f58095937"'
+      size: 3311213
     - path: vacancies.py
       hash: md5
       md5: 3f34c1d7317d5b07275bb766c766a47e
       size: 2884
     outs:
-    - path: ../../src/themes/people-skills-future/vacancies/_data/vacancies_by_sector.csv
+    - path: 
+        ../../src/themes/people-skills-future/vacancies/_data/vacancies_by_sector.csv
       hash: md5
-      md5: cee0446c7340e031071510aa3d3d5871
-      size: 12571
+      md5: e776082446fcb3192eed6e42528f4ef4
+      size: 12568
     - path: 
         ../../src/themes/people-skills-future/vacancies/_data/vacancies_yearly_change_by_sector.csv
       hash: md5
-      md5: 807b86f460a7243693877b0759f73864
-      size: 1548
+      md5: 3af515e21b78954799afe77ff2b0c4d4
+      size: 1556
     - path: ../../src/themes/people-skills-future/vacancies/_data/vis_dates.yaml
       hash: md5
-      md5: 73d413dbe71df9a086265dc5a374f87a
+      md5: 92aca759ebf29cf4acfb532f20a2f52a
       size: 90
   employment:
     cmd: PYTHONPATH=../.. python employment.py
@@ -49,7 +51,8 @@ stages:
       md5: 9c51d3c5f0d7e712b226543232afbf89
       size: 2677
     outs:
-    - path: ../../src/themes/people-skills-future/employment/_data/economic_inactivity.csv
+    - path: 
+        ../../src/themes/people-skills-future/employment/_data/economic_inactivity.csv
       hash: md5
       md5: 7e4807e59f4b6f80201ca37f68a28319
       size: 3566
@@ -58,11 +61,13 @@ stages:
       hash: md5
       md5: 057e81fac703f9fb2688fc3d7a406413
       size: 28180
-    - path: ../../src/themes/people-skills-future/employment/_data/employment.csv
+    - path: 
+        ../../src/themes/people-skills-future/employment/_data/employment.csv
       hash: md5
       md5: 04fb8c28d58910c5beb477f72bc00a30
       size: 3572
-    - path: ../../src/themes/people-skills-future/employment/_data/employment_LAD.csv
+    - path: 
+        ../../src/themes/people-skills-future/employment/_data/employment_LAD.csv
       hash: md5
       md5: 4ef259d3c48d6feeeb67306a24b69ac4
       size: 28269
@@ -82,7 +87,8 @@ stages:
       md5: 14f95f85aced30e4d81013d40e60271a
       size: 875
     outs:
-    - path: ../../src/themes/people-skills-future/qualifications/_data/nvq_4plus.csv
+    - path: 
+        ../../src/themes/people-skills-future/qualifications/_data/nvq_4plus.csv
       hash: md5
       md5: 3990161ad18da32662be4cb08145d336
       size: 727
@@ -120,12 +126,14 @@ stages:
       hash: md5
       md5: 53fc178350ac206e7f0d87854b4b7bf0
       size: 159
-    - path: ../../src/themes/people-skills-future/employment/_data/risk_of_neet_by_la.csv
+    - path: 
+        ../../src/themes/people-skills-future/employment/_data/risk_of_neet_by_la.csv
       hash: md5
       md5: 121be03fe40ba8f11044310423afd4bb
       size: 23551
   youth-employment:
-    cmd: papermill --no-progress-bar --no-report-mode youth_employment.ipynb ../../output/youth_employment.ipynb
+    cmd: papermill --no-progress-bar --no-report-mode youth_employment.ipynb 
+      ../../output/youth_employment.ipynb
     deps:
     - path: ../../working/cs/youth-unemployment-adjusted.csv
       hash: md5
@@ -136,7 +144,8 @@ stages:
       md5: 8e0a16924b5ff95016b01e0f9c92763e
       size: 10527
     outs:
-    - path: ../../src/themes/people-skills-future/employment/_data/youth_employment_RGN.csv
+    - path: 
+        ../../src/themes/people-skills-future/employment/_data/youth_employment_RGN.csv
       hash: md5
       md5: b0687d5009b835af787101f8d4a1ca2e
       size: 2734
