@@ -209,7 +209,7 @@ print $fh "\"Total B Corps\",$nbhits,\"In the UK\"\n";
 print $fh "\"Northern B Corps\",$total,,\n";
 close($fh);
 
-msg("Total of <yellow>$total<none> northern corps out of <yellow>$nbhits<none>.");
+msg("Total of <yellow>$total<none> northern corps out of <yellow>$nbhits<none>.\n");
 
 
 updateCreationTimestamp($yfile);
@@ -296,8 +296,14 @@ sub fixPostcode {
 	if($pcd eq "S331AZ" && $name eq "Sladen Consulting"){ $pcd = "S321AZ"; }
 	if($pcd eq "HA1SX1" && $name eq "The Curious Beetle"){ $pcd = "HA11SX"; }
 	if($pcd eq "SW9" && $name eq "Urban Jungle Services Ltd"){ $pcd = "N17GU"; }
+	if($pcd eq "CF156BH" && $name eq "Academii Limited"){ $pcd = "CF827FN"; }	# From website 
+	if($pcd eq "SN881JJ" && $name eq "Lets Think Limited"){ $pcd = "W1W5PF"; }	# From website 
+	if($pcd eq "SY31GA" && $name eq "Pathfinder FX"){ $pcd = "SY13GA"; }	# From website
+	if($pcd eq "H12JQ" && $name eq "Tribes Digital LTD"){ $pcd = "M46WX"; }	# From website
+	if($pcd eq "EC2Y1HT" && $name eq "Octopus Group"){ $pcd = "EC1N2HT"; }	# From Companies House
 	if($pcd eq "W12" && $name eq "Higson"){ $pcd = "W127RZ"; }
 	if($pcd eq "" && $name eq "Kin and Carta Plc"){ $pcd = "N19BE"; }
+	if($pcd eq "EC2A4N" && $name eq "Novoda"){ $pcd = "EC2A4NE"; }
 	if($pcd eq "UK" && $name eq "By Sarah"){ $pcd = "B798RH"; }
 	if($pcd eq "WC2A0HF"){ $pcd = "WC2H0HF"; }
 	if($pcd eq "TA11FH"){ $pcd = "TA11QN"; }
